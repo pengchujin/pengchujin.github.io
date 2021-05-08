@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://pengchujin.github.io</id>
+    <title>Gridea</title>
+    <updated>2021-05-08T18:44:29.286Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://pengchujin.github.io"/>
+    <link rel="self" href="https://pengchujin.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://pengchujin.github.io/images/avatar.png</logo>
+    <icon>https://pengchujin.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[OpenClash 使用教程]]></title>
+        <id>https://pengchujin.github.io/post/openClash/</id>
+        <link href="https://pengchujin.github.io/post/openClash/">
+        </link>
+        <updated>2021-05-07T23:15:20.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg" alt="截屏2021-05-08 下午6.29.51" loading="lazy"></figure>
+<p><a href="https://github.com/vernesong/OpenClash">OpenClash</a> 是一个可运行在 OpenWrt 上的<a href="https://github.com/Dreamacro/clash"> Clash </a>客户端，一般来说你的路由器的第三方固件会附带，当然也可以自行安装。相比于传统的 SS、SSR 或者 PassWall 这些客户端来说，OpenClash 使用 Clash 的配置文件，规则代理会灵活很多，配合 yacd 等 WebUI 控制台操作也非常方便。<!--more--></p>
+<h2 id="安装">安装</h2>
+<p>OpenClash 会发布编译好的 IPK 文件（openwrt 的软件包），你可以直接<a href="https://github.com/vernesong/OpenClash/releases">下载安装</a>，然后 SSH 到 openwrt 后台进行安装。</p>
+<pre><code>cd /tmp
+wget https://github.com/vernesong/OpenClash/releases/download/v0.42.05-beta/luci-app-openclash_0.42.05-beta_all.ipk
+opkg install luci-app-openclash_0.42.05-beta_all.ipk
+</code></pre>
+<p>如果你的版本比较旧，你也可以这样来更新你的 openclash，我这里就以 0.42.05 版本为例。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%884.06.12.jpg" alt="截屏2021-05-08 下午4.06.12" loading="lazy"></figure>
+<h2 id="配置">配置</h2>
+<h3 id="添加配置文件">添加配置文件</h3>
+<p>你的机场一般会给你提供一个订阅地址，有没有 Clash 的订阅都没关系。ss、v2ray、trojan 都是支持的 SSR 不行🙅，复制准备好。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%884.36.31.jpg" alt="截屏2021-05-08 下午4.36.31" loading="lazy"></figure>
+<p>打开 openclash，在 ConfigUpdate 配置文件订阅里选择新增。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%884.40.08.jpg" alt="截屏2021-05-08 下午4.40.08" loading="lazy"></figure>
+<ul>
+<li>
+<p>配置文件名随便取个名字</p>
+</li>
+<li>
+<p>然后在订阅地址里填写机场给你提供的（不是 SSR 的都行）</p>
+</li>
+<li>
+<p>在线订阅转换勾选上 ｜ 如果你机场提供的就是 Clash 的配置订阅并且你也不想改，就不用勾选</p>
+</li>
+<li>
+<p>订阅转换模版如果你有喜欢的可以里面选择一个，或者默认即可</p>
+</li>
+<li>
+<p>其它默认即可。当然其它的选项你理解，并且有需求可以自行更改。</p>
+</li>
+</ul>
+<p>然后保存配置。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%885.03.26.jpg" alt="截屏2021-05-08 下午5.03.26" loading="lazy"></figure>
+<p>保存配置后，应用配置理论上就能直接使用了，打开 Google YouTube 等网站应该不会有问题。你可以选择打开自动更新，这样就会每天更新你机场的节点变动。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%885.52.59.jpg" alt="截屏2021-05-08 下午5.52.59" loading="lazy"></figure>
+<h2 id="控制面板">控制面板</h2>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.08.53.jpg" alt="截屏2021-05-08 下午6.08.53" loading="lazy"></figure>
+<p>在 OpenClash 打开后会提供控制面板，推荐你选择 Yacd 的。控制面板提供流量信息，可以方便的切换节点配置。（如果你打开后需要填写 ip 地址就是你这台 openwrt 路由器的 IP，端口默认是 9090，密码默认是：123456 ）控制面板的信息在上图中也有提供。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.10.43.jpg" alt="截屏2021-05-08 下午6.10.43" loading="lazy"></figure>
+<p>概述里面能看到图形化的实时流量信息。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.13.18.jpg" alt="截屏2021-05-08 下午6.13.18" loading="lazy"></figure>
+<p>在代理里面能切换节点。简单介绍下规则：</p>
+<ul>
+<li>节点选择就是默认的选择节点（你也可以选择 url-test，系统就会选择默认延迟低的；全球直连则是不走代理）</li>
+<li>自动选择（这个你可以忽略）</li>
+<li>国外媒体、微软服务、苹果服务等等，你的可能不一样。你可以针对每个服务进行选择，这样的好处是灵活。比如你可以让电报走美国节点，Netflix 选择香港、苹果的选择直接连接等等。</li>
+</ul>
+<p>这个文件规则是你上面「订阅转换模版」选择的结果，你可以在那里选择功能更丰富的规则。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.19.18.jpg" alt="截屏2021-05-08 下午6.19.18" loading="lazy"></figure>
+<p>在配置里默认是 Rule 就是有规则的代理，国内网站不走代理，国外的才走，能大大提升速度节省流量。如果你想完全不走代理你在这里可以选择 Direct、如果你想所有的网站包括国内都走代理可以在这里选择 Global，然后在上一步代理的 Global 里即可选择节点。</p>
+<h3 id="方便的-web-管理">方便的 Web 管理</h3>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.23.54.jpg" alt="截屏2021-05-08 下午6.23.54" loading="lazy"></figure>
+<p>你可以打开 http://yacd.haishan.me/ 保存这个网站到书签或者你浏览器的首页，手机、电脑任何一个设备都可以。然后添加你的控制面板信息，http://路由器IP:端口、然后输入密码、像是上图我的那样（结尾不需要/）。就可以成功添加。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.25.52.jpg" alt="截屏2021-05-08 下午6.25.52" loading="lazy"></figure>
+<p>这样局域网里的任何设备都能非常方便的控制 Clash 的规则、查看网络信息等等。非常方便</p>
+<h2 id="后记">后记</h2>
+<p>OpenClash 可能看起来麻烦点，不过实际使用却非常方便灵活，能按规则的走代理，让不同的服务走不同的节点就非常方便。配合 Web 网页的控制后台，非常推荐大家路由器都使用这种更先进的上网方式。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chromecast with Google TV 上手体验]]></title>
+        <id>https://pengchujin.github.io/post/ccwgt/</id>
+        <link href="https://pengchujin.github.io/post/ccwgt/">
+        </link>
+        <updated>2020-11-01T04:41:42.000Z</updated>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/chromecast-with-google-tv-header-scaled.jpg" alt="" loading="lazy"></figure>
+<p>今年各家在电视盒子方面都没什么动作：苹果仍旧是 2017 年发布的 Apple TV 4k；小米和 Amazon 都是在今年只更新了 1080p 的产品 Mi TV Stick 和 Fire TV 的 1080p 带语音控制版本。说起 Google 家的电视盒子上次还是 2014 年的 Nexus Player，时隔六年后 Google 终于更新了自家的电视盒子产品并且改名为：Chromecast with Google TV，支持 4k 60Hz 、Dolby Vision 和 Dolby Atmos 定价也还不错 50 刀。在官网下单反复被砍的情况，我最终选择了淘宝代购的现货，用了两天后今天分享下我的使用体验。</p>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/chromecast-with-google-tv-header-scaled.jpg" alt="" loading="lazy"></figure>
+<p>今年各家在电视盒子方面都没什么动作：苹果仍旧是 2017 年发布的 Apple TV 4k；小米和 Amazon 都是在今年只更新了 1080p 的产品 Mi TV Stick 和 Fire TV 的 1080p 带语音控制版本。说起 Google 家的电视盒子上次还是 2014 年的 Nexus Player，时隔六年后 Google 终于更新了自家的电视盒子产品并且改名为：Chromecast with Google TV，支持 4k 60Hz 、Dolby Vision 和 Dolby Atmos 定价也还不错 50 刀。在官网下单反复被砍的情况，我最终选择了淘宝代购的现货，用了两天后今天分享下我的使用体验。</p>
+<!--more-->
+<h2 id="出色的硬件配置">出色的硬件配置</h2>
+<p>我买到的是白色版本，蓝色和粉色版本虽然更好看但目前缺货严重，想拿到手可能得等比较久。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_20201101_124609.jpg" alt="" loading="lazy"></figure>
+<p>包装不大里面就盒子主体、遥控器、以及普通的 type c 充电器。和以前的 Chromecast 最大不同是这次配备了遥控器。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/photo_2020-11-01_14-49-14%20(2).jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/photo_2020-11-01_14-50-21%20(3).jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/photo_2020-11-01_14-49-14.jpg" alt="" loading="lazy"></figure>
+<p>遥控器功能十分丰富：支持 Google Assistant 语音助手（黑色按钮）；有两个快捷按键：YouTube 和 Netflix；支持对电视或 Sound Bar 的 CEC 控制：你可以用这个遥控器调节电视音量、切换电视输入源、控制电视电源。设计也非常小巧，正好一手掌握，和 Fire TV  的遥控一样人体工学都做得不错：导航键正好是你大拇指的位置。通过蓝牙与 Chromecast with Google TV 连接，包装也匹配送了两节白色 7 号电池（电池颜色还是和机身匹配的）。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/photo_2020-11-01_15-33-42.jpg" alt="" loading="lazy"></figure>
+<p>机身扁平圆润，有点像无线充电板。一头是 HDMI 接口，另外一头是 Type C 口。值得一提的是这个是 Type C 口是支持拓展的，用拓展坞外接：网线、键盘、鼠标、摄像头、U 盘、硬盘都可以。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/photo_2020-11-01_15-33-43.jpg" alt="" loading="lazy"></figure>
+<p>背面只有一个按键和一个电源指示灯，短按可以匹配蓝牙遥控器等设备、长按松开会重置系统。配备的电源适配器是 7.5w，如果你家电视后面有 USB 接口直接插上去应该也是不可以供电使用的，会提示电源供电不足，让你切换到电源适配器（我试了自己的 Vizio 电视会提示供电不足）。</p>
+<p>其它具体参数如下：</p>
+<ul>
+<li>晶晨 S905X2 芯片，Cortex-A53 架构，1.8 GHz 主频</li>
+<li>支持 HDR 10、Dolby Vision、HLG 三种主流 HDR 规格</li>
+<li>2G Ram、8G Rom</li>
+<li>HDMI 2.0a、Type C、蓝牙 4.2 、支持 5Ghz WiFi</li>
+</ul>
+<h2 id="全新的-google-tv-系统">全新的 Google TV 系统</h2>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/cover1.png" alt="" loading="lazy"></figure>
+<p>以前的 Chromecast 只能接受被动投屏，这次 Chromecast with Google TV 的这个 Google TV 可以说是 Google 版本的 Android TV。整个系统非常简洁，主页面是 Google 根据你订阅的服务和你的兴趣爱好再用自家的算法给你推送到首页。像我订阅了 Disney+ 这几天《The Mandalorian》第二季正好开播了，我的首页也就出现了它。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/cover2.png" alt="" loading="lazy"></figure>
+<p>添加到首页的推荐内容有很多家像：Netflix、HBO Max、Disney+、YouTube、Prime Video 等等，除了基础的介绍外 Goolge 还会添加上有合作的 rotten tomatoes 烂番茄的评分。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/cover3.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/sys1.png" alt="" loading="lazy"></figure>
+<p>除了推荐很有 Google 特色外，其它地方和 Android TV 差异不大，应用都是和 Android TV 版本的一样。系统设置里也可以看到就是 Android TV 10 不过版本很新。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/ga1.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/ga2.png" alt="" loading="lazy"></figure>
+<p>因为 Google Assistant 支持了中文（台湾地区版本），使用起来还是蛮方便的，问个天气搜个视频看看一点问题没有。</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/photo_2020-11-01_18-02-52.jpg" alt="" loading="lazy"></figure>
+<p>对了，它还叫 Chromecast 自然以前的功能都还在，你用在 YouTube、Netflix、Disney+ 等等手机 App 的时候都能够直接 Cast 投屏到电视上播放。</p>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/ls1.png" alt="" loading="lazy"></figure>
+<p>氛围模式（锁屏）还是 Google 特色的静态壁纸，蛮好看的。在设置里你也可以设置成你的 Google Photo 里的照片，由 Google 帮你挑选。只是清晰度和氛围感远没有 Apple 家 4k 动态视频的锁屏来的爽快。</p>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/gc1.png" alt="" loading="lazy"></figure>
+<p>在这台 Chromecast with Google TV 上安装国内的 App 也没有任何问题，国内 App 用起来居然出奇的流畅，体验非常好（我是打开 USB 调试直接插到电脑安装的 App）。比较可惜的是在测试爱奇艺、优酷、腾讯视频的支援情况时，发现只有腾讯视频对这台设备支持 4K（无HDR），其它俩家都是只支持播放 HD 1080p 视频，这点和 Fire TV 类似应该是国内 App 只适配了部分认证设备。</p>
+<h2 id="实际体验">实际体验</h2>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/youtube1.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/youtube2.png" alt="" loading="lazy"></figure>
+<p>试了下用这款设备播放普通 YouTube 4k 适配和 4k 60帧 HDR 视频都非常流畅，也能正确的让电视设备跳到 HDR 10 模式。</p>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/photo_2020-11-01_19-11-39.jpg" alt="" loading="lazy"></figure>
+<p>有点让人头疼的是这款 Chromecast with Google TV 的系统目前还有很多问题得修复。我的这台和我的 Vizio 电视搭配 Netflix 就死活不显示 4K 的支持，上 Reddit 上看了下也有很多人抱怨这种情况。另外 Disney+ 也有类似问题，很多设备不能够完美的支持 4k + Dolby Vision。这些肯定都是 Google 的系统的问题，因为我的 Fire TV 4k 一切正常。</p>
+<p>也有很多人碰到的电视只能选择 4k 30帧，我在重置后解决。有一点很坑，就是这款设备断电后时间会重置，导致连不上网，得手动改系统时间。</p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/photo_2020-11-01_19-13-45.jpg" alt="" loading="lazy"></figure>
+<p>如果你有游戏手柄的话搭配 Google Chromecast with Google TV 玩游戏体验也不错，只可惜 Google 家的 Stadia 云游在这款设备上跳票到了明年。</p>
+<h2 id="值不值得买">值不值得买</h2>
+<p>如果你平时使用更多的是 Google 系的产品，那么这款 Google Chromcast with Google TV 无疑很适合你。单论产品性价比来说它没现在打折卖 30 刀的 Fire TV 4k 划算。Google Chromcast with Google TV 有支持中文、USB C、Google 账户等优势，但 Fire TV 已经支持了 Apple TV 兼容和系统稳定性更占优势打折，售价也更便宜。如果未来 Google 能更新下系统修正这些问题，我才会真正推荐大家选购 Google Chromcast with Google TV 这款产品。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apple 美区家庭组开车指南，开通 Apple One 教程]]></title>
+        <id>https://pengchujin.github.io/post/posts:appleOne/</id>
+        <link href="https://pengchujin.github.io/post/posts:appleOne/">
+        </link>
+        <updated>2020-09-19T20:40:02.000Z</updated>
+        <content type="html"><![CDATA[<p>苹果的 App Store、Apple Music、Apple TV+、iCloud 等服务都是分区的，不同区之间的差距很大 ：像 App Store 很多应用中国区就没有（反过来同理）、iCloud 中国区则是由云上贵州运营的、Apple Music 的曲库差距也很大。还有很多服务像：Apple TV+、Apple News+、Arcade 以及即将上线的 Apple Fitness+ 中国区账户则都享受不到。</p>
+<p>如果想要使用美区，并且使用一些美区的服务你就得解决两个问题。</p>
+<ol>
+<li>注册美区 Apple ID 账户</li>
+<li>给美区 Apple ID 绑定付款方式</li>
+</ol>
+<p>经过实践摸索，基本熟悉了自己也开了美区 Apple 家庭组的车，开了各项服务。发现网上系统介绍这个的不是很多，大都也不太全面，所以写下这篇博客，希望对你有所帮助（也方便回答问我的朋友）。</p>
+<h2 id="注册美区-apple-id">注册美区 Apple ID</h2>
+<p>苹果的硬件 iPhone、iPad、Mac 等设备全球基本都一样（不包括日版的拍照有声音、海外版的现在是 esim 双卡等差异），能在体验上提供差异化地域化让给不同国家用户不同体验和内容的方法则是是通过——Apple ID。</p>
+<p>在中国大陆，我们默认注册的是中国区的苹果账户/Apple ID。登录 iPhone 后，我们的照片、联系人、短信信息、App数据、付款方式等等 iCloud 的数据都会被存储在云上贵州，我们的账户也是由中国区所管理。</p>
+<p>此外 App Store 账户其实是单独的，我们一个 iOS 设备可以登录两账户分别是：</p>
+<ul>
+<li>系统账户：提供 iCloud、查找 iPhone、设备安全、家庭、付款方式 等服务</li>
+<li>App Store 账户：提供 App Store、Apple Music+、Arcade、News+、Apple TV+ 等服务。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HBO max 换了皮的 HBO now]]></title>
+        <id>https://pengchujin.github.io/post/HBOMAX/</id>
+        <link href="https://pengchujin.github.io/post/HBOMAX/">
+        </link>
+        <updated>2020-05-27T03:12:40.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200527194726.jpg" alt="" loading="lazy"></figure>
+<p>今天也就是5月27日，“万众期待”的流媒体 HBO max 也正式上线了。<!--more--> 如果你喜欢美剧你对 HBO 一定不会陌生，像去年的神作《切尔诺贝利》、烂尾的《权力的游戏》、《西部世界》、《硅谷》等，还有呼声最高的《老友记》你也都能在 HBO max 观看到了。除了这些 HBO max 主打这几个系列：</p>
+<ul>
+<li>HBO</li>
+<li>DC</li>
+<li>Sesame Workshop（芝麻街）</li>
+<li>Classics Curated by TCM（turner classic movies）</li>
+<li>Studio Ghibli （吉卜力工作室）</li>
+<li>Cartoon Network Collection （动漫）</li>
+<li>Adult Swim Collection （动漫 rick and morty 就来自这个工作室）</li>
+<li>Crunchyroll Collection（日漫）</li>
+<li>Looney Tunes （美漫）</li>
+</ul>
+<p>我也订阅了 HBO max 体验了下写篇分享。</p>
+<h2 id="问题很多-劝退中国用户">问题很多 劝退中国用户</h2>
+<ul>
+<li>
+<p>没中文字幕</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200527201141.jpg" alt="" loading="lazy"></figure>
+<p>中国用户最关心的一点其实就是：有中文字幕吗？答案是没有，因为 HBO max 只在美国提供服务，并且相当一段长的时间不可能进入亚洲，所以吃不了“生肉”（一般称呼没有中文字幕的内容为生肉）没必要订阅 HBO max。</p>
+</li>
+<li>
+<p>付款方式严格</p>
+<p>官方在之前做过促销活动，不过订阅所需的信用卡需要美国发行的信用卡，也不支持 PayPal。（具体如何绕过限制订阅，后面会介绍）</p>
+</li>
+<li>
+<p>没有 4K HDR</p>
+<p>几乎所有主流的流媒体都已经支持 4k HDR 以及 Dolby atmos（杜比全景声）了，像 Netflix 、Disney+、Apple TV+、Amazon Prime Video 等，并且这两年开始几家自制的内容全都要求 4K HDR 了。而 HBO max 现在还是 HD （1080p）以及杜比5.1的音频，实在很难让人接受。</p>
+</li>
+<li>
+<p>网页换皮，APP 也不太好用</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200527203510.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20200527203532.jpg" alt="" loading="lazy"></figure>
+<p>无论是 HBO max 还是 HBO now 都没适配好高分辨率的网页，并且两者确实非常相像。App 端也没好到哪去，像 Android 客户端就还不支持放大比例全屏。</p>
+</li>
+<li>
+<p>还有一些槽点</p>
+<p>15刀一个月的价格不太有诚意；支持的设备不是很多，像 roku 和 firetv 这些热门平台 HBO max 还不支持；最多只支持 3 个设备同时在线播放，比其它同行都要少；限制只有美国IP才能观看。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/20200527205107.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+<h2 id="如何订阅">如何订阅</h2>
+<p>因为 HBO 官方订阅会让你提供美区的信用卡，这点对大部分人都比较困难，这里大家可以参考我饶过的办法。HBO max 从开始就是不一个“新”的流媒体，而是继承之前的内容，这点从多个渠道的订阅和自动升级方式就容易看出来。（如果你是 HBO now 用户，直接登录就是 HBO max 用户）</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/20200527210112.jpg" alt="" loading="lazy"></figure>
+<p>推荐美区 Apple TV Channel 里可以订阅 HBO、或者在 hulu  <a href="https://www.hulu.com/hbo">Adds-on</a> 里订阅 HBO。这两者只用提供美区 PayPal 即可。（注册美区 PayPal 可以参考 https://www.vpsdawanjia.com/2070.html，挺麻烦的）。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/20200527213535.jpg" alt="" loading="lazy"></figure>
+<h3 id="隐藏羊毛福利">隐藏羊毛福利</h3>
+<p>HBO max 和 Netflix 一样都是完整账户支持5个子账户的，不过如果你使用 Apple TV+ 订阅的 HBO ，在登录 HBO max 的时候你会发现：Apple 家庭组（一个 Apple 最多可以6个用户）所有成员都可以登录，并且都单独享有一个完整账户。会让绑定一个邮箱，邮箱是可以单独登录的（可以修改邮箱密码，使用邮箱登录，不一定非得 Apple ID 登录）。本人已经亲自尝试薅羊毛了，不过 Apple TV 里已经暂时下架了 HBO 的订阅，如果你以前订阅过 HBO 可以在 Apple 账户订阅历史点击重新订阅。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20200527213313.JPEG" alt="" loading="lazy"></figure>
+<h2 id="总结">总结</h2>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/20200527214047.jpg" alt="" loading="lazy"></figure>
+<p>我个人对 HBO max 不太满意，看不到 HBO max 想改变的诚意。如果你想订阅 HBO，我推荐你选择香港区的 HBO Now E， 有中文字幕，付款也没那么多要求。HBO 用户体验实在是太差，虽然守着不少优秀的内容，但已经赶不上 Netflix 最近两年在量和质量都做了不少努力。HBO 更多是死守美区的版权，像《老友记》、吉卜力工作室 的内容 HBO 就抓住了美区的版权，而美区以外的广大世界都是 Netflix 的天地。特别是对于中国区用户，Netflix 或者 Prime Video 的友好程度都远超 HBO max。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Netflix：下一站巴西🇧🇷]]></title>
+        <id>https://pengchujin.github.io/post/BrazilNetflix/</id>
+        <link href="https://pengchujin.github.io/post/BrazilNetflix/">
+        </link>
+        <updated>2020-05-26T05:55:43.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="观看内容和付费订阅有关系吗">观看内容和付费订阅有关系吗？</h3>
+<p>Netflix 是最🐂🍺的视频流媒体，还没有之一，这个自然不用多说。对于对 Netflix 订阅和价格之类还不够了解的朋友我这里简单介绍下：<strong>Netflix 不同国家地区的订阅价格是不同的，但是不会影响你观看的内容，你看的内容由你的IP地址决定。</strong> 所以对于中国这个世界上唯三没有覆盖 Netflix 的同胞来说，选择一个便宜的地区订阅 Netflix 然后选择有中文字幕的地区IP观看是非常划算的一件事（总之<strong>选便宜</strong>的区就对了，不会影响挂看内容和语言）。更全的价格可以查看此 <a href="https://docs.google.com/spreadsheets/d/1usSHC2Vrb4KRk3WCu_2LLhls5qtBHHRuh_9ESeXI3nw/edit#gid=1088253101">google doc</a> 。&lt;--!more--&gt;</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200527005035.png" alt="" loading="lazy"></figure>
+<h3 id="订阅需要哪些东西">订阅需要哪些东西？</h3>
+<ul>
+<li>外币信用卡 💳（必须）</li>
+<li>邮箱 📮（必须）</li>
+</ul>
+<p>订阅所需的信用卡必须是支持 Visa、MasterCard、Discover、 American Express 的外币卡，你可以检查下你自己的信用卡上有没有这种标示。如果你没有信用卡的话其实也可以使用虚拟信用卡像：<a href="https://www.tapngo.com.hk/chi/index.html">拍住赏</a> 或者 <a href="https://www.globalcash.hk/v4/">全球付</a> 都是可以的，这些都可以预存款消费。当然你也可以选择办一张外币信用卡。</p>
+<p><strong>邮箱</strong>请一定选择自己能用的邮箱，因为跳过手机验证，所以邮箱是你拥有此账户的唯一凭证，也是你找回密码的必备条件。</p>
+<h3 id="为什么现在推荐巴西呢">为什么现在推荐巴西呢？</h3>
+<p>巴西区是目前 Netflix 第三低的区，土耳其区和阿根廷区注册风控限制信用卡比较严格，还强制有求验证手机号；再而土耳其区现在已经屏蔽香港的IP用户挂看，也就意味着如果你选择土耳其区就会痛失香港区的观看内容。巴西作为一个价格比较合适，也不强验证手机号，也几乎不限制信用卡，所以我现在还是非常推荐大家注册巴西区的。</p>
+<h3 id="流程">流程</h3>
+<p>使用巴西 IP 打开 netflix.com 官网。（扫描下面二维码 Shadowsocks 协议）</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200527013128.jpg" alt="" loading="lazy"></figure>
+<p>打开官网后你可以发现官网地址的后缀是 <strong>https://www.netflix.com/br-en/</strong>  br 也就代表这你现在选的巴西区。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200527013343.jpg" alt="" loading="lazy"></figure>
+<p>输入邮箱注册，会首先让你选择套餐，注意货币现在已经是 R$ 巴西的货币了，这里推荐大家选择最高级的套餐。因为只有这个套餐支持 4k ，还能支持5个子账户（profile）4设备能够同时在线观看，非常适合开车和小伙伴一起使用。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20200527013719.jpg" alt="" loading="lazy"></figure>
+<p>在输入密码后就可以输入你的信用卡信息了</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/20200527013938.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[上海转机]]></title>
+        <id>https://pengchujin.github.io/post/TransferInShanghai/</id>
+        <link href="https://pengchujin.github.io/post/TransferInShanghai/">
+        </link>
+        <updated>2020-05-24T23:51:57.000Z</updated>
+        <content type="html"><![CDATA[<p>四月的夜晚特别寒冷，外面还下着小雨，我站在航站楼的门口冷的直哆嗦。<!--more--></p>
+<p>从青岛去桂林办事，回程因为疫情影响直飞的航班基本都被取消了，只好在上海转机。我之前也去过几次上海，大城市很时尚，也感觉特别陌生没归属感，周围的人节奏快的似乎一直在奔跑，而我完全不能融入其中。</p>
+<p>从桂林出发的前一晚有点失眠，突然想到自己买机票时忘了看到达上海是哪个机场，匆忙拿起手机检查自己的机票。“晚上11:00到达—上海浦东” “凌晨6点出发—上海虹桥” 这大晚上的还得从浦东赶到虹桥。便搜了下高德，浦东到虹桥晚上11点后还有守航线，价格比打底2、300元要便宜很多。</p>
+<p>到达浦东的时候外面已经开始下起雨了，下了飞机就匆忙上了摆渡车。摆渡车上人还是挺多的，没座位了，只好扶着立着的把手。站在我旁边的是以为中年妇女，大概四十多岁，看起来比较像进城务工的，带着白色的布口罩，不过看布料样式口罩像是自己做的，和车上大家带的似乎都不太一样。她刚上车就问我：“小伙子，这个车哪里给钱啊”，我就给她解释下了摆渡车不用给钱，然后出机场跟着人群走就行了。这时候我也才想到，在桂林机场我也碰见了她，在进机场的门口，她被检查“绿码”的人给拦住了，向工作人员解释了会才知道她没有手机(她不用手机)，然后就应该是登记身份证啥的了。除了这位妇女以外，车上其他人都挺年轻，穿着时尚，大多都拿着手机，带着耳机，等着摆渡车到港。</p>
+<p>浦东的检查确实要严格很多，从机场工作人员的穿着和设施就能看出来，也因为检查麻烦各种扫码，人群很快拥堵起。我提前手机准备好了，很快插到了前面，不过人群中不乏有人假装咳嗽恶心下人。机场实在是太大，走到机场公交站门口花了我二十多分钟，中间还有很多司机问我去哪，我没搭理闷着头走。</p>
+<p>从楼梯下到公交站的时候我还是有点吓到，下面像是等待着“绵羊”的“大灰狼”，都是黑车司机问我去哪，说守航线已经停了啥的，此时已经晚上的11.30了。</p>
+<p>一番询问后我跟着一个中年男子走到了停车场，七座的“宝骏”面包车，一看车牌“皖”，居然是老乡，因为我也是安徽人，便套了下近乎。我坐到了副驾的位置，因为我是第一只“小绵羊”。随后中年男子又回到了上层的公交站等待。等了蛮久的终于凑足了司机满意的人数，我的心情已经不太满意了，因为实在拖的太久都12点了。</p>
+<p>终于发动了，最后一位上车的是司机的老婆，坐到了最后面，还有一位姑娘一直和男朋友语音打着语音电话，听口音应该是桂林那的，其他几位基本一直保持沉默。</p>
+<p>司机打开了包皖烟，问我要来一支不，看了下应该是十几元一盒的那种，婉拒了，自己不抽烟（其实我极少抽烟）。司机可能不太熟悉路，一出机场便用语音熟练的打开了手机上的导航，然后放到了仪表盘上。他老婆一上车就有点紧张和兴奋，告诉司机，有个同行被便衣逮住了。然后谈了谈自己和便衣“斗智”的技巧。他们会看乘客鞋子，如果是那种皮鞋那肯定是便衣，还看乘客有没有背包，还有一大堆有的没有，然后吐槽了下今晚被抓的老乡同行“笨”。不过抓了也没啥，就是当天生意会没了，教育一会又给放了。随后又说了一堆自己多机智等，司机师傅和他老婆聊的比较欢，因为都是安徽的我也都能听懂，听起来司机家应该是老婆管家比较多。</p>
+<p>因为已经凌晨了，又是雨天，我看司机开车有点慌，怕司机打瞌睡，就主动和司机聊天，问了问司机老家在哪里啥的。其实安徽人在上海不是很受待见，或者说上海人地域黑安徽人的比较多，也蛮好理解的。安徽一直比较穷，外出打工特别是到上海这种离家比较近的大城市比较多，大部分都是干的相对比较低层的工作，也可能会有一些安徽人做了一些不太好的事情。和我想的一样，夫妻二人也是来上海“讨生活”的，已经十几年了。当我问到他们的孩子情况时，夫妻俩的声音一下子变得充满了骄傲的感觉，大儿子和我一样大，学习成绩蛮好的，高中从老家考的上海一个不错的大学，现在已经开始工作了。他们家还有一个小的，现在还是在上海读书，因为户籍制度的问题，马上上初中了也就只能回到老家继续读，几个月后小的也就要回到安徽读书了。听的出夫妻俩对孩子上学特别重视，说小的现在一直跟着在上网课，还希望也能考到上海来上大学啥的。因为了解到我老家是安庆市的，他们还吐槽了下有个亲戚家的孩子考的不太好，在安庆一个“三本”学校上大学。</p>
+<p>雨夜车一直开着，因为夫妻俩现在一天只跑这一次，司机在老乡群或者是“黑车群”里交流今天的信息，说那个谁被便衣逮住了，然后又约着今晚回去打牌。但司机开车果真不太靠谱，听着导航还是有几个路口跑错了，有个下车的小哥要发票，司机折腾半天自己买的打发票的机器发现油墨还是有问题。</p>
+<p>好在终于把我送到了虹桥机场门口，给完钱下车后，司机老婆还特地告诉我怎么进机场啥的，声音非常有热情，可能是感觉我和他家儿子一样大。那个广西来的姑娘也在机场门口下的车，因为她得等凌晨的高铁去下一站。</p>
+<p>比较惨的是所有门都是关的，虹桥根本进不去，因为疫情的关系，得到凌晨四五点才才开门。穿了两件衣服的我还是被这雨夜冻的直打哆嗦，旁边还是有几个的士司机的，告诫我这里不开门，也没地可去，带我去下一层需要30元不过下面门也是关的。我按着司机老婆的方法到旁边的星级酒店绕过去，结果当然还是不行的，星级酒店的钟点房实在是有点贵我有点接受不了。</p>
+<p>这时候一个穿着机场制服的人来套近乎，聊了几句，让我去机场合作的酒店住个钟点房。200元我同意了，呼机叫了个酒店的的士来接我。酒店比较偏僻，条件也不太好，中年阿姨领我进的房间，中间电梯还碰见个送外卖的小哥，她问了下最近挣得的多吗，小哥抱怨说少了很多，倒不是点餐的人少了，而是送外卖的人比以前多了好几倍，不过吓到我的还是她领我进房间打开灯和空调后问我要不要按摩。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[斐讯n1配置旁路由后无法访问网络]]></title>
+        <id>https://pengchujin.github.io/post/feixunN1/</id>
+        <link href="https://pengchujin.github.io/post/feixunN1/">
+        </link>
+        <updated>2020-05-22T19:00:26.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200523120019.jpg" alt="" loading="lazy"></figure>
+<p>斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。<!--more--></p>
+<p>参考了恩山 这个帖子 [N1盒子] <a href="https://www.right.com.cn/FORUM/thread-2983767-1-1.html">【终极指南】关于N1做旁路由添加 iptables 自定义防火墙规则的见解</a></p>
+<h3 id="方法一">方法一</h3>
+<ul>
+<li>选择 <strong>网络</strong> — <strong>防火墙</strong> — <strong>自定义防火墙</strong>  末尾添加上这段</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200523120019.jpg" alt="" loading="lazy"></figure>
+<pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+</code></pre>
+<p>解释：用来 “iptables 修改 NAT 表，使经过 eth0 的网卡的流量的源 IP 伪装成 eth0 的 IP，而且是动态伪装（直接读取 eth0 的 IP 地址）”</p>
+<h3 id="方法二">方法二</h3>
+<p>我个人因为试过的路由器比较多，方法一碰见很多路由器其实没啥作用。这里添加wan 口就可以。</p>
+<ul>
+<li>
+<p>第一步：打开 <strong>网络</strong>—<strong>接口</strong>—<strong>lan 修改</strong>—<strong>物理设置</strong></p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200523120418.jpg" alt="" loading="lazy"></figure>
+<p>取消勾选桥接接口，下面选择 “以太网适配器: &quot;eth0()&quot;”  保存应用</p>
+</li>
+<li>
+<p>第二步 打开 <strong>网络</strong>—<strong>接口</strong>—<strong>添加新接口</strong></p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20200523120742.jpg" alt="" loading="lazy"></figure>
+<p>新的接口名称：wan</p>
+<p>新接口的协议：DHCP客户端</p>
+<p>包含以下接口选择：“以太网适配器: &quot;eth0()&quot;”</p>
+<p>然后点提交</p>
+</li>
+</ul>
+<p>这时候应该都解决问题，能打开网站了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[视频与编码]]></title>
+        <id>https://pengchujin.github.io/post/codec/</id>
+        <link href="https://pengchujin.github.io/post/codec/">
+        </link>
+        <updated>2020-04-12T05:47:48.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200220172739.jpg" alt="" loading="lazy"></figure>
+<p>你我中的绝大多数从出生开始就一直伴随着“视频”以及视频技术的飞速发展<!--more-->，我是95后我依然很清晰的记得小学时的露天电影：白色的幕布，硕大的放映机🎥，每次放映的师傅来还会带好几盘很大的胶卷盒，伴随着机械的声音光打到了白色的布上，特别期待的电影🎬也就这样开始了。我也记得以前的CRT电视：从黑白的到彩色的，动画片一定要放学后准时收看否则你就再也看不到了，电视还会因信号不好莫名的变得不清楚全是雪花点。到后来用上了电脑、手机、网络电视，我们已经能随时享受到 4k 高清HDR的 Netflix、YouTube、BiliBili，但视频所给我们带来的兴奋与快乐始终没有改变。</p>
+<h2 id="模拟视频与数字视频">模拟视频与数字视频</h2>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200219233901.jpg" alt="" loading="lazy"></figure>
+<p>我们常常把信号分为两种：模拟信号和数字信号。模式信号指：模拟信号是指时间上和数值上均连续的信号，数字信号是指：数字信号是指时间上和数值上均离散的信号。李永乐老师讲解过<a href="https://www.bilibili.com/video/av25762796">模拟信号与数字信号的区别</a>感兴趣的可以看看。回归到电影、视频领，像🎞️胶片电影(光敏材料记录)、以前的CRT电视📺（连续的电信号）、VHS录像带📼这些都是模拟信号的视频。而如今我们通过网络上看到的所有视频，电脑手机存的这些影片都是数字视频，它们都是摄像机采集通过编码数字化，计算机用0和1存储传播然后又解码后呈现到我们的屏幕上。</p>
+<h4 id="film-胶片电影">Film 胶片电影</h4>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200220172739.jpg" alt="" loading="lazy"></figure>
+<p>&quot;If I can't shoot on film I'll stop making movies&quot; 如果不能使用胶片的话那么我将放弃拍电影。这是昆汀在电台里所说的，包括不久前上映的《好莱坞往事》也都是用35mm的胶片进行拍摄的里面也有很多致敬胶片电影的片段，即使观看昆汀也更愿意看胶片放映而不是数字，他更喜欢那种一秒种24张照片的魔法。像昆汀这样坚持拍摄胶片的导演还有挺多的，比如诺亚的《婚姻故事》、诺兰的《敦刻尔克》、《星际穿越》等一系列电影。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20200221105831.png" alt="" loading="lazy"></figure>
+<p>电影从19世纪末诞生的那一刻开始就来自于胶片，从无声电影到旁边电影到有声电影，从黑白电影到彩色电影再到3D电影，胶片也从8mm、到16mm、32mm到 IMAX 70mm。我们从胶片到数字，直到今天胶片电影任然占据着电影工业很重要的一部分。数字电影拍摄制作会快很多也会便宜很多，而胶片又更具有“艺术性”的优势，我个人并不会在意一部电影是数字的还是用胶片拍摄的，它像是一种工具，看是否被电影和导演所需要。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/20200221160908.jpg" alt="" loading="lazy"></figure>
+<p>像《乔布斯》这部电影里，在乔布斯不同年纪分别就采用了 16mm胶片、32mm胶片、以及数码的形式呈现时代的变化。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/20200221164320.jpg" alt="" loading="lazy"></figure>
+<p>近年来你能看到很多像 NOMO 这样模拟复古胶片的相机App，很多音乐MV、Vlog 里都插入了 Super 8mm 胶片相机拍摄的镜头，过去的胶片又在以不同的形式流行。</p>
+<p>如果你感兴趣可以看看这几个视频：</p>
+<ul>
+<li>如果你想查看一部电影所使用的相机，镜头等信息可以在 <a href="https://www.imdb.com/title/tt7131622/technical?ref_=tt_ql_dt_6">IMDB 查看 Technical Specifications</a></li>
+<li><a href="https://youtu.be/FhjPi5o2quE">从1878到2018年电影的改革</a></li>
+<li><a href="https://youtu.be/TRqAxhykP_4">如何使用 Super 8mm 胶片相机进行拍摄</a></li>
+<li><a href="https://youtu.be/rUOYXjH6y7w">关于相机 CMOS 的以及胶片的大小</a></li>
+<li>Vox 写的：<a href="https://www.vox.com/2016/1/5/10714588/film-digital-35mm-70mm-explainer">数字还是胶片电影界里最大的争论</a></li>
+</ul>
+<h4 id="crt-显像管电视">CRT 显像管电视</h4>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/20200221184849.jpg" alt="" loading="lazy"></figure>
+<p>相比电影，电视的出现和普及要晚很多，从20世纪40年代开始商业化，在美国5、60年代开始逐渐普及。直到2008年LCD电视的销量才超越 CRT 显像管电视，而各国从模拟信号逐渐转变为数字信号的时间则要更晚一些。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20200221234550.jpg" alt="" loading="lazy"></figure>
+<p><strong>电视节目的录制</strong>：<strong>摄像管</strong>是CCD出现之前的一类用于摄像的阴极射线管CRT。这就是传统CRT电视信号的来源，摄像管逐行扫描图像将光信号转变成模拟电信号。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/20200222125553.png" alt="" loading="lazy"></figure>
+<p><strong>电视节目的传输</strong>：模拟电信号包含着同步信息，亮度、色度将通过电磁波或不同的介质输送到千家万户。无论是使用 NTSC 制式（北美大部分国家的信号制式） 还是 PAL（我国和欧洲东南亚大多数国家使用的制式）它们的原理都是基本都是这样。只是扫描方式、颜色信息处理、以及帧率的差别。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/20200222170622.gif" alt="" loading="lazy"></figure>
+<p><strong>电视节目的播放</strong>：在 CRT 显像管电视里模拟电信号又通过电子枪发射的电子束打到屏幕上形成亮点，电磁线圈驱使电子束横向扫描让我们看见亮线，最终竖向扫描亮线形成了一帧的画面，然后25/30帧的画面形成了我们电视里看到的一秒钟的视频。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/20200222171817.svg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/20200222225845.gif" alt="" loading="lazy"></figure>
+<p>我本以为 NTSC 或 PAL 只是以前的电视信号制式，对我们大多数人应该没什么影响，但我发现我自己的 sony 微单里也有 PAL 和 NTSC 的选择我才发现事情并没有这么简单。电视 NTSC 制式是每秒30帧的视频，而 PAL 则是每秒25帧的视频，恰巧的是全球使用 PAL 制式的点国家的交流电都是50Hz的，而使用 NTSC 制式的国家都是60HZ的交流电。其实这并不是巧合，“使场刷新率与电源匹配可以避免互调（也称为跳动），跳动会在屏幕上产生滚动条。刷新速率与交流电的频率偶然的帮助了显像管摄像机记录早期的现场电视广播，因为交流电频率正好符合电动摄像机的速度来捕获每一帧的画面”（引用自 wikipedia）</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/20200222231058.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/20200222231107.jpg" alt="" loading="lazy"></figure>
+<p>很多相机、GoPro 都内置了 NTSC/PAL 拍摄的选择，切换后你会发现视频的帧率倍数都会改变。PAL 模式会是 25p、50p、100p 这样，NTSC 模式则是 30p、60p、120p。如果帧率与当地交流电的灯光的频率相符，拍摄的素材一般则不会有灯光闪烁的问题，当你出国拍摄素材的时候请记得选择与当地交流电频率相符（50Hz PAL，60Hz NTSC）。</p>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/20200222231802.jpg" alt="" loading="lazy"></figure>
+<p>如果你在 YouTube 上观察不同地区的 YouTuber 的视频你也会发现这个非常有趣的现象：除了24帧是因为电影大家会一样以外，绝大部分的 YouTuber 拍摄的帧率都是和当地的 NTSC/PAL 相符。</p>
+<p>有很多我只说了了个大概（也可能说的不太对），如果感兴趣可以看看：</p>
+<ul>
+<li><a href="https://youtu.be/Ea6tw-gulnQ">彩色CRT电视上面并不是像素点</a></li>
+<li><a href="https://youtu.be/r38nVmxBfvM">模拟信号视频是如何工作的</a></li>
+<li><a href="https://youtu.be/rjDX5ItsOnQ">视频是如何发明的</a></li>
+<li><a href="https://youtu.be/3BJU2drrtCM">慢放镜头下的电视</a></li>
+<li><a href="https://en.wikipedia.org/wiki/NTSC">NTSC wikipedia</a></li>
+<li>李永乐老师：<a href="https://youtu.be/Sq6LE1OKuPU">电视机的显像原理</a></li>
+</ul>
+<h2 id="数字视频编码">数字视频编码</h2>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/20200223161154.jpg" alt="" loading="lazy"></figure>
+<p>从上个世纪末计算机逐渐开始普及，视频（电影）从拍摄、到剪辑、到传播以及呈现都发生了转向数字化的改变，视频编码则是在这其中每一步都凸显的尤为关键。</p>
+<p>视频编码（视频编解码器，这里就简称视频编码）的英文名叫 codec 是 encoder 和 decoder 的缩写，我们拍摄、剪辑、转码的时候会将图像的光信号处理后 encoder；在播放的时候又会 decoder 将视频呈现出来。</p>
+<p>视频编码与我们平常见到的 .mp4、 .flv 等视频的拓展名并没有必然的联系，这些拓展名格式像一个容器或者说“container”里面往往包含了不同编码的视频、不同编码的音频、图片、字幕、等等都可以。</p>
+<p>目前大家接触到比较多的视频编码大体有下面5种：</p>
+<h3 id="h264avc">H.264/AVC</h3>
+<p>无论是叫 H.264 或者是 AVC 或者  MPEG-4 Part 10, Advanced Video Coding 都是指的这一个。</p>
+<p>这是在2003年就由MPEG（Moving Picture Experts Group 动态影像专家组）发布了的至今为止已经有17年历史的视频编码，也是迄今为止最流行最通用的视频编码。H.264 的适应范围非常广，我们不同系统的电脑、浏览器、手机、电视、数码相机、流媒体、播放器、剪辑软件等几乎都有在使用这种编码。</p>
+<h3 id="h265hevc">H.265/HEVC</h3>
+<p>无论是叫 H.265 还是 HEVC （High Efficiency Video Coding ）或者  MPEG-H Part 2 指的都是这个编码。</p>
+<p>H.265 可以说是 H.264 的继任者，H.265 主要解决了 H.264 的两个问题：</p>
+<ol>
+<li>H.265 的效率要高很多，一般相同的画质 H.265 比 H.264 节省了大约一倍的带宽（1080p 下节省了57%左右，4k UHD 更是节省了大约64%的带宽 ），这对于一众流媒体视频网站的诱惑力可以说是十分巨大的，因为视频网站往往有一半甚至更多的开销得花费在带宽上面。不过还是有缺点的，播放 H.265 编码的视频内容的设备需要更好的性能，目前很多设备往往也并不支持 H.265 视频的播放，这时候就要在服务端放两份一份 H.264 的一份 H.265 的然后分发给不同的客户端。</li>
+<li>目前4K已经比较普遍，很多专业设备甚至手机都能拍摄8k的内容，很多8k的电视也已经开卖。而 H.264 最高只支持4k已经不太适合更高质量视频的拍摄、制作、和播放了，H.265 支持8k恰好能满足当前的需求。</li>
+</ol>
+<p>最大的坏处是收费，并且更贵了。</p>
+<h3 id="vp9">VP9</h3>
+<p>无论是 H.264 还是 H.265 都有一个非常大的问题就是收费，并且非常昂贵，厂商随随便便一用一年就是几百万刀的钱进去了。Google 就想我又有技术又有钱我为啥不自己造个轮子，受这“剥削”干嘛。于是2009年 Google 就花了106.5万刀收购了 On2（视频编码公司）然后很快就推出了 VP8 供大家免费使用，但这个时候天下早已经是 H.264 的，VP8 本身的编码效率也不够好，除了 YouTube 和几家浏览器开始支持外并没有特别大规模的被使用。</p>
+<p>索性2010年 Google 就直接又推出了 VP9，目标是直接干 H.265，YouTube、Netflix 等视频网站巨头也都相继支持，主流浏览器除了 Safari 也都支持（这就是你的 Safari 看 YouTube 没有 1080p 以上选项的根本原因），Android 更是从 4.4 就开始支持了。Netflix 曾经做过详细的对比 VP9 相比较 H.265 在1080p往上的分辨率 VP9 还是拥有不小的优势。</p>
+<h3 id="av1">AV1</h3>
+<p>虽然 Google 的 VP9 效果还不错，但是其它几家巨头并不太买单，毕竟在 Google 手里的项目他们也不太放心，苹果就始终未支持 VP9/VP8，很多买了 Apple TV 估计也会因此困恼无法观看4k的 YouTube。然后苹果、亚马逊、思科、 谷歌、英特尔、 微软、Mozilla 以及 Netflix 等共同组建了 Alliance for Open Media（开发媒体联盟）在2018年推出了 AV1（AOMedia Video 1）来共同对抗 H.265。谷歌也贡献出了自己的VP9作为基础，AV1比起VP9又节省了约20%的带宽，依然免版权费。</p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/20200225233004.jpg" alt="" loading="lazy"></figure>
+<p>不过最重要的是这个联盟的号召力，图上N个公司都加入了这个联盟，像 Netflix 、YouTube 很多也都直接开始分发 AV1 编码的视频了，其它也都陆陆续续开始支持 AV1 了。</p>
+<h3 id="apple-prores">Apple ProRes</h3>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/20200226000444.png" alt="" loading="lazy"></figure>
+<p>与上述几种帧间编码的视频编码不同，多用于专业相机拍摄的编码 Apple ProRes 属于帧内编码。“帧内压缩只参考本帧数据，压缩率小；帧间压缩要参考其他帧数据，压缩率大” 。Apple ProRes 这种帧内编码的视频编码的体积会比帧间编码的大很多很多，像一般的数码相机、微单都很少使用这种，因为体积过于庞大。</p>
+<p>不过 Apple ProRes 这种帧内编码的好处也是有的，这种编码往往会使用更大的体积保存更多的信息；因为是帧内编码不需要计算出其它的帧在剪辑的时候也会对性能的要求低很多很多，即使配置低的电脑剪辑高分辨率的视频也会流畅很多。</p>
+<p>有很多专业级别的拍摄设备都会有自己家类似 Apple ProRes 的编码，甚至有些会记录“无损”的数据，记录更高的质量，方便后期处理。这些专业的拍摄设备一般用户不会接触到，网络视频传播基本也不会使用帧内编码的这类，因为体积实在太大了，非常不利于传播。</p>
+<p>如果你对这些感兴趣可以看看：</p>
+<ul>
+<li><a href="https://medium.com/advanced-computer-vision/h-264-vs-h-265-a-technical-comparison-when-will-h-265-dominate-the-market-26659303171a">H.264 vs H.265 H.265 会主宰市场吗？</a></li>
+<li><a href="https://www.jianshu.com/p/70a45e0e9876">【省带宽、压成本专题】深入解析 H.265 编码模式，带你了解 Apple 全面推进 H.265 的原因</a></li>
+<li><a href="https://netflixtechblog.com/the-end-of-video-coding-40cf10e711a2">视频编码的终结？</a></li>
+<li><a href="https://blog.frame.io/2018/09/24/hevc-format-wars/">HEVC (H.265) 是啥，我们需要关注什么？</a></li>
+<li><a href="https://aomedia.org/">aomedia 官网</a></li>
+<li><a href="https://variety.com/2016/digital/news/netflix-offline-downloads-codecs-vp9-1201932502/">2016年 Netflix 在 Android 上分发 VP9 内容</a></li>
+<li><a href="https://mpeg.chiariglione.org/standards/mpeg-4/advanced-video-coding">AVC 编码详解</a></li>
+<li><a href="http://x265.org/hevc-advance-reduces-proposed-license-fees/">HEVC 授权价格</a></li>
+<li><a href="https://headjack.io/blog/hevc-vp9-vp10-dalaa-thor-netvc-future-video-codecs/">HEVC VP9 未来的视频编码</a></li>
+</ul>
+<h3 id="视频的拍摄">视频的拍摄</h3>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/20200229014326.jpg" alt="" loading="lazy"></figure>
+<p>拍摄：大部分设备我们都是没法选择视频录制的编码的，不过 iPhone 可以所以 iPhone 为例。在 设置-相机-格式 可以选<strong>高效</strong>（H.265 即 HEVC）或者 <strong>兼容性最佳</strong>（H.264 即 AVC），可以在两个对比图中看出视频编码对体积的影响真的很大。（4k 60fps 只能选择高效即使是兼容最佳模式，个人认为是如果记录 H.264 编码的视频体积会过于庞大对用户非常不友好）</p>
+<p>选择高效自然会碰见兼容性问题，你可以参考广告导演 flypig 微博：<a href="https://weibo.com/1639529981/Ivpa9pBB7?type=comment">iPhone 拍下来的素材在 Final Cut Pro X 里花屏</a> ，碰见这种问题一般你可以选择将 H.265 的素材转成 H.254 或者坚持自己的系统或者剪辑软件是不是最新的。</p>
+<p>拍摄、剪辑、和导出上传我自然是门外汉了（别的也是），推荐你们可以看看影视飓风的这几期视频，讲的很清楚。</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/av4101573/">完全解析：编码与封装</a></li>
+<li><a href="https://www.bilibili.com/video/av25783076/">高画质的背后——视频的封装与编码</a></li>
+<li><a href="https://www.bilibili.com/video/av29270929/">422，420，10bit，8bit？这些究竟是什么</a></li>
+</ul>
+<h3 id="视频的分发">视频的分发</h3>
+<p>相同的电影剧集，看起来清晰不清晰除了和分辨率、码率有关，视频的编码也是非常重要的一部分，也常常被我我们所忽视。</p>
+<p>国际上比较主流的视频网站都采用了多种视频编码来应对不同平台和不同的内容甚至不同的网络环境，下面是我个人总结的一些（可能会不完整）</p>
+<ul>
+<li>
+<p>Netflix</p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/20200229150321.jpg" alt="" loading="lazy"></figure>
+<p>Netflix 目前正在使用 4 种不同的编码，分别是</p>
+<p>H.264(AVC)：这是 Netflix 使用较多的一种编码格式，在 Safari、iOS、电视客户端等都在使用。</p>
+<p>H.265(HEVC)：Netflix 一般仅为 4k 的内容提供 H.265 的编码，并且一般只有在能看 4k 的客户端上使用此编码。我这里说的是 4k 的内容并不是你看 4k 的时候才会使用 H.265 编码，举个例子：你在 firetv 4k 或者 Windows edge 浏览器上观看 《爱尔兰人》等有 4k 版本的内容，即使你观看的分辨率是 480p、或者720p 都会是 H.265 编码的。</p>
+<p>AV1：Netflix 在前几天宣布 Android 上正式开始使用这种编码，在这之前一直使用的是VP9，不过只有在使用流量省数据的选项下才会采用。</p>
+<p>VP9: Netflix 目前在 Android、Chrome 等谷歌系的一直使用这种编码。这里也很容易解释为啥你在 iOS 下载相同的内容和 Android 下载的体积不一样（iOS 客户端下载的普遍体积更小）</p>
+</li>
+<li>
+<p>YouTube</p>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/20200229150131.jpg" alt="" loading="lazy"></figure>
+<p>YouTube 目前主要使用 VP9、H.264、以及 AV1 视频编码，不过值得注意的是 1080p 以上的内容 YouTube 都不会使用 H.264 编码，这也导致了 Apple 全系产品目前没法观看 YouTube 4k，不过 YouTube 已经开始支持 AV1 编码了，AV1 也有苹果的一部分参与，未来几年内应该能解决这个问题。</p>
+</li>
+</ul>
+<p>像 Apple TV+、Disney+ 也都采用了 H.265 在 4k 内容上，并且码率还要比 Netflix 的 16Mbps 要高些许，相比国内爱奇艺、bilibili 只使用 H.264 并且码率也要低很多很多，差距确实十分明显。</p>
+<figure data-type="image" tabindex="22"><img src="https://oss.qust.me/img/20200229151855.jpg" alt="" loading="lazy"></figure>
+<p>如果你也使用 firetv 想看详细播放内容详细信息可以开启开发者模式：</p>
+<p>“遥控器：在方向盘上，按住“ 中央”按钮一秒钟；然后（仍然按住居中），也按下“ 向下”按钮。按住两个按钮约3-4秒。然后释放两个按钮，然后按遥控器的菜单按钮。（如果这不起作用，请尝试同时按住“ Center”和“ Down”，而不要交错放置。）”</p>
+<h2 id="尾巴">尾巴</h2>
+<p>胶片电影时我们的视频时一秒24张照片的魔法，到电视我们的视频是“不稳定”的模拟电信号，到如今我们的视频又是网络中的数字信号。好的内容不会因为传播记录方式而改变，但却能让更多人看到更多更好的内容。</p>
+<p>文章写杂乱，很多说的很糙很杂，如果有不对欢迎您指正。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://pengchujin.github.io/post/hello-gridea/</id>
+        <link href="https://pengchujin.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
