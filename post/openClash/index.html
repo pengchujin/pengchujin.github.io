@@ -1,95 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OpenClash 使用教程 | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="OpenClash 使用教程 | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>OpenClash 使用教程 | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620501171677">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="
-OpenClash 是一个可运行在 OpenWrt 上的 Clash 客户端，一般来说你的路由器的第三方固件会附带，当然也可以自行安装。相比于传统的 SS、SSR 或者 PassWall 这些客户端来说，OpenClash 使用 Clas..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620501171677" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              OpenClash 使用教程
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-05-08
-              </span>
-              <span>
-                4 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">OpenClash 使用教程</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-05-08</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg" alt="截屏2021-05-08 下午6.29.51" loading="lazy"></figure>
+          </div>
+          <div class="post-content">
+            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg" alt="截屏2021-05-08 下午6.29.51" loading="lazy"></figure>
 <p><a href="https://github.com/vernesong/OpenClash">OpenClash</a> 是一个可运行在 OpenWrt 上的<a href="https://github.com/Dreamacro/clash"> Clash </a>客户端，一般来说你的路由器的第三方固件会附带，当然也可以自行安装。相比于传统的 SS、SSR 或者 PassWall 这些客户端来说，OpenClash 使用 Clash 的配置文件，规则代理会灵活很多，配合 yacd 等 WebUI 控制台操作也非常方便。<!--more--></p>
 <h2 id="安装">安装</h2>
 <p>OpenClash 会发布编译好的 IPK 文件（openwrt 的软件包），你可以直接<a href="https://github.com/vernesong/OpenClash/releases">下载安装</a>，然后 SSH 到 openwrt 后台进行安装。</p>
@@ -149,94 +146,57 @@ opkg install luci-app-openclash_0.42.05-beta_all.ipk
 <h2 id="后记">后记</h2>
 <p>OpenClash 可能看起来麻烦点，不过实际使用却非常方便灵活，能按规则的走代理，让不同的服务走不同的节点就非常方便。配合 Web 网页的控制后台，非常推荐大家路由器都使用这种更先进的上网方式。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE">配置</a>
-<ul>
-<li><a href="#%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">添加配置文件</a></li>
-</ul>
-</li>
-<li><a href="#%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF">控制面板</a>
-<ul>
-<li><a href="#%E6%96%B9%E4%BE%BF%E7%9A%84-web-%E7%AE%A1%E7%90%86">方便的 Web 管理</a></li>
-</ul>
-</li>
-<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/home-mesh/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/home-mesh/">
               <h3 class="post-title">
-                家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix
+                下一篇：家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

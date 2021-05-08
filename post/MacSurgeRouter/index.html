@@ -1,95 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Surge 把你的 Mac 变成最强路由器 | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Surge 把你的 Mac 变成最强路由器 | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>Surge 把你的 Mac 变成最强路由器 | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620501171677">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="最近一两年我用过很多路由器：斐讯 n1、NanoPi r2s、NanoPi r4s、华硕 ax86u 等等都是蛮热门的产品。但在我前俩天买了用了 Mac 的 Surge 当作家里的路由器后，方便和体验真的是回不去了。
-关于 surge 4 ..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620501171677" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Surge 把你的 Mac 变成最强路由器
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-01-16
-              </span>
-              <span>
-                6 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">Surge 把你的 Mac 变成最强路由器</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-01-16</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>最近一两年我用过很多路由器：斐讯 n1、NanoPi r2s、NanoPi r4s、华硕 ax86u 等等都是蛮热门的产品。但在我前俩天买了用了 Mac 的 Surge 当作家里的路由器后，方便和体验真的是回不去了。</p>
+          </div>
+          <div class="post-content">
+            <p>最近一两年我用过很多路由器：斐讯 n1、NanoPi r2s、NanoPi r4s、华硕 ax86u 等等都是蛮热门的产品。但在我前俩天买了用了 Mac 的 Surge 当作家里的路由器后，方便和体验真的是回不去了。</p>
 <p>关于 surge 4 的教程特别是 DHCP 当做路由器，我看网上的资料教程实在是很少，自己查也废了不少功夫，就写个教程做个视频分享给大家。温馨提示：<strong>首先你得有台放在家里，最好接着网线的 Mac 系统电脑；还有就是你要花几百块买 Surge 这个软件。</strong></p>
 <p>Surge 是一个很强大的网络工具，不仅仅是一个代理软件；目前 Surge 是版本买断制度的，你可以直接在<a href="https://nssurge.com/buy_now">官网购买</a>，然后就能一直使用 Surge 4 这个大的版本了。<!--more--></p>
 <h2 id="surge-dhcp-接管网络">Surge DHCP 接管网络</h2>
@@ -228,103 +225,57 @@ ca-p12 = MIIJtQIBAzCCCXwGCSqGSIb3DQ…..
 <p>surge 官方功能手册：https://manual.nssurge.com/book/understanding-surge/cn/</p>
 <p>如果对这篇教程有疑问也可以发邮件给我 pengchujin@hotmail.com</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#surge-dhcp-%E6%8E%A5%E7%AE%A1%E7%BD%91%E7%BB%9C">Surge DHCP 接管网络</a>
-<ul>
-<li><a href="#1-%E6%B7%BB%E5%8A%A0-surge-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">1 添加 Surge 的配置文件</a></li>
-<li><a href="#2-%E9%85%8D%E7%BD%AE-surge-dhcp-%E6%8E%A5%E7%AE%A1%E7%BD%91%E7%BB%9C">2 配置 Surge DHCP 接管网络</a>
-<ul>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E7%94%B5%E8%84%91-ip-%E4%B8%BA%E9%9D%99%E6%80%81ip">设置电脑 IP 为静态IP</a></li>
-<li><a href="#%E5%85%B3%E9%97%AD%E8%B7%AF%E7%94%B1%E5%99%A8-dhcp">关闭路由器 DHCP</a></li>
-<li><a href="#%E6%89%93%E5%BC%80-surge-dhcp-%E9%80%89%E9%A1%B9">打开 Surge DHCP 选项</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#surge-dhcp-%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97">Surge DHCP 使用模块</a><br>
-*
-<ul>
-<li><a href="#mac-%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6">Mac 创建证书</a></li>
-<li><a href="#%E5%8F%91%E9%80%81%E8%AF%81%E4%B9%A6%E5%88%B0%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85">发送证书到手机安装</a></li>
-<li><a href="#surge-%E5%AE%89%E8%A3%85%E6%89%93%E5%BC%80%E6%A8%A1%E5%9D%97">Surge 安装打开模块</a></li>
-</ul>
-</li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/PocketTube/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/PocketTube/">
               <h3 class="post-title">
-                使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅
+                下一篇：使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

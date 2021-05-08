@@ -1,95 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅 | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅 | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅 | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620501171677">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="
-我是个 YouTube 重度用户，每天都得看个把小时 YouTube。自然这些年看 YouTube 也没少订阅 YouTube 频道，刚才看了下我订阅的频道已经 300 多个了。频道订阅超过一定数量的时候我就感觉到订阅所起到的作用在逐渐减..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620501171677" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-12-21
-              </span>
-              <span>
-                4 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-12-21</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201221223701.webp" alt="" loading="lazy"></figure>
+          </div>
+          <div class="post-content">
+            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201221223701.webp" alt="" loading="lazy"></figure>
 <p>我是个 YouTube 重度用户，每天都得看个把小时 YouTube。自然这些年看 YouTube 也没少订阅 YouTube 频道，刚才看了下我订阅的频道已经 300 多个了。频道订阅超过一定数量的时候我就感觉到订阅所起到的作用在逐渐减小，我每天只能看到 YouTube 的推荐内容，我也没精力挨个点开频道查看更新。</p>
 <p>这是个问题，因为我只能被动的接收 YouTube 的算法推荐，如果我喜欢的 YouTuber 被算法“忽略”或者是更新不够勤奋，那个频道可能永远只躺在我的订阅列表里。<!--more--></p>
 <p>今天看到 App Store 里有个叫 PocketTube 的 Safari 插件评分挺高的就下载试了下，一口气把我的订阅全部整理分类好了，确实能很好的分类和分优先级我的订阅，而不是 YouTube 之前全一个列表无优先级无分类的方式。</p>
@@ -127,93 +124,57 @@
 <h2 id="最后">最后</h2>
 <p>不管你喜欢与否我还是非常愿意分享下我个人的 YouTube 300 多个订阅，你<a href="https://oss.qust.me/youtube_subscription_manager_2020-12-21-20_01.json"><strong>点此链接</strong></a>下载导入就能直接添加我的订阅和分组。YouTube 之前的订阅太过粗暴，想用算法推荐来掩盖这些，PocketTube 更能满足我个人对自己订阅的 YouTube 频道 RSS 类形式的需求。我会有意分等级我的订阅，在我查找内容时我也更方便根据分组浏览。当然 PockeTube 也不完美，每个设备你都需要单独安装插件和同步订阅，打开 YouTube 时 PocketTube 也打开还需要加载一会。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#pockettube-%E4%BD%BF%E7%94%A8">PocketTube 使用</a>
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E5%88%86%E7%BB%84">创建分组</a></li>
-<li><a href="#%E6%B7%BB%E5%8A%A0-youtube-%E9%A2%91%E9%81%93%E5%88%B0%E5%88%86%E7%BB%84">添加 YouTube 频道到分组</a></li>
-<li><a href="#%E6%B5%8F%E8%A7%88%E5%88%86%E7%BB%84">浏览分组</a></li>
-<li><a href="#%E7%AE%A1%E7%90%86%E8%AE%A2%E9%98%85%E5%86%85%E5%AE%B9">管理订阅内容</a></li>
-<li><a href="#%E5%AF%BC%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA">导入和导出</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9C%80%E5%90%8E">最后</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/NanoPiR4s/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/NanoPiR4s/">
               <h3 class="post-title">
-                NanoPi R4S 上手体验
+                下一篇：NanoPi R4S 上手体验
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

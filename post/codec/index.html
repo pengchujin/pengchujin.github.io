@@ -1,99 +1,102 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>视频与编码 | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="视频与编码 | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>视频与编码 | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620501171677">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="
-你我中的绝大多数从出生开始就一直伴随着“视频”以及视频技术的飞速发展，我是95后我依然很清晰的记得小学时的露天电影：白色的幕布，硕大的放映机🎥，每次放映的师傅来还会带好几盘很大的胶卷盒，伴随着机械的声音光打到了白色的布上，特别期待的电影..." />
-    <meta name="keywords" content="untagged" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620501171677" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              视频与编码
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-04-12
-              </span>
-              <span>
-                17 min read
-              </span>
-              
-                <a href="http://localhost:4000/tag/hzHOrTn7X/" class="post-tag">
-                  # untagged
-                </a>
-              
-            </div>
+          
+          <h2 class="post-title">视频与编码</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-04-12</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200220172739.jpg" alt="" loading="lazy"></figure>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://pengchujin.github.io/tag/hzHOrTn7X/">
+                    untagged
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200220172739.jpg" alt="" loading="lazy"></figure>
 <p>你我中的绝大多数从出生开始就一直伴随着“视频”以及视频技术的飞速发展<!--more-->，我是95后我依然很清晰的记得小学时的露天电影：白色的幕布，硕大的放映机🎥，每次放映的师傅来还会带好几盘很大的胶卷盒，伴随着机械的声音光打到了白色的布上，特别期待的电影🎬也就这样开始了。我也记得以前的CRT电视：从黑白的到彩色的，动画片一定要放学后准时收看否则你就再也看不到了，电视还会因信号不好莫名的变得不清楚全是雪花点。到后来用上了电脑、手机、网络电视，我们已经能随时享受到 4k 高清HDR的 Netflix、YouTube、BiliBili，但视频所给我们带来的兴奋与快乐始终没有改变。</p>
 <h2 id="模拟视频与数字视频">模拟视频与数字视频</h2>
 <figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200219233901.jpg" alt="" loading="lazy"></figure>
@@ -219,101 +222,49 @@
 <p>胶片电影时我们的视频时一秒24张照片的魔法，到电视我们的视频是“不稳定”的模拟电信号，到如今我们的视频又是网络中的数字信号。好的内容不会因为传播记录方式而改变，但却能让更多人看到更多更好的内容。</p>
 <p>文章写杂乱，很多说的很糙很杂，如果有不对欢迎您指正。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%A8%A1%E6%8B%9F%E8%A7%86%E9%A2%91%E4%B8%8E%E6%95%B0%E5%AD%97%E8%A7%86%E9%A2%91">模拟视频与数字视频</a><br>
-*
-<ul>
-<li><a href="#film-%E8%83%B6%E7%89%87%E7%94%B5%E5%BD%B1">Film 胶片电影</a></li>
-<li><a href="#crt-%E6%98%BE%E5%83%8F%E7%AE%A1%E7%94%B5%E8%A7%86">CRT 显像管电视</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E5%AD%97%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81">数字视频编码</a>
-<ul>
-<li><a href="#h264avc">H.264/AVC</a></li>
-<li><a href="#h265hevc">H.265/HEVC</a></li>
-<li><a href="#vp9">VP9</a></li>
-<li><a href="#av1">AV1</a></li>
-<li><a href="#apple-prores">Apple ProRes</a></li>
-<li><a href="#%E8%A7%86%E9%A2%91%E7%9A%84%E6%8B%8D%E6%91%84">视频的拍摄</a></li>
-<li><a href="#%E8%A7%86%E9%A2%91%E7%9A%84%E5%88%86%E5%8F%91">视频的分发</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B0%BE%E5%B7%B4">尾巴</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/hello-gridea/">
-              <h3 class="post-title">
-                Hello Gridea
-              </h3>
-            </a>
-          </div>
-        
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>
