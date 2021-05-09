@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-05-09T04:45:06.639Z</updated>
+    <updated>2021-05-09T10:29:04.696Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://qust.me/images/avatar.png</logo>
     <icon>https://qust.me/favicon.ico</icon>
     <rights>All rights reserved 2021, 酱紫表</rights>
+    <entry>
+        <title type="html"><![CDATA[红米 AX5、小米 AX1800 解锁 SSH｜安装使用 ShellClash 教程]]></title>
+        <id>https://qust.me/post/hong-mi-ax5xiao-mi-ax1800-jie-suo-sshoran-zhuang-shi-yong-shellclash-jiao-cheng/</id>
+        <link href="https://qust.me/post/hong-mi-ax5xiao-mi-ax1800-jie-suo-sshoran-zhuang-shi-yong-shellclash-jiao-cheng/">
+        </link>
+        <updated>2021-05-09T09:00:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>这个教程将会指导你如何解锁红米 AX5、小米 AX1800 SSH，并安装 ShellClash 插件，用非常先进的 Clash 实现科学上网。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这个教程将会指导你如何解锁红米 AX5、小米 AX1800 SSH，并安装 ShellClash 插件，用非常先进的 Clash 实现科学上网。</p>
+<!--more-->
+<p>红米 AX5 和小米 AX1800 可以基本看成一个产品，配置基本相同，外观设计不同。CPU都是：高通 IPQ6000，高通四核1.2GHz。在性能上和小米 AX3600 或者说红米 AX6 差距很大，不是非常推荐购买 AX5 更不推荐购买 AX1800。</p>
+<h2 id="降级">降级？</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%886.04.55.jpg" alt="截屏2021-05-09 下午6.04.55" loading="lazy"></figure>
+<p><strong>目前这一步你可以省略</strong>，亲测目前 AX5 升级到最新固件 <em>1.4.20</em>，仍然可以解锁 SSH。AX1800 最新固件应该也没有问题，如果你下面操作不行的话，可以使用这里提供的降级固件，在后台常用设置-系统状态里-手动选择下载好的固件，降级后再解锁 SSH。</p>
+<ul>
+<li><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/rm1800/miwifi_rm1800_all_65ab2_1.0.328.bin">小米 AX1800 1.0.328 下载</a></li>
+<li><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra67/miwifi_ra67_all_f3fac_1.0.26.bin">红米 AX6 1.0.26 下载</a></li>
+</ul>
+<h2 id="获取-ssh-权限">获取 SSH 权限</h2>
+<h3 id="获取后台-stok">获取后台 STOK</h3>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.43.49.jpg" alt="截屏2021-05-03 下午4.43.49" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<h3 id="获取-ssh">获取 SSH</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B
+</code></pre>
+<p>将 <STOK>  替换为上一步的值，替换完成后复制到浏览器打开。</p>
+<h3 id="修改默认-ssh-密码为-admin">修改默认 SSH 密码为 admin</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20echo%20-e%20'admin%5Cnadmin'%20%7C%20passwd%20root%3B
+</code></pre>
+<p>将 <STOK>  替换为上上一步的值，替换完成后复制到浏览器打开。</p>
+<h3 id="连接-ssh">连接 SSH</h3>
+<p>现在应该可以通过 ssh 连接到 小米 AX1800、红米 AX5 了，终端里执行（密码是 admin，输入不会显示，输入完回车就行）</p>
+<pre><code>ssh root@192.168.31.1
+</code></pre>
+<p>如果提示这种错误 (没有就可以忽略，第一次让你按 yes 即可)</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%886.13.46.jpg" alt="截屏2021-05-09 下午6.13.46" loading="lazy"></figure>
+<p>你可以删除这个文件的指定行，我这里后面可以看到是 45，或者直接删除这个文件。</p>
+<pre><code>rm -rf /Users/pengchujin/.ssh/known_hosts
+</code></pre>
+<h2 id="安装使用-shellclash">安装使用 ShellClash</h2>
+<p>SSH 连接上小米 AX1800、红米 AX5 执行安装</p>
+<pre><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.55.06.jpg" alt="截屏2021-05-06 下午7.55.06" loading="lazy"></figure>
+<p>选择 1 安装到 /etc，然后再选择 1 确认安装。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.56.25.jpg" alt="截屏2021-05-06 下午7.56.25" loading="lazy"></figure>
+<p>安装好就能使用 clash 命令了 ，输入 clash 就能进入配置。这里选择 4 让局域网设备都能走代理（如果你清楚别的可以自行选择）。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.59.53.jpg" alt="截屏2021-05-06 下午7.59.53" loading="lazy"></figure>
+<p>推荐选择不代理 UDP 也就是 1，然后安装 DashBoard 面板也就能网页直接控制了也就是 1 。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.01.39.jpg" alt="截屏2021-05-06 下午8.01.39" loading="lazy"></figure>
+<p>推荐选择 Yacd 面板，界面很好看 选择 2，然后安装目录选择 1 即可。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.05.20.jpg" alt="截屏2021-05-06 下午8.05.20" loading="lazy"></figure>
+<p>1 选择导入配置文件。如果你没有 Clash 的配置文件而是 v2ray、ss、trojan 的订阅链接（你的机场会提供），你可以再选择 1 进行「在线生成 Clash 配置文件」；如果有的话可以选择 2 直接导入配置文件。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.07.27.jpg" alt="截屏2021-05-06 下午8.07.27" loading="lazy"></figure>
+<p>然后粘贴上你的订阅链接（url 链接），再选择 1 开始生成配置文件。生成配置文件后按 0 返回上层菜单即可。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
+<p>再按 1 选择立即开启 Clash  的服务即可。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
+<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
+<p>这个时候应该就能科学上网了速度也应该还可以。</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%885.21.05.jpg" alt="截屏2021-05-09 下午5.21.05" loading="lazy"></figure>
+<p>这是我测试的红米 AX5 v2ray（vmess ws+tls）的速度，比红米 AX6 或者说小米 AX3600 相差很多，后者能跑满我家 500M 宽带。</p>
+<h2 id="后记">后记</h2>
+<p>这个不会固化 telnet ，如果你升级路由器应该会丢失 SSH，建议你不要再升级固件，目前的固件也已经支持 AP mesh。如果你非常想升级以后新出的固件，可以参考恩山<a href="https://www.chiphells.com/FORUM/thread-4107121-1-1.html">这个教程</a>，固化 telnet 以后升级都会保留 SSH权限，就是稍微有点麻烦。</p>
+<p>红米 AX5 和小米 AX1800 性能稍微有点差，但也能满足日常使用，看 Netflix 4K、YouTube 8k 都没问题。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[OpenClash 使用教程]]></title>
         <id>https://qust.me/post/openClash/</id>
@@ -947,20 +1015,6 @@ ca-p12 = MIIJtQIBAzCCCXwGCSqGSIb3DQ…..
 <li>R4s 价格偏高，体积偏大了点，发热也大了不少，没更高需求建议买 Type C 口的 R2s ，性价比会高很多。</li>
 </ul>
 <p>我会把 NanoPi R4s 当作便携的高性能路由器使用，出门能挂在移动电源上，然后配合 USB 无线网卡非常不错。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我买了台 Mac M1]]></title>
-        <id>https://qust.me/post/mac2020/</id>
-        <link href="https://qust.me/post/mac2020/">
-        </link>
-        <updated>2020-11-24T09:42:11.000Z</updated>
-        <summary type="html"><![CDATA[<p>因为有做视频需求、需要一个轻便的 Mac 笔记本，就找上研究生的同学陪我一起去 Apple Store 买了台学生价的 Macbook Air M1（最基础的配置 8+256），价格还挺便宜的 7199。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>因为有做视频需求、需要一个轻便的 Mac 笔记本，就找上研究生的同学陪我一起去 Apple Store 买了台学生价的 Macbook Air M1（最基础的配置 8+256），价格还挺便宜的 7199。</p>
-<!--more-->
-<p>有个朋友买了教育优惠的 Apple 软件套装（5款软件），我就蹭了下让他把我国区账户拉进了家庭组，很开心能白嫖 fcp 和 compressor。</p>
-<p>因为 Apple Motion 这个软件实在教程太少，我也没怎么用过，以前有用过点 AE。想找个便宜的 Adobe Creative Cloud 订阅，浏览了下 Adobe 全球的订阅价格几乎都差不多，并没有像别的流媒体订阅一样根据国家地区定价，实在太贵。在淘宝翻了一圈，发现有家卖 888 的一年激活码，不知道具体他们是怎么套路到 Adobe 的。我买了后被要求使用澳大利亚区的账户，注册后成功享受到了一年的 Adobe Creative Cloud 全家桶，非常开心！（翻车了，淘宝跑了路，我的也直接失效，谨慎购买淘宝任何订阅！）</p>
 ]]></content>
     </entry>
 </feed>
