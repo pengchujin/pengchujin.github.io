@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AX3600 ShellClash 教程｜官方固件使用代理 | 酱紫表</title>
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620556524861">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620557560727">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://qust.me/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="AX3600 ShellClash 教程｜官方固件使用代理 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
@@ -31,7 +31,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://qust.me">
-  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620556524861" alt="">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620557560727" alt="">
   </a>
   <h1 class="site-title">
     酱紫表
@@ -131,11 +131,11 @@
 <h3 id="获取-ssh">获取 SSH</h3>
 <pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B
 </code></pre>
-<p>将 <STOK>  替换为上一步的值，替换完成后复制到浏览器打开。</p>
+<p>将 &lt;STOK&gt;  替换为上一步的值，替换完成后复制到浏览器打开。</p>
 <h3 id="修改默认-ssh-密码为-admin">修改默认 SSH 密码为 admin</h3>
 <pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20echo%20-e%20'admin%5Cnadmin'%20%7C%20passwd%20root%3B
 </code></pre>
-<p>将 <STOK>  替换为上上一步的值，替换完成后复制到浏览器打开。</p>
+<p>将 &lt;STOK&gt;  替换为上上一步的值，替换完成后复制到浏览器打开。</p>
 <h3 id="备份">备份</h3>
 <p>现在应该可以通过 ssh 连接到 小米 AX3600 了，终端里执行（密码是 admin）</p>
 <pre><code>ssh root@192.168.31.1
