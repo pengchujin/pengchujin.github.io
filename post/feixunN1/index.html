@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>斐讯n1配置旁路由后无法访问网络 | 酱紫表</title>
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620529957271">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620532398192">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://qust.me/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="斐讯n1配置旁路由后无法访问网络 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
@@ -11,8 +11,8 @@
 
 
 
-    <meta name="description" content="
-斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。
+    <meta name="description" content="斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。
+
 参考了恩山 这个帖子 [N1盒子] 【终极指南】关于N1做旁路由添加 iptabl..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -23,7 +23,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://qust.me">
-  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620529957271" alt="">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620532398192" alt="">
   </a>
   <h1 class="site-title">
     酱紫表
@@ -88,16 +88,18 @@
               
             </div>
             
+              <img class="post-feature-image" src="https://oss.qust.me/img/20200523120019.jpg" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200523120019.jpg" alt="" loading="lazy"></figure>
-<p>斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。<!--more--></p>
+                <p>斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。</p>
+<!--more-->
 <p>参考了恩山 这个帖子 [N1盒子] <a href="https://www.right.com.cn/FORUM/thread-2983767-1-1.html">【终极指南】关于N1做旁路由添加 iptables 自定义防火墙规则的见解</a></p>
 <h3 id="方法一">方法一</h3>
 <ul>
 <li>选择 <strong>网络</strong> — <strong>防火墙</strong> — <strong>自定义防火墙</strong>  末尾添加上这段</li>
 </ul>
-<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200523120019.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200523120019.jpg" alt="" loading="lazy"></figure>
 <pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
 </code></pre>
 <p>解释：用来 “iptables 修改 NAT 表，使经过 eth0 的网卡的流量的源 IP 伪装成 eth0 的 IP，而且是动态伪装（直接读取 eth0 的 IP 地址）”</p>
@@ -106,12 +108,12 @@
 <ul>
 <li>
 <p>第一步：打开 <strong>网络</strong>—<strong>接口</strong>—<strong>lan 修改</strong>—<strong>物理设置</strong></p>
-<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200523120418.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200523120418.jpg" alt="" loading="lazy"></figure>
 <p>取消勾选桥接接口，下面选择 “以太网适配器: &quot;eth0()&quot;”  保存应用</p>
 </li>
 <li>
 <p>第二步 打开 <strong>网络</strong>—<strong>接口</strong>—<strong>添加新接口</strong></p>
-<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20200523120742.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200523120742.jpg" alt="" loading="lazy"></figure>
 <p>新的接口名称：wan</p>
 <p>新接口的协议：DHCP客户端</p>
 <p>包含以下接口选择：“以太网适配器: &quot;eth0()&quot;”</p>

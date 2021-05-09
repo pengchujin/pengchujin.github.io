@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>N1 刷 Flippy 固件，设置旁路由 | 酱紫表</title>
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620529957271">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620532398192">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://qust.me/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="N1 刷 Flippy 固件，设置旁路由 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
@@ -11,8 +11,8 @@
 
 
 
-    <meta name="description" content="
-这篇主要介绍 n1 如何重新刷入系统，买到手想换个系统或者弄错了想重新刷入系统的朋友都可以参考下。
+    <meta name="description" content="这篇主要介绍 n1 如何重新刷入系统，买到手想换个系统或者弄错了想重新刷入系统的朋友都可以参考下。
+
 准备
 
 一台 n1，和 n1 的电源线
@@ -26,7 +26,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://qust.me">
-  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620529957271" alt="">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620532398192" alt="">
   </a>
   <h1 class="site-title">
     酱紫表
@@ -91,10 +91,12 @@
               
             </div>
             
+              <img class="post-feature-image" src="https://oss.qust.me/img/20201116195359.png" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201116195359.png" alt="" loading="lazy"></figure>
-<p>这篇主要介绍 n1 如何重新刷入系统，买到手想换个系统或者弄错了想重新刷入系统的朋友都可以参考下。<!--more--></p>
+                <p>这篇主要介绍 n1 如何重新刷入系统，买到手想换个系统或者弄错了想重新刷入系统的朋友都可以参考下。</p>
+<!--more-->
 <h2 id="准备">准备</h2>
 <ol>
 <li>一台 n1，和 n1 的电源线</li>
@@ -104,23 +106,23 @@
 <li>电脑 （Win Mac 均可）</li>
 </ol>
 <h2 id="刷入-u盘-系统">刷入 U盘 系统</h2>
-<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20201116211511.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201116211511.png" alt="" loading="lazy"></figure>
 <p>解压下载后的固件，打开 etcher 选择好刚解压好的包和对应 U盘，选择 Flash 刷入即可。</p>
 <h2 id="u-盘系统刷入-n1">U 盘系统刷入 n1</h2>
-<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20212943.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20212943.png" alt="" loading="lazy"></figure>
 <p>刷好系统的 U盘 插上 n1，再接上电源，稍等一两分钟你应该就能都搜索到名是 “openwrt” 无密码的 WiFi。（此时其实已经可以用了，只是系统在 U盘 上，如果喜欢一直插着 U盘 这样使用也没问题）。</p>
 <p>连接上 wifi，浏览器打开 192.168.1.1，密码默认是 password，然后即可进入路由器后台。</p>
-<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20213614.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20213614.png" alt="" loading="lazy"></figure>
 <p>在后台选择 系统 - TTY 终端，打开后输入 root 回车，然后输入 password 回车（输入的密码不会显示，输完回车就好）。</p>
-<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20213911.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20213911.png" alt="" loading="lazy"></figure>
 <p>进入系统后输入 ./inst-to-emmc.sh 回车，然后确认按 y ，就开始刷入 n1 系统了，稍等几分钟就会提示刷好。</p>
-<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20214059.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20214059.png" alt="" loading="lazy"></figure>
 <h2 id="设置-n1-旁路由">设置 n1 旁路由</h2>
 <p>刷完后拔掉 U盘再插电启动，连上 openwrt wifi，输入 password 进入后台。</p>
 <p>选择 网络 - 接口 - lan 修改。</p>
-<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20214608.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20214608.png" alt="" loading="lazy"></figure>
 <p>一般配置里：</p>
-<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%202152111.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%202152111.png" alt="" loading="lazy"></figure>
 <ul>
 <li>IPv4 地址：设置成目前你路由器网段中的一个地址，只用修改目前路由器后台中的最后一位，例如你以前路由器的后台地址是 192.168.3.1 ，这里你设置成 192.168.3.X（X在2-255区间都可以）我这里设置成 192.168.3.8 。</li>
 <li>IPv4 子网掩码: 设置成 255.255.255.0 即可。</li>
@@ -128,7 +130,7 @@
 <li>DNS 服务器：你自己之前路由器后台地址 和 8.8.8.8 即可。（我这里是 192.168.3.1 和 8.8.8.8）</li>
 </ul>
 <p>高级设置里：</p>
-<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20220150.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-16%20220150.png" alt="" loading="lazy"></figure>
 <pre><code>* 强制 DHCP： 勾选
 * 强制：勾选
 * IPv4 子网掩码: 设置成 255.255.255.0 即可。
