@@ -1,93 +1,99 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷 | 酱紫表</title>
-<meta name="description" content="复杂的世界里一个就足够了">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620526992184">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620532527963">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-
+    <meta name="description" content="红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷
+我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge ..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://pengchujin.github.io">
-        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620526992184" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://pengchujin.github.io">
-        <h1 class="site-title">酱紫表</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620532527963" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
         <div class="post-detail">
-          
-          <h2 class="post-title">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-05-03</span>
+          <article class="post">
+            <h2 class="post-title">
+              红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-03
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <h1 id="红米-ax6-刷-openwrt-教程软路由杀手来了">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h1>
-<p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。<!--more--></p>
+              <img class="post-feature-image" src="https://oss.qust.me/img/IMG_1725.PNG" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="红米-ax6-刷-openwrt-教程软路由杀手来了">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h1>
+<p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。</p>
+<!--more-->
 <p>该教程主要参考：</p>
 <p><a href="https://www.right.com.cn/forum/space-uid-191571.html">li4621180</a>：https://www.right.com.cn/forum/thread-4111331-1-1.html</p>
 <p><a href="https://www.right.com.cn/forum/space-uid-90558.html">yyjdelete</a>：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4060726&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D64</p>
@@ -281,57 +287,119 @@ src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/1
 <p>我家是 500M 的联通宽带，vmess 协议 ws+tls 轻松跑满 500M 的宽带，CPU 占用也才 20-30%。如果拿 MTK 7621 芯片的 k2p 测试的速度是 30Mbps。红米 AX6 采用的是高通 IPQ8071A 芯片，4 核心 A53 1.4GHz 的 CPU 外加上双核 1.7GHz NPU，在进行计算任务的时候依靠 NPU，红米 AX6 在这方面真的暴打很多软路由。</p>
 <p>不足的是现在刷机还比较麻烦，并且目前的固件不是很稳定，还只适合尝鲜阶段不适合日常使用。期待下吧，毕竟这款 CPU+NPU 实在是太强了。</p>
 
-          </div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%BA%A2%E7%B1%B3-ax6-%E5%88%B7-openwrt-%E6%95%99%E7%A8%8B%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%9D%80%E6%89%8B%E6%9D%A5%E4%BA%86">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</a>
+<ul>
+<li><a href="#%E8%AD%A6%E5%91%8A%EF%B8%8F">警告⚠️</a></li>
+<li><a href="#%E5%87%86%E5%A4%87">准备</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E9%99%8D%E7%BA%A7%E5%B9%B6%E6%81%A2%E5%A4%8D%E5%87%BA%E5%8E%82%E8%AE%BE%E7%BD%AE">第一步｜降级并恢复出厂设置</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%87%86%E5%A4%87-openwrt-%E6%9C%8D%E5%8A%A1">第二步｜准备 openwrt 服务</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA-lua-%E6%96%87%E4%BB%B6">创建 lua 文件</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E8%AF%A5-openwrt-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84-lan-%E5%9C%B0%E5%9D%80%E5%B9%B6%E5%85%B3%E9%97%AD-dhcp">修改该 openwrt 路由器的 Lan 地址，并关闭 DHCP</a></li>
+<li><a href="#%E9%AA%8C%E8%AF%81">验证</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E7%BA%A2%E7%B1%B3-ax-6-%E7%A0%B4%E8%A7%A3-ssh">第三步｜红米 AX 6 破解 SSH</a>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0-stok">获取后台 STOK</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82">第一次请求</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%B7%E6%B1%82">第二次请求</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E9%AA%8C%E8%AF%81-ssh-%E5%B9%B6%E5%A4%87%E4%BB%BD">第四步｜验证 SSH 并备份</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%E5%88%B7%E5%85%A5-openwrt-%E5%9B%BA%E4%BB%B6">第五步｜刷入 openwrt 固件</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6%E5%A4%87%E7%94%A8">下载固件备用</a></li>
+<li><a href="#ssh-%E8%BF%9E%E6%8E%A5-%E7%BA%A2%E7%B1%B3-ax-%E8%AE%BE%E7%BD%AEenv">ssh 连接 红米 ax  设置env</a></li>
+<li><a href="#scp-%E5%9B%BA%E4%BB%B6-qsdk-%E5%9B%BA%E4%BB%B6%E5%B9%B6%E5%88%B7%E5%85%A5">scp 固件 qsdk 固件并刷入</a></li>
+<li><a href="#%E9%87%8D%E6%96%B0%E5%88%86%E5%8C%BA">重新分区</a></li>
+<li><a href="#openwrt%E5%88%B7%E5%85%A5%E5%88%B0rootfs_1%E5%88%86%E5%8C%BA">openwrt刷入到rootfs_1分区</a></li>
+</ul>
+</li>
+<li><a href="#one-more-thing-%E5%AE%89%E8%A3%85-clash">one more thing ｜安装 Clash</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://pengchujin.github.io/post/clashxProMac/">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/clashxProMac/">
               <h3 class="post-title">
-                下一篇：Mac 电脑使用 ClashX Pro 作为网关旁路由
+                Mac 电脑使用 ClashX Pro 作为网关旁路由
               </h3>
             </a>
           </div>
-          
-      </div>
+        
 
-      
+        
 
-      <div class="site-footer">
-  <div class="slogan">复杂的世界里一个就足够了</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script>
+      hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-</script>
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
+    </script>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+            appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+        })
+    </script>
   </body>
 </html>
