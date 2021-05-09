@@ -1,96 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>B 站和 HDR | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="B 站和 HDR | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>B 站和 HDR | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620526992184">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="
-近几年，HDR 这个技术频频出现在手机厂商的发布会上。
-2018 年 iPhone X 发布成为苹果首款支持 HDR 的手机，此后每一款 iPhone HDR 都没有缺席。我刚去小米官网看了下，价格仅 999 元的 Redmi 10x 也..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620526992184" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              B 站和 HDR
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-09-28
-              </span>
-              <span>
-                11 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">B 站和 HDR</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-09-28</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/679b0013-c9c3-40b2-878d-beeb6065565c.png" alt="来源：Verge" loading="lazy"></figure>
+          </div>
+          <div class="post-content">
+            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/679b0013-c9c3-40b2-878d-beeb6065565c.png" alt="来源：Verge" loading="lazy"></figure>
 <p>近几年，HDR 这个技术频频出现在手机厂商的发布会上。</p>
 <p>2018 年 iPhone X 发布成为苹果首款支持 HDR 的手机，此后每一款 iPhone HDR 都没有缺席。我刚去小米官网看了下，价格仅 999 元的 Redmi 10x 也已经支持了蛮高规格的 HDR。</p>
 <p>虽然 HDR 已经成为近几年中高端手机的标配，但想要充分享受到 HDR 画质的视频，硬件、内容、网络条件缺一不可。 <!--more--></p>
@@ -232,93 +228,57 @@
 <p>4K 电视卖的越来约便宜，我们也是 4K 电视用户最多的国家，不到千元的电视都采用了 4K 面板，HDR 成为了中高端电视的标配。在移动端，千元机都用上了支持 HDR 的 OLED 屏幕，屏幕的刷新率也是蹭蹭的涨。5G 信号的覆盖也能为我们随时随地观看高画质视频提供网络支持。可这几年视频平台在内容和画质上的进步却很缓慢，远不能满足我们的需求。</p>
 <p>2018 年B站将最高码率提升到了 6Mbps，在去年开始灰度 4K，今年则全面开放了 4K 120fps，同时将最高码率也拉升到了 20 Mbps。B站在成为国内能提供最佳视频质量的平台只差 HDR 这关键的一步，在今天也已补上。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-hdr">什么是 HDR</a>
-<ul>
-<li><a href="#%E6%9B%B4%E6%9A%97%E4%B9%9F%E6%9B%B4%E4%BA%AE">更暗也更亮</a></li>
-<li><a href="#%E6%9B%B4%E4%B8%B0%E5%AF%8C%E8%89%B3%E4%B8%BD%E7%9A%84%E9%A2%9C%E8%89%B2">更丰富艳丽的颜色</a></li>
-<li><a href="#%E6%9B%B4%E8%87%AA%E7%84%B6%E7%9A%84%E7%94%BB%E9%9D%A2">更自然的画面</a></li>
-</ul>
-</li>
-<li><a href="#b%E7%AB%99%E7%9A%84%E7%94%BB%E8%B4%A8%E6%B0%B4%E5%B9%B3">B站的画质水平</a></li>
-<li><a href="#%E4%B8%BA%E4%BB%80b%E7%AB%99%E9%80%89%E6%8B%A9-hdr-10">为什B站选择 HDR 10</a></li>
-<li><a href="#hdr-%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%8C%91%E6%88%98">HDR 带来的挑战</a></li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/posts:appleOne/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/posts:appleOne/">
               <h3 class="post-title">
-                Apple 美区家庭组开车指南，开通 Apple One 教程
+                下一篇：Apple 美区家庭组开车指南，开通 Apple One 教程
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

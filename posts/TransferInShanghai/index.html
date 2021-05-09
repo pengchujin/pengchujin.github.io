@@ -1,95 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>上海转机 | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="上海转机 | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>上海转机 | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620526992184">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="四月的夜晚特别寒冷，外面还下着小雨，我站在航站楼的门口冷的直哆嗦。
-从青岛去桂林办事，回程因为疫情影响直飞的航班基本都被取消了，只好在上海转机。我之前也去过几次上海，大城市很时尚，也感觉特别陌生没归属感，周围的人节奏快的似乎一直在奔跑，而我..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620526992184" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              上海转机
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-05-25
-              </span>
-              <span>
-                7 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">上海转机</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-05-25</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>四月的夜晚特别寒冷，外面还下着小雨，我站在航站楼的门口冷的直哆嗦。<!--more--></p>
+          </div>
+          <div class="post-content">
+            <p>四月的夜晚特别寒冷，外面还下着小雨，我站在航站楼的门口冷的直哆嗦。<!--more--></p>
 <p>从青岛去桂林办事，回程因为疫情影响直飞的航班基本都被取消了，只好在上海转机。我之前也去过几次上海，大城市很时尚，也感觉特别陌生没归属感，周围的人节奏快的似乎一直在奔跑，而我完全不能融入其中。</p>
 <p>从桂林出发的前一晚有点失眠，突然想到自己买机票时忘了看到达上海是哪个机场，匆忙拿起手机检查自己的机票。“晚上11:00到达—上海浦东” “凌晨6点出发—上海虹桥” 这大晚上的还得从浦东赶到虹桥。便搜了下高德，浦东到虹桥晚上11点后还有守航线，价格比打底2、300元要便宜很多。</p>
 <p>到达浦东的时候外面已经开始下起雨了，下了飞机就匆忙上了摆渡车。摆渡车上人还是挺多的，没座位了，只好扶着立着的把手。站在我旁边的是以为中年妇女，大概四十多岁，看起来比较像进城务工的，带着白色的布口罩，不过看布料样式口罩像是自己做的，和车上大家带的似乎都不太一样。她刚上车就问我：“小伙子，这个车哪里给钱啊”，我就给她解释下了摆渡车不用给钱，然后出机场跟着人群走就行了。这时候我也才想到，在桂林机场我也碰见了她，在进机场的门口，她被检查“绿码”的人给拦住了，向工作人员解释了会才知道她没有手机(她不用手机)，然后就应该是登记身份证啥的了。除了这位妇女以外，车上其他人都挺年轻，穿着时尚，大多都拿着手机，带着耳机，等着摆渡车到港。</p>
@@ -104,76 +101,57 @@
 <p>比较惨的是所有门都是关的，虹桥根本进不去，因为疫情的关系，得到凌晨四五点才才开门。穿了两件衣服的我还是被这雨夜冻的直打哆嗦，旁边还是有几个的士司机的，告诫我这里不开门，也没地可去，带我去下一层需要30元不过下面门也是关的。我按着司机老婆的方法到旁边的星级酒店绕过去，结果当然还是不行的，星级酒店的钟点房实在是有点贵我有点接受不了。</p>
 <p>这时候一个穿着机场制服的人来套近乎，聊了几句，让我去机场合作的酒店住个钟点房。200元我同意了，呼机叫了个酒店的的士来接我。酒店比较偏僻，条件也不太好，中年阿姨领我进的房间，中间电梯还碰见个送外卖的小哥，她问了下最近挣得的多吗，小哥抱怨说少了很多，倒不是点餐的人少了，而是送外卖的人比以前多了好几倍，不过吓到我的还是她领我进房间打开灯和空调后问我要不要按摩。</p>
 
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/feixunN1/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/feixunN1/">
               <h3 class="post-title">
-                斐讯n1配置旁路由后无法访问网络
+                下一篇：斐讯n1配置旁路由后无法访问网络
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

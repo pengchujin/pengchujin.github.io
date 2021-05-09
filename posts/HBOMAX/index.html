@@ -1,95 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HBO max 换了皮的 HBO now | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="HBO max 换了皮的 HBO now | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>HBO max 换了皮的 HBO now | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620526992184">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="
-今天也就是5月27日，“万众期待”的流媒体 HBO max 也正式上线了。 如果你喜欢美剧你对 HBO 一定不会陌生，像去年的神作《切尔诺贝利》、烂尾的《权力的游戏》、《西部世界》、《硅谷》等，还有呼声最高的《老友记》你也都能在 HBO ..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620526992184" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              HBO max 换了皮的 HBO now
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-05-27
-              </span>
-              <span>
-                4 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">HBO max 换了皮的 HBO now</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-05-27</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200527194726.jpg" alt="" loading="lazy"></figure>
+          </div>
+          <div class="post-content">
+            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200527194726.jpg" alt="" loading="lazy"></figure>
 <p>今天也就是5月27日，“万众期待”的流媒体 HBO max 也正式上线了。<!--more--> 如果你喜欢美剧你对 HBO 一定不会陌生，像去年的神作《切尔诺贝利》、烂尾的《权力的游戏》、《西部世界》、《硅谷》等，还有呼声最高的《老友记》你也都能在 HBO max 观看到了。除了这些 HBO max 主打这几个系列：</p>
 <ul>
 <li>HBO</li>
@@ -142,89 +139,57 @@
 <figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/20200527214047.jpg" alt="" loading="lazy"></figure>
 <p>我个人对 HBO max 不太满意，看不到 HBO max 想改变的诚意。如果你想订阅 HBO，我推荐你选择香港区的 HBO Now E， 有中文字幕，付款也没那么多要求。HBO 用户体验实在是太差，虽然守着不少优秀的内容，但已经赶不上 Netflix 最近两年在量和质量都做了不少努力。HBO 更多是死守美区的版权，像《老友记》、吉卜力工作室 的内容 HBO 就抓住了美区的版权，而美区以外的广大世界都是 Netflix 的天地。特别是对于中国区用户，Netflix 或者 Prime Video 的友好程度都远超 HBO max。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E9%97%AE%E9%A2%98%E5%BE%88%E5%A4%9A-%E5%8A%9D%E9%80%80%E4%B8%AD%E5%9B%BD%E7%94%A8%E6%88%B7">问题很多 劝退中国用户</a></li>
-<li><a href="#%E5%A6%82%E4%BD%95%E8%AE%A2%E9%98%85">如何订阅</a>
-<ul>
-<li><a href="#%E9%9A%90%E8%97%8F%E7%BE%8A%E6%AF%9B%E7%A6%8F%E5%88%A9">隐藏羊毛福利</a></li>
-</ul>
-</li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/BrazilNetflix/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/BrazilNetflix/">
               <h3 class="post-title">
-                Netflix：下一站巴西🇧🇷
+                下一篇：Netflix：下一站巴西🇧🇷
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

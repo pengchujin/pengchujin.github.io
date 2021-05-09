@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://pengchujin.github.io</id>
+    <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-05-09T02:23:15.338Z</updated>
+    <updated>2021-05-09T02:41:44.139Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://pengchujin.github.io"/>
-    <link rel="self" href="https://pengchujin.github.io/atom.xml"/>
+    <link rel="alternate" href="https://qust.me"/>
+    <link rel="self" href="https://qust.me/atom.xml"/>
     <subtitle>复杂的世界里一个就足够了</subtitle>
-    <logo>https://pengchujin.github.io/images/avatar.png</logo>
-    <icon>https://pengchujin.github.io/favicon.ico</icon>
+    <logo>https://qust.me/images/avatar.png</logo>
+    <icon>https://qust.me/favicon.ico</icon>
     <rights>All rights reserved 2021, 酱紫表</rights>
     <entry>
         <title type="html"><![CDATA[OpenClash 使用教程]]></title>
-        <id>https://pengchujin.github.io/post/openClash/</id>
-        <link href="https://pengchujin.github.io/post/openClash/">
+        <id>https://qust.me/post/openClash/</id>
+        <link href="https://qust.me/post/openClash/">
         </link>
         <updated>2021-05-07T23:15:20.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg" alt="截屏2021-05-08 下午6.29.51" loading="lazy"></figure>
@@ -79,8 +79,8 @@ opkg install luci-app-openclash_0.42.05-beta_all.ipk
     </entry>
     <entry>
         <title type="html"><![CDATA[家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix]]></title>
-        <id>https://pengchujin.github.io/post/home-mesh/</id>
-        <link href="https://pengchujin.github.io/post/home-mesh/">
+        <id>https://qust.me/post/home-mesh/</id>
+        <link href="https://qust.me/post/home-mesh/">
         </link>
         <updated>2021-05-06T20:51:42.000Z</updated>
         <content type="html"><![CDATA[<img src="https://oss.qust.me/img/%E5%9B%BE%E5%83%8F5-7-21%20%E4%B8%8B%E5%8D%881.42.JPG" alt="图像5-7-21 下午1.42" style="zoom:150%;" />
@@ -149,8 +149,8 @@ opkg install luci-app-openclash_0.42.05-beta_all.ipk
     </entry>
     <entry>
         <title type="html"><![CDATA[AX3600 ShellClash 教程｜官方固件使用代理]]></title>
-        <id>https://pengchujin.github.io/post/ax3600_shellclash/</id>
-        <link href="https://pengchujin.github.io/post/ax3600_shellclash/">
+        <id>https://qust.me/post/ax3600_shellclash/</id>
+        <link href="https://qust.me/post/ax3600_shellclash/">
         </link>
         <updated>2021-05-04T23:32:18.000Z</updated>
         <content type="html"><![CDATA[<p>小米 AX3600 采用的是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，外加上双核主频高达 1.7GHz 的 NPU，这让这款路由器的跑「加密解密」类的代理性能特别特别的好。开启 SSH 和 安装 ShellClash 都不会影响固件正常的更新升级，也不会影响官方固件的功能， 如果你有这方面的需求会是非常棒的选择。<!--more--></p>
@@ -236,8 +236,8 @@ dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
     </entry>
     <entry>
         <title type="html"><![CDATA[红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷]]></title>
-        <id>https://pengchujin.github.io/post/redmi_ax6_openwrt/</id>
-        <link href="https://pengchujin.github.io/post/redmi_ax6_openwrt/">
+        <id>https://qust.me/post/redmi_ax6_openwrt/</id>
+        <link href="https://qust.me/post/redmi_ax6_openwrt/">
         </link>
         <updated>2021-05-03T02:55:43.000Z</updated>
         <content type="html"><![CDATA[<h1 id="红米-ax6-刷-openwrt-教程软路由杀手来了">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h1>
@@ -438,8 +438,8 @@ src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/1
     </entry>
     <entry>
         <title type="html"><![CDATA[Mac 电脑使用 ClashX Pro 作为网关旁路由]]></title>
-        <id>https://pengchujin.github.io/post/clashxProMac/</id>
-        <link href="https://pengchujin.github.io/post/clashxProMac/">
+        <id>https://qust.me/post/clashxProMac/</id>
+        <link href="https://qust.me/post/clashxProMac/">
         </link>
         <updated>2021-03-29T05:34:18.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -517,8 +517,8 @@ src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/1
     </entry>
     <entry>
         <title type="html"><![CDATA[Netflix 上最值得看的情色电影推荐]]></title>
-        <id>https://pengchujin.github.io/post/netflix18/</id>
-        <link href="https://pengchujin.github.io/post/netflix18/">
+        <id>https://qust.me/post/netflix18/</id>
+        <link href="https://qust.me/post/netflix18/">
         </link>
         <updated>2021-02-23T21:20:49.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20210224181612.jpg" alt="" loading="lazy"></figure>
@@ -601,8 +601,8 @@ src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/1
     </entry>
     <entry>
         <title type="html"><![CDATA[Surge 把你的 Mac 变成最强路由器]]></title>
-        <id>https://pengchujin.github.io/post/MacSurgeRouter/</id>
-        <link href="https://pengchujin.github.io/post/MacSurgeRouter/">
+        <id>https://qust.me/post/MacSurgeRouter/</id>
+        <link href="https://qust.me/post/MacSurgeRouter/">
         </link>
         <updated>2021-01-16T07:59:01.000Z</updated>
         <content type="html"><![CDATA[<p>最近一两年我用过很多路由器：斐讯 n1、NanoPi r2s、NanoPi r4s、华硕 ax86u 等等都是蛮热门的产品。但在我前俩天买了用了 Mac 的 Surge 当作家里的路由器后，方便和体验真的是回不去了。</p>
@@ -747,8 +747,8 @@ ca-p12 = MIIJtQIBAzCCCXwGCSqGSIb3DQ…..
     </entry>
     <entry>
         <title type="html"><![CDATA[使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅]]></title>
-        <id>https://pengchujin.github.io/post/PocketTube/</id>
-        <link href="https://pengchujin.github.io/post/PocketTube/">
+        <id>https://qust.me/post/PocketTube/</id>
+        <link href="https://qust.me/post/PocketTube/">
         </link>
         <updated>2020-12-21T04:33:22.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201221223701.webp" alt="" loading="lazy"></figure>
@@ -792,8 +792,8 @@ ca-p12 = MIIJtQIBAzCCCXwGCSqGSIb3DQ…..
     </entry>
     <entry>
         <title type="html"><![CDATA[NanoPi R4S 上手体验]]></title>
-        <id>https://pengchujin.github.io/post/NanoPiR4s/</id>
-        <link href="https://pengchujin.github.io/post/NanoPiR4s/">
+        <id>https://qust.me/post/NanoPiR4s/</id>
+        <link href="https://qust.me/post/NanoPiR4s/">
         </link>
         <updated>2020-12-20T03:21:35.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201220194933.png" alt="" loading="lazy"></figure>
@@ -931,8 +931,8 @@ ca-p12 = MIIJtQIBAzCCCXwGCSqGSIb3DQ…..
     </entry>
     <entry>
         <title type="html"><![CDATA[我买了台 Mac M1]]></title>
-        <id>https://pengchujin.github.io/post/mac2020/</id>
-        <link href="https://pengchujin.github.io/post/mac2020/">
+        <id>https://qust.me/post/mac2020/</id>
+        <link href="https://qust.me/post/mac2020/">
         </link>
         <updated>2020-11-24T09:42:11.000Z</updated>
         <content type="html"><![CDATA[<p>因为有做视频需求、需要一个轻便的 Mac 笔记本，就找上研究生的同学陪我一起去 Apple Store 买了台学生价的 Macbook Air M1（最基础的配置 8+256），价格还挺便宜的 7199。<!--more--></p>

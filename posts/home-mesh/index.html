@@ -1,98 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix | Gridea</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620500273373">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix | Gridea - Atom Feed" href="http://localhost:4000/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix | 酱紫表</title>
+<meta name="description" content="复杂的世界里一个就足够了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://pengchujin.github.io/favicon.ico?v=1620526992184">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://pengchujin.github.io/styles/main.css">
 
 
 
-    <meta name="description" content="
-上图是我家目前的搭配方案，下面我会和你慢慢解释让你理解学会，如何用小米、红米 AX 系列路由器就能组建稳定强大的无线网络，电视等设备观看 Netflix 秒加载 4k。
-弱电箱
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-一般最近十几年建的房子都会有「弱电箱」，你拉宽带附带的光猫..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620500273373" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://pengchujin.github.io">
+        <img class="avatar" src="https://pengchujin.github.io/images/avatar.png?v=1620526992184" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://pengchujin.github.io">
+        <h1 class="site-title">酱紫表</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-05-07
-              </span>
-              <span>
-                7 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-05-07</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <img src="https://oss.qust.me/img/%E5%9B%BE%E5%83%8F5-7-21%20%E4%B8%8B%E5%8D%881.42.JPG" alt="图像5-7-21 下午1.42" style="zoom:150%;" />
+          </div>
+          <div class="post-content">
+            <img src="https://oss.qust.me/img/%E5%9B%BE%E5%83%8F5-7-21%20%E4%B8%8B%E5%8D%881.42.JPG" alt="图像5-7-21 下午1.42" style="zoom:150%;" />
 <p>上图是我家目前的搭配方案，下面我会和你慢慢解释让你理解学会，如何用小米、红米 AX 系列路由器就能组建稳定强大的无线网络，电视等设备观看 Netflix 秒加载 4k。<!--more--></p>
 <h2 id="弱电箱">弱电箱</h2>
 <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/IMG_1822.JPG" alt="IMG_1822" loading="lazy"></figure>
@@ -155,99 +149,57 @@
 <p>我是真的退休了 Mac mini + Surge 接管网络方案，小米的 AP Mesh 性价比极高，又能实现非常棒的全家 Netflix 效果，真心推荐。</p>
 <p>我个人认为我的这套方案稳定性、可拓展性、和性价比都不错，也只用一台设备安装 ShellClash。你想部分局域网能 2.5G 连接 Nas ，替换或者添加 AX6000 AX9000 AP Mesh 即可。想更便宜也可以选择性价比更高的红米 AX5 做覆盖。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%BC%B1%E7%94%B5%E7%AE%B1">弱电箱</a>
-<ul>
-<li><a href="#%E7%AE%80%E4%BB%8B%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%89%E7%8C%AB">简介下什么是光猫</a></li>
-<li><a href="#%E5%BC%B1%E7%94%B5%E7%AE%B1%E9%87%8C%E9%80%89%E6%8B%A9%E4%BB%80%E4%B9%88%E8%B7%AF%E7%94%B1%E5%99%A8">弱电箱里选择什么路由器</a></li>
-</ul>
-</li>
-<li><a href="#mesh-%E8%B7%AF%E7%94%B1%E5%99%A8">Mesh 路由器</a></li>
-<li><a href="#%E5%B0%8F%E7%B1%B3-mesh-%E4%BD%BF%E7%94%A8-shellclash-%E5%85%A8%E5%AE%B6%E5%BC%80%E5%BF%83-netflix">小米 Mesh 使用 ShellClash 全家开心 Netflix</a>
-<ul>
-<li><a href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%AE%89%E8%A3%85-shellclash">如果你是主路由安装 ShellClash</a></li>
-<li><a href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF-mesh-%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85-shellclash%E6%8E%A8%E8%8D%90%E7%BD%91%E7%BA%BF%E8%BF%9E%E6%8E%A5">如果你是 Mesh 节点安装 ShellClash（推荐网线连接）</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%81%E8%AE%B8-lan-%E8%BD%AC%E5%8F%91">修改防火墙允许 lan 转发</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E8%B7%AF%E7%94%B1%E7%9A%84-dhcp%E8%AE%A9%E5%AE%89%E8%A3%85%E4%BA%86-shellclash-%E7%9A%84%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A5%E7%AE%A1">配置主路由的 DHCP，让安装了 ShellClash 的路由器接管。</a></li>
-</ul>
-</li>
-<li><a href="#clash-web-%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF">Clash  Web 控制面板</a></li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/ax3600_shellclash/">
+            <a class="purple-link" href="https://pengchujin.github.io/post/ax3600_shellclash/">
               <h3 class="post-title">
-                AX3600 ShellClash 教程｜官方固件使用代理
+                下一篇：AX3600 ShellClash 教程｜官方固件使用代理
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">复杂的世界里一个就足够了</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://pengchujin.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>
