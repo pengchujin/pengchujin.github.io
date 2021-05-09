@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-05-09T04:41:50.173Z</updated>
+    <updated>2021-05-09T04:45:06.639Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -247,11 +247,9 @@ dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
         <link href="https://qust.me/post/redmi_ax6_openwrt/">
         </link>
         <updated>2021-05-03T02:55:43.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="红米-ax6-刷-openwrt-教程软路由杀手来了">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h1>
-<p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。</p>
+        <summary type="html"><![CDATA[<p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<h1 id="红米-ax6-刷-openwrt-教程软路由杀手来了">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h1>
-<p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。</p>
+        <content type="html"><![CDATA[<p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。</p>
 <!--more-->
 <p>该教程主要参考：</p>
 <p><a href="https://www.right.com.cn/forum/space-uid-191571.html">li4621180</a>：https://www.right.com.cn/forum/thread-4111331-1-1.html</p>
