@@ -1,101 +1,95 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>如何使用代理，伪装到全球各国 | 酱紫表</title>
-<meta name="description" content="复杂的世界里一个就足够了">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620528650408">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620529957271">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="如何使用代理，伪装到全球各国 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-168348943-1');
-</script>
-
-
+    <meta name="description" content="
+无论是注册 Netflix、Spotify、或是 Tidal音乐 等等，我们常常需要使用不同国家的网络IP来注册，或临时使用。即使我们订阅了一些梯子服务商，他们所提供的国家代理也常常不能满足需求。很多国家的 VPS 很难注册，或收费较高。..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://qust.me">
-        <img class="avatar" src="https://qust.me/images/avatar.png?v=1620528650408" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://qust.me">
-        <h1 class="site-title">酱紫表</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620529957271" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
         <div class="post-detail">
-          
-          <h2 class="post-title">如何使用代理，伪装到全球各国</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-09-18</span>
+          <article class="post">
+            <h2 class="post-title">
+              如何使用代理，伪装到全球各国
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-09-18
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200918104212.png" alt="" loading="lazy"></figure>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200918104212.png" alt="" loading="lazy"></figure>
 <p>无论是注册 Netflix、Spotify、或是 Tidal音乐 等等，我们常常需要使用不同国家的网络IP来注册，或临时使用。即使我们订阅了一些梯子服务商，他们所提供的国家代理也常常不能满足需求。很多国家的 VPS 很难注册，或收费较高。这里我介绍下我的使用方式，免费、也相对简单、希望对你有所帮助。<!--more--></p>
 <h2 id="下载安装-firefox-浏览器">下载安装 Firefox 浏览器</h2>
 <ul>
@@ -127,57 +121,93 @@
 <h2 id="一些问题">一些问题</h2>
 <p>不是每一个代理都比较快好用的，如果有问题可以尝试多换几个。浏览器有缓存的情况，你可以尝试打开隐私窗口，也是可以用的。</p>
 
-          </div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-firefox-%E6%B5%8F%E8%A7%88%E5%99%A8">下载安装 Firefox 浏览器</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E4%BD%BF%E7%94%A8%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86">获取使用免费代理</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">一些问题</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://qust.me/post/ctm-1888/">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/ctm-1888/">
               <h3 class="post-title">
-                下一篇：澳门电信学生卡套餐，划算的无墙漫游流量
+                澳门电信学生卡套餐，划算的无墙漫游流量
               </h3>
             </a>
           </div>
-          
-      </div>
+        
 
-      
+        
 
-      <div class="site-footer">
-  <div class="slogan">复杂的世界里一个就足够了</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qust.me/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script>
+      hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-</script>
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
+    </script>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+            appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+        })
+    </script>
   </body>
 </html>

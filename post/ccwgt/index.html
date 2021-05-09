@@ -1,101 +1,95 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chromecast with Google TV 上手体验 | 酱紫表</title>
-<meta name="description" content="复杂的世界里一个就足够了">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620528650408">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620529957271">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Chromecast with Google TV 上手体验 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-168348943-1');
-</script>
-
-
+    <meta name="description" content="
+今年各家在电视盒子方面都没什么动作：苹果仍旧是 2017 年发布的 Apple TV 4k；小米和 Amazon 都是在今年只更新了 1080p 的产品 Mi TV Stick 和 Fire TV 的 1080p 带语音控制版本。说起 G..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://qust.me">
-        <img class="avatar" src="https://qust.me/images/avatar.png?v=1620528650408" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://qust.me">
-        <h1 class="site-title">酱紫表</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620529957271" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
         <div class="post-detail">
-          
-          <h2 class="post-title">Chromecast with Google TV 上手体验</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-11-01</span>
+          <article class="post">
+            <h2 class="post-title">
+              Chromecast with Google TV 上手体验
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-11-01
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/chromecast-with-google-tv-header-scaled.jpg" alt="" loading="lazy"></figure>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/chromecast-with-google-tv-header-scaled.jpg" alt="" loading="lazy"></figure>
 <p>今年各家在电视盒子方面都没什么动作：苹果仍旧是 2017 年发布的 Apple TV 4k；小米和 Amazon 都是在今年只更新了 1080p 的产品 Mi TV Stick 和 Fire TV 的 1080p 带语音控制版本。说起 Google 家的电视盒子上次还是 2014 年的 Nexus Player，时隔六年后 Google 终于更新了自家的电视盒子产品并且改名为：Chromecast with Google TV，支持 4k 60Hz 、Dolby Vision 和 Dolby Atmos 定价也还不错 50 刀。在官网下单反复被砍的情况，我最终选择了淘宝代购的现货，用了两天后今天分享下我的使用体验。</p>
 <!--more-->
 <h2 id="出色的硬件配置">出色的硬件配置</h2>
@@ -146,57 +140,94 @@
 <h2 id="值不值得买">值不值得买</h2>
 <p>如果你平时使用更多的是 Google 系的产品，那么这款 Google Chromcast with Google TV 无疑很适合你。单论产品性价比来说它没现在打折卖 30 刀的 Fire TV 4k 划算。Google Chromcast with Google TV 有支持中文、USB C、Google 账户等优势，但 Fire TV 已经支持了 Apple TV 兼容和系统稳定性更占优势打折，售价也更便宜。如果未来 Google 能更新下系统修正这些问题，我才会真正推荐大家选购 Google Chromcast with Google TV 这款产品。</p>
 
-          </div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%BA%E8%89%B2%E7%9A%84%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE">出色的硬件配置</a></li>
+<li><a href="#%E5%85%A8%E6%96%B0%E7%9A%84-google-tv-%E7%B3%BB%E7%BB%9F">全新的 Google TV 系统</a></li>
+<li><a href="#%E5%AE%9E%E9%99%85%E4%BD%93%E9%AA%8C">实际体验</a></li>
+<li><a href="#%E5%80%BC%E4%B8%8D%E5%80%BC%E5%BE%97%E4%B9%B0">值不值得买</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://qust.me/post/onelist/">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/onelist/">
               <h3 class="post-title">
-                下一篇：拿 OneDrive 做共享云，方便速度还贼快
+                拿 OneDrive 做共享云，方便速度还贼快
               </h3>
             </a>
           </div>
-          
-      </div>
+        
 
-      
+        
 
-      <div class="site-footer">
-  <div class="slogan">复杂的世界里一个就足够了</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qust.me/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script>
+      hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-</script>
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
+    </script>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+            appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+        })
+    </script>
   </body>
 </html>

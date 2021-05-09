@@ -1,272 +1,58 @@
-
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>酱紫表</title>
-<meta name="description" content="复杂的世界里一个就足够了">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620528650408">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620529957271">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-168348943-1');
-</script>
-
-
+    <meta name="description" content="复杂的世界里一个就足够了" />
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://qust.me">
-        <img class="avatar" src="https://qust.me/images/avatar.png?v=1620528650408" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://qust.me">
-        <h1 class="site-title">酱紫表</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620529957271" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/openClash/">
-        <h2 class="post-title">OpenClash 使用教程</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-05-08</span>
-        
-      </div>
-    </div>
-    
-      <a href="https://qust.me/post/openClash/">
-        <div class="feature-container" style="background-image: url('https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/home-mesh/">
-        <h2 class="post-title">家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-05-07</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/ax3600_shellclash/">
-        <h2 class="post-title">AX3600 ShellClash 教程｜官方固件使用代理</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-05-05</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/redmi_ax6_openwrt/">
-        <h2 class="post-title">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-05-03</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/clashxProMac/">
-        <h2 class="post-title">Mac 电脑使用 ClashX Pro 作为网关旁路由</h2>
-      </a>
-      <div class="post-abstract">
-        <h2 id="前言">前言</h2>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-03-29</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/netflix18/">
-        <h2 class="post-title">Netflix 上最值得看的情色电影推荐</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-02-24</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/MacSurgeRouter/">
-        <h2 class="post-title">Surge 把你的 Mac 变成最强路由器</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-01-16</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/PocketTube/">
-        <h2 class="post-title">使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-12-21</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/NanoPiR4s/">
-        <h2 class="post-title">NanoPi R4S 上手体验</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-12-20</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://qust.me/post/mac2020/">
-        <h2 class="post-title">我买了台 Mac M1</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-11-24</span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-    <a href="https://qust.me/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">复杂的世界里一个就足够了</div>
   <div class="social-container">
     
       
@@ -280,26 +66,224 @@
       
     
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qust.me/atom.xml" target="_blank">RSS</a>
 </div>
 
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://qust.me/post/openClash/">
+        <h2 class="post-title">OpenClash 使用教程</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-05-08
+        </span>
+        <span>
+          4 min read
+        </span>
+        
+      </div>
+      
+        <a href="https://qust.me/post/openClash/" class="post-feature-image" style="background-image: url('https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/home-mesh/">
+        <h2 class="post-title">家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-05-07
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/ax3600_shellclash/">
+        <h2 class="post-title">AX3600 ShellClash 教程｜官方固件使用代理</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-05-05
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/redmi_ax6_openwrt/">
+        <h2 class="post-title">红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-05-03
+        </span>
+        <span>
+          10 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/clashxProMac/">
+        <h2 class="post-title">Mac 电脑使用 ClashX Pro 作为网关旁路由</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-03-29
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        <h2 id="前言">前言</h2>
 
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/netflix18/">
+        <h2 class="post-title">Netflix 上最值得看的情色电影推荐</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-02-24
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/MacSurgeRouter/">
+        <h2 class="post-title">Surge 把你的 Mac 变成最强路由器</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-01-16
+        </span>
+        <span>
+          6 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/PocketTube/">
+        <h2 class="post-title">使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-12-21
+        </span>
+        <span>
+          4 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/NanoPiR4s/">
+        <h2 class="post-title">NanoPi R4S 上手体验</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-12-20
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://qust.me/post/mac2020/">
+        <h2 class="post-title">我买了台 Mac M1</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-11-24
+        </span>
+        <span>
+          2 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+</div>
+
+    
+        <div class="pagination-container">
+  
+  
+    <a href="https://qust.me/page/2" class="next-page">下一页</a>
+  
+</div>
+
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
     </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-
   </body>
 </html>
