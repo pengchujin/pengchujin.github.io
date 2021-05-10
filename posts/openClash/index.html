@@ -3,12 +3,22 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>OpenClash 使用教程 | 酱紫表</title>
-<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620532527963">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1620617792557">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://qust.me/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="OpenClash 使用教程 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="OpenClash 使用教程 | 酱紫表 - Atom Feed" href="http://localhost:4000/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
 
 
     <meta name="description" content="OpenClash 是一个可运行在 OpenWrt 上的 Clash 客户端，一般来说你的路由器的第三方固件会附带，当然也可以自行安装。相比于传统的 SS、SSR 或者 PassWall 这些客户端来说，OpenClash 使用 Clash..." />
@@ -20,8 +30,8 @@
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="https://qust.me">
-  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620532527963" alt="">
+  <a href="http://localhost:4000">
+  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1620617792557" alt="">
   </a>
   <h1 class="site-title">
     酱紫表
@@ -59,9 +69,21 @@
   <div class="social-container">
     
       
-    
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
       
     
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
       
     
       
@@ -179,7 +201,7 @@ opkg install luci-app-openclash_0.42.05-beta_all.ipk
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://qust.me/post/home-mesh/">
+            <a href="http://localhost:4000/post/home-mesh/">
               <h3 class="post-title">
                 家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix
               </h3>
@@ -187,11 +209,20 @@ opkg install luci-app-openclash_0.42.05-beta_all.ipk
           </div>
         
 
-        
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
     <i class="ri-rss-line"></i> RSS
   </a>
 </div>
@@ -238,14 +269,6 @@ opkg install luci-app-openclash_0.42.05-beta_all.ipk
         });
       });
 
-    </script>
-    <div id="vcomments"></div>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
-            appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
-        })
     </script>
   </body>
 </html>
