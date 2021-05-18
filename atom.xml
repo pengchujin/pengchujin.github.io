@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-05-18T06:35:23.167Z</updated>
+    <updated>2021-05-18T07:02:40.615Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -150,8 +150,8 @@ src/gz openwrt_routing http://downloads.openwrt.org/snapshots/packages/aarch64_c
 <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%886.04.55.jpg" alt="截屏2021-05-09 下午6.04.55" loading="lazy"></figure>
 <p>使用这里提供的降级固件，在后台常用设置-系统状态里-手动选择下载好的固件，降级后再解锁 SSH。降级后第一次进入后台配置的时候请选择不自动更新，或者手机小米Wi-Fi App 里关闭系统更新。（目前的系统虽然不是最新的也能够 Mesh 不影响使用，等等吧第三方的 openwrt 已经在路上了）</p>
 <ul>
-<li><a href="https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/rm1800/miwifi_rm1800_firmware_df7e3_1.0.385.bin">小米 AX1800 1.0.385 下载</a></li>
-<li><a href="https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra67/miwifi_ra67_firmware_cca10_1.0.44.bin">红米 AX5 1.0.44 下载</a></li>
+<li><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/rm1800/miwifi_rm1800_firmware_fafda_1.0.336.bin">小米 AX1800 1.0.336 下载</a></li>
+<li><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra67/miwifi_ra67_all_f3fac_1.0.26.bin">红米 AX5 1.0.26 下载</a></li>
 </ul>
 <h2 id="获取-ssh-权限">获取 SSH 权限</h2>
 <h3 id="获取后台-stok">获取后台 STOK</h3>
