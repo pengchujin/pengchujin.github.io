@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-05-19T04:42:02.865Z</updated>
+    <updated>2021-05-24T04:35:14.935Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -404,7 +404,7 @@ dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
 </code></pre>
 <p>这会设置永久的 ssh、telnet、uart 权限，也会计算出<strong>默认的密码，记得保存</strong></p>
 <p>备注：如果升级后丢失 SSH 权限，你也可以 telnet 连接上 AX3600 后执行，即可恢复 SSH。</p>
-<p>telnet 192.168.31.1 （用户名是 root，秘密是刚才得出的密码）</p>
+<p>telnet 192.168.31.1 （用户名是 root，密码是刚才得出的密码）</p>
 <p>如果你的电脑提示没有 telnet，<strong><a href="https://help.aliyun.com/document_detail/40796.html">Windows 打开 telnet 教程</a></strong>，Mac 则是先安装 brew 再通过 brew 安装 telnet。</p>
 <pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
 /etc/init.d/dropbear start
@@ -428,7 +428,7 @@ dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
 <figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
 <p>再按 1 选择立即开启 Clash  的服务即可。</p>
 <figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
-<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<p>启动后你可以通过 http://192.168.31.1:9999/ui，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
 <figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
 <p>这个时候应该就能科学上网了速度也应该不错。</p>
 <h3 id="电视-netflix-看不了">电视 Netflix 看不了？</h3>
