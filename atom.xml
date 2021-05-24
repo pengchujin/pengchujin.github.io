@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-05-24T04:35:14.935Z</updated>
+    <updated>2021-05-24T04:41:45.278Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -110,7 +110,7 @@ scp fuckax3000 root@192.168.31.1:/etc/fuckax3000
 <figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
 <p>再按 1 选择立即开启 Clash  的服务即可。</p>
 <figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
-<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<p>启动后你可以通过 http://192.168.31.1:9999/ui，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
 <figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
 <p>这个时候应该就能科学上网了速度也应该不错。</p>
 <h2 id="后记">后记</h2>
@@ -193,7 +193,7 @@ src/gz openwrt_routing http://downloads.openwrt.org/snapshots/packages/aarch64_c
 <figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
 <p>再按 1 选择立即开启 Clash  的服务即可。</p>
 <figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
-<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<p>启动后你可以通过 http://192.168.31.1:9999/ui，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
 <figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
 <p>这个时候应该就能科学上网了速度也应该还可以。</p>
 <figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%885.21.05.jpg" alt="截屏2021-05-09 下午5.21.05" loading="lazy"></figure>
