@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-05T14:18:54.703Z</updated>
+    <updated>2021-06-05T14:20:23.199Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://qust.me/favicon.ico</icon>
     <rights>All rights reserved 2021, 酱紫表</rights>
     <entry>
-        <title type="html"><![CDATA[ 如何在中国使用过 Netflix｜Netflix 入门指南]]></title>
+        <title type="html"><![CDATA[ 如何在中国使用过 Netflix｜Netflix 入门指南🧭]]></title>
         <id>https://qust.me/post/netflix2021/</id>
         <link href="https://qust.me/post/netflix2021/">
         </link>
