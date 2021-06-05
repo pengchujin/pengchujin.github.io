@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-05T14:51:05.963Z</updated>
+    <updated>2021-06-05T15:54:17.088Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -73,7 +73,7 @@
 <p>在所有设备上 Netflix 都是不能调整在线播放的画质的，Netflix 会根据你的网络速度来给你提供你能流畅观看的最高画质，所以不要抱怨 Netflix 的画质很糊，你应该考虑你的网络代理速度是不是足够快。</p>
 <figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/photo-1619462729239-ca28ab216892.jpeg" alt="" loading="lazy"></figure>
 <h3 id="iphone-ipad-等-ios-设备">iPhone iPad 等 iOS 设备</h3>
-<p>在国内的 App Store 你是搜索不到 Netflix 的，你需要注册一个非国区的 Apple ID 登录 App Store 才难下载这个 App。🤌<a href="https://www.lizhi.io/blog/78586045">荔枝数码教程</a></p>
+<p>在国内的 App Store 你是搜索不到 Netflix 的，你需要注册一个非国区的 Apple ID 登录 App Store 才能下载这个 App。🤌<a href="https://www.lizhi.io/blog/78586045">荔枝数码教程</a></p>
 <p>在手机上打开代理，打开 Netflix App 登录账户就能正常观看了。在 iPhone 8 以及更新的 iPhone 上你都能享受 HD 1080p 高清和 Dolby Vision 杜比视界的 HDR。如果你用的是 iPad Pro，使用 Safari 浏览器你甚至能播放 4K 超高清的内容（App 目前仍然限制 1080p）。</p>
 <h3 id="android-手机平板">Android 手机平板</h3>
 <p>很多 Android 手机即使是在 Google Play 上也是搜不到 Netflix App，这是因为你的设备并没有通过 Google 的认证。不过没关系，Netflix 并不依赖 Google 框架，你可以直接在 <a href="https://m.apkpure.com/cn/netflix/com.netflix.mediaclient">APKPure 下载</a> Netflix 安装即可。</p>
