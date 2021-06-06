@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-06T11:20:52.644Z</updated>
+    <updated>2021-06-06T12:40:12.819Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -100,7 +100,7 @@
 <li>你家路由器的型号 + openwrt</li>
 </ol>
 <h4 id="电视-电视盒子客户端">电视、电视盒子客户端</h4>
-<p>绝大部分电视或者你家的电视盒子是安装不了 Netflix 客户端的，只有认证的过才可以。Sony 最近几年出的电视可以直接下载 <a href="https://m.apkpure.com/netflix/com.netflix.mediaclient">Netflix App</a> 安装到电视使用，使用 LG、三星的电视可以参看<a href="https://sspai.com/post/59549">Bohao 的换区教程</a>后安装使用 Netflix。</p>
+<p>绝大部分电视或者你家的电视盒子是安装不了 Netflix 客户端的，只有认证的过才可以。Sony 最近几年出的电视可以直接下载 <a href="https://m.apkpure.com/netflix/com.netflix.ninja">Netflix App</a> 安装到电视使用，使用 LG、三星的电视可以参看<a href="https://sspai.com/post/59549">Bohao 的换区教程</a>后安装使用 Netflix。</p>
 <p>如果你的电视本身不支持 Netflix，你也可以通过购买有 Netflix 的电视盒子，这里推荐几个，性价比都很高都支持 4K HDR。</p>
 <ol>
 <li>Amazon FireTV Stick 4k（又称作火棒，淘宝售价 300+）</li>
