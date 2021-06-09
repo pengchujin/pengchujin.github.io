@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-09T06:22:20.271Z</updated>
+    <updated>2021-06-09T06:34:37.391Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -83,7 +83,7 @@
 <p>HBO、Disney+ 等一众流媒体你基本都没法使用，因为 IP 基本都会被判别为代理。</p>
 <h2 id="总结">总结🪢</h2>
 <figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.55.26.jpg" alt="" loading="lazy"></figure>
-<p>不实用 Private Relay 专用转接代理｜示意</p>
+<p>不使用 Private Relay 专用转接代理｜示意</p>
 <figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.54.38.jpg" alt="" loading="lazy"></figure>
 <p>打开 Private Relay 专用转接代理｜示意</p>
 <p>Private Relay 专用转接代理目的是保护用户的隐私，保护用户的隐私不被中间人监控查看，保护用户的隐私不被网站或者任何服务收集。它确实是 VPN 在理念上和实现上比绝大多 VPN 和你用的代理都高级，在加密和对隐私的保护上做到里极致。</p>
