@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-09T06:13:31.957Z</updated>
+    <updated>2021-06-09T06:16:38.740Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -35,6 +35,30 @@
 <p>检测原理：苹果会定时大概 10 分钟左右访问一次 Apple 那边的接口，如果你的 IP 在中国大陆等都不会开启 Private Relay 专用转接代理，如果访问 Apple 接口的 <strong>IP 是非中国大陆则默认开启 Private Relay</strong> 专用转接代理。</p>
 <figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%8812.45.25.jpg" alt="" loading="lazy"></figure>
 <p>那么操作则很简单很简单，你在路由器后台仅仅让<strong>🍎苹果的服务 走代理</strong>即可，其它服务都可以直连。（上图是 路由器 + OpenClash，如果你的 Clash 没有这些规则你可以参看 <a href="https://merlinblog.xyz/wiki/api.html">Sabrina的教程</a>）</p>
+<p>如果你使用的是其它软件，你可以参看下 Apple 这部分的规则。</p>
+<pre><code>    - 'DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple.co,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple.com.cn,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple-cloudkit.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,appstore.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,cdn-apple.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,icloud.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,icloud.com.cn,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,icloud-content.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,me.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务'
+    - 'DOMAIN-KEYWORD,apple.com.akadns.net,🍎 苹果服务'
+    - 'DOMAIN-KEYWORD,icloud.com.akadns.net,🍎 苹果服务'
+    - 'IP-CIDR,17.0.0.0/8,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,63.92.224.0/19,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,65.199.22.0/23,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,139.178.128.0/18,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,144.178.0.0/19,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,192.35.50.0/24,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,198.183.17.0/24,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve'
+</code></pre>
 <figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_2474.JPEG" alt="" loading="lazy"></figure>
 <p>打开设置 - 你的账户 - iCloud - 专用转接代理，打开以后你的 Safari 浏览器理论上就能访问任意网站，并且流量都是走的苹果提供的服务器。</p>
 <figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/IMG_2481.JPEG" alt="" loading="lazy"></figure>
