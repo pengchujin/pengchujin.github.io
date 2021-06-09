@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-07T02:41:24.283Z</updated>
+    <updated>2021-06-09T06:13:31.957Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -10,6 +10,65 @@
     <logo>https://qust.me/images/avatar.png</logo>
     <icon>https://qust.me/favicon.ico</icon>
     <rights>All rights reserved 2021, 酱紫表</rights>
+    <entry>
+        <title type="html"><![CDATA[如何在中国开启 iCloud Private Relay｜苹果家的 VPN 使用体验]]></title>
+        <id>https://qust.me/post/PrivateRelay/</id>
+        <link href="https://qust.me/post/PrivateRelay/">
+        </link>
+        <updated>2021-06-09T02:58:02.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>这篇文章将教你如何在中国开启 「Private Relay」体验下苹果的 VPN 是如何保护我们在上网隐私的。</strong></p>
+<p>在刚刚过去的 WWDC 2021 上苹果给自己的核心业务 iCloud 增加了  iCloud+ 的服务，主要包含了 「Private Relay 专用转接代理」和 「Private Email 隐藏邮件地址」，你可以理解为苹果提供的 VPN 和 苹果的临时邮箱服务。在 macOS 12 和 iOS 15 上 Private Relay 都是默认打开的，不过在中国大陆、白俄罗斯、哥伦比亚、埃及、哈萨克斯坦、沙特阿拉伯、南非、土库曼斯坦、乌干达和菲律宾这些国家都无法使用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>这篇文章将教你如何在中国开启 「Private Relay」体验下苹果的 VPN 是如何保护我们在上网隐私的。</strong></p>
+<p>在刚刚过去的 WWDC 2021 上苹果给自己的核心业务 iCloud 增加了  iCloud+ 的服务，主要包含了 「Private Relay 专用转接代理」和 「Private Email 隐藏邮件地址」，你可以理解为苹果提供的 VPN 和 苹果的临时邮箱服务。在 macOS 12 和 iOS 15 上 Private Relay 都是默认打开的，不过在中国大陆、白俄罗斯、哥伦比亚、埃及、哈萨克斯坦、沙特阿拉伯、南非、土库曼斯坦、乌干达和菲律宾这些国家都无法使用。</p>
+<!--more-->
+<h2 id="什么是-private-relay-专用转接代理">什么是 Private Relay 专用转接代理❓</h2>
+<p>简单来说就是苹果和 CloudFlare 合作提供的系统级 VPN，不过只能在 Safari 浏览器里使用。</p>
+<h2 id="准备工作">准备工作📖</h2>
+<ul>
+<li>升级了 iOS 15 或者 macOS 12 （<a href="https://ibeta.me">尝鲜派教程</a> 测试系统谨慎升级，备份好数据）</li>
+<li>一个非「中国大陆、白俄罗斯、哥伦比亚、埃及、哈萨克斯坦、沙特阿拉伯、南非、土库曼斯坦、乌干达和菲律宾」的 Apple ID （<a href="https://www.lizhi.io/blog/78586045">荔枝数码美区 Apple ID 注册教程</a>）</li>
+<li>订阅了 iCloud 存储空间（淘宝可以购买充值卡订阅；你也可以弄一个美区虚拟信用卡 <a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiF0LLV2onxAhVI7GEKHUjECSMQFjAAegQICBAD&amp;url=https%3A%2F%2Fwww.vpsdawanjia.com%2Ftag%2Feasypay%25E8%2599%259A%25E6%258B%259F%25E5%258D%25A1&amp;usg=AOvVaw0pT6mwV9jO9veG4upJ3-rj">VPS大玩家教程</a>；或者注册美国区 PayPal 绑定国内外币卡）</li>
+<li>一台能设置代理的路由器（最好使用 Clash，似乎有些闭环了）</li>
+</ul>
+<h2 id="如何开启-private-relay-专用转接代理">如何开启 Private Relay 专用转接代理🤌</h2>
+<p>检测原理：苹果会定时大概 10 分钟左右访问一次 Apple 那边的接口，如果你的 IP 在中国大陆等都不会开启 Private Relay 专用转接代理，如果访问 Apple 接口的 <strong>IP 是非中国大陆则默认开启 Private Relay</strong> 专用转接代理。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%8812.45.25.jpg" alt="" loading="lazy"></figure>
+<p>那么操作则很简单很简单，你在路由器后台仅仅让<strong>🍎苹果的服务 走代理</strong>即可，其它服务都可以直连。（上图是 路由器 + OpenClash，如果你的 Clash 没有这些规则你可以参看 <a href="https://merlinblog.xyz/wiki/api.html">Sabrina的教程</a>）</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_2474.JPEG" alt="" loading="lazy"></figure>
+<p>打开设置 - 你的账户 - iCloud - 专用转接代理，打开以后你的 Safari 浏览器理论上就能访问任意网站，并且流量都是走的苹果提供的服务器。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/IMG_2481.JPEG" alt="" loading="lazy"></figure>
+<p>如果有“专用转接代理在您所在地区不可”的提示，只是因为你访问 Apple 服务的 IP 是中国大陆。👇下面提示国家只是拿了通用设置 - 语言地区的国家，和这个设置没有关系，<strong>仅仅是因为你访问 Apple 服务的 IP 是中国大陆</strong>。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.14.29.jpg" alt="" loading="lazy"></figure>
+<p>在 Mac 上也是相同。Private Relay 专用转接代理这里其实有两个选项</p>
+<p>保留大概位置：你代理使用 IP 库基本都在你 IP 的国家</p>
+<p>使用更广泛位置：你代理使用 IP 全球乱飘</p>
+<h2 id="使用体验">使用体验🌍</h2>
+<p>因为只能在 Safari 浏览器里使用，所以一下所有测试都是使用的 Safari 外加打开了专用转接代理。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8A%E5%8D%8810.01.16.jpg" alt="" loading="lazy"></figure>
+<p>fast.com 测速，我家是联通 500M 的带宽，然后打开专用转接代理 Safari 浏览器跑的测速。（这个测速并没走我自己的梯子，这点确认过）</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.23.47.jpg" alt="截屏2021-06-09 下午1.23.47" loading="lazy"></figure>
+<p>speedtest 速度测试</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.33.59.jpg" alt="" loading="lazy"></figure>
+<p>YouTube 8K 视频测速</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.47.48.jpg" alt="" loading="lazy"></figure>
+<p>Netflix 测试，不过经常会播放不了，因为 IP 一直在变。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.49.27.jpg" alt="" loading="lazy"></figure>
+<p>从 <a href="http://ip111.cn">ip111.cn</a> 可以看出，专用转接代理甚至每一次请求的 IP 都改变。如果网站想通过 IP 来搜集访问者的信息也很难实现。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.52.04.jpg" alt="" loading="lazy"></figure>
+<p>HBO、Disney+ 等一众流媒体你基本都没法使用，因为 IP 基本都会被判别为代理。</p>
+<h2 id="总结">总结🪢</h2>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.55.26.jpg" alt="" loading="lazy"></figure>
+<p>不实用 Private Relay 专用转接代理｜示意</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.54.38.jpg" alt="" loading="lazy"></figure>
+<p>打开 Private Relay 专用转接代理｜示意</p>
+<p>Private Relay 专用转接代理目的是保护用户的隐私，保护用户的隐私不被中间人监控查看，保护用户的隐私不被网站或者任何服务收集。它确实是 VPN 在理念上和实现上比绝大多 VPN 和你用的代理都高级，在加密和对隐私的保护上做到里极致。</p>
+<p>当然缺点也很多，目前因为 IP 跳的太快和没规律很多流媒体你无法观看会被判为代理，Google 搜索时也会有需要验证的情况，日后我觉得会这部分会改善。在中国大陆打开这个功能有点麻烦，还会定时检测，主要有点闭环，很多人只是想打开被屏蔽的内容这么做有点南辕北辙的意味。</p>
+<p>题图来自 The Verge</p>
+<p>推荐拓展阅读：</p>
+<p><a href="https://developer.apple.com/videos/play/wwdc2021/10096/">Apple 官方 Private Relay 视频介绍</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 如何在中国使用 Netflix｜Netflix 入门指南🧭]]></title>
         <id>https://qust.me/post/netflix2021/</id>
@@ -978,93 +1037,6 @@ src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/1
 <h2 id="总结">总结</h2>
 <p><strong>删除退出 ClashX Pro 后如果不能上网得恢复网络设置</strong>：https://jingyan.baidu.com/article/020278113fc2511bcc9ce5e8.html</p>
 <p>ClashX Pro 完全免费这点真的太棒了，使用软件作为网关接管网络体验真的非常非常棒，建议你也试试。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Netflix 上最值得看的情色电影推荐]]></title>
-        <id>https://qust.me/post/netflix18/</id>
-        <link href="https://qust.me/post/netflix18/">
-        </link>
-        <updated>2021-02-23T21:20:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>情色电影都和性相关，大多又不仅仅拘泥于性。在李普曼 1922 年写的《舆论》里有这么一段“观众需要被图像调动起来，有那么两种调动形式，无论是操作便宜程度还是人们对寻求刺激的渴望程度来看，都远胜于其他形式，那就是性激情和斗争”。情色电影常常以性为介质吸引观众，又在性之上给观众诉说更多的故事。</p>
-<p>大陆影视内容并没有分级，所以很多包含情色内容的电影都没法上映播出，Netflix 是全球最大的流媒体有着庞大的影视库，里面有很多评价非常高的情色电影，今天就给大家推荐 11 部能在 Netflix 欣赏到的情色电影🎬。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>情色电影都和性相关，大多又不仅仅拘泥于性。在李普曼 1922 年写的《舆论》里有这么一段“观众需要被图像调动起来，有那么两种调动形式，无论是操作便宜程度还是人们对寻求刺激的渴望程度来看，都远胜于其他形式，那就是性激情和斗争”。情色电影常常以性为介质吸引观众，又在性之上给观众诉说更多的故事。</p>
-<p>大陆影视内容并没有分级，所以很多包含情色内容的电影都没法上映播出，Netflix 是全球最大的流媒体有着庞大的影视库，里面有很多评价非常高的情色电影，今天就给大家推荐 11 部能在 Netflix 欣赏到的情色电影🎬。</p>
-<!--more-->
-<h2 id="戏梦巴黎the-dreamers-2003">《戏梦巴黎》The Dreamers 2003</h2>
-<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20210224181612.jpg" alt="" loading="lazy"></figure>
-<p>导演是《末代皇帝》的导演贝纳尔多·贝托鲁奇，女主是《007：大战皇家赌场 》中的邦女郎伊娃·格林，不过这部电影不需要任何头衔。</p>
-<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20210224190457.JPG" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20210224190440.JPG" alt="" loading="lazy"></figure>
-<p>电影里有很多对新浪潮电影和音乐致敬，让人印象最深刻的肯定是主角三人模仿电影《法外之徒》打破最快“参观”罗浮宫记录。把《The Dreamers》放到第一位置是因为我个人非常喜欢这部电影。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/jp-en/title/60031542</p>
-<p><strong>可观看国家/地区</strong>：🇯🇵日本</p>
-<h2 id="色戒lust-caution-2007">《色，戒》Lust, Caution 2007</h2>
-<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20210224191503.jpg" alt="" loading="lazy"></figure>
-<p>导演李安，男主梁朝伟，女主汤唯，入选了豆瓣 Top250。</p>
-<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/20210224192135.jpg" alt="" loading="lazy"></figure>
-<p>王佳芝（汤唯）和易先生（梁朝伟）在电影中的三场床戏每次都有着不同的深意。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/kr-en/title/70059999</p>
-<p><strong>可观看国家/地区</strong>：🇰🇷韩国</p>
-<h2 id="情人the-lover-1992">《情人》The Lover 1992</h2>
-<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/20210224193033.jpg" alt="" loading="lazy"></figure>
-<p>导演: 让-雅克·阿诺，男主：梁家辉，女主：珍·玛奇；豆瓣评分 8.2。</p>
-<p>你以后会记得这个下午。即使你忘记了我的长相，我的名字。——《情人》</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/kr-en/title/60011230</p>
-<p><strong>可观看国家/地区</strong>：🇰🇷韩国</p>
-<h2 id="大开眼戒eyes-wide-shut-1999">《大开眼戒》Eyes Wide Shut 1999</h2>
-<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/20210224195059.jpg" alt="" loading="lazy"></figure>
-<p>导演：斯坦利·库布里克，男主：汤姆克鲁斯，女主：妮可·基德曼。我认真看了但没怎么看懂，女主很美男主很帅（废话），里面隐喻的东西太多了，又还有点玄幻色彩。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/title/5670434</p>
-<p><strong>可观看国家/地区</strong>：🇭🇰香港、🇸🇬新加坡、🇷🇺俄罗斯、🇹🇭泰国、🇲🇾马来西亚、🇵🇹葡萄牙、🇪🇸西班牙、🇮🇳印度、🇮🇱以色列、🇬🇷希腊</p>
-<h2 id="巴黎野玫瑰betty-blue-1986">《巴黎野玫瑰》Betty Blue 1986</h2>
-<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20210224200144.jpg" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/20210224201710.jpg" alt="" loading="lazy"></figure>
-<p>豆瓣评分 8.4，IMDB 7.4 分，获得了 1987 年奥斯卡最佳外语片提名，荣获了 1987 年金球奖。</p>
-<p>在当时这是部大制作的电影，取景主要选自意大利弗洛伦萨和法国巴黎，还没仔细看完，不过每一帧的画面是真的漂亮。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/kr-en/title/60010137</p>
-<p><strong>可观看国家/地区</strong>：🇰🇷韩国</p>
-<h2 id="本能-basic-instinct-1992">《本能》 Basic Instinct 1992</h2>
-<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/20210224201948.jpg" alt="" loading="lazy"></figure>
-<p>导演: 保罗·范霍文，男主：迈克尔·道格拉斯，女主：莎朗·斯通。获得了奥斯卡提名、金球奖提名、戛纳电影节提名。</p>
-<p>豆瓣上👍最多的简评是：<strong>影响一代人性爱姿势之作</strong>（豆瓣id：哪吒男）</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/title/286139</p>
-<p><strong>可观看国家/地区</strong>：🇰🇷韩国</p>
-<h2 id="小姐the-handmaiden-2016">《小姐》The Handmaiden 2016</h2>
-<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/20210224203453.jpg" alt="" loading="lazy"></figure>
-<p>导演: 朴赞郁，主演: 金敏喜、金泰梨。这是在豆瓣评价最高的情色电影之一，高达 8.3 分，也是最近几年难得的高分情色电影。</p>
-<p>其实这也是一部 LGBT 女同的电影，认真看上面的电影海报其实就能感受到其中人物的关系。我个人觉得这部电影更多的是宣扬 LGBT，特别是电影的结局，在相对保守的亚洲这部电影意义重大。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/title/80113804</p>
-<p><strong>可观看国家/地区</strong>：🇰🇷韩国、🇬🇧英国</p>
-<h2 id="女性瘾者第一部-nymphomaniac-volume-i-2013">《女性瘾者：第一部》 Nymphomaniac: Volume I 2013</h2>
-<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/20210224205447.jpg" alt="" loading="lazy"></figure>
-<p>导演: 拉斯·冯·提尔、年老女主：夏洛特·甘斯布，年轻女主：斯塔西·马汀，男主：希亚·拉博夫。</p>
-<p>这部电影性从始至终都是觉得的主旋律，从女主年轻到年老，在性中体验无限美好。（女主实在是太漂亮了）</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/gl-en/title/70297799</p>
-<p><strong>可观看国家/地区</strong>：🇸🇪瑞典</p>
-<h2 id="阿黛尔的生活blue-is-the-warmest-color-2013">《阿黛尔的生活》Blue Is the Warmest Color 2013</h2>
-<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/20210224211015.jpg" alt="" loading="lazy"></figure>
-<p>我看到有很多人讲这部归类到情色电影，我个人认为 LGBT 情感电影更合适。</p>
-<p>《阿黛尔的生活》改编自法国女作家朱莉·马洛的情欲漫画《蓝色是最温暖的颜色》（即英文片名），讲述了女孩阿黛尔一段如火如荼的同性爱情。3个小时的片长长而不闷，充满各种情趣元素，而在性爱内容上又惊人的大胆。影片最可贵之处，是没有将同性恋做为热点话题加以投机，而是以同性之爱作为承载，寄托人类最美好也最伤感的初恋情怀。主角从发现自己的性取向，到一步步找到真爱，又一步步失去爱人，整个过程就如繁花盛放又归于荼蘼，让观众看得如痴如醉。 ——豆瓣</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/gl-en/title/70275600</p>
-<p><strong>可观看国家/地区</strong>：🇫🇷法国、🇮🇹意大利、🇯🇵日本、🇹🇭泰国、🇩🇪德国</p>
-<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/20210224211702.jpg" alt="" loading="lazy"></figure>
-<p>另一部和相似同样拿到了 8.4  高分的 LGBT 影片**《卡罗尔》Carol**  你也可以在 Netflix 看到，主演凯特·布兰切特和鲁妮·玛拉实在是太有魅力了。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/gl-en/title/80058700</p>
-<p><strong>可观看国家/地区</strong>：🇺🇸美国、🇯🇵日本</p>
-<h2 id="伊莉莎与玛瑟拉-elisa-y-marcela-2019">《伊莉莎与玛瑟拉》 Elisa y Marcela 2019</h2>
-<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/20210224212202.jpg" alt="" loading="lazy"></figure>
-<p>一部来自西班牙的 LGBT 电影，也是一部黑白电影，豆瓣有 8.3 分的好成绩，也获得了柏林电影节的提名。这是一部 Netflix Original 的电影，所以大部分国家地区都能直接看。</p>
-<p>故事开始于1898年西班牙西北部的一座名叫拉科鲁尼亚的城市之中。马赛拉（格蕾塔·费尔南德斯 Greta Fernández 饰）是修道院里新转来的学生，在这里，她认识了名为伊莉莎（娜特莉·德·莫利纳 Natalia de Molina 饰）的女孩。两个女孩之间很快就结下了深厚的友谊，并且这种友谊渐渐转化成为了懵懂的爱情。 这段背德的感情在当时当然是不被允许的，为了拆散两人，马赛拉的父亲将女儿送进了另一所位于马德里的学校。一晃眼三年过去，此时的伊莉莎在一座小村庄里当老师，而马赛拉义无反顾的去那里找她，这对有情人终于再度走到了一起。可是，最终，她们的爱情还是抵不过世俗的非议，伊莉莎选择了离开，而马赛拉则和一个男人结婚了。——豆瓣</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/gl-en/title/80121387</p>
-<h2 id="西西里的美丽传说malena-2000">《西西里的美丽传说》Malena 2000</h2>
-<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/20210224214047.jpg" alt="" loading="lazy"></figure>
-<p>最后压轴给《西西里的美丽传说》，这部电影有很多性启蒙的教育意义，当然也是一部将性和战争完美结合的一部电影。是豆瓣最高的情色电影，也在 Top250 上排名 69，无论是不是情色电影这部电影都值得每一位认真观看。</p>
-<p><strong>链接</strong>🔗：https://www.netflix.com/gl-en/title/60003396</p>
-<p><strong>可观看国家/地区</strong>：🇮🇹意大利</p>
-<h1 id="后记">后记</h1>
-<p>Netflix 的内容是分国家地区的，你的 IP 只用切换到对应的国家或地区再次打开 Netflix 即可。情色电影中的性只是媒介，认真观看每一部电影你都能收获更多的东西。</p>
 ]]></content>
     </entry>
 </feed>
