@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-12T10:12:04.053Z</updated>
+    <updated>2021-06-12T10:27:56.171Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -89,7 +89,7 @@
 <p>Disney+ 最高支持 4K HDR，具体规格上 Dolby Vision、Dolby Atoms 以及 HDR 10 都是支持的。目前 Disney+ 在所有移动设备上最高的画质都是 1080p HDR，只有电视、电视盒子、游戏主机才支持到 4K HDR。（你可以在 Disney+ 详情页看查看支持情况，上图的平板 Disney+ 支持 HD 1080p 和 5.1 的声道）</p>
 <p>Disney+ 和 Netflix 一样不能手动选择画质，会根据网络自动调整。流畅 1080p HD 需要 5Mbps 以上，流畅 4K 需要 25Mbps 以上，1 小时 4K 视频大概会消耗 7.7 GB，流量消耗具体可参考 <a href="https://help.disneyplus.com/csp?id=csp_article_content&amp;sys_kb_id=6955c7c1db6c18502e27eadc139619e2">Disney+ 文档</a>。</p>
 <h3 id="ios-iphone-ipad-设备">iOS iPhone iPad 设备</h3>
-<p>美区 App Store 下载安装 Disney+，打开代理登录账户即可以观看。（没有美区 Apple ID？<a href="https://www.lizhi.io/blog/78586045">荔枝数码美区 App store 注册教程</a>）</p>
+<p>美区 App Store 下载安装 Disney+，打开代理登录账户即可以观看，iPhone 8 以及以后的 iPhone 都支持 Dolby Vision。（没有美区 Apple ID？<a href="https://www.lizhi.io/blog/78586045">荔枝数码美区 App store 注册教程</a>）</p>
 <h3 id="android-手机平板">Android 手机平板</h3>
 <p>Google Play 可以搜索安装 Disney+，搜不到说明你的设备没过 Google 认证可以通过 <a href="https://m.apkpure.com/disney/com.disney.disneyplus">ApkPure 安装</a>。</p>
 <h3 id="mac-windows-linux-电脑">Mac 、Windows、Linux 电脑</h3>
