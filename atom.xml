@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-10T02:27:03.392Z</updated>
+    <updated>2021-06-12T10:12:04.053Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -10,6 +10,135 @@
     <logo>https://qust.me/images/avatar.png</logo>
     <icon>https://qust.me/favicon.ico</icon>
     <rights>All rights reserved 2021, 酱紫表</rights>
+    <entry>
+        <title type="html"><![CDATA[Disney+ 订阅使用指南｜如何在中国使用 Disney+ 看这篇就够了📺]]></title>
+        <id>https://qust.me/post/disney_plus/</id>
+        <link href="https://qust.me/post/disney_plus/">
+        </link>
+        <updated>2021-06-10T10:18:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>Disney+ 可能是大陆热度最高的流媒体之一，其中包含的漫威、星战、皮克斯还有迪士尼自家的电影都是顶流的 IP。虽然 Disney+ 仅仅推出 1 年多，订阅用户数却已经超越了 1 亿里程碑，也已经在全球数十个国家地区提供了服务，下半年还会陆续登陆港澳台地区。</p>
+<p>今天这篇文章就为你介绍下 Disney+ 如何订阅、观看、账户区域、内容划分、以及字幕等问题，认真看完应该对你帮助很大。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Disney+ 可能是大陆热度最高的流媒体之一，其中包含的漫威、星战、皮克斯还有迪士尼自家的电影都是顶流的 IP。虽然 Disney+ 仅仅推出 1 年多，订阅用户数却已经超越了 1 亿里程碑，也已经在全球数十个国家地区提供了服务，下半年还会陆续登陆港澳台地区。</p>
+<p>今天这篇文章就为你介绍下 Disney+ 如何订阅、观看、账户区域、内容划分、以及字幕等问题，认真看完应该对你帮助很大。</p>
+<!--more-->
+<h2 id="️-关于网络的问题">✈️ 关于网络的问题</h2>
+<p>Disney+ 在大陆并不能直接访问，你需要使用美国、新加坡、香港、或像是英国、德国、法国等一些欧美国家的代理。当然并不是上述国家的代理节点就都能使用，因为 <strong>Disney+ 对 IP 要求比较严格</strong>，你购买的「✈️机场」基本都会有支持的节点，你可以挨个去测试能不能打开登录 Disney+，或看下「✈️机场」对 Disney+ 情况有没有作出标注保证，或者直接发工单咨询。</p>
+<p>「✈️机场」这里就不重复推荐了，你可以看我上次写的<a href="https://qust.me/post/netflix2021/">如何在中国使用 Netflix 第一部分</a>，或直接打开 <a href="https://duyaoss.com/archives/1/">毒药机场评测</a>选择一个（需要挂代理才能打开）。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/IMG_2528.JPEG" alt="" loading="lazy"></figure>
+<p>（如果打开 Disney+ App 显示“我要收到最新消息”或“掌握最新动态”，说明你挂的节点国家地区还没有 Disney+ 服务；如果你的账户无法在手机电脑上登录，这个是你的节点被 Disney+ 判定为代理，换种说法这个节点不支持 Disney+）</p>
+<h2 id="了解-disney-账户和内容分区">🌍 了解 Disney+ 账户和内容分区</h2>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/Disney-_locations.jpeg" alt="" loading="lazy"></figure>
+<p>(蓝色代表已经支持 Disney+ 的国家地区，黄色代表合作运营，红色表示今年即将支持——<a href="https://en.wikipedia.org/wiki/Disney%2B">来自Wikipedia</a>)</p>
+<p><strong>目前来说 Disney+ 的账号分为三种：</strong></p>
+<ul>
+<li>
+<p><strong>国际版</strong>（美国、加拿大、南美、欧洲大部分国家、新加坡等）</p>
+<p><strong>订阅价格差距很小</strong>，订阅价格都在每月 8 到 9 美元左右，并没有特别的的低价区，国际版账户其实是通用<strong>可以互相登录</strong>的。和 Netflix 一样，你<strong>登录的 IP 决定你看到的内容</strong>。像是新加坡等非美国的 IP 登录你就能看到「Star」分区包含了很多21世纪福克斯等内容，比美区的内容要多不少。</p>
+</li>
+<li>
+<p><strong>Hotstar 版</strong>（印度、印度尼西亚、泰国、菲律宾）</p>
+<p>Hotstar 版 Disney+ 完全独立运营，App、网站、账户系统都是完全独立的，并且限制只能使用这几个国家的代理观看。价格其实便宜很多，像是印度尼西亚订阅一年只要 100 人民币不到，不过代理节点麻烦、并且有中文字幕的内容比国际版还少、使用体验差很多比如没有子账户 Profile，<strong>总之不推荐</strong>。</p>
+</li>
+<li>
+<p><strong>日本版</strong>（和运营商合作独立运营，或许还有别的国家）</p>
+<p>日本的 Disney+ 和 NTT Docomo 合作运营，和国际版账户不通用。价格和美区基本相同，我个人只推荐在日本的朋友订阅日本版的 Disney+。</p>
+</li>
+</ul>
+<h3 id="字幕问题">字幕问题</h3>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/IMG_2537.JPG" alt="" loading="lazy"></figure>
+<p>国际版最近几个月新出内容包括以前的热门内容也都有了中文字幕，你在国际版任何区都是有中字的，比如《洛基》、《猎鹰与冬兵》、《花木兰》、《复仇者联盟4：终局之战》等，<strong>可以预见以后新出的热门内容也都直接会有中字</strong>。</p>
+<h2 id="如何订阅-disney-合租">💰 如何订阅 Disney+ ｜合租</h2>
+<h3 id="选择哪一个区">选择哪一个区</h3>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8B%E5%8D%8812.43.50.jpg" alt="" loading="lazy"></figure>
+<p>我个人推荐你订阅美区，美区比新加坡区订阅稍微便宜一点点，中文字幕大家都是一样国际区都有的。主要你使用新加坡节点依然能看新加坡区的内容，以后香港区应该也是一样，目前香港节点也能够观看 Disney+ 了（注意是观看不是能登录注册了），另外美区能绑定订阅 hulu 和 ESPN+ 对于有需求的朋友也更划算。</p>
+<h3 id="准备付款以美区为例">准备付款（以美区为例）</h3>
+<p>Disney+ 没有试用，只有一种套餐，都支持 4K HDR，月付订阅 7.99 刀，年付订阅 79.99 刀，个人比较推荐年付订阅划算不少。（今年涨价过一次，之前是 6.99 刀和 69.99 刀）</p>
+<p>👇下面介绍三种付款方式</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8B%E5%8D%882.06.18.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p><strong>通过官网订阅</strong></p>
+<p><a href="https://www.disneyplus.com/">disneyplus.com</a>官网支持美国发的信用卡、美区的 Paypal。国内的外币卡是无法支付的，你可以参看 <a href="https://www.vpsdawanjia.com/3377.html">VPS 大玩家 EasyPay 美国虚拟信用卡注册教程</a> EasyPay 这个可以支付；美区的 PayPal 可以绑定国内的外币卡，但是风控严格。</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/IMG_2532.JPEG" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p><strong>通过苹果 App Store 订阅</strong></p>
+<p>你可以是使用美区 App Store 的余额进行支付，淘宝可以购买充值卡，但请注意不要贪便宜，请选择信誉好的商家。</p>
+<p>没有美区 Apple ID？<a href="https://www.lizhi.io/blog/78586045">荔枝数码美区 App store 注册教程</a>，美区的 Apple 其实也能绑定上面说的 EasyPay 或是美区的 PayPal。</p>
+</li>
+<li>
+<p><strong>通过 Android Google Play 订阅</strong></p>
+<p>Google Play 是可以绑定国内的信用卡支付的，银联的也可以。如果你的手机 Google Play 搜素不到 Disney+ 你可以通过 <a href="https://m.apkpure.com/disney/com.disney.disneyplus">ApkPure 安装</a>。</p>
+</li>
+</ul>
+<p>无论哪个平台付款注册的，都是一样，可以在其它任何平台登录使用的。</p>
+<h3 id="合租使用">合租使用</h3>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8B%E5%8D%882.53.50.jpg" alt="" loading="lazy"></figure>
+<p>Disney+ 最多可以创建 7 个 profile 子账户，每个子账户还可以设置单独的密码锁，观看记录和推荐以及片单都是独立的，和朋友一起分担费用使用非常方便。不过 Disney+ 最多也是 4 个屏幕同时观看，以我的经验和 7  朋友一起使用共享完全没问题，因为 Disney+ 的剧都是一集一集放出来，「撞车」概率极小。</p>
+<p>合租平台目前都还没有上线 Disney+ 的合租服务。</p>
+<ul>
+<li><a href="https://naifei.pro/m/">奈飞 pro</a>（合租平台，不含推广，还没有 D+）</li>
+<li><a href="https://nf.brushshopy.com/">奈飞小铺</a>（合租平台，不含推广，还没有 D+）</li>
+</ul>
+<p>在 <a href="http://daixiahu.co/">逮虾户</a>，或一些 telegram <a href="https://t.me/hezu1">合租平台</a> 有个人提供合租的，还是提醒下，合租固然方便但请思考下对方有没有可能是骗子，别开始一次交钱太多。</p>
+<h2 id="如何在设备上观看-disney">📺 如何在设备上观看 Disney+</h2>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/Screenshot_2021-06-12-16-17-19-0491761317.png" alt="" loading="lazy"></figure>
+<p>Disney+ 最高支持 4K HDR，具体规格上 Dolby Vision、Dolby Atoms 以及 HDR 10 都是支持的。目前 Disney+ 在所有移动设备上最高的画质都是 1080p HDR，只有电视、电视盒子、游戏主机才支持到 4K HDR。（你可以在 Disney+ 详情页看查看支持情况，上图的平板 Disney+ 支持 HD 1080p 和 5.1 的声道）</p>
+<p>Disney+ 和 Netflix 一样不能手动选择画质，会根据网络自动调整。流畅 1080p HD 需要 5Mbps 以上，流畅 4K 需要 25Mbps 以上，1 小时 4K 视频大概会消耗 7.7 GB，流量消耗具体可参考 <a href="https://help.disneyplus.com/csp?id=csp_article_content&amp;sys_kb_id=6955c7c1db6c18502e27eadc139619e2">Disney+ 文档</a>。</p>
+<h3 id="ios-iphone-ipad-设备">iOS iPhone iPad 设备</h3>
+<p>美区 App Store 下载安装 Disney+，打开代理登录账户即可以观看。（没有美区 Apple ID？<a href="https://www.lizhi.io/blog/78586045">荔枝数码美区 App store 注册教程</a>）</p>
+<h3 id="android-手机平板">Android 手机平板</h3>
+<p>Google Play 可以搜索安装 Disney+，搜不到说明你的设备没过 Google 认证可以通过 <a href="https://m.apkpure.com/disney/com.disney.disneyplus">ApkPure 安装</a>。</p>
+<h3 id="mac-windows-linux-电脑">Mac 、Windows、Linux 电脑</h3>
+<p>Disney+ 对电脑的支持非常差，最高也只支持 1080p。Mac 推荐使用 Safari，Windows 推荐使用 Edge 浏览器，Linux 随意。</p>
+<h3 id="电视-电视盒子">电视 电视盒子</h3>
+<h4 id="路由器代理">路由器代理</h4>
+<p>想要在电视上观看 Disney+ 前提你得整好家里的网络环境，你的路由器网络要能挂上代理才能让电视、电视盒子等设备直接就能连上 Disney+。这里就不细说，你 Google 搜索下面的关键词就能看到很多教程，也可以在 <a href="http://www.right.com.cn/forum/forum.php">恩山论坛</a>找找资源资料。</p>
+<ol>
+<li>NanoPi R2s openwrt</li>
+<li>小米 AX3600 shellclash</li>
+<li>华硕梅林固件 Merlin Clash</li>
+<li>软路由 passwall openclash</li>
+<li>Mac Surge 路由器</li>
+<li>你家路由器的型号 + openwrt</li>
+</ol>
+<h4 id="电视盒子推荐">电视盒子推荐</h4>
+<p>使用 LG、三星的电视可以参看<a href="https://sspai.com/post/59549">Bohao 的换区教程</a>后安装使用 Disney+，但不想麻烦的朋友推荐你直接购买电视盒子。</p>
+<ol>
+<li>Amazon FireTV Stick 4k（又称作火棒，淘宝售价 300+）</li>
+<li>Google ChromeCast With Google TV（淘宝售价 400+）</li>
+<li>Apple TV 6 代（淘宝售价 1400+）</li>
+</ol>
+<h3 id="游戏主机">游戏主机</h3>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8B%E5%8D%884.42.33.jpg" alt="" loading="lazy"></figure>
+<p>Xbox、索尼 PS 游戏主机都是可以安装 Dinsey+ 的，并且 Xbox 新款支持了 Dolby Vision 拿来看 Disney+ 也是个不错的选择。对了 订阅 Xbox Game Pass Ultimate 现在还赠送 Disney+ 会员，具体可以查看 <a href="https://news.xbox.com/en-us/2021/06/08/disney-plus-returns-xbox-game-pass-ultimate/">Xbox 官网</a>。</p>
+<h2 id="premier-access">🔪 Premier Access</h2>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8B%E5%8D%885.50.25.jpg" alt="" loading="lazy"></figure>
+<p>Disney 会把很多院线电影直接在 Disney+ 上首映，之前的几部像是《花木兰》、《黑白魔女库伊拉》等都是采取的这种方式，可以直接看首播，就是有点贵每一部提前看都是 30 刀。</p>
+<h2 id="如何解锁-r21-内容">🔞 如何解锁 R21 内容？</h2>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8B%E5%8D%885.01.34.JPEG" alt="" loading="lazy"></figure>
+<p>左边是美区 Dinsey+ 的分级，右边是新加坡区 Disney+ 的分级，你可以编辑你用户 profile 里找到。R21 是新加坡才有的分级，因为新加坡内容比美区多不少，很多是是限制级的，所以有了这个划分，你可以参看<a href="https://help.disneyplus.com/csp?id=csp_article_content&amp;sys_kb_id=1a6908a5dbaf68507a73eacb1396198a">Disney+ 官方解释</a>，像是下面这些内容在新加坡都是 R21 级。</p>
+<ul>
+<li>Battle of the Sexes</li>
+<li>Borat</li>
+<li>Homeland (Seasons 1 to 8)</li>
+<li>Love, Simon</li>
+<li>Love, Victor</li>
+<li>Modern Family (Seasons 1 to 11)</li>
+<li>Scary Movie 4</li>
+</ul>
+<p>不解锁 R21 即使你使用新加坡代理也是观看不到的，你需要打开 <a href="https://help.disneyplus.com/csp">disney+帮助</a> 下方的 live chat，告诉客服说你人在新加坡想看 R21 内容（请说 English），客服就会帮你把账户从美区转到新加坡。设置好后你账户的归属地就是新加坡，添加 pin 码和设置你定年龄就能搜索观看到 R21 的内容。</p>
+<p>不用担心，你的付款方式也没有变，也不会暂停账户，依然是美区支付扣款，只是默认归属地变了，这里也能看出 Disney+ 国际区的优势和特点。</p>
+<h2 id="总结">🪢 总结</h2>
+<p>虽然港澳台的 Disney+ 还没登陆，但我基本可以确定会和新加坡模式相同，比如现在其实已经可以使用香港 IP 观看就能证实。Disney+ 的付款也不算难只是有些绕，年付订阅和朋友一起使用是个不错的选择。观看对节点要求稍微有点高，选择「✈️机场」的时候可以留意下对 Disney+ 的支持情况。</p>
+<p>Disney+ 是我个人认为非常值得的流媒体订阅，迪士尼帝国的内容库只要 Netflix 一半的订阅价格，基本都是大片也是支持 4K HDR 的，，最近一两年出的剧集更是很给力，便宜又大腕。</p>
+<p>题图来自 TheVerge，感谢 <a href="https://weibo.com/u/6125976106">X5</a> 、Hal 提供的配图，参考阅读：</p>
+<p><a href="https://sspai.com/post/57439">少数派——漫威、星战、皮克斯一网打尽，视频流媒体 Disney+ 订阅指南</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何在中国开启 iCloud Private Relay｜苹果家的 VPN 使用体验 ✈️]]></title>
         <id>https://qust.me/post/PrivateRelay/</id>
@@ -984,83 +1113,6 @@ src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/1
 <h2 id="总结">总结</h2>
 <p>我家是 500M 的联通宽带，vmess 协议 ws+tls 轻松跑满 500M 的宽带，CPU 占用也才 20-30%。如果拿 MTK 7621 芯片的 k2p 测试的速度是 30Mbps。红米 AX6 采用的是高通 IPQ8071A 芯片，4 核心 A53 1.4GHz 的 CPU 外加上双核 1.7GHz NPU，在进行计算任务的时候依靠 NPU，红米 AX6 在这方面真的暴打很多软路由。</p>
 <p>不足的是现在刷机还比较麻烦，并且目前的固件不是很稳定，还只适合尝鲜阶段不适合日常使用。期待下吧，毕竟这款 CPU+NPU 实在是太强了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mac 电脑使用 ClashX Pro 作为网关旁路由]]></title>
-        <id>https://qust.me/post/clashxProMac/</id>
-        <link href="https://qust.me/post/clashxProMac/">
-        </link>
-        <updated>2021-03-29T05:34:18.000Z</updated>
-        <summary type="html"><![CDATA[<p><strong>这个教程将会指导你用 Mac 电脑使用免费的 ClashX Pro 软件作为家庭的网关，让全家设备连上 Wi-Fi 就能科学上网。（Windows 版本暂时还不行，得等等看）</strong></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><strong>这个教程将会指导你用 Mac 电脑使用免费的 ClashX Pro 软件作为家庭的网关，让全家设备连上 Wi-Fi 就能科学上网。（Windows 版本暂时还不行，得等等看）</strong></p>
-<!--more-->
-<p>之前有分享过 Surge 作为网关 DHCP 接管家里网络的教程，这几个月家里的设备一直这么使用非常稳定，电视手机直接科学上网也非常方便。但是：Surge 价格有点贵会劝退人，之前的教程也需要手动设置下使用 Surge 作为网关走代理（那是我设置问题）所以这次写下 ClashX Pro 的教程。</p>
-<p>使用 Clash 或者 Surge 软件作为网关我再赘述下我个人觉得的优点：</p>
-<ol>
-<li>性能非常非常好，因为是直接使用你的电脑 CPU 加密解密，性能比软路由、或者啥啥路由器都会好很多。</li>
-<li>使用非常便利，软件鼠标直接点下就能修改规则选择节点，在状态栏也能直接看到整体的网络状态。</li>
-<li>直接使用你的 Mac 电脑，不用单独购买设备。</li>
-<li>稳定性不错、还有就一个软件更新非常也便利。</li>
-</ol>
-<h2 id="教程">教程</h2>
-<h3 id="下载安装">下载安装</h3>
-<p>下载链接：<a href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public">ClashX Pro</a></p>
-<p>第一次打开会有这个提示，选择 install 安装，输入电脑密码即可。</p>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2021/03/29/Kfdgz3MwRuE6cOI.jpg" alt="" loading="lazy"></figure>
-<h3 id="准备-clash-的配置文件">准备 Clash 的配置文件</h3>
-<p>一般你订阅的服务应该会给 Clash 的<strong>订阅链接</strong>，如果没有也没关系，你可以通过第三方 <a href="https://bianyuan.xyz/">订阅转换</a> 生成（推荐用这个，分流会丰富合理很多）：</p>
-<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-29%20%E4%B8%8B%E5%8D%8811.45.13.jpg" alt="" loading="lazy"></figure>
-<ol>
-<li>订阅链接填上你的 v2ray、ss 、trojan 的订阅（非 SSR 的订阅）</li>
-<li>客户端选择 Clash</li>
-<li>选择生成订阅链接就好了</li>
-</ol>
-<h3 id="添加配置">添加配置</h3>
-<p>打开有 ClashX Pro 后，右上角会有一只小猫咪🐱的图标。右键选择 Config 配置 — Remote 托管配置 — Manage 管理。</p>
-<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-29%20%E4%B8%8B%E5%8D%8811.53.40.jpg" alt="" loading="lazy"></figure>
-<p>然后选择 Add 添加，URL 填上你上一步生成的 Clash 订阅地址，Config name 可以给它取一个名字备注，然后选择 OK 确定。</p>
-<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-29%20%E4%B8%8B%E5%8D%8811.56.52.jpg" alt="" loading="lazy"></figure>
-<h3 id="打开系统代理和增强模式">打开系统代理和增强模式</h3>
-<p>再次右键打开小猫咪选项，应该就能看到你的配置文件规则（你可以通过节点选择来配置默认的上网节点）。</p>
-<p>我们还需打开</p>
-<ul>
-<li>Set as system proxy 设置为系统代理</li>
-<li>Enhanced Mode 增强模式（正是这个起到了网关路由器的作用）</li>
-</ul>
-<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-30%20%E4%B8%8A%E5%8D%8812.18.50.jpg" alt="" loading="lazy"></figure>
-<p>这个时候你这一台电脑应该就能科学上网了。</p>
-<h3 id="将-mac-设置为固定">将 Mac 设置为固定</h3>
-<p><strong>强烈建议使用网线连接到电脑 ，Wi-Fi 其实也是 OK 的不过作为路由器，Wi-Fi 不会稳定。</strong></p>
-<p>打开 系统偏好设置 — 网络 — 以太网：</p>
-<ul>
-<li>
-<p>配置 IPv4 选择手动</p>
-</li>
-<li>
-<p>IP地址填写你局域网段里的一个就行（我的路由器是 192.168.88.1 所以 IP 地址我就填 192.168.88.2，只用修改最后一位在 2-225 之间就行。如果你的路由器是 192.168.31.1 你的 IP 地址就可以填 192.168.31.2，以此类推）</p>
-</li>
-<li>
-<p>路由器就填写你路由器后台 IP 地址 （我的路由器是 192.168.88.1，你的如果是 192.168.31.1 你就填你路由器后台地址）</p>
-</li>
-</ul>
-<p>修改好选择应用</p>
-<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-30%20%E4%B8%8A%E5%8D%8812.10.32.png" alt="" loading="lazy"></figure>
-<h3 id="修改路由器的-dhcp-选项">修改路由器的 DHCP 选项</h3>
-<p>打开路由器后台，选择 内部网络（LAN）— DHCP 服务器 ，将默认网关由路由器的后台地址改为刚才你设置你 Mac 的 IP 地址</p>
-<p>。（我的这里默认网关原本是 192.168.88.1  我改为了我 Mac 的 IP地址 192.168.88.2）,DNS 服务器也得同样修改为 Mac 的 IP 地址。</p>
-<p>我这里的是 padavan 系统的路由器，华硕等大部分品牌路由器应该都是有修改默认网关的选项。</p>
-<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-30%20%E4%B8%8A%E5%8D%8810.10.54.jpg" alt="" loading="lazy"></figure>
-<p>然后重启你的路由器或者设备重新连接 Wi-Fi 就能让 ClashX Pro 接管网络实现科学上网了。<br>
-在 Clash 的面板 连接 里你也能看到接管设备的数量状态，只是没 Surge 那么美观。</p>
-<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-03-30%20%E4%B8%8A%E5%8D%8812.35.03.png" alt="" loading="lazy"></figure>
-<h3 id="如果你的路由器真的不支持修改-dhcp-网关">如果你的路由器真的不支持修改 DHCP 网关</h3>
-<p>你可以手动修改 Wi-Fi 里想要科学上网的设备，配置 IP 地址为手动，将路由器即网关改为 Mac 的 IP 地址。（当然还是更建议你选择修改路由器 DHCP 选项会方便很多很多）</p>
-<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/IMG_0975.PNG" alt="" loading="lazy"></figure>
-<h2 id="总结">总结</h2>
-<p><strong>删除退出 ClashX Pro 后如果不能上网得恢复网络设置</strong>：https://jingyan.baidu.com/article/020278113fc2511bcc9ce5e8.html</p>
-<p>ClashX Pro 完全免费这点真的太棒了，使用软件作为网关接管网络体验真的非常非常棒，建议你也试试。</p>
 ]]></content>
     </entry>
 </feed>
