@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qust.me</id>
     <title>酱紫表</title>
-    <updated>2021-06-22T15:53:46.239Z</updated>
+    <updated>2021-06-22T15:59:16.257Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qust.me"/>
     <link rel="self" href="https://qust.me/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://qust.me/post/ax6000_shellclash/">
         </link>
         <updated>2021-06-22T13:46:27.000Z</updated>
-        <summary type="html"><![CDATA[<p>AX3600 其实已经 EOL 下市了，线下的小米之家已经全替换为了 AX6000。AX3600 是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，还有双核的 1.7Ghz 的 NPU；而 AX6000 CPU 是 IPQ5018 双核，NPU 也成了 1GHz。虽然无线方面有加强，也有了 1 个 2.5G 的网口，不过这 CPU 和 NPU 砍的实在是太厉害了。今天我们就解锁下这台 AX6000 安装 ShellClash 看看性能如何，能不能满足日常使用。</p>
+        <summary type="html"><![CDATA[<p>AX3600 其实已经 EOL 下市了，线下的小米之家已经全替换为了 AX6000。AX3600 是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，还有双核的 1.7Ghz 的 NPU；而 AX6000 CPU 是 IPQ5018 双核 1.0 GHz，NPU 也成了单核 1GHz。虽然无线方面有加强，也有了 1 个 2.5G 的网口，不过这 CPU 和 NPU 砍的实在是太厉害了。今天我们就解锁下这台 AX6000 安装 ShellClash 看看性能如何，能不能满足日常使用。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>AX3600 其实已经 EOL 下市了，线下的小米之家已经全替换为了 AX6000。AX3600 是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，还有双核的 1.7Ghz 的 NPU；而 AX6000 CPU 是 IPQ5018 双核，NPU 也成了 1GHz。虽然无线方面有加强，也有了 1 个 2.5G 的网口，不过这 CPU 和 NPU 砍的实在是太厉害了。今天我们就解锁下这台 AX6000 安装 ShellClash 看看性能如何，能不能满足日常使用。</p>
+        <content type="html"><![CDATA[<p>AX3600 其实已经 EOL 下市了，线下的小米之家已经全替换为了 AX6000。AX3600 是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，还有双核的 1.7Ghz 的 NPU；而 AX6000 CPU 是 IPQ5018 双核 1.0 GHz，NPU 也成了单核 1GHz。虽然无线方面有加强，也有了 1 个 2.5G 的网口，不过这 CPU 和 NPU 砍的实在是太厉害了。今天我们就解锁下这台 AX6000 安装 ShellClash 看看性能如何，能不能满足日常使用。</p>
 <!--more-->
 <h3 id="致谢">致谢</h3>
 <ul>
