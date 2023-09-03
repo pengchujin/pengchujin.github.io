@@ -1,0 +1,352 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>360v6 刷 openwrt 教程，跑满 1000M 外网，比软路由更强 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="360v6 刷 openwrt 教程，跑满 1000M 外网，比软路由更强 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="如果一台 200 多的 Wi-Fi6 路由器能跑满 1000M 科学上网，有 USB 接口，甚至还能跑 Docker 你会心动吗？
+
+不卖关子了，今天的教程就是每次发路由器视频都会被大家提到的 360v6 路由器。在拼多多和闲鱼等平台，目前..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              360v6 刷 openwrt 教程，跑满 1000M 外网，比软路由更强
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-03-27
+              </span>
+              <span>
+                9 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/202203311549684.jpeg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>如果一台 200 多的 Wi-Fi6 路由器能跑满 1000M 科学上网，有 USB 接口，甚至还能跑 Docker 你会心动吗？</p>
+<!--more-->
+<p>不卖关子了，今天的教程就是每次发路由器视频都会被大家提到的 360v6 路由器。在拼多多和闲鱼等平台，目前售价都在 260 元左右。先来简单说一下配置：在路由器上你就能看到骄傲的印着“made with Qualcomm networking pro series”，可见厂商对这颗高通 IPQ6018 的 CPU 有多自信。IPQ6018 的规格也确实非常给力：14nm 制程，四核 A53 架构，主频高达 1.8GHz；另外还有个 1.5GHz 的 NPU 专门给网络加速。这个 CPU 的规格和 MTK、或是博通这些路由器芯片比都显得欺负人，它的对手应该是 NanoPi R2S、R4S 树莓派4B 这些 ARM 软路由。不过 IPQ6018 实际测试对比下来都是乱杀，14nm 先进的制程和对手一众 28nm 的对比下来更显得还算“清凉”。</p>
+<p>除了 CPU 其它配置也给大家过一下，128M 的闪存，512M 的内存；4个千兆的网口，一个 USB 2.0 的接口，无线规格是 AX1800。站立式的设计，隐藏了天线，外表是类肤涂层，正面有一颗一字形的 LED 灯，整体质感不错。</p>
+<p>目前能比较方便的不拆机刷机，也有了 uboot 不死（收费 5 元）但是确实挺好用，固件也有 openwrt、QSDK、和 梅林SWRT 版本的可以使用。</p>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>一台 360V6 路由器（京东云版或普通版都OK）</li>
+<li>能插网线的 Windows 电脑</li>
+<li>花 5 元购买<a href="https://mianbaoduo.com/o/bread/mbd-YpeXk5pq">下载好 uboot</a></li>
+<li>下载安装好 <a href="https://www.rejetto.com/hfs/download">HFS</a>（HTTP 文件服务器）和 <a href="https://termi.us/win">Termius</a>（Telnet SSH 工具）</li>
+<li>下载好刷机<a href="https://share.qust.me/%E8%B7%AF%E7%94%B1%E5%99%A8/360v6">需要的文件</a></li>
+</ul>
+<p>在教程开始前还是向 lean，和 lean 群组的很多朋友提供的教程和固件表示感谢。</p>
+<h2 id="第一步升级固件开启-telnet">第一步：升级固件开启 Telnet</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/202203301704284.jpg" alt="" loading="lazy"></figure>
+<p>用网线连接电脑和 360v6 路由器 lan 口，打开在路由器的后台（默认是：192.168.0.1），选择-路由器设置-手动升级，找到下载好的升级固件选择升级，然后等待升级完成重启。</p>
+<ul>
+<li>360V6_JD-v4.2.13.3033-rel-upgrade.bin（京东版v6）</li>
+<li>360V6-v4.2.13.3033-rel-upgrade.bin（普通版v6）</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/202203301709913.jpg" alt="" loading="lazy"></figure>
+<p>重启完成后，再到后台-功能拓展-插件中心里上传下载好的 360_v6_jd_telnetd_ctrl_app_nda_signed.opk 文件。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/202203301712629.jpg" alt="" loading="lazy"></figure>
+<p>打开 telnet开关控制插件，telnet 状态选择 ON，保存生效即可，现在应该可以 Telnet 连接。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/202203302123018.jpg" alt="" loading="lazy"></figure>
+<p>打开安装好的 Termius（可以跳过不登录），然后选择 NEW HOST，Address 填写 192.168.0.1，SSH 不勾选，Telnet 勾选上，再点击向右的箭头，最后打开刚添加好的开始 Telnet 连接。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/202203302134378.jpg" alt="" loading="lazy"></figure>
+<p>telnet 连接用户名：root</p>
+<p>密码：telnetdebug</p>
+<p>输入密码会不显示，输入完回车即可。</p>
+<h2 id="第二步刷入-uboot-和分区文件">第二步：刷入 uboot 和分区文件</h2>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/202203302150390.jpg" alt="" loading="lazy"></figure>
+<p>打开下载安装好的 HFS，如果防火墙有提示选择允许即可。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/202203302159005.jpg" alt="" loading="lazy"></figure>
+<p>确认自己 HFS 网段是在 192.168.0.X，如果不是可以在 Mean 菜单—IP adress IP 地址 里选择 192.168.0.X 网段。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/202203302215579.jpg" alt="" loading="lazy"></figure>
+<p>然后将下载好的 uboot 和 mibib 分区文件拖到 HFS 的左侧窗口里。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/202203302219734.jpg" alt="" loading="lazy"></figure>
+<p>回到 telnet 连接，执行下面命令到切换到 tmp 目录</p>
+<pre><code class="language-shell">cd /tmp
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/202203302226448.jpg" alt="" loading="lazy"></figure>
+<p>然后从依次 HFS 里右键复制文件的 URL 链接，粘贴到 wget 命令后面，回车执行。</p>
+<pre><code>wget uboot的HFS链接
+wget mibib的HFS链接
+</code></pre>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/202203302228163.jpg" alt="" loading="lazy"></figure>
+<p>执行好后应该和上图一样，看到输出的内容。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/202203302233061.jpg" alt="" loading="lazy"></figure>
+<p>我们再执行以下命令，检查下文件是否下载成功。</p>
+<pre><code>ls | grep bin
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/202203302243407.jpg" alt="" loading="lazy"></figure>
+<p>在刷入 uboot 和大分区前，输入命令检查一下分区情况。确认 mtd1 和 mtd13、mtd14 和上图内容相同。</p>
+<pre><code>cat /proc/mtd
+</code></pre>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/202203302241708.jpg" alt="" loading="lazy"></figure>
+<p>确认好后，输入下面命令刷入大分区和 uboot 。</p>
+<pre><code>mtd write /tmp/360v6-mibib.bin /dev/mtd1
+mtd write /tmp/uboot-qihoo-v6.bin /dev/mtd13
+mtd write /tmp/uboot-qihoo-v6.bin /dev/mtd14
+</code></pre>
+<p>现在 uboot 应该就刷好了。</p>
+<h2 id="第三步-从-uboot-刷入-openwrt-固件">第三步： 从 uboot 刷入 openwrt 固件</h2>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/202203302304148.jpg" alt="" loading="lazy"></figure>
+<p><strong>进入 uboot 的方法</strong></p>
+<ul>
+<li>电脑通过有线连接路由器 lan 口</li>
+<li>路由器先断电，用卡针顶住路由器电源下方的 reset 不放，插上电源，路由器会先绿灯闪烁，大约 5 秒左右转为红灯即可松开 reset。</li>
+<li>将电脑设置为静态 IP：192.168.1.3（可参考上图）</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/202203302308091.jpg" alt="" loading="lazy"></figure>
+<p>然后浏览器打开 192.168.1.1，就能打开 uboot 后台。</p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/202203302326499.jpg" alt="" loading="lazy"></figure>
+<p>uboot 刷入固件非常简单，选择好文件（选择下载好的 openwrt 固件即可），然后点 Update firmware。（openwrt 一般选择 factory 包名的固件）</p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/202203302357665.jpg" alt="" loading="lazy"></figure>
+<p>然后等待路由器刷入完成重启，这个页面可能不会更新。能搜到 openwrt 的 Wi-Fi 就说明刷好了。</p>
+<p><strong>lean 固件默认的信息：</strong><br>
+Wi-Fi：openwrt ｜ openwrt-5G</p>
+<p>后台地址：192.168.1.1</p>
+<p>用户名：root</p>
+<p>密码：password</p>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/202203310000040.jpg" alt="" loading="lazy"></figure>
+<h2 id="openwrt-基本操作指南">openwrt 基本操作指南</h2>
+<p><strong>1 修改回 DHCP</strong></p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/202203311130068.jpg" alt="" loading="lazy"></figure>
+<p>在刷完之后，推荐你将之前修改电脑的静态 IP 改为 DHCP，否则网络状态变化了可能没法上网。（下次进入 uboot 刷机的时候还是需要改为静态 IP）</p>
+<p><strong>2 修改默认的 LAN 地址</strong></p>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/202203311145200.jpg" alt="" loading="lazy"></figure>
+<p>因为很多人家的光猫的后台也是 192.168.1.1，刷完后 openwrt 后台默认也是 192.168.1.1 会导致 IP 冲突，无法上网。你需要在 openwrt 后台—网络—接口—选择 lan—修改—将 IPv4 地址 改为 192.168.X.1 （X改为你喜欢的数字，2-255 之间都行），然后保存并应用，以后你的 openwrt 后台也会变为此地址。</p>
+<p><strong>3 安装需要的软件</strong></p>
+<figure data-type="image" tabindex="22"><img src="https://oss.qust.me/img/202203311405699.jpg" alt="" loading="lazy"></figure>
+<p>目前的固件自带的软件比较少，你可以自行在 系统—文件传输—上传下载好的安装，比如 adguard、argon 主题、openclash 等等。因为和 nanoPi r2s 一样都是 aarch64_cortex-a53 架构，可以安装相同的软件包，像是 <a href="https://afdian.net/@openwrt/plan">kiddin9</a>  的提供<a href="https://op.supes.top/packages/aarch64_cortex-a53/">软件库</a> 就很使用，当然你熟悉 opkg 或者自己编译一些软件也都是能用的。</p>
+<h2 id="性能测试">性能测试</h2>
+<figure data-type="image" tabindex="23"><img src="https://oss.qust.me/img/202203311445622.jpg" alt="" loading="lazy"></figure>
+<p>跑满 1000M 外网！选的是比较吃性能的 vmess 协议，然后插件选的是 passwall（默认调用的 xray 内核）。从右侧 htop 信息可以看到跑满 900+Mbps 的代理四核 CPU 都在努力工作，占用也都在 90% 左右，利用率非常好。</p>
+<p><strong>那么 NPU 在干啥？</strong></p>
+<figure data-type="image" tabindex="24"><img src="https://oss.qust.me/img/202203311450165.jpg" alt="" loading="lazy"></figure>
+<pre><code>cat /sys/kernel/debug/qca-nss-drv/stats/cpu_load_ubi
+</code></pre>
+<p>目前我测试下来跑科学上网 NPU 基本都是不参与，但这颗 NPU 作用却非常大。这颗 1.5Ghz 的 NPU 更多作用在于从解放 CPU：比如在你连接 Wi-Fi 跑 speedtest 直连测速时，跑到 7、800Mbps 的 Wi-Fi 速度，CPU 都是不参与的使用率接近于 0，这些都由 NPU 来承担，NPU 这时候的使用率也才十几个%。</p>
+<p>当然除了 Wi-Fi 无线，NPU 在很多方面也会被调用使用，比如你用 clash 跑测速你也会发现 NPU 参与其中，未来 NSS 的驱动的完善这个颗 NPU 作用应该会更凸显出来。</p>
+<p>也给大家对比下 nanoPi r2s、红米 AX6s 和 360v6 的 CPU 跑 ss-rust 性能对比吧。</p>
+<p><strong>360v6</strong></p>
+<pre><code>————————nmsl friendlyarm ————————
+          Method none speed: 249M
+          Method plain speed: 244M
+          Method aes-128-gcm speed: 162M
+          Method aes-256-gcm speed: 156M
+          Method chacha20-ietf-poly1305 speed: 89.1M
+————————nmsl friendlyarm ————————
+</code></pre>
+<p><strong>红米AX6S</strong></p>
+<pre><code>-----------------nmsl friendlyarm -----------------
+          Method none speed: 101M
+          Method plain speed: 98.0M
+          Method aes-128-gcm speed: 85.9M
+          Method aes-256-gcm speed: 79.0M
+          Method chacha20-ietf-poly1305 speed: 56.4M
+-----------------nmsl friendlyarm -----------------
+</code></pre>
+<p><strong>nanoPi R2s（R2c）</strong></p>
+<pre><code>-----------------nmsl friendlyarm -----------------
+          Method none speed: 213M
+          Method plain speed: 209M
+          Method aes-128-gcm speed: 135M
+          Method aes-256-gcm speed: 124M
+          Method chacha20-ietf-poly1305 speed: 79.8M
+-----------------nmsl friendlyarm -----------------
+</code></pre>
+<h2 id="one-more-thing">ONE MORE THING</h2>
+<figure data-type="image" tabindex="25"><img src="https://oss.qust.me/img/202203311524368.jpg" alt="" loading="lazy"></figure>
+<p><a href="https://blog.paldier.com/">paldier</a> SWRT 梅林也有 360v6 版，不过收费40元，你可以尝试使用，觉得好用再购买（不激活 10分钟重启一次）。同是在 uboot 里选择 360v6_ASUS_WRT.img 刷入即可，非常方便。</p>
+<h2 id="总结">总结</h2>
+<p><strong>先说缺点吧：</strong></p>
+<p>目前固件功能比较简单，很多希望到手即用功能丰富的朋友可能无法满足你；闪存还是比较小的，如果你要装很多插件的话 128M 确实会不够；无线信号一般，近处测速还行，隔了一堵墙后就比同价位 ax6s 差不少（一个 300+ Mbps 一个 200Mbps 左右）；散热一般，稍微有点热，日常使用开个 adguard 和上网的插件室温 20 度左右，CPU 稳定在 60 度左右。</p>
+<p>优点那就是 200 多，可玩性贼高，IPQ6018 的性能就能跑满 1000Mbps 科学上网，NPU 的加持也让网络更顺畅，另外还有一个 USB2.0 的接口。我个人认为这是 200 元价位性能最佳的路由器了。</p>
+<p>最后：uboot 5 元真的很划算，刷机方便；lean 的 360v6 固件暂时没开源，他的群收费 50 即可进入（加他 QQ：5200455，红包 50 即可），梅林固件 40 确实不算便宜，不过你可以先尝试再决定是否付费。最后希望大家多支持一下开发者。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%8D%87%E7%BA%A7%E5%9B%BA%E4%BB%B6%E5%BC%80%E5%90%AF-telnet">第一步：升级固件开启 Telnet</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%88%B7%E5%85%A5-uboot-%E5%92%8C%E5%88%86%E5%8C%BA%E6%96%87%E4%BB%B6">第二步：刷入 uboot 和分区文件</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E4%BB%8E-uboot-%E5%88%B7%E5%85%A5-openwrt-%E5%9B%BA%E4%BB%B6">第三步： 从 uboot 刷入 openwrt 固件</a></li>
+<li><a href="#openwrt-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97">openwrt 基本操作指南</a></li>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">性能测试</a></li>
+<li><a href="#one-more-thing">ONE MORE THING</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/ax6s/">
+              <h3 class="post-title">
+                红米 AX6S 性能远超想象，解锁 SSH 安装 ShellClash｜刷 openwrt 教程
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

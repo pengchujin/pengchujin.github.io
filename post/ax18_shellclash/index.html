@@ -1,0 +1,276 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>移动和目 AX18 ShellClash 安装教程｜最便宜的高通 Wi-Fi 6 路由器，红米 AX5 一半的价格 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="移动和目 AX18 ShellClash 安装教程｜最便宜的高通 Wi-Fi 6 路由器，红米 AX5 一半的价格 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="移动和目 CMIOT-AX18 这款路由器是我在拼多多 104 元买的，目前拼多多和闲鱼都有在售，价格也在 100 元左右。这款路由器性价比真的挺高，和红米 ax5 以及小米 ax1800 都是相同的 CPU 高通 IPQ6000，4 核 ..." />
+    <meta name="keywords" content="瞎折腾" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              移动和目 AX18 ShellClash 安装教程｜最便宜的高通 Wi-Fi 6 路由器，红米 AX5 一半的价格
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-06-18
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://qust.me/tag/c1ZDMH8LV/" class="post-tag">
+                  # 瞎折腾
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/IMG_2605.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>移动和目 CMIOT-AX18 这款路由器是我在拼多多 104 元买的，目前拼多多和闲鱼都有在售，价格也在 100 元左右。这款路由器性价比真的挺高，和红米 ax5 以及小米 ax1800 都是相同的 CPU 高通 IPQ6000，4 核 A53 1.2GHz 外加上单核 1.5GHz 的 NPU，256M 的 ram 和 128M 的 rom，100 元的路由器能买到这个配置 cpu 的路由器血赚不亏。默认 ssh 就是开启的，今天这个教程就指导你如何安装 ShellClash 用 Clash 代理上网。</p>
+<!--more-->
+<h3 id="致谢">致谢</h3>
+<ul>
+<li>感谢 <a href="https://github.com/juewuy/ShellClash">ShellClash</a> 的作者，「骚扰」他更新了好几版本才能在 AX18 上正常使用，如果愿意可以<a href="https://juewuy.github.io/yOF4Yf06Q/">点此捐赠 ShellClash 项目</a>。</li>
+<li>acwifi 网有这款路由器的拆解评测，大家可以<a href="https://www.acwifi.net/13867.html">移步去看看</a>。</li>
+</ul>
+<h2 id="安装-shellclash">安装 ShellClash</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%889.46.30.jpg" alt="" loading="lazy"></figure>
+<p>安装之前，你需要进后台管理 wifi.cmcc 配置下 DHCP 上网。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_2586.JPG" alt="" loading="lazy"></figure>
+<p>在路由器的背面有默认的 wifi 信息，<strong>默认密码就是你的 ssh 密码</strong>，路由器的后台是 wifi.cmcc 或 192.168.10.1。使用终端/命令行工具链接，Windows 可以下载 putty 。</p>
+<pre><code>ssh root@192.168.10.1
+</code></pre>
+<p>输入路由器背后的「默认密码」即可（输入不显示输完回车即可）</p>
+<pre><code>export url='http://sc.qust.me/' &amp;&amp; wget -q -O /tmp/install.sh $url/install.sh  &amp;&amp; sh /tmp/install.sh &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<p>输入上面命令开始安装 ShellClash（因为 ax18 系用 wget 系统版本很低不支持 https，我这里提供了 http 版本的服务器）</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%886.59.55.jpg" alt="" loading="lazy"></figure>
+<p>2 选择测试版本目前，目前只有测试版本支持 ax18。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%889.51.09.jpg" alt="" loading="lazy"></figure>
+<p>1 选择 etc 目录，1 确认 安装，安装好后我们就可以用 clash 命令配置 ShellClash 啦。</p>
+<h2 id="配置使用-shellclash">配置使用 ShellClash</h2>
+<h3 id="准备订阅链接">准备订阅链接</h3>
+<p>因为低版本的 wget 不能用 https 的订阅链接，所以我们要先准备 http clash 的订阅给 ax18 用。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%889.02.53.jpg" alt="" loading="lazy"></figure>
+<p>打开 <a href="https://bianyuan.xyz/">边缘订阅转换</a> ，选择进阶模式，第一个空复制上你机场提供的订阅地址，后端地址填写下面的，然后选择生成订阅链接。</p>
+<pre><code>http://sub.qust.me:25500/sub?
+</code></pre>
+<p>生成好的链接你可以浏览器检查下能不能打开，打开应该是你的配置文件，OK 下面就会用到。</p>
+<h3 id="shellclash-配置使用">ShellClash 配置使用</h3>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%889.24.16.jpg" alt="" loading="lazy"></figure>
+<p>ssh 连接路由器后输入 clash，然后选择 1 主（旁）路由。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%889.25.52.jpg" alt="" loading="lazy"></figure>
+<p>然后 1 不代理 UDP 流量，1 安装 Dashboard 面板，2 Yacd 面板，1 下载并安装根证书。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%8811.42.06.jpg" alt="" loading="lazy"></figure>
+<p>然后 1 开始导入配置文件，2 导入 Clash 配置文件链接，最后复制上你上一步得到的链接。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%8811.33.08.jpg" alt="截屏2021-06-18 下午11.33.08" loading="lazy"></figure>
+<p>导入完成后应该就能可惜上网了，打开后台 http://192.168.10.1:9999/ui 你也可以切换节点等操作很方便。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%8811.48.41.jpg" alt="" loading="lazy"></figure>
+<p>当然更多的操作你还可以 ssh 连接路由器使用 clash 命令进行。</p>
+<h2 id="vmess-性能测试">vmess 性能测试</h2>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8B%E5%8D%8811.55.51.jpg" alt="" loading="lazy"></figure>
+<p>vemess ws+tls 的性能测试，和红米 ax5 小米 ax1800 表现一致都是在 100Mbps 左右，对于日常看 4k 视频，Netflix 4k 等等完全足够，顺便说下吧 k2p 相同的节点加密方式测试在 30Mbps 左右。</p>
+<h2 id="wi-fi-信号测试">Wi-Fi 信号测试</h2>
+<p>拿相同 cpu 定价大概是移动 AX18 两倍的 红米 AX5 做个简单的测试，都是默认设置。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/IMG_2592.JPEG" alt="" loading="lazy"></figure>
+<p>近距离：联通 500M + 一加8手机（支持 wifi 6）测试</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/IMG_2595.JPEG" alt="" loading="lazy"></figure>
+<p>隔一堵墙：联通 500M + 一加8手机（支持 wifi 6）测试</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-19%20%E4%B8%8A%E5%8D%8812.43.36.jpg" alt="" loading="lazy"></figure>
+<p>哦对这款路由器也是支持组 mesh 的，不过我只买了一台没办法实际测试。</p>
+<h2 id="总结">总结</h2>
+<p>移动和目 CMIOT-AX18 性价比真的非常高，如果只想买一个路由器，不想花太多钱，想要 Wi-Fi 6，还想要 ShellClash 科学上网的话这真是个不错的选择，前提价格在 100 左右。缺点就是做工一般，发热比较厉害，持续高 cpu 负载可能会有温度过高重启的概率，建议有能力的手动改改散热。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85-shellclash">安装 ShellClash</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8-shellclash">配置使用 ShellClash</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5">准备订阅链接</a></li>
+<li><a href="#shellclash-%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8">ShellClash 配置使用</a></li>
+</ul>
+</li>
+<li><a href="#vmess-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">vmess 性能测试</a></li>
+<li><a href="#wi-fi-%E4%BF%A1%E5%8F%B7%E6%B5%8B%E8%AF%95">Wi-Fi 信号测试</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/disney_plus/">
+              <h3 class="post-title">
+                Disney+ 订阅使用指南｜如何在中国使用 Disney+ 看这篇就够了📺
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

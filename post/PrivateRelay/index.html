@@ -1,0 +1,285 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>如何在中国开启 iCloud Private Relay｜苹果家的 VPN 使用体验 ✈️ | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="如何在中国开启 iCloud Private Relay｜苹果家的 VPN 使用体验 ✈️ | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="这篇文章将教你如何在中国开启 「Private Relay」体验下苹果的 VPN 是如何保护我们上网隐私的。
+在刚刚过去的 WWDC 2021 上苹果给自己的核心业务 iCloud 增加了  iCloud+ 的服务，主要包含了 「Priva..." />
+    <meta name="keywords" content="数字难民" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              如何在中国开启 iCloud Private Relay｜苹果家的 VPN 使用体验 ✈️
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-06-09
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://qust.me/tag/R5TM4hRpV/" class="post-tag">
+                  # 数字难民
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/D0noejjXQAACq1b.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><strong>这篇文章将教你如何在中国开启 「Private Relay」体验下苹果的 VPN 是如何保护我们上网隐私的。</strong></p>
+<p>在刚刚过去的 WWDC 2021 上苹果给自己的核心业务 iCloud 增加了  iCloud+ 的服务，主要包含了 「Private Relay 专用转接代理」和 「Private Email 隐藏邮件地址」，你可以理解为苹果提供的 VPN 和 苹果的临时邮箱服务。在 macOS 12 和 iOS 15 上 Private Relay 都是默认打开的，不过在中国大陆、白俄罗斯、哥伦比亚、埃及、哈萨克斯坦、沙特阿拉伯、南非、土库曼斯坦、乌干达和菲律宾这些国家因为某些原因都无法使用。</p>
+<!-- more -->
+<h2 id="什么是-private-relay-专用转接代理">❓ 什么是 Private Relay 专用转接代理</h2>
+<p>简单来说就是苹果和 CloudFlare 合作提供的系统级 VPN，不过目前只能在 Safari 浏览器里使用。</p>
+<h2 id="准备工作">📖 准备工作</h2>
+<ul>
+<li>升级了 iOS 15 或者 macOS 12 （<a href="https://ibeta.me">尝鲜派教程</a> 测试系统谨慎升级，切记备份好数据）</li>
+<li>一个非「中国大陆、白俄罗斯、哥伦比亚、埃及、哈萨克斯坦、沙特阿拉伯、南非、土库曼斯坦、乌干达和菲律宾」的 Apple ID （<a href="https://www.lizhi.io/blog/78586045">荔枝数码美区 Apple ID 注册教程</a>）</li>
+<li>订阅了 iCloud 存储空间（淘宝可以购买充值卡订阅；你也可以弄一个美区虚拟信用卡 <a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiF0LLV2onxAhVI7GEKHUjECSMQFjAAegQICBAD&amp;url=https%3A%2F%2Fwww.vpsdawanjia.com%2Ftag%2Feasypay%25E8%2599%259A%25E6%258B%259F%25E5%258D%25A1&amp;usg=AOvVaw0pT6mwV9jO9veG4upJ3-rj">VPS大玩家教程</a>；或者注册美国区 PayPal 绑定国内外币卡）</li>
+<li>一台能设置代理的路由器（最好使用 Clash，似乎有些闭环了）</li>
+</ul>
+<h2 id="如何开启-private-relay-专用转接代理">🤌 如何开启 Private Relay 专用转接代理</h2>
+<p>检测原理：苹果会定时大概 10 分钟左右访问一次 Apple 那边的接口，如果你的 IP 在中国大陆等都不会开启 Private Relay 专用转接代理，如果访问 Apple 接口的 <strong>IP 是非中国大陆则默认开启 Private Relay</strong> 专用转接代理。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%8812.45.25.jpg" alt="" loading="lazy"></figure>
+<p>那么操作则很简单很简单，你在路由器后台仅仅让<strong>🍎苹果的服务 走代理</strong>即可，其它服务都可以直连。（上图是 路由器 + OpenClash，如果你的 Clash 没有这些规则你可以参看 <a href="https://merlinblog.xyz/wiki/api.html">Sabrina的教程</a>）</p>
+<p>如果你使用的是其它软件，你可以参看下 Apple 这部分的规则。</p>
+<pre><code>    - 'DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple.co,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple.com.cn,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,apple-cloudkit.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,appstore.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,cdn-apple.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,icloud.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,icloud.com.cn,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,icloud-content.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,me.com,🍎 苹果服务'
+    - 'DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务'
+    - 'DOMAIN-KEYWORD,apple.com.akadns.net,🍎 苹果服务'
+    - 'DOMAIN-KEYWORD,icloud.com.akadns.net,🍎 苹果服务'
+    - 'IP-CIDR,17.0.0.0/8,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,63.92.224.0/19,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,65.199.22.0/23,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,139.178.128.0/18,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,144.178.0.0/19,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,192.35.50.0/24,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,198.183.17.0/24,🍎 苹果服务,no-resolve'
+    - 'IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve'
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_2474.JPEG" alt="" loading="lazy"></figure>
+<p>打开设置 - 你的账户 - iCloud - 专用转接代理，打开以后你的 Safari 浏览器理论上就能访问任意网站，并且流量都是走苹果提供的服务器。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/IMG_2481.JPEG" alt="" loading="lazy"></figure>
+<p>如果有“专用转接代理在您所在地区不可”的提示，只是因为你访问 Apple 服务的 IP 是中国大陆。👇下面提示国家只是拿了通用设置 - 语言地区的国家，<strong>和这个设置没有关系</strong>，<strong>仅仅是因为你访问 Apple 服务的 IP 是中国大陆</strong>。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.14.29.jpg" alt="" loading="lazy"></figure>
+<p>在 Mac 上也是相同使用。另外 Private Relay 专用转接代理这里其实有两个选项</p>
+<p>保留大概位置：你代理使用 IP 库基本都在你 IP 的国家</p>
+<p>使用更广泛位置：你代理使用 IP 全球乱飘</p>
+<h2 id="使用体验">🌍 使用体验</h2>
+<p>因为只能在 Safari 浏览器里使用，所以一下所有测试都是使用的 Safari 外加打开了专用转接代理。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8A%E5%8D%8810.01.16.jpg" alt="" loading="lazy"></figure>
+<p>fast.com 测速，我家是联通 500M 的带宽，然后打开专用转接代理 Safari 浏览器跑的测速。（这个测速并没走我自己的梯子，这点确认过）</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.23.47.jpg" alt="截屏2021-06-09 下午1.23.47" loading="lazy"></figure>
+<p>speedtest 速度测试</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.33.59.jpg" alt="" loading="lazy"></figure>
+<p>YouTube 8K 视频测速</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.47.48.jpg" alt="" loading="lazy"></figure>
+<p>Netflix 测试，不过经常会播放不了，因为 IP 一直在变。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.49.27.jpg" alt="" loading="lazy"></figure>
+<p>从 <a href="http://ip111.cn">ip111.cn</a> 可以看出，专用转接代理甚至每一次请求的 IP 都改变。如果网站想通过 IP 来搜集访问者的信息也很难实现。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.52.04.jpg" alt="" loading="lazy"></figure>
+<p>HBO、Disney+ 等一众流媒体你基本都没法使用，因为 IP 基本都会被判别为代理。</p>
+<h2 id="总结">🪢 总结</h2>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.55.26.jpg" alt="" loading="lazy"></figure>
+<p>不使用 Private Relay 专用转接代理｜示意</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-09%20%E4%B8%8B%E5%8D%881.54.38.jpg" alt="" loading="lazy"></figure>
+<p>打开 Private Relay 专用转接代理｜示意</p>
+<p>Private Relay 专用转接代理目的是保护用户的隐私，保护用户的隐私不被中间人监控查看，保护用户的隐私不被网站或者任何服务收集。它确实是 VPN 在理念上和实现上比绝大多 VPN 和你用的代理都高级，在加密和对隐私的保护上做到了极致。</p>
+<p>当然缺点也很多，目前因为 IP 跳的太快和没规律很多流媒体你无法观看会被判为代理，Google 搜索时也会有需要验证的情况，日后我觉得会这部分会改善。在中国大陆打开这个功能有点麻烦，还会定时检测，主要有点闭环，很多人只是想打开被屏蔽的内容这么做有点南辕北辙的意味。</p>
+<p>题图来自 The Verge</p>
+<p>推荐拓展阅读：</p>
+<p><a href="https://developer.apple.com/videos/play/wwdc2021/10096/">Apple 官方 Private Relay 视频介绍</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-private-relay-%E4%B8%93%E7%94%A8%E8%BD%AC%E6%8E%A5%E4%BB%A3%E7%90%86">❓ 什么是 Private Relay 专用转接代理</a></li>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">📖 准备工作</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF-private-relay-%E4%B8%93%E7%94%A8%E8%BD%AC%E6%8E%A5%E4%BB%A3%E7%90%86">🤌 如何开启 Private Relay 专用转接代理</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C">🌍 使用体验</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">🪢 总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/netflix2021/">
+              <h3 class="post-title">
+                 如何在中国使用 Netflix｜Netflix 入门指南🧭
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

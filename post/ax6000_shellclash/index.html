@@ -1,0 +1,306 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>小米 AX6000 解锁 SSH 安装 ShellClash 教程｜缩水的 CPU 属实拉垮👊🏼 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="小米 AX6000 解锁 SSH 安装 ShellClash 教程｜缩水的 CPU 属实拉垮👊🏼 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="AX3600 其实已经 EOL 下市了，线下的小米之家已经全替换为了 AX6000。AX3600 是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，还有双核的 1.7Ghz 的 NPU；而 AX6000 CPU 是 IPQ..." />
+    <meta name="keywords" content="瞎折腾" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              小米 AX6000 解锁 SSH 安装 ShellClash 教程｜缩水的 CPU 属实拉垮👊🏼
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-06-22
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://qust.me/tag/c1ZDMH8LV/" class="post-tag">
+                  # 瞎折腾
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/53d56fb213f7485fa26a96e21634fb3d.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>AX3600 其实已经 EOL 下市了，线下的小米之家已经全替换为了 AX6000。AX3600 是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，还有双核的 1.7Ghz 的 NPU；而 AX6000 CPU 是 IPQ5018 双核 1.0 GHz，NPU 也成了单核 1GHz。虽然无线方面有加强，也有了 1 个 2.5G 的网口，不过这 CPU 和 NPU 砍的实在是太厉害了。今天我们就解锁下这台 AX6000 安装 ShellClash 看看性能如何，能不能满足日常使用。</p>
+<!--more-->
+<h3 id="致谢">致谢</h3>
+<ul>
+<li>感谢 <a href="https://github.com/juewuy/ShellClash">ShellClash</a> 的作者，如果愿意可以<a href="https://juewuy.github.io/yOF4Yf06Q/">点此捐赠 ShellClash 项目</a></li>
+<li>感谢<a href="https://github.com/shell-script/unlock-redmi-ax3000">天灵 Github 的解锁脚本</a></li>
+<li>acwifi 网有这款路由器的拆解评测，大家可以<a href="https://www.acwifi.net/12621.html">移步去看看</a></li>
+</ul>
+<h2 id="准备">🔧 准备</h2>
+<ol>
+<li>一台能插网线的电脑（Windows 需要安装 <a href="https://www.putty.org/">Putty</a> 和 <a href="https://winscp.net/eng/download.php">WinSCP</a>｜Mac 使用命令行即可）</li>
+<li>另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）</li>
+<li>下载好降级固件和解锁脚本（链接: https://pan.baidu.com/s/11EMGkFbrLE3OwpFg2PbS7Q  密码: g7dl）</li>
+</ol>
+<h2 id="️-第一步降级">⬇️ 第一步｜降级</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.22.39.jpg" alt="" loading="lazy"></figure>
+<p>解压好下载的文件，登录小米路由器的后台，选择手动升级下载好的 1.0.41.bin 固件，选择开始升级（降级），等待重启降级完成。</p>
+<h2 id="️-第二步准备-openwrt-服务">💁‍♂️ 第二步｜准备 openwrt 服务</h2>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_1734.JPG" alt="IMG_1734" loading="lazy"></figure>
+<p>我这里准备的是一台刷了 openwrt 的 k2p，只需要接上电源有 Wi-Fi 信号，然后使用网线连接此 openwrt 路由器。我的这台 openwrt 路由器的地址是 10.0.0.1 你的应该不是，下面也记得根据你自己的修改。scp 上传 wireless.sh 到 openwrt 路由器。（把解压好的文件夹拖到命令里回车，在文件夹目录里执行；如果你是 Windows 命令提示符里没有 scp 功能的话你可以单独下载一个 WinSCP）</p>
+<pre><code class="language-bash">scp wireless.sh root@10.0.0.1:/root/wireless.sh
+</code></pre>
+<p>然后 ssh 连接到这台 openwrt 路由器。</p>
+<pre><code>ssh root@10.0.0.1
+</code></pre>
+<p>再执行脚本（<strong>执行本脚本会更改您的网络和无线设定，执行之前请务必备份相关数据</strong>）</p>
+<pre><code>sh /root/wireless.sh
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.27.16.jpg" alt="截屏2021-06-22 下午10.27.16" loading="lazy"></figure>
+<p>这里回车选择继续</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.29.22.jpg" alt="截屏2021-06-22 下午10.29.22" loading="lazy"></figure>
+<p>操作后这个脚本会修改我们 openwrt 路由器的 Wi-Fi 密码的一些设置，稍微等待一会，openwrt 插着电放在旁边即可，等会小米 AX6000 会连到 openwrt 的 Wi-Fi。</p>
+<h2 id="第三步小米-ax6000-破解-ssh">😈 第三步｜小米 AX6000 破解 SSH</h2>
+<p>将电脑用网线和 小米 AX6000 连接（因为小米 AX6000 解锁 Wi-Fi 可能会掉线）。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.47.33.jpg" alt="" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<h3 id="浏览器请求">浏览器请求</h3>
+<p>打开浏览器，复制下面的内容到地址栏，并替换 &lt;STOK&gt;</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/xqsystem/extendwifi_connect_inited_router?ssid=MEDIATEK-ARM-IS-GREAT&amp;password=ARE-YOU-OK&amp;admin_username=root&amp;admin_password=admin&amp;admin_nonce=xxx
+</code></pre>
+<ul>
+<li>&lt;STOK&gt; 替换为上面的值</li>
+</ul>
+<p>我的替换后如下。将替换好的值复制到浏览器请求，如果显示如下内容则表示成功。(请求可能需要等待一会)</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.50.20.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.50.53.jpg" alt="" loading="lazy"></figure>
+<p>再次打开路由器后台查看  <strong>2.4G 频段</strong> Wi-Fi 密码，这个 Wi-Fi 密码就是我们默认的 ssh <strong>密码，保存好！！！</strong>（没保存好可以<a href="https://www.oxygen7.cn/miwifi/">去这个页面</a>输入SN码计算出来（路由后台右下角 SN 码））</p>
+<h2 id="第四步-尝试-ssh-连接路由器">👅 第四步 ｜ 尝试 SSH 连接路由器</h2>
+<p>执行下面命令即可 ssh 连接到了路由器（输入 yes，密码是上面的，输入密码不会显示，输完回车即可）</p>
+<pre><code>ssh root@192.168.31.1
+</code></pre>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8810.52.36.jpg" alt="" loading="lazy"></figure>
+<h2 id="第五步-安装使用-shellclash">🧰 第五步 ｜ 安装使用 ShellClash</h2>
+<p>通过 SSH 连接上小米 AX6000 执行安装（<strong>请不要使用 telnet 连接安装 ShellClash，否则会乱码</strong>）</p>
+<pre><code>export url='https://raw.fastgit.org/juewuy/ShellClash/master' &amp;&amp; sh -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.30.49.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.31.40.jpg" alt="" loading="lazy"></figure>
+<p>1 /etc 目录，1 确认安装。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.33.51.jpg" alt="" loading="lazy"></figure>
+<p>安装好就能使用 clash 命令了 ，输入 clash 就能进入配置。这里选择 1  各类路由器设备（如果你清楚别的可以自行选择）。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.34.22.jpg" alt="" loading="lazy"></figure>
+<p>1 不代理 UDP 流量，1 安装 Dashboard 面板，2 yacd 面板（如果你清楚其它别的含义可以自行选择）</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.36.18.jpg" alt="" loading="lazy"></figure>
+<p>1 选择导入配置文件。如果你没有 Clash 的配置文件而是 v2ray、ss、trojan 的订阅链接（你的机场会提供），你可以再选择 1 进行「在线生成 Clash 配置文件」；如果有的话可以选择 2 直接导入配置文件。</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.37.56.jpg" alt="" loading="lazy"></figure>
+<p>然后粘贴上你的订阅链接（url 链接），再选择 1 开始生成配置文件。生成配置文件后按 0 返回上层菜单即可。</p>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.40.05.jpg" alt="" loading="lazy"></figure>
+<p>启动后你可以通过 http://192.168.31.1:9999/ui，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-20%20%E4%B8%8B%E5%8D%889.43.38.jpg" alt="" loading="lazy"></figure>
+<p>这个时候应该就能科学上网了速度也应该不错。</p>
+<h2 id="性能测试总结">🪢 性能测试｜总结</h2>
+<h3 id="vmess-ws-tls-测试">vmess + ws+ tls 测试</h3>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8811.14.33.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-06-22%20%E4%B8%8B%E5%8D%8811.15.47.jpg" alt="" loading="lazy"></figure>
+<p>测试了下，性能确实拉垮，连红米 AX5 这种特别便宜的都能跑满 100M 的 vmess ws+tls 的科学代理；AX6000 怎么测试也只能跑到 60-70Mbps 左右，还有个问题就是国内的流量虽然不走代理但是目前也是过 clash 处理的，AX6000 的性能太过拉垮导致打开了 ShellClash 国内的速度也上不去，我家 500M 的宽带活生生只能跑满 200M 了，关了 clash 又恢复正常。（ShellClash 倒是单独提供绕过国内的功能）</p>
+<h3 id="总结">总结</h3>
+<p>小米 AX6000 CPU 和 NPU 实在阉割的太过头了，用 ShellClash 跑科学代理的速度真的特别拉垮，都远比不过百元级别搭载 IPQ6000 芯片的路由器。如果你有安装 ShellClash 科学上网的需求，别买 AX6000。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%86%E5%A4%87">🔧 准备</a></li>
+<li><a href="#%EF%B8%8F-%E7%AC%AC%E4%B8%80%E6%AD%A5%E9%99%8D%E7%BA%A7">⬇️ 第一步｜降级</a></li>
+<li><a href="#%EF%B8%8F-%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%87%86%E5%A4%87-openwrt-%E6%9C%8D%E5%8A%A1">💁‍♂️ 第二步｜准备 openwrt 服务</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%B0%8F%E7%B1%B3-ax6000-%E7%A0%B4%E8%A7%A3-ssh">😈 第三步｜小米 AX6000 破解 SSH</a>
+<ul>
+<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82">浏览器请求</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E5%B0%9D%E8%AF%95-ssh-%E8%BF%9E%E6%8E%A5%E8%B7%AF%E7%94%B1%E5%99%A8">👅 第四步 ｜ 尝试 SSH 连接路由器</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-shellclash">🧰 第五步 ｜ 安装使用 ShellClash</a></li>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%80%BB%E7%BB%93">🪢 性能测试｜总结</a>
+<ul>
+<li><a href="#vmess-ws-tls-%E6%B5%8B%E8%AF%95">vmess + ws+ tls 测试</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/ax9000_shellclash/">
+              <h3 class="post-title">
+                小米 AX9000 解锁 SSH 安装 ShellClash 教程｜地表最强硬路由💪
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

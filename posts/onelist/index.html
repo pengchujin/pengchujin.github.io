@@ -1,0 +1,267 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>拿 OneDrive 做共享云，方便速度还贼快 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="拿 OneDrive 做共享云，方便速度还贼快 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="此前有看到过拿 OneDrive 做共享云的，速度很快，也不走自己服务器流量。最近开了 Office 365 车，正好想到此事。看了几个 OneDrive 共享的程序，感觉配置有点复杂，为了方便自己折腾也或许能给别人提供便利就打包了个 Ca..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              拿 OneDrive 做共享云，方便速度还贼快
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-10-23
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-23%20231252.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>此前有看到过拿 OneDrive 做共享云的，速度很快，也不走自己服务器流量。最近开了 Office 365 车，正好想到此事。看了几个 OneDrive 共享的程序，感觉配置有点复杂，为了方便自己折腾也或许能给别人提供便利就打包了个 Caddy 2 和 OneList go 版本的 Docker。</p>
+<!--more-->
+<p><strong>cloud.qust.me 可以看看我的共享 OneDrive，分享文件下载十分方便。</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-10-23%20231252.png" alt="" loading="lazy"></figure>
+<h2 id="准备">准备</h2>
+<ol>
+<li>一台 vps 服务器(会占用 443 和 80 端口)</li>
+<li>已经解析好了到该服务器的域名</li>
+<li>OneDrive 账户</li>
+</ol>
+<h2 id="安装">安装</h2>
+<h3 id="安装好-docker">安装好 Docker</h3>
+<pre><code> curl -fsSL https://get.docker.com -o get-docker.sh  &amp;&amp; \
+ bash get-docker.sh
+</code></pre>
+<h3 id="获取授权">获取授权</h3>
+<p>根据你的账户情况选择</p>
+<h4 id="国际版-个人版家庭版"><a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&amp;response_type=code&amp;redirect_uri=http://localhost/onedrive-login&amp;response_mode=query&amp;scope=offline_access%20User.Read%20Files.ReadWrite.All">国际版, 个人版(家庭版)</a></h4>
+<h4 id="中国版世纪互联"><a href="https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?client_id=dfe36e60-6133-48cf-869f-4d15b8354769&amp;response_type=code&amp;redirect_uri=http://localhost/onedrive-login&amp;response_mode=query&amp;scope=offline_access%20User.Read%20Files.ReadWrite.All">中国版(世纪互联)</a></h4>
+<p>点击上述链接后浏览器会跳转到 http://localhost/onedrive-login?code=XXXX 这样的，复制下面会用到。</p>
+<h3 id="运行">运行</h3>
+<p>授权链接：复制上面的跳转</p>
+<p>类型选择：</p>
+<ul>
+<li>国际版 填 a</li>
+<li>家庭版个人版填 ms</li>
+<li>世纪互联版填  cn</li>
+</ul>
+<p>域名：此 VPS 绑定的域名，Caddy 获取 SSL 用</p>
+<p>子目录：根目录文件名，比如共享 OneDrive 根路径下面的 share 文件夹，填 share 即可；不填则表示共享根目录。</p>
+<pre><code>docker run -d --rm --name onelist -p 443:443 -p 80:80 pengchujin/onelist:0.14 授权链接 类型选择 域名 子目录 &amp;&amp; sleep 3s &amp;&amp; docker logs onelist
+</code></pre>
+<p>像我 填好就是这样：</p>
+<pre><code>docker run -d --rm --name onelist -p 443:443 -p 80:80 pengchujin/onelist:0.14 http://localhost/onedrive-login?code=M.R3_BL2.a41510da-4b4a-d332-1ba2-xxxxxxxxxx a cloud.qust.me share &amp;&amp; sleep 3s &amp;&amp; docker logs onelist
+</code></pre>
+<p>运行完浏览器打开 你的域名 应该即可共享。</p>
+<h2 id="可能会遇到的问题">可能会遇到的问题</h2>
+<p>查看日志：</p>
+<pre><code>docker logs onelist 
+</code></pre>
+<p>如果没有日志，很有可能是授权链接错误。</p>
+<p>停止共享：</p>
+<pre><code>docker stop onelist
+</code></pre>
+<ol>
+<li>授权的链接用一次就会失效，请每次单独生成。</li>
+<li>如果打开域名，显示 No Found，应该是无该目录或者该目录下无文件（如果是 OneDrive 刚添加的同步任然需要一段时间）</li>
+</ol>
+<p><strong>欢迎提出问题。</strong></p>
+<p><strong>感谢</strong>：<a href="https://github.com/MoeClub">MoeClub</a> 的 <a href="https://github.com/MoeClub/OneList/tree/master/Rewrite">OneList</a> ，以及 Caddy 2。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87">准备</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%A5%BD-docker">安装好 Docker</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E6%8E%88%E6%9D%83">获取授权</a>
+<ul>
+<li><a href="#%E5%9B%BD%E9%99%85%E7%89%88-%E4%B8%AA%E4%BA%BA%E7%89%88%E5%AE%B6%E5%BA%AD%E7%89%88">国际版, 个人版(家庭版)</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E7%89%88%E4%B8%96%E7%BA%AA%E4%BA%92%E8%81%94">中国版(世纪互联)</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%90%E8%A1%8C">运行</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">可能会遇到的问题</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/hdr/">
+              <h3 class="post-title">
+                B 站和 HDR
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

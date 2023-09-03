@@ -1,0 +1,255 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>移动和目 AX18 刷 openwrt 教程，百元的 IPQ6000 也太强了。 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="移动和目 AX18 刷 openwrt 教程，百元的 IPQ6000 也太强了。 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="之前有在博客和视频推荐过 移动 AX18 这款路由器，在推荐后价格也一路上涨了几十元，但最近几个月芯片缺货严重，即使是主打性价比的用高通芯片的小米路由器也顶不住，纷纷涨价和改用「低端」 MTK 芯片了。近期出品的 GL-iNet 同款芯片的..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              移动和目 AX18 刷 openwrt 教程，百元的 IPQ6000 也太强了。
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-11-25
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/IMG_2606.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>之前有在博客和视频推荐过 <a href="https://qust.me/post/ax18_shellclash/">移动 AX18 这款路由器</a>，在推荐后价格也一路上涨了几十元，但最近几个月芯片缺货严重，即使是主打性价比的用高通芯片的小米路由器也顶不住，纷纷涨价和改用「低端」 MTK 芯片了。近期出品的 GL-iNet 同款芯片的 AX1800 也卖到了 500 元，相比之下移动 AX18 依然性价比特别特别高。<strong>（注意不要买新款，新款的 AX18 不是 IPQ6000 芯片了）</strong></p>
+<p><strong>省流助手</strong></p>
+<ul>
+<li>感谢「<a href="https://www.right.com.cn/forum/thread-6945618-1-1.html">暗云</a>」大佬提供的固件</li>
+<li>暂时该 openwrt 固件没有 Wi-Fi 无线功能（作者说：256M 内存太小，硬件加解密驱动和无线只能二选一，所以无线驱动没上）</li>
+</ul>
+<h3 id="下载固件和-uboot">🌍 下载固件和 uboot</h3>
+<p>链接:  <a href="https://pan.baidu.com/s/12vfeSMahZRjq2OldKn8OSw">百度网盘</a> 提取码: ng0s</p>
+<h3 id="刷入-openwrt-系统">💻 刷入 openwrt 系统</h3>
+<p>AX18 刷成 openwrt 系统非常非常简单：</p>
+<ol>
+<li>登陆后台：在路由器的背面有默认的 wifi 信息，<strong>默认密码就是你的后台登录密码</strong>，路由器的后台是 wifi.cmcc 或 192.168.10.1。</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-25%20%E4%B8%8B%E5%8D%8810.48.20.png" alt="截屏2021-11-25 下午10.48.20" loading="lazy"></figure>
+<ol start="2">
+<li>刷写固件：在后台选择-高级设置-升级固件-<strong>取消勾选保留配置</strong>-然后选择下载好的固件上传升级即可。</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-25%20%E4%B8%8B%E5%8D%8810.56.38.png" alt="截屏2021-11-25 下午10.56.38" loading="lazy"></figure>
+<ol start="3">
+<li>稍等几分钟后路由器重启使用有线网络连接路由器就是 openwrt 的系统了。（后台密码是:password）注意⚠️这个系统是没有 无线网络 Wi-Fi 功能的。</li>
+</ol>
+<h3 id="刷入-uboot">🔌 刷入 uboot</h3>
+<p>有了 uboot 就能非常方便的刷机更新系统了，也能很大程度避免路由器变砖，如果刷过 android 知道 Recovery 这个就和那类似。</p>
+<ol>
+<li>
+<p>在 openwrt-系统-文件传输 上传好下载的 uboot-cmiot-ax18.bin 文件。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-04%20%E4%B8%8A%E5%8D%8811.28.19.jpg" alt="截屏2021-12-04 上午11.28.19" loading="lazy"></figure>
+</li>
+<li>
+<p>再打开 TTYD 终端 执行以下命令(用户名：root 密码：password 密码输入不显示，输入完回车即可)</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-04%20%E4%B8%8A%E5%8D%8811.34.38.jpg" alt="截屏2021-12-04 上午11.34.38" loading="lazy"></figure>
+<pre><code class="language-shell">mtd write /tmp/upload/uboot-cmiot-ax18.bin /dev/mtd13
+</code></pre>
+</li>
+</ol>
+<p>进入 uboot 的方式，插电开机按住 rest 8s 以上，电脑通过网线连接路由器的 lan 口，并且将电脑设置为静态IP：192.168.1.x （x表示 2-255 任意数），打开 192.168.1.1 即可打开 uboot。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-04%20%E4%B8%8A%E5%8D%8811.46.01.jpg" alt="截屏2021-12-04 上午11.46.01" loading="lazy"></figure>
+<h3 id="性能测试">💥 性能测试</h3>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-25%20%E4%B8%8B%E5%8D%8811.24.44.png" alt="截屏2021-11-25 下午11.24.44" loading="lazy"></figure>
+<p>刷完之后我直接扔进弱电箱做主路由了，然后 Wi-Fi 用的是小米 mesh 那一套（ax6000 + ax6 * 2）。</p>
+<p>直接看图吧，没必要多说了吧。百元的 AX18 路由器，高通  IPQ6000 的 CPU，轻松跑满 1000M 宽带。</p>
+<h3 id="总结">🪢 总结</h3>
+<p>还要啥自行车？？？赶紧冲吧，这价格还不是暴打你的软路由。另外还修复了之前官方固件有高 CPU 系统会挂的问题，现在怎么测速高负载都很稳了。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6%E5%92%8C-uboot">🌍 下载固件和 uboot</a></li>
+<li><a href="#%E5%88%B7%E5%85%A5-openwrt-%E7%B3%BB%E7%BB%9F">💻 刷入 openwrt 系统</a></li>
+<li><a href="#%E5%88%B7%E5%85%A5-uboot">🔌 刷入 uboot</a></li>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">💥 性能测试</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">🪢 总结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/ax6000_shellclash/">
+              <h3 class="post-title">
+                小米 AX6000 解锁 SSH 安装 ShellClash 教程｜缩水的 CPU 属实拉垮👊🏼
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

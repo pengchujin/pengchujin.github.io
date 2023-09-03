@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://qust.me</id>
+    <title>酱紫表</title>
+    <updated>2023-09-03T13:19:08.770Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://qust.me"/>
+    <link rel="self" href="https://qust.me/atom.xml"/>
+    <subtitle>复杂的世界里一个就足够了</subtitle>
+    <logo>https://qust.me/images/avatar.png</logo>
+    <icon>https://qust.me/favicon.ico</icon>
+    <rights>All rights reserved 2023, 酱紫表</rights>
+    <entry>
+        <title type="html"><![CDATA[infuse+alist+网盘，不用 NAS 也能打造影音库]]></title>
+        <id>https://qust.me/post/infuse-alist/</id>
+        <link href="https://qust.me/post/infuse-alist/">
+        </link>
+        <updated>2022-12-23T13:15:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>这几天一直在使用体验 infuse + alist + 网盘，体验还不错，比 Nas 会要方便很多。主要用 Nas 的还是少部分用户，毕竟入门门槛还是有些高的，只是拿来看电影看剧也没太要必要。 这里也就简单写个文字版，配合视频，方便大家复制代码，查看引用的链接。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这几天一直在使用体验 infuse + alist + 网盘，体验还不错，比 Nas 会要方便很多。主要用 Nas 的还是少部分用户，毕竟入门门槛还是有些高的，只是拿来看电影看剧也没太要必要。 这里也就简单写个文字版，配合视频，方便大家复制代码，查看引用的链接。</p>
+<!-- more -->
+<h2 id="alist-安装">alist 安装</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/419b0f2ceb4c180cb94bdabd5c90065c.jpg" alt="" loading="lazy"></figure>
+<p>为什么要安装 alist 呢？主要是绝大部分网盘都不支持 <a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%96%E5%86%99%E5%92%8C%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">webdav</a> 协议，需要借助 alist 找个“中介”提供 webdav 让 infuse 能连接观看网盘里的电影，当然 alist 默认的是转发，连接速度还是取决于你网盘以及本地网络的速度。所以在路由器、安卓手机、replit 平台安装体验都很不错，下面三种任选其一即可。</p>
+<h3 id="路由器">路由器</h3>
+<p>软路由 iStoreOS 系统自带就不讲了，不带的可以用 <a href="https://github.com/sbwml/luci-app-alist">luci-app-alist</a> 的一键安装脚本（需要 40M 剩余空间，手动安装的话只需要 20多M）</p>
+<pre><code>sh -c &quot;$(curl -ksS https://raw.githubusercontent.com/sbwml/luci-app-alist/master/install.sh)&quot;
+</code></pre>
+<p>我试了 360t7 没问题，在 <a href="https://github.com/sbwml/luci-app-alist/releases">releases</a> 里也可以手动下载安装。下载自己路由 CPU 架构的 alist ipk，luci alist，以及 i18n 三个 ipk 文件，然后在路由器后台里的系统-文件传输，选择下载好的三个文件依次上传，再依次安装就完成了。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/764b1ea4be8e291d33e3e8876d3eb3d9.jpg" alt="" loading="lazy"></figure>
+<p>选择启用，推荐勾选允许外网访问，然后保存并应用就可以了，默认的 web 管理密码可以支持查看。</p>
+<h3 id="安卓手机">安卓手机</h3>
+<p>在手机上安装使用前我真是没想到手机上操作能这么方便还非常省电，我坚果 pro2 一晚上后台挂着掉电 10% 左右，四五天充一次没问题的。</p>
+<p>推荐从 <a href="https://f-droid.org/en/packages/com.termux/">f-droid</a> 上下载安装 termux，Google Play 上蛮久没更新了，安装打开后：</p>
+<p>更新软件软件包：</p>
+<pre><code>pkg update
+</code></pre>
+<p>安装 alist：</p>
+<pre><code>pkg install alist
+</code></pre>
+<p>启动 alist 服务：</p>
+<pre><code>alist server 
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/4224eeab766c4e63b23288129a711fa0.jpg" alt="" loading="lazy"></figure>
+<p>第一次启动会输出用户名 admin 和初始化的密码，保存好。然后访问手机 Wi-Fi 的 ip，比如我这里是 192.168.1.22，再加上端口号 5244 就能进入后台。</p>
+<h3 id="replit-平台">replit 平台</h3>
+<p><a href="https://replit.com/~">replit</a> 是一个在线开发平台，当然也可以白嫖运行 alist 的服务。alist 官方也有给提供一键导入运行的<a href="https://github.com/alist-org/alist-replit">链接</a>。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/4ef551b4fc1637b0ff7e3a7be596ebbf.jpg" alt="" loading="lazy"></figure>
+<p>选择 run on replit，需要注册登录下，我就直接使用 GitHub 账户登录 replit 了。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/f3aad9ad044b10b0b54f603c3fff9c42.jpg" alt="" loading="lazy"></figure>
+<p>再点击 Import from GitHub，倒入的过程需要稍等片刻。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/6fe2fc5044f35e824181e7828d081dfc.jpg" alt="" loading="lazy"></figure>
+<p>然后点击最顶部的 run，就会开始运行。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/5227c8dde86f12d4cbb174fedbd6cf6c.jpg" alt="" loading="lazy"></figure>
+<p>完成后就能看到 replit 提供的链接就是我们的后台地址，右下角输出的就是我们后台的密码，也就能打开登录使用了。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/4931467160d36876ab80750181dbff4e.jpg" alt="" loading="lazy"></figure>
+<p>replit 一段时间不访问就会自动杀死，推荐在监控网站上添加个 5 分钟每次的监控，以我在用的 <a href="https://updown.io/">updown.io</a> 为例。注册登录以后，输入刚才 alist 链接地址，然后勾选5分钟，再点击保存就好了</p>
+<h2 id="alist-添加网盘">alist 添加网盘</h2>
+<p>这里给大家演示下 alist 添加阿里云盘，<a href="https://alist.nn.ci/zh/guide/drivers/aliyundrive.html">alist 官方文档</a> 有非常详细的教程直接参看就能添加上，当然 alist 支持非常多的网盘，不是用阿里云盘的同样也能添加上。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/ddad8dbd64b7ffed47bcb2fc9a1b4a1e.jpg" alt="" loading="lazy"></figure>
+<p>在 alist 的管理后台选择-存储-添加-驱动选择阿里云盘：</p>
+<p>挂载路径填写：/阿里云盘 （这个会是主页文件夹的名称）</p>
+<p>根文件夹ID：root （默认的 root 就是整个网盘都挂载上）</p>
+<p>刷新令牌：在 <a href="https://alist.nn.ci/zh/guide/drivers/aliyundrive.html">alist 官方文档</a> 用手机阿里云盘 app 扫码就能得到 （不要泄漏，保存好）</p>
+<p>最后点击添加就能添加上。</p>
+<p><strong>补充下根文件夹 ID</strong></p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/446cc41484ddff3ee6ca97a7c6cd9b2d.jpg" alt="" loading="lazy"></figure>
+<p>如果你只想挂载阿里云盘里的电影这个文件，就复制选中的这段字符替换默认的 root 填进根文件夹 ID 里。</p>
+<h2 id="infuse-添加-alist">infuse 添加 alist</h2>
+<p><a href="https://alist.nn.ci/zh/guide/webdav.html">alist 官方文档</a> 有 webdav 非常详细的介绍，我这里截图给大家演示下 iPhone 的，因为 infuse 各客户端能通过 iCloud 同步设置，只用添加一台设备就 OK。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/db68a009ab6b2bfb187beb5eea147dcd.JPEG" alt="" loading="lazy"></figure>
+<p>在 infuse 的设置-新增文件来源-添加-添加 WebDAV 就能开始添加。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/8ebf963dadf2da3f12e0a619f9b7ee7e.JPEG" alt="" loading="lazy"></figure>
+<p>名称：随意填写</p>
+<p>通讯协议：路由器或者安卓手机的默认的 webdav 就行，replit 因为是 https，所以勾选成 WebDAV（HTTPS）</p>
+<p>地址：路由器或者安卓填局域网 IP，replit 填写它给的链接就行</p>
+<p>用户名和密码：就是 alist 后台的用户名和密码</p>
+<p>高级里的路径：/dav (如果你想细分 infuse 只连接某个文件夹可以后面继续添加比如 /dav/阿里云盘，/dav 一定要填的)</p>
+<p>端口：安卓手机和路由默认的都是 5244 端口，replit 链接是 https 所以是 443</p>
+<p>点击保存应该就能连接上了，连上后文件夹点下星号收藏，就会开始同步抓取内容。</p>
+<h2 id="资源推荐">资源推荐</h2>
+<h3 id="阿里云盘">阿里云盘</h3>
+<p>阿里云盘的好处是速度真的还行，40G 50G 的原盘很流畅，自己存储空间不够也能保存下来别人分享的超大资源。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[360 T7 刷 openwrt 教程｜最强的百元路由器]]></title>
+        <id>https://qust.me/post/360t7-openwrt/</id>
+        <link href="https://qust.me/post/360t7-openwrt/">
+        </link>
+        <updated>2022-11-23T11:17:17.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>这就是 2022 年百元最强的路由器 360 T7，和红米 AX6S 相同规格的无线 Wi-Fi，同等性能的 CPU，以及同样都能刷 openwrt，但价格却只要红米的一半。360 T7 是运营商与 360 合作的定制款路由器，我买到的这款是白色的，站立式的设计比较省空间，正面有一颗 led 指示灯，背面是四个千兆的网口。</p>
+<p>无线规格是 ax3000，支持 160Mhz 频宽的 Wi-Fi，相比红米 ax6s 的 4x4mimo 80Mhz 频宽，目前 2*2 mimo 160Mhz 还是更实用，能让近几年的安卓、Windows 设备都能达到 2400Mbps 的连接速率；CPU 是 MTK 的 MT7981，arm a53 双核 1.3GHz，和红米的 AX6s 基本相当，不过胜在 MT7981 支持的加速特性更多；以及配备了 256M 的内存 128M 的闪存。当然更多的拆解和评测可以去 <a href="https://www.acwifi.net/22217.html">acwifi 网站</a>有非常详细的拆解评测；而我们今天的教程是把它刷成 openwrt，不能浪费这么好的配置。</p>
+<p><strong>教程开始前还是先感谢下：</strong></p>
+<ul>
+<li><a href="https://cmi.hanwckf.top/">hanwckf h大的开源适配以及刷机的教程</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-8263340-1-1.html">237 编译分享的固件</a></li>
+</ul>
+<p><strong>目前的刷机教程需要拆机，用 ttl 的方式刷机，对新手不是很友好。</strong></p>
+<h2 id="准备工作">准备工作</h2>
+<p>1 360 T7 路由器</p>
+<p>2 一台 Windows 电脑（需要能插网线）</p>
+<p>3 USB 转 TTL 的模块（淘宝几块钱就能买到）</p>
+<p>4 公对母的杜邦线（用于连接 TTL 模块和路由器）和网线</p>
+<p>5 下载好 <a href="https://www.right.com.cn/forum/thread-8263340-1-1.html">openwrt 固件</a></p>
+<p>6 下载<a href="https://apps.microsoft.com/store/detail/%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B/9NBLGGH43HDM?hl=zh-cn&amp;gl=cn">安装串口调试助手</a>和 <a href="https://termius.com/windows">Termius</a></p>
+<h2 id="开启-telnet">开启 Telnet</h2>
+<p><strong>拆机接上 TTL</strong></p>
+<p>360 T7 的底部有两颗螺丝，螺丝刀捅开贴纸就能顺利拧下来。塑料后盖非常的紧，卡扣非常多，需要费点力气，当然也没法避免卡扣会掉。<br>
+<img src="https://oss.qust.me/img/de59b787402fbf56c138bca3fd733e75.JPEG" alt="" loading="lazy"></p>
+<p>拆开后，就能看到 TTL 的串口，如图里所示，从上到下分别是 RXD、TXD、GND。我们用杜邦线对应的连接好 TTL 模块即可（路由 RXD 连接模块的 TXD，TXD 连接 RXD，GND 连接 GND）。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/b52265c40b228f09a2831780ef70db41.jpg" alt="" loading="lazy"></figure>
+<p>打开串口调试助手后，串口号选择插入 COM 口设备，波特率选择到 115200，然后选择连接。</p>
+<p><strong>failsafe 模式下打开 telnet</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/53ff1e59f71b6809d0792a8f283f0ce9.jpg" alt="" loading="lazy"></figure>
+<p>现在给路由器插上电源，就能看到右边框里不断有开机日志的输出。我们不停的发送 f（记得需要回车换行，另外按 esc 能直接发送），就能看到进入 failsafe 模式。</p>
+<pre><code># 开启uboot控制台菜单
+fw_setenv bootmenu_delay 3
+
+# 挂载rootfs并开启telnet
+mount_root
+sed -i 's/.*local debug=.*/\tlocal debug=1/' /etc/init.d/telnet
+
+# 修改root密码为password
+passwd root
+
+password
+
+password
+
+# 重启
+reboot
+
+</code></pre>
+<p>然后依次复制上面的命令到串口调试工具里执行，记得都要有回车换行符号。修改 root 密码这一步是连续两次输入相同的密码，我这里是换成了 password；最后完成 reboot 重启就可以。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/5da1d5c6c42a33f8cb8d6a1065ab7e4b.jpg" alt="" loading="lazy"></figure>
+<p>输入 reboot 回车后系统就会正常重启。</p>
+<h2 id="刷入-uboot">刷入 uboot</h2>
+<p>重启之后我们就可以正常配置好路由器，路由器的 Wi-Fi 密码信息以及后台密码信息在 360 T7 的底部，这一步请<strong>确保路由能正常联网</strong>，因为会从网络上获取 uboot 进行刷入，当然如果你习惯 scp 或别的方式上传也是一样的。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/dc0c3233e7bf44a610a6fec2bc3de86d.jpg" alt="" loading="lazy"></figure>
+<p>打开 termius 选择 telnet 进行连接，默认的后台地址是 192.168.2.1，用户名是 root，密码是 password（这个是上一步自己输入修改的）。</p>
+<pre><code>cd /tmp
+wget https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/360T7/360t7-fip-fixed-parts.bin
+mtd write 360t7-fip-fixed-parts.bin fip
+</code></pre>
+<p>连接后复制上面的命令在 telnet 里执行，这一步会将 uboot 写入路由器。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/2e6a33685891d446d17c2665a2ad4d02.jpg" alt="" loading="lazy"></figure>
+<p>我这执行完成后是如图的结果，现在就能开始下一步了。</p>
+<h2 id="uboot-刷入-openwrt">uboot 刷入 openwrt</h2>
+<p>有了 uboot 刷机就非常方便了，我们先进入 uboot ：路由器先顶住背面的 reset 按钮不放，再插上电源等待大约 8 秒松开 reset 就能进入 uboot。uboot 是没有 dhcp 的，用网线连接路由的 LAN 口和电脑，我们需要手动设置下电脑的 IP。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/5c18cd64f6b9f3d784621cf9252fbe8e.jpg" alt="" loading="lazy"></figure>
+<p>如图上电脑的 IP 手动设置为 192.168.1.2，子网掩码 255.255.255.0，网关设置 192.168.1.1，dns 也设置 192.168.1.1。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/9c1df35991ab498dc757a332262bf5fe.jpg" alt="" loading="lazy"></figure>
+<p>然后浏览器打开 192.168.1.1 就能进入 uboot 了，我们选择下载好的 openwrt 固件，上传刷入即可（zip 格式的需要解压）。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20d75584129352e4aa9fefacf082e23f.jpg" alt="" loading="lazy"></figure>
+<p>刷入完成路由器就会自动重启进入新的 openwrt 固件，你也能重新装好后盖正常使用。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/05c040f0370136cdd76cdde19f9456a1.jpg" alt="" loading="lazy"></figure>
+<p>openwrt 固件默认后台地址的是 192.168.6.1，用户名是 root，密码 password，默认的 Wi-Fi 名是 mtk 开头的，默认 Wi-Fi 没有密码。</p>
+<h2 id="openwrt-性能测试">openwrt 性能测试</h2>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/b3ffba0984573151b89572017188ac62.jpg" alt="" loading="lazy"></figure>
+<p>首先 coremark 跑分 8803.7，MT7981 还行能看，都是 arm a53 主频和核心数肯定直接影响得分，这个双核 1.3Ghz 也就差不多这水平了。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/99124442d5faf2fabc561d2a00849b3b.jpg" alt="" loading="lazy"></figure>
+<p>科学性能能跑到 800Mbps 左右，这里需要说一下用的是 passwall，ss 的加密是 chacha20-ietf-poly1305，我手动选择了 rust 的版本，如果默认的 Libev 版本大约只有 300Mbps 左右。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/6da89ac066899ca67b575eb688f67d87.jpg" alt="" loading="lazy"></figure>
+<p>hwnat 硬件加速工作正常，跑满 1000M 宽带 CPU 基本没有占用。</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/69b379fe3ef6549cec7f1d1ba62bb4e1.JPEG" alt="" loading="lazy"></figure>
+<p>无线信号真的非常不错，近处用 iPhone 13 测试无论原厂还是 openwrt 都能有 700Mbps 以上。</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/b303c5d04fe2da6cc267569dc79b820a.JPEG" alt="" loading="lazy"></figure>
+<p>隔了一堵区墙后也能有 450Mbps 以上，效果比之前的 ax6s 还略好一点。</p>
+<h2 id="总结">总结</h2>
+<p>360 T7 一百多的价格，搭载了 MTK MT7981，无论是无线 Wi-Fi 性能还是刷机后的科学性能都非常非常有性价比了，也有 uboot 刷机方便不用担心刷挂了；目前唯一的缺点就是刷机需要拆机用 ttl，有点麻烦对新手不友好。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[红米 ax6000 刷 openwrt 教程，终于有完善好用的 openwrt 了]]></title>
+        <id>https://qust.me/post/ax6000-openwrt/</id>
+        <link href="https://qust.me/post/ax6000-openwrt/">
+        </link>
+        <updated>2022-11-06T06:59:26.000Z</updated>
+        <content type="html"><![CDATA[<p>上次我们给红米 AX6000 解锁了 SSH，今天就再进一步来给他刷上 openwrt 顺便测试下。目前红米 AX6000 已经有 openwrt 官方的支持了，固件也达到了基本完善的状态，无线 Wi-Fi 信号和原厂差不多，只是 led 灯依然有一些 bug。不过如果你不是对 openwrt 需求强烈和爱折腾的用户，其实跟着按照上次解锁 SSH 后就够用了。当然今天这个教程刷完 openwrt 还是能直接用官方恢复工具刷回原厂固件的，不用担心变砖。</p>
+<p><strong>在教程开始前还是先感谢下：</strong></p>
+<ul>
+<li>
+<p><a href="https://github.com/openwrt/openwrt/pull/10690">暗云的适配和提交的代码</a></p>
+</li>
+<li>
+<p><a href="https://www.right.com.cn/forum/thread-8255378-1-1.html">ptpt52 分享的不用拆机的刷机教程</a></p>
+</li>
+<li>
+<p><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=8261104&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D103">以及 237176253 编译分享的固件</a></p>
+</li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<p>1 一台红米 ax6000 路由器（解锁好 ssh 了，如果没有可以先看看上篇）</p>
+<p>2 一台 Windows 电脑（主要刷回原厂固件需要 Windows ）</p>
+<p>3 下载安装 <a href="https://termius.com/windows">Termius</a> (termius ssh 连接比较方便，当然别的 ssh 工具也行)</p>
+<p>4 然后下载好（原厂分区）<a href="https://www.right.com.cn/forum/thread-8261104-1-1.html">红米 ax6000 的 openwrt 固件</a></p>
+<h2 id="第一步刷入过渡固件">第一步：刷入过渡固件</h2>
+<pre><code>cat /proc/cmdline
+</code></pre>
+<p>这一步需要路由器是正常联网的，首先 ssh 连接上红米 ax6000 ，执行上面的命令，查看返回的 firmware 等于 0 还是 1。 （我截图这里是 1 ）</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/83c9206c32913d9035fbd41e03dda290.png" alt="" loading="lazy"></figure>
+<p>如果是 0 执行</p>
+<pre><code>nvram set boot_wait=on
+nvram set uart_en=1
+nvram set flag_boot_rootfs=1
+nvram set flag_last_success=1
+nvram set flag_boot_success=1
+nvram set flag_try_sys1_failed=0
+nvram set flag_try_sys2_failed=0
+nvram commit
+cd /tmp
+curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/redmi-ax6000/initramfs-factory.ubi -o initramfs-factory.ubi
+ubiformat /dev/mtd9 -y -f /tmp/initramfs-factory.ubi
+reboot -f
+</code></pre>
+<p>如果是 1 执行</p>
+<pre><code>nvram set boot_wait=on
+nvram set uart_en=1
+nvram set flag_boot_rootfs=0
+nvram set flag_last_success=0
+nvram set flag_boot_success=1
+nvram set flag_try_sys1_failed=0
+nvram set flag_try_sys2_failed=0
+nvram commit
+cd /tmp
+curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/redmi-ax6000/initramfs-factory.ubi -o initramfs-factory.ubi
+ubiformat /dev/mtd8 -y -f /tmp/initramfs-factory.ubi
+reboot -f
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/6ecb550bc09b0d5727c98e365fa06ce9.png" alt="" loading="lazy"></figure>
+<p>复制执行完就会重启进入过渡固件，过渡固件的</p>
+<ul>
+<li>管理ip：192.168.5.1</li>
+<li>用户名和密码：root/password</li>
+<li>无线wifi名称：OpenWrt</li>
+<li>无线wifi密码：password</li>
+</ul>
+<h2 id="第二步从过渡固件刷入-openwrt">第二步：从过渡固件刷入 openwrt</h2>
+<p>在刷写前需要设置下 ENV ，浏览器打开过渡固件后台 192.168.5.1，登录用户名 root，密码 password。然后打开服务里的终端，同样登录用户名 root，密码 password（输入密码不会显示输完回车即可）。</p>
+<pre><code>fw_setenv boot_wait on
+fw_setenv uart_en 1
+fw_setenv flag_boot_rootfs 0
+fw_setenv flag_last_success 1
+fw_setenv flag_boot_success 1
+fw_setenv flag_try_sys1_failed 8
+fw_setenv flag_try_sys2_failed 8
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/5c135d3417688558c9c3cd1ab3e16829.png" alt="" loading="lazy"></figure>
+<p>然后复制上面的命令到终端执行，从过渡固件刷入 openwrt 这步是必须做的。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/f8dcae198ecb44b333723fa7e422c4d5.png" alt="" loading="lazy"></figure>
+<p>然后打开系统-备份与升级，选择刷写固件。浏览里找到下载好的 openwrt 固件，选择上传。上传好后选择<strong>取消勾选保留当前配置</strong>然后选择继续。等待刷写完成自动重启，就会进入新的 openwrt 固件。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/83f3fd0d3a73d69e2430ba51ad62534b.png" alt="" loading="lazy"></figure>
+<p>新的 openwrt 固件后台地址是 192.168.6.1 用户名和密码依然是 root 和 password，默认的网口 1 是 wan 口，剩下的都是 lan 口。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/2b8b2c4abbbdb3bad4cf12a4a94b5c7c.jpg" alt="" loading="lazy"></figure>
+<p>目前这个 openwrt 的固件已经集成了 hwnat，也就是硬件加速，这是我喜欢硬路由的地方，正常上网使用像是 NAT、PPOE 性能和效率都非常高，跑满正常 1000M 宽带 CPU 几乎不动。CPU 性能当然依然足够 1000M 外网，coremark 两万七千多分数，这个上篇也说过。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/f3d8f60d7cc959ed5b30cdc024d921cc.JPEG" alt="" loading="lazy"></figure>
+<p>和官方固件对比测试了下无线 Wi-Fi 的性能，测试的手机是最低标配 Wi-Fi 6 的 iPhone 13 ，在近处能达到 700Mbps 多，隔了一堵墙后也有 500 Mbps 左右，基本能达到官方固件的水平。</p>
+<p>如果你想从当前 openwrt 固件刷到别的版本，同样是在系统-备份与升级，下载好的 openwrt 固件，选择上传，然后选择刷写固件，不勾选保留当前配置即可。当然如果只是同一个作者的固件只是更新版本，一般也可以保留配置直接升级的。</p>
+<h2 id="刷回官方">刷回官方</h2>
+<p>如果不想使用 openwrt 固件了或者一不小心刷错了无法开机，都可以是使用官方的修复工具刷回原厂，当然前提是你没修改过路由器的分区。目前 openwrt 官方的固件会合并最后两个分区为大分区，个人不建议新手这么做，因为要是挂了刷回官方固件就需要拆机比较麻烦，ptpt52 也在 GitHub 发了使用官方分区 PR 等等看吧。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/1e3713a47744387ed30a74d8766862ee.png" alt="" loading="lazy"></figure>
+<p>首先下载好<a href="https://www.miwifi.com/miwifi_download.html">官方修复工具</a>和<a href="https://www.miwifi.com/miwifi_download.html">官方固件</a>，使用小米路由器修复工具需要提前退出 Windows 自带的杀毒，我<strong>更推荐大家去下载安装个火绒</strong>这样更安全方便。</p>
+<p>路由器进入恢复模式，路由器先用针按住后面的 reset 恢复按钮，再插上电源，持续顶住大约 8s，等到黄色指示灯变为黄色闪烁，就可以松开 reset 按钮，然后用网线连接 Windows 电脑，路由器这边连接 lan 口就可以，红米 ax6000 没有标 lan wan ，接 234 都可以。</p>
+<p>打开解压好的小米路由器修复工具，要是有防火墙提示选择允许即可，然后选择本地上传下载好的官方固件 ；然后网卡选择：请选择与路由器相连的以太网网卡； 现在再点下一步就会自动开始刷机，看到发送完成就说明刷机完成了。然后我们等待路由黄灯变为蓝灯闪烁。我们就可以拔下电源再重新插上路由器，这样就完成了，路由器就回到了官方的固件。</p>
+<h2 id="重置-升级-刷机后如何恢复-ssh">重置、升级、刷机后如何恢复 SSH</h2>
+<p>无论你是升级了系统、还是恢复了出厂、还是刷了别的版本的系统或 openwrt 再刷回来，telnet 其实都是打开的，因为已经写在了 bdata 分区。不过 telnet 密码会恢复成默认的，我们需要通过路由器后台右下角的 SN 号来计算。这里有两个网站直接在线计算（安全的离线计算）：</p>
+<ul>
+<li>
+<p><a href="https://www.oxygen7.cn/miwifi/">Oxygen7</a></p>
+</li>
+<li>
+<p><a href="https://miwifi.dev/ssh">Miwifidev</a></p>
+</li>
+</ul>
+<p>telnet 连上以后，执行：</p>
+<pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+</code></pre>
+<p>就开启了 ssh，ssh 默认密码就是上面计算出来的一样。</p>
+<h2 id="总结">总结</h2>
+<p>这次把红米 ax6000 从刷 openwrt 到刷回官方固件，恢复 ssh 整个完整的都折腾了一遍，希望对大家有所帮助。还是那句话你了解你需要 openwrt 你再去刷它，刷了 openwrt 肯定会失去官方的 mesh 以及官方的 App，当然也会获得更多的功能。红米 ax6000 在 400 元左右真的是个还不错的选择，除了没有 2.5G 网口很遗憾；当然预算少点选择红米 ax6s 也不错性能也是够用，相比软路由 ax6000 更适合当台路由器也同样能有丰富的功能。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程]]></title>
+        <id>https://qust.me/post/ax6000-shellclash/</id>
+        <link href="https://qust.me/post/ax6000-shellclash/">
+        </link>
+        <updated>2022-09-10T17:38:56.000Z</updated>
+        <summary type="html"><![CDATA[<p>这是一台红米 AX6000 路由器，这台路由器被大家诟病最多就是没有 2.5G 网口，连一个都没有，全都是千兆网口，隔壁的 tp-link  相同方案的都已经配备了两个 2.5G 的网口了。雷军，金凡！但价格也确实便宜很多，在 pdd 上都被促销到了 300 多元。红米 AX6000 搭载的是 MTK  2021 年发布的 Filogic 830 平台，具体型号是 mt7986a，四核  ARM A53 的架构，主频更是高达 2.0GHz，制程也是极为先进的 12nm，对于路由器这个 CPU 已经是最强的之一了，另外还有 512M 内存和 128M 闪存。这么强大性能的 CPU 如果不让它干点别的简直是浪费，今天就把这台红米 AX6000 解锁 SSH 安装 ShellClash 看看性能到底有多强。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这是一台红米 AX6000 路由器，这台路由器被大家诟病最多就是没有 2.5G 网口，连一个都没有，全都是千兆网口，隔壁的 tp-link  相同方案的都已经配备了两个 2.5G 的网口了。雷军，金凡！但价格也确实便宜很多，在 pdd 上都被促销到了 300 多元。红米 AX6000 搭载的是 MTK  2021 年发布的 Filogic 830 平台，具体型号是 mt7986a，四核  ARM A53 的架构，主频更是高达 2.0GHz，制程也是极为先进的 12nm，对于路由器这个 CPU 已经是最强的之一了，另外还有 512M 内存和 128M 闪存。这么强大性能的 CPU 如果不让它干点别的简直是浪费，今天就把这台红米 AX6000 解锁 SSH 安装 ShellClash 看看性能到底有多强。</p>
+<!--more-->
+<p>在教程开始前还是想感谢下面的帖子，我也是参看他们的方法：</p>
+<ul>
+<li>
+<p><a href="https://forum.openwrt.org/t/add-openwrt-support-for-xiaomi-redmi-ax6000/125008/141">openwrt 官方社区的破解</a></p>
+</li>
+<li>
+<p><a href="https://www.right.com.cn/forum/thread-8253195-1-1.html">恩山论坛「高伟凡」的简化</a></p>
+</li>
+<li>
+<p><a href="https://github.com/juewuy/ShellClash">GitHub ShellClash 项目</a></p>
+</li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>一台红米 AX6000 （ 产品型号 RB06）</li>
+<li>一台电脑（Mac Win Linux 均可）</li>
+<li>下载安装 <a href="https://termius.com/">Termius</a> （任意 ssh 工具都行，termius 简单适合新手）</li>
+<li>下载路由路由器固件 <a href="https://share.qust.me/redmi-ax6000-1.2.8.bin">1.2.8 版本</a></li>
+</ul>
+<h2 id="解锁-ssh">解锁 SSH</h2>
+<p><strong>1 升级到指定版本固件(可跳过)</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/634acdbce425fff1d6e7c50936a50ba6.png" alt="" loading="lazy"></figure>
+<p>这款路由器的固件一直没有升级，当前的固件可以直接跳过这一步，主要有人反馈 1.2.8 有丢失 5G 的情况。在小米路由器后台，将路由器手动升级到 <a href="https://share.qust.me/redmi-ax6000-1.2.8.bin">1.2.8 版本</a></p>
+<p><strong>2 获取路由器 stock</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/024c75b6d70e1dfe518cbee557f5549c.png" alt="" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<p><strong>3 开启调试模式</strong></p>
+<p>打开浏览器，复制下面的内容到地址栏，并替换 {STOK}</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok={token}/api/misystem/set_sys_time?timezone=%20%27%20%3B%20zz%3D%24%28dd%20if%3D%2Fdev%2Fzero%20bs%3D1%20count%3D2%202%3E%2Fdev%2Fnull%29%20%3B%20printf%20%27%A5%5A%25c%25c%27%20%24zz%20%24zz%20%7C%20mtd%20write%20-%20crash%20%3B%20
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/428b4ac624cd226edd18fc9fcbc6819f.png" alt="" loading="lazy"></figure>
+<p>我的替换后如上。将替换好的值复制到浏览器请求，如果显示 {&quot;code&quot;:0} 如上返回内容则表示成功。</p>
+<p><strong>4 通过浏览器请求重启</strong></p>
+<p>同样打开浏览器，复制下面的内容到地址栏，并替换 {STOK}</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok={token}/api/misystem/set_sys_time?timezone=%20%27%20%3b%20reboot%20%3b%20
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/0214c8bf434a74c5c8cdc6f4af0e9d31.png" alt="" loading="lazy"></figure>
+<p>通过浏览器执行完这一步路由器会重启，等待重启完成。</p>
+<p><strong>5 设置 Bdata 永久开启 telnet</strong></p>
+<p>重启完成后打开路由器后台（注意：路由器重启你需要重新登陆获取下新的 stok ），然后同样打开浏览器，复制下面的内容到地址栏，并替换 {STOK} 。</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok={token}/api/misystem/set_sys_time?timezone=%20%27%20%3B%20bdata%20set%20telnet_en%3D1%20%3B%20bdata%20set%20ssh_en%3D1%20%3B%20bdata%20set%20uart_en%3D1%20%3B%20bdata%20commit%20%3B%20
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/04c251ca083bfe723f623ee1b481ae15.png" alt="" loading="lazy"></figure>
+<p>然后再次执行第 4 小步的「通过浏览器请求重启」，等待重启完成。</p>
+<p><strong>6 telnet 连接开启 ssh</strong></p>
+<p>打开 Termius，可以选择不登录 Continue Without Account。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/8C2AAD6B-524A-420B-BFD0-C41C91B5DD24.png" alt="img" loading="lazy"></figure>
+<p>点击 New Host 添加</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/51541936-2C8F-4B4A-9730-4CCEC7BA4900.png" alt="img" loading="lazy"></figure>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH：取消勾选</p>
+<p>Telnet：勾选</p>
+<p>然后点击向右的箭头，最后选择 Hosts 里的「192.168.31.1」开始 telnet 连接。(不用输入用户和密码)</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/500ebdbdab277edd684af63a25749cdf.png" alt="" loading="lazy"></figure>
+<p><strong>7 永久开启并固化 ssh</strong></p>
+<pre><code>echo -e 'admin\nadmin' | passwd root
+nvram set ssh_en=1
+nvram set telnet_en=1
+nvram set uart_en=1
+nvram set boot_wait=on
+nvram commit
+sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+mkdir /data/auto_ssh
+cd /data/auto_ssh
+curl -O https://fastly.jsdelivr.net/gh/lemoeo/AX6S@main/auto_ssh.sh
+chmod +x auto_ssh.sh
+uci set firewall.auto_ssh=include
+uci set firewall.auto_ssh.type='script'
+uci set firewall.auto_ssh.path='/data/auto_ssh/auto_ssh.sh'
+uci set firewall.auto_ssh.enabled='1'
+uci commit firewall
+uci set system.@system[0].timezone='CST-8'
+uci set system.@system[0].webtimezone='CST-8'
+uci set system.@system[0].timezoneindex='2.84'
+uci commit
+mtd erase crash
+reboot
+</code></pre>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/026b10d7a8e18e9acaadfdaad062d1cf.png" alt="" loading="lazy"></figure>
+<p>复制上面的命令到 termius 终端里执行，这会设置 ssh 密码为 admin、并永久开启 SSH、并从开发模式修改回正常的模式，并重启。重启完成后就能连上 ssh 了。</p>
+<p><strong>8 尝试 ssh 连接路由器</strong></p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/31FE7942-F350-4A16-B7D0-291FD84D8932.png" alt="img" loading="lazy"></figure>
+<p>选择 Hosts-点击 New Host 添加</p>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH 的用户名里填写：root</p>
+<p>Password 是：admin</p>
+<p>点击右上角箭头，再点击 Hosts 里的 192.168.31.1 就应该能连接上 SSH 了。（注意选择 ssh 不是 telnet）</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/9373666F-3D32-474B-97F7-226220669E9F.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/38d7fbb3f0de3f2bcc6a87cee76f6ba0.png" alt="" loading="lazy"></figure>
+<p>选择 ADD AND CONTINUE，就会进入 ssh 连接。</p>
+<h2 id="安装-shellclash">安装 ShellClash</h2>
+<p><strong>安装</strong></p>
+<p>在 SSH 里复制此命令开始安装 ShellClash</p>
+<pre><code>export url='https://raw.fastgit.org/juewuy/ShellClash/master' &amp;&amp; sh -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/d75280a49fea597269a0cdfeb7410c88.png" alt="" loading="lazy"></figure>
+<p>选择 1 正式版，然后选择 1 确认安装。</p>
+<p><strong>配置 Clash</strong></p>
+<p>输入 Clash 回车进行配置<img src="https://oss.qust.me/img/c1ccb59b92deb4dafbf9e4be11fa7e67.png" alt="" loading="lazy"></p>
+<ul>
+<li>选择 1 主机或旁路由</li>
+<li>选择 1 不代理 UDP</li>
+<li>选 1 安装 Dashboard 面板</li>
+<li>选择 3 YACD 面板（选择你熟悉的都 OK）</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/777dba3c4da2cd659026516f38694abf.png" alt="" loading="lazy"></figure>
+<ul>
+<li>选择 1 的路径</li>
+</ul>
+<ul>
+<li>1 开始导入</li>
+<li>1 在线生成</li>
+<li>粘贴你的订阅链接（你的机场✈️后台有提供）</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/bf4f9318774bbe3e5ba31d044c2aa1d7.png" alt="" loading="lazy"></figure>
+<ul>
+<li>1 开始生成配置文件</li>
+<li>1 立即启动 Clash 服务</li>
+<li>选择 4 允许开机启动</li>
+<li>最后选择 0 退出脚本即可</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/f31725aff57a2b10742b495e14aa3b7e.png" alt="" loading="lazy"></figure>
+<p>现在应该就能正常使用了，在浏览器里打开 http://192.168.31.1:9999/ui，就能访问控制后台。</p>
+<h2 id="测速性能">测速性能</h2>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/94ad9b666e209e4344f48f40b1c8ccc0.jpg" alt="" loading="lazy"></figure>
+<p>直接上图，跑满 1000M 宽带 CPU 占用不到 50%！这 TM 也太强了吧。Filogic 830  四核 2.0GHz 果然没让我失望，并且发热真的很低，比小米 AX5400 电竞一手摸就能感觉凉快很多。</p>
+<h2 id="重置-升级-刷机后如何恢复-ssh">重置、升级、刷机后如何恢复 SSH</h2>
+<p>无论你是升级了系统、还是恢复了出厂、还是刷了别的版本的系统或 openwrt 再刷回来，telnet 其实都是打开的，因为写在了 bdata 分区。不过 telnet 密码会恢复成默认的，我们需要通过路由器后台右下角的 SN 号来计算。这里有两个网站直接在线计算（安全的离线计算）：</p>
+<p><a href="https://www.oxygen7.cn/miwifi/">Oxygen7</a></p>
+<p><a href="https://miwifi.dev/ssh">Miwifidev</a></p>
+<p>telnet 连上以后，执行：</p>
+<pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+</code></pre>
+<p>就开启了 ssh，ssh 默认密码就是上面计算出来的一样。</p>
+<h2 id="总结购买建议">总结购买建议</h2>
+<p>红米 AX6000 搭载的 Filogic 830 平台 mt7986a 性能太强了，这可能是市面上最强的硬路由 CPU 了；但红米 AX6000 没给一个 2.5G 网口真的是浪费这颗 CPU 的性能，1000M 的外网远远达不到这颗 CPU 的上限。如果你买了红米 AX6000 那解锁 ssh 安装 ShellClash 是个好的选择，如果没有价格在 400 左右还是非常值得考虑入手的，再高就等  Filogic 830 平台的新品吧。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[4g 随身 Wi-Fi 刷 openwrt 变成软路由 ]]></title>
+        <id>https://qust.me/post/msm8916/</id>
+        <link href="https://qust.me/post/msm8916/">
+        </link>
+        <updated>2022-06-02T13:01:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>首先感谢酷安「随身 Wi-Fi」 社区，里面有很多资料可以参看；<a href="https://yanziblog.top/291/">燕子博客</a>的教程也非常详细，以及 handsomehacker <a href="https://www.kancloud.cn/handsomehacker/openstick/2636505">开源的 debian</a> 系统和「苏苏小亮亮」（酷安ID）编译的 openwrt，以及 <a href="https://momoe.ml/">Zy143L 博客</a>的拆解和帮助。</p>
+<p>这是一个二十多块就能买到的， 4G USB 随身 Wi-Fi，你可能不会想到它居然跑的是安卓系统。并且还能刷 debian 系统，甚至你还能刷 openwrt 成为软路由，更棒的是 4G 和 Wi-Fi 、USB 等功能都正常工作。</p>
+<p><strong>本教程不会讨论 ML 也不讨论使用自带的 esim 套餐，openwrt 只使用自己的卡。</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>首先感谢酷安「随身 Wi-Fi」 社区，里面有很多资料可以参看；<a href="https://yanziblog.top/291/">燕子博客</a>的教程也非常详细，以及 handsomehacker <a href="https://www.kancloud.cn/handsomehacker/openstick/2636505">开源的 debian</a> 系统和「苏苏小亮亮」（酷安ID）编译的 openwrt，以及 <a href="https://momoe.ml/">Zy143L 博客</a>的拆解和帮助。</p>
+<p>这是一个二十多块就能买到的， 4G USB 随身 Wi-Fi，你可能不会想到它居然跑的是安卓系统。并且还能刷 debian 系统，甚至你还能刷 openwrt 成为软路由，更棒的是 4G 和 Wi-Fi 、USB 等功能都正常工作。</p>
+<p><strong>本教程不会讨论 ML 也不讨论使用自带的 esim 套餐，openwrt 只使用自己的卡。</strong></p>
+<!--more-->
+<h2 id="前言">前言</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/202206022035737.JPG" alt="" loading="lazy"></figure>
+<p>购买一个随身 Wi-Fi 这里面门道确实挺多，也有点碰运气（因为卖家基本都不会标注具体的型号，你也别问卖家不会和你说）。你在淘宝、或者闲鱼搜随身 Wi-Fi 便宜的有从几块到几十不等的。</p>
+<p><strong>你可能会好奇为啥会这么便宜？</strong> 首先便宜的随身 Wi-Fi 基本用的都是工模的方案，像是高通的 410、高通的 210、中兴微等方案，外观差别可能很大，内在或许都是同一种方案（同一种方案具体的板子也会有不同），当然也会有可能同一个商品发给买家不同的型号；其次低价的随声 Wi-Fi 商品基本都会有流量套餐选择，里面有一张 esim 卡，你扫码实名认证激活就能使用，当然大部分里面其实都是有一个实体卡槽的（也有坑的产品没有），可以使用自己的手机卡套餐，只是需要自己手动切卡（本教程是使用自己手机卡，如果你非要选择商家套餐，也推荐按月购买，坑就不多说了）。</p>
+<p><strong>商家标识的是单网能买吗？</strong> 没啥问题。因为方案都完全一样的，实际大多数都是支持电信联通，移动也可以通过刷基带的办法解决实现三网通，就是移动会麻烦很多。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/202206022127135.jpeg" alt="" loading="lazy"></figure>
+<p><strong>所以我应该哪买，买哪款？</strong> 酷安「随身 Wi-Fi」 社区，你可以蹲到很多几块、十几元的便宜的车；或者嫌麻烦直接买别人标注了版本，刷好三网通的，甚至还有改好了风扇的。</p>
+<p><strong>默认基本的配置都是：</strong> 高通410 四核 1.2GHz  CPU、512M 内存、4G emmc 闪存、默认 android 4.4 系统。</p>
+<h2 id="准备工作">准备工作</h2>
+<ol>
+<li><strong>高通410（msm8916）方案的随身 Wi-Fi</strong>：板子上的丝印是 UFI001B、UFI001C、UFI003、UFI-W-001 最好，或者 SP970（不推荐，细分版本目前13个太多，基本要短接才能进 9008 模式，然后现在的 openwrt Wi-Fi 也有问题）、UZ801 也 OK；<strong>需要带卡槽、能切卡</strong>。</li>
+<li><strong>一台 Windows 电脑</strong>（建议安装火绒，一些文件会被 Win 默认防护当病毒删除）</li>
+<li><strong>小卡转大卡 SIM 卡套</strong></li>
+<li><strong>螺丝刀</strong>（拧随身 Wi-Fi 十字小螺丝）</li>
+<li><strong>下载刷机需要的工具文件</strong> <a href="https://pan.baidu.com/s/15a2Imo4NcdG9u7ijsuHSAA">百度云</a> 提取码：1fqr 或自建 <a href="https://share.qust.me/%E8%B7%AF%E7%94%B1%E5%99%A8/%E9%9A%8F%E8%BA%AB%20wifi">onedrive</a> 和 <a href="https://www.kancloud.cn/a813630449/ufi_car/2792820">「苏苏小亮亮」编译的 openwrt</a></li>
+</ol>
+<p>附带下我购买的 5 个产品的情况：</p>
+<pre><code>铁恒信旗舰店 54 元款：UFI003 （后台密码 admin、切卡密码 UFIadmin1234）
+天天特卖工厂店 29 元款：SP970-Main-v2（后台：admin admin，切卡用酷安工具，无法直接进 9008，openwrt wifi 有问题不推荐）
+酷翼旗舰店 8.8 元款：UFI003 （后台密码 admin、切卡密码 无）
+纽皇 6.8 元款：可能是 UFI001W ？？？（后台密码 admin、切卡密码：qr0521）但会抽奖碰到高通 210 款
+天天特卖工厂店 28 元款 UFI001 C （后台密码 admin、切卡密码：UFIadmin1234，现在改成没卡槽了）
+</code></pre>
+<h2 id="检查和备份">检查和备份</h2>
+<h3 id="检查">检查</h3>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/202206011136328.JPG" alt="" loading="lazy"></figure>
+<p>到手后第一件事，先插上电，连上随身 Wi-Fi 提供的 Wi-Fi，进入后台，检查下是否能正常工作，防止到手就是坏的；然后用螺丝刀拆开检查板子，是否有卡槽，以及上面的版本丝印。（可以看到我的这款有卡槽，丝印是：UFI003_MB_V002 ）</p>
+<h3 id="全量备份">全量备份</h3>
+<p>做好全量备份就不会变砖，随时刷成到手的状态。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/202206011221325.PNG" alt="" loading="lazy"></figure>
+<p>首先安装下载好的 9008 驱动</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/202206011224831.JPG" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/202206011225387.PNG" alt="" loading="lazy"></figure>
+<p>按住拇指位置的按钮插上电脑（一般不会有亮灯），在电脑设备管理器-端口设备里能看到 9008 的 COM 设备就说明连接上了。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/202206011311176.PNG" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/202206011315425.PNG" alt="" loading="lazy"></figure>
+<p>然后安装下载好的 miko，并将 Loader 移动到安装的路径下面（默认在 C:\Program Files (x86)\miko_service_tool_pro\miko_service_tool_pro），打开 Loader。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/202206011320691.PNG" alt="" loading="lazy"></figure>
+<p>然后在 miko 里依次选择 Read - Partition Backup/Earese - 点击左下角 Load Partition Structure 看到右边有系统信息的输出就说明连上了。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/202206011323311.PNG" alt="" loading="lazy"></figure>
+<p>然后点击 Read Full Image 选个路径，取个名字就开始全量备份救砖能用的 .bin 文件。过程会比较慢，可能要十几分钟。等到跑完进度条 100% 右边的输出显示 success 就备份好了，我们就能开始随意折腾。</p>
+<h2 id="切换网络电信基本可跳过此步">切换网络（电信基本可跳过此步）</h2>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/202206021434936.jpg" alt="" loading="lazy"></figure>
+<p>你可以在默认的安卓系统下直接从默认的 esim 切到你自己的卡来验证是否有网，一般联通电信都是可以正常工作的，因为刷写 openwrt 会直接使用安卓系统里的基带分区，<strong>如果使用自己的卡网络正常，可以直接跳到下一步刷 openwrt，也就是说只有切卡不能正常使用你才需要刷基带，另外刷 openwrt 目前有个 BUG ：你只能使用在刷前安卓上正常工作的运营商的卡。</strong></p>
+<p>比如看图中我插入使用的是联通卡正常工作，我刷 openwrt 就只能使用联通的卡。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/202206021756208.JPG" alt="" loading="lazy"></figure>
+<p>插卡使用时，记得扣上这个「小帽子」，这是随身 Wi-Fi 的天线部分，如果不扣上信号会非常弱甚至没网。<strong>如果你要使用移动的卡，或者你联通卡不能正常工作，那你可能需要刷下基带。</strong></p>
+<h2 id="刷入-openwrt">刷入 openwrt</h2>
+<p>刷入 openwrt 十分简单，因为「苏苏小亮亮」已经做好了一键刷入的包。刷入前请确认你安卓里你插入使用的 SIM 卡正常工作。</p>
+<h3 id="进入-fastboot-模式">进入 fastboot 模式</h3>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/202206021811254.PNG" alt="" loading="lazy"></figure>
+<p>随身 Wi-Fi 插在电脑会默认开启 adb ，我们打开搞机工具箱，选择线刷专区，重启到 Fastboot，一般重启 fastboot 后随身 Wi-Fi 会亮红灯。</p>
+<h3 id="刷写系统">刷写系统</h3>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/202206021821886.PNG" alt="" loading="lazy"></figure>
+<p>打开解压好对应版本的 openwrt 文件夹（如果是 UFI001W 刷 UFI001C 的包），然后双击 flash.bat 就能开始刷机。观察是否都正常刷入，如果有错误，可以重新打开 flash.bat 再重新插入随身 Wi-Fi 。</p>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/202206021817996.jpg" alt="" loading="lazy"></figure>
+<p>能搜索到 HandsomeMod Wi-Fi 就是 openwrt 刷好了。默认的后台地址是 192.168.1.1 用户名是 root 没有密码。</p>
+<h3 id="检查-modem-网络">检查 modem 网络</h3>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/202206021825567.jpg" alt="" loading="lazy"></figure>
+<p>在后台网络接口里，检查 MODEM 是否能正常获取 IP 地址，如果能那说明 SIM 卡能正常联网使用，你现在的 Wi-Fi 应该也是有网络的。</p>
+<h3 id="修改软件源">修改软件源</h3>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/202206041344422.jpg" alt="" loading="lazy"></figure>
+<p>在 openwrt 里的软件包里选择配置 OPKG，将 /etc/opkg.conf 里的内容替换为以下：</p>
+<pre><code>dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+arch all 1
+arch noarch 1
+arch aarch64_cortex-a53_neon 10
+arch aarch64_cortex-a53 100
+</code></pre>
+<p>将 /etc/opkg/distfeeds.conf 内容替换为：</p>
+<pre><code>src/gz reboot_base http://mirrors.cloud.tencent.com/lede/releases/21.02.3/packages/aarch64_cortex-a53/base
+src/gz reboot_luci http://mirrors.cloud.tencent.com/lede/releases/21.02.3/packages/aarch64_cortex-a53/luci
+src/gz reboot_packages http://mirrors.cloud.tencent.com/lede/releases/21.02.3/packages/aarch64_cortex-a53/packages
+src/gz reboot_routing http://mirrors.cloud.tencent.com/lede/releases/21.02.3/packages/aarch64_cortex-a53/routing
+src/gz reboot_telephony http://mirrors.cloud.tencent.com/lede/releases/21.02.3/packages/aarch64_cortex-a53/telephony
+src/gz openwrt_kiddin9 https://op.supes.top/packages/aarch64_cortex-a53
+
+</code></pre>
+<p>然后点击保存，就能通过 opkg 安装需要的软件包了。</p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/202206041352138.jpg" alt="" loading="lazy"></figure>
+<p>比如给系统安装个好看点的 argon 主题。</p>
+<h3 id="安装-shellclash">安装 shellclash</h3>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/202206021907402.jpg" alt="" loading="lazy"></figure>
+<p>直接使用低版本的 wget 安装 shellclash。</p>
+<pre><code>export url='http://shellclash.cf/' &amp;&amp; wget -q -O /tmp/install.sh $url/install.sh  &amp;&amp; sh /tmp/install.sh &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/202206021911781.jpg" alt="" loading="lazy"></figure>
+<p>配置好应该就能上网了，变成「随身翻」</p>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/202206021912268.jpg" alt="" loading="lazy"></figure>
+<p>目前 4g 的网速确实不快，只有 4Mbps 左右，估计得靠 openwrt 更新优化了。</p>
+<h2 id="疑难杂症">疑难杂症</h2>
+<h3 id="刷写基带">刷写基带</h3>
+<p><strong>酷安 qq 群：743509392 有很多这方面的资料。</strong></p>
+<p>大部分 UFI00X 丝印的随身 Wi-Fi 都是支持电信卡的，很多其实也支持联通，移动大概率默认是不支持的。当然因为产品众多，甚至丝印型号相同用的 modem 型号都有差别，当然最麻烦的其实也是这一步，不能保证你刷了基带后移动联通就能正常使用，还是更推荐电信或联通用户使用。</p>
+<p>先使用搞机工具箱重启进入 fastboot 模式。</p>
+<figure data-type="image" tabindex="22"><img src="https://oss.qust.me/img/202206021934100.PNG" alt="" loading="lazy"></figure>
+<p>然后打开星海工具箱-选择高通-选择高通基带擦除-一键执行，完成后会重启。(如果你的星海无法打开你可能得安装下<a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170">微软的这个包</a>)</p>
+<figure data-type="image" tabindex="23"><img src="https://oss.qust.me/img/202206021947102.PNG" alt="" loading="lazy"></figure>
+<p>然后勾选写入 QCN，选择全网通的基带写入。会可能一次写入不成功，多写入几次。重启随身 Wi-Fi，看看你的卡能不能正常工作。</p>
+<h3 id="默认没开-adb-的设备">默认没开 adb 的设备</h3>
+<figure data-type="image" tabindex="24"><img src="https://oss.qust.me/img/202206022024769.PNG" alt="" loading="lazy"></figure>
+<p>如果你的型号是 UFI001W 等，可能你到手设备并没有打开 adb 功能，你可以在 web 后台尝试重置，如果仍然不行。直接 9008 模式用 miflash 工具刷别人改好的包，浏览里选择下载解压好的包，刷新勾选设备，点击刷机即可。会直接开启adb、锁定插入的 SIM 卡、和 root 等功能。</p>
+<h3 id="从-openwrt-刷回原厂备份">从 openwrt 刷回原厂备份</h3>
+<p><a href="https://pan.baidu.com/s/1_99uOa4M2RP_Ipix6t2zFQ">我的备份</a>（如果你正好版本相同需要） 提取码：3cad</p>
+<figure data-type="image" tabindex="25"><img src="https://oss.qust.me/img/202206022026793.PNG" alt="" loading="lazy"></figure>
+<p>如果你的 openwrt 有问题，或者你想刷回原厂也很简单。随身 Wi-Fi 9008 模式插上电脑，打开第一步备份使用的 miko loader 程序。选择 Flash - emmc block0 flasher - 双击勾选备份好的文件-选择 flash，等待进度条跑完，可能会很慢。</p>
+<h2 id="总结">总结</h2>
+<p>目前这个阶段，高通 410 芯片的随身 Wi-Fi 刷 openwrt 更多还是像个有意思的玩具，你不能指望它有多快。当然目前的 openwrt 才刚刚出来，以后迭代可能会好很多。随身 Wi-Fi 刷 openwrt 其实很简单，进入 fastboot 一键脚本就能刷成，当前更多的问题是版本太多，基带的问题，换句话说如果你是电信用户，那么确实简单很多 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[360v6 刷 openwrt 教程，跑满 1000M 外网，比软路由更强]]></title>
+        <id>https://qust.me/post/360v6/</id>
+        <link href="https://qust.me/post/360v6/">
+        </link>
+        <updated>2022-03-27T09:00:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>如果一台 200 多的 Wi-Fi6 路由器能跑满 1000M 科学上网，有 USB 接口，甚至还能跑 Docker 你会心动吗？</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>如果一台 200 多的 Wi-Fi6 路由器能跑满 1000M 科学上网，有 USB 接口，甚至还能跑 Docker 你会心动吗？</p>
+<!--more-->
+<p>不卖关子了，今天的教程就是每次发路由器视频都会被大家提到的 360v6 路由器。在拼多多和闲鱼等平台，目前售价都在 260 元左右。先来简单说一下配置：在路由器上你就能看到骄傲的印着“made with Qualcomm networking pro series”，可见厂商对这颗高通 IPQ6018 的 CPU 有多自信。IPQ6018 的规格也确实非常给力：14nm 制程，四核 A53 架构，主频高达 1.8GHz；另外还有个 1.5GHz 的 NPU 专门给网络加速。这个 CPU 的规格和 MTK、或是博通这些路由器芯片比都显得欺负人，它的对手应该是 NanoPi R2S、R4S 树莓派4B 这些 ARM 软路由。不过 IPQ6018 实际测试对比下来都是乱杀，14nm 先进的制程和对手一众 28nm 的对比下来更显得还算“清凉”。</p>
+<p>除了 CPU 其它配置也给大家过一下，128M 的闪存，512M 的内存；4个千兆的网口，一个 USB 2.0 的接口，无线规格是 AX1800。站立式的设计，隐藏了天线，外表是类肤涂层，正面有一颗一字形的 LED 灯，整体质感不错。</p>
+<p>目前能比较方便的不拆机刷机，也有了 uboot 不死（收费 5 元）但是确实挺好用，固件也有 openwrt、QSDK、和 梅林SWRT 版本的可以使用。</p>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>一台 360V6 路由器（京东云版或普通版都OK）</li>
+<li>能插网线的 Windows 电脑</li>
+<li>花 5 元购买<a href="https://mianbaoduo.com/o/bread/mbd-YpeXk5pq">下载好 uboot</a></li>
+<li>下载安装好 <a href="https://www.rejetto.com/hfs/download">HFS</a>（HTTP 文件服务器）和 <a href="https://termi.us/win">Termius</a>（Telnet SSH 工具）</li>
+<li>下载好刷机<a href="https://share.qust.me/%E8%B7%AF%E7%94%B1%E5%99%A8/360v6">需要的文件</a></li>
+</ul>
+<p>在教程开始前还是向 lean，和 lean 群组的很多朋友提供的教程和固件表示感谢。</p>
+<h2 id="第一步升级固件开启-telnet">第一步：升级固件开启 Telnet</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/202203301704284.jpg" alt="" loading="lazy"></figure>
+<p>用网线连接电脑和 360v6 路由器 lan 口，打开在路由器的后台（默认是：192.168.0.1），选择-路由器设置-手动升级，找到下载好的升级固件选择升级，然后等待升级完成重启。</p>
+<ul>
+<li>360V6_JD-v4.2.13.3033-rel-upgrade.bin（京东版v6）</li>
+<li>360V6-v4.2.13.3033-rel-upgrade.bin（普通版v6）</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/202203301709913.jpg" alt="" loading="lazy"></figure>
+<p>重启完成后，再到后台-功能拓展-插件中心里上传下载好的 360_v6_jd_telnetd_ctrl_app_nda_signed.opk 文件。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/202203301712629.jpg" alt="" loading="lazy"></figure>
+<p>打开 telnet开关控制插件，telnet 状态选择 ON，保存生效即可，现在应该可以 Telnet 连接。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/202203302123018.jpg" alt="" loading="lazy"></figure>
+<p>打开安装好的 Termius（可以跳过不登录），然后选择 NEW HOST，Address 填写 192.168.0.1，SSH 不勾选，Telnet 勾选上，再点击向右的箭头，最后打开刚添加好的开始 Telnet 连接。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/202203302134378.jpg" alt="" loading="lazy"></figure>
+<p>telnet 连接用户名：root</p>
+<p>密码：telnetdebug</p>
+<p>输入密码会不显示，输入完回车即可。</p>
+<h2 id="第二步刷入-uboot-和分区文件">第二步：刷入 uboot 和分区文件</h2>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/202203302150390.jpg" alt="" loading="lazy"></figure>
+<p>打开下载安装好的 HFS，如果防火墙有提示选择允许即可。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/202203302159005.jpg" alt="" loading="lazy"></figure>
+<p>确认自己 HFS 网段是在 192.168.0.X，如果不是可以在 Mean 菜单—IP adress IP 地址 里选择 192.168.0.X 网段。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/202203302215579.jpg" alt="" loading="lazy"></figure>
+<p>然后将下载好的 uboot 和 mibib 分区文件拖到 HFS 的左侧窗口里。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/202203302219734.jpg" alt="" loading="lazy"></figure>
+<p>回到 telnet 连接，执行下面命令到切换到 tmp 目录</p>
+<pre><code class="language-shell">cd /tmp
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/202203302226448.jpg" alt="" loading="lazy"></figure>
+<p>然后从依次 HFS 里右键复制文件的 URL 链接，粘贴到 wget 命令后面，回车执行。</p>
+<pre><code>wget uboot的HFS链接
+wget mibib的HFS链接
+</code></pre>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/202203302228163.jpg" alt="" loading="lazy"></figure>
+<p>执行好后应该和上图一样，看到输出的内容。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/202203302233061.jpg" alt="" loading="lazy"></figure>
+<p>我们再执行以下命令，检查下文件是否下载成功。</p>
+<pre><code>ls | grep bin
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/202203302243407.jpg" alt="" loading="lazy"></figure>
+<p>在刷入 uboot 和大分区前，输入命令检查一下分区情况。确认 mtd1 和 mtd13、mtd14 和上图内容相同。</p>
+<pre><code>cat /proc/mtd
+</code></pre>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/202203302241708.jpg" alt="" loading="lazy"></figure>
+<p>确认好后，输入下面命令刷入大分区和 uboot 。</p>
+<pre><code>mtd write /tmp/360v6-mibib.bin /dev/mtd1
+mtd write /tmp/uboot-qihoo-v6.bin /dev/mtd13
+mtd write /tmp/uboot-qihoo-v6.bin /dev/mtd14
+</code></pre>
+<p>现在 uboot 应该就刷好了。</p>
+<h2 id="第三步-从-uboot-刷入-openwrt-固件">第三步： 从 uboot 刷入 openwrt 固件</h2>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/202203302304148.jpg" alt="" loading="lazy"></figure>
+<p><strong>进入 uboot 的方法</strong></p>
+<ul>
+<li>电脑通过有线连接路由器 lan 口</li>
+<li>路由器先断电，用卡针顶住路由器电源下方的 reset 不放，插上电源，路由器会先绿灯闪烁，大约 5 秒左右转为红灯即可松开 reset。</li>
+<li>将电脑设置为静态 IP：192.168.1.3（可参考上图）</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/202203302308091.jpg" alt="" loading="lazy"></figure>
+<p>然后浏览器打开 192.168.1.1，就能打开 uboot 后台。</p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/202203302326499.jpg" alt="" loading="lazy"></figure>
+<p>uboot 刷入固件非常简单，选择好文件（选择下载好的 openwrt 固件即可），然后点 Update firmware。（openwrt 一般选择 factory 包名的固件）</p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/202203302357665.jpg" alt="" loading="lazy"></figure>
+<p>然后等待路由器刷入完成重启，这个页面可能不会更新。能搜到 openwrt 的 Wi-Fi 就说明刷好了。</p>
+<p><strong>lean 固件默认的信息：</strong><br>
+Wi-Fi：openwrt ｜ openwrt-5G</p>
+<p>后台地址：192.168.1.1</p>
+<p>用户名：root</p>
+<p>密码：password</p>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/202203310000040.jpg" alt="" loading="lazy"></figure>
+<h2 id="openwrt-基本操作指南">openwrt 基本操作指南</h2>
+<p><strong>1 修改回 DHCP</strong></p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/202203311130068.jpg" alt="" loading="lazy"></figure>
+<p>在刷完之后，推荐你将之前修改电脑的静态 IP 改为 DHCP，否则网络状态变化了可能没法上网。（下次进入 uboot 刷机的时候还是需要改为静态 IP）</p>
+<p><strong>2 修改默认的 LAN 地址</strong></p>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/202203311145200.jpg" alt="" loading="lazy"></figure>
+<p>因为很多人家的光猫的后台也是 192.168.1.1，刷完后 openwrt 后台默认也是 192.168.1.1 会导致 IP 冲突，无法上网。你需要在 openwrt 后台—网络—接口—选择 lan—修改—将 IPv4 地址 改为 192.168.X.1 （X改为你喜欢的数字，2-255 之间都行），然后保存并应用，以后你的 openwrt 后台也会变为此地址。</p>
+<p><strong>3 安装需要的软件</strong></p>
+<figure data-type="image" tabindex="22"><img src="https://oss.qust.me/img/202203311405699.jpg" alt="" loading="lazy"></figure>
+<p>目前的固件自带的软件比较少，你可以自行在 系统—文件传输—上传下载好的安装，比如 adguard、argon 主题、openclash 等等。因为和 nanoPi r2s 一样都是 aarch64_cortex-a53 架构，可以安装相同的软件包，像是 <a href="https://afdian.net/@openwrt/plan">kiddin9</a>  的提供<a href="https://op.supes.top/packages/aarch64_cortex-a53/">软件库</a> 就很使用，当然你熟悉 opkg 或者自己编译一些软件也都是能用的。</p>
+<h2 id="性能测试">性能测试</h2>
+<figure data-type="image" tabindex="23"><img src="https://oss.qust.me/img/202203311445622.jpg" alt="" loading="lazy"></figure>
+<p>跑满 1000M 外网！选的是比较吃性能的 vmess 协议，然后插件选的是 passwall（默认调用的 xray 内核）。从右侧 htop 信息可以看到跑满 900+Mbps 的代理四核 CPU 都在努力工作，占用也都在 90% 左右，利用率非常好。</p>
+<p><strong>那么 NPU 在干啥？</strong></p>
+<figure data-type="image" tabindex="24"><img src="https://oss.qust.me/img/202203311450165.jpg" alt="" loading="lazy"></figure>
+<pre><code>cat /sys/kernel/debug/qca-nss-drv/stats/cpu_load_ubi
+</code></pre>
+<p>目前我测试下来跑科学上网 NPU 基本都是不参与，但这颗 NPU 作用却非常大。这颗 1.5Ghz 的 NPU 更多作用在于从解放 CPU：比如在你连接 Wi-Fi 跑 speedtest 直连测速时，跑到 7、800Mbps 的 Wi-Fi 速度，CPU 都是不参与的使用率接近于 0，这些都由 NPU 来承担，NPU 这时候的使用率也才十几个%。</p>
+<p>当然除了 Wi-Fi 无线，NPU 在很多方面也会被调用使用，比如你用 clash 跑测速你也会发现 NPU 参与其中，未来 NSS 的驱动的完善这个颗 NPU 作用应该会更凸显出来。</p>
+<p>也给大家对比下 nanoPi r2s、红米 AX6s 和 360v6 的 CPU 跑 ss-rust 性能对比吧。</p>
+<p><strong>360v6</strong></p>
+<pre><code>————————nmsl friendlyarm ————————
+          Method none speed: 249M
+          Method plain speed: 244M
+          Method aes-128-gcm speed: 162M
+          Method aes-256-gcm speed: 156M
+          Method chacha20-ietf-poly1305 speed: 89.1M
+————————nmsl friendlyarm ————————
+</code></pre>
+<p><strong>红米AX6S</strong></p>
+<pre><code>-----------------nmsl friendlyarm -----------------
+          Method none speed: 101M
+          Method plain speed: 98.0M
+          Method aes-128-gcm speed: 85.9M
+          Method aes-256-gcm speed: 79.0M
+          Method chacha20-ietf-poly1305 speed: 56.4M
+-----------------nmsl friendlyarm -----------------
+</code></pre>
+<p><strong>nanoPi R2s（R2c）</strong></p>
+<pre><code>-----------------nmsl friendlyarm -----------------
+          Method none speed: 213M
+          Method plain speed: 209M
+          Method aes-128-gcm speed: 135M
+          Method aes-256-gcm speed: 124M
+          Method chacha20-ietf-poly1305 speed: 79.8M
+-----------------nmsl friendlyarm -----------------
+</code></pre>
+<h2 id="one-more-thing">ONE MORE THING</h2>
+<figure data-type="image" tabindex="25"><img src="https://oss.qust.me/img/202203311524368.jpg" alt="" loading="lazy"></figure>
+<p><a href="https://blog.paldier.com/">paldier</a> SWRT 梅林也有 360v6 版，不过收费40元，你可以尝试使用，觉得好用再购买（不激活 10分钟重启一次）。同是在 uboot 里选择 360v6_ASUS_WRT.img 刷入即可，非常方便。</p>
+<h2 id="总结">总结</h2>
+<p><strong>先说缺点吧：</strong></p>
+<p>目前固件功能比较简单，很多希望到手即用功能丰富的朋友可能无法满足你；闪存还是比较小的，如果你要装很多插件的话 128M 确实会不够；无线信号一般，近处测速还行，隔了一堵墙后就比同价位 ax6s 差不少（一个 300+ Mbps 一个 200Mbps 左右）；散热一般，稍微有点热，日常使用开个 adguard 和上网的插件室温 20 度左右，CPU 稳定在 60 度左右。</p>
+<p>优点那就是 200 多，可玩性贼高，IPQ6018 的性能就能跑满 1000Mbps 科学上网，NPU 的加持也让网络更顺畅，另外还有一个 USB2.0 的接口。我个人认为这是 200 元价位性能最佳的路由器了。</p>
+<p>最后：uboot 5 元真的很划算，刷机方便；lean 的 360v6 固件暂时没开源，他的群收费 50 即可进入（加他 QQ：5200455，红包 50 即可），梅林固件 40 确实不算便宜，不过你可以先尝试再决定是否付费。最后希望大家多支持一下开发者。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[红米 AX6S 性能远超想象，解锁 SSH 安装 ShellClash｜刷 openwrt 教程]]></title>
+        <id>https://qust.me/post/ax6s/</id>
+        <link href="https://qust.me/post/ax6s/">
+        </link>
+        <updated>2022-03-09T07:27:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>这大半年路由器涨价降配，大家应该都有所了解。红米 AX6S 就是之前红米 AX6 的继任者，无线规格基本一致，主要是 CPU 从高通 IPQ8071A 降级到了双核 1.35GHz A53 的 MTK7622B，以及 128M 的闪存和 256M 的内存。不过如今两者全新的价格已经不在一个档次，AX6S 拼多多只要 240 元左右，AX6 已经停产全新的都被炒到了 400 元。本来不打算买红米 AX6S，但最近流出了 AX6S 解锁 SSH 的官方固件，并且能刷 openwrt 了。另外测试下来这颗 MTK7622B CPU 支持 aes 硬解，<strong>科学性能表现十分强悍</strong>，比之前的 MTK7621 不知道高哪里去了。我个人觉得目前挺值得购买的，也就有了这个教程。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这大半年路由器涨价降配，大家应该都有所了解。红米 AX6S 就是之前红米 AX6 的继任者，无线规格基本一致，主要是 CPU 从高通 IPQ8071A 降级到了双核 1.35GHz A53 的 MTK7622B，以及 128M 的闪存和 256M 的内存。不过如今两者全新的价格已经不在一个档次，AX6S 拼多多只要 240 元左右，AX6 已经停产全新的都被炒到了 400 元。本来不打算买红米 AX6S，但最近流出了 AX6S 解锁 SSH 的官方固件，并且能刷 openwrt 了。另外测试下来这颗 MTK7622B CPU 支持 aes 硬解，<strong>科学性能表现十分强悍</strong>，比之前的 MTK7621 不知道高哪里去了。我个人觉得目前挺值得购买的，也就有了这个教程。</p>
+<!--more-->
+<p><strong>致谢：在此感谢如下帖子和教程，我也是整合并用更简单规整的方式重新表述。</strong></p>
+<ul>
+<li><a href="https://www.right.com.cn/forum/thread-8173581-1-1.html">【恩山】红米AX6s 有开发版官方固件</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-8187405-1-1.html">【恩山】AX6S 闭源无线驱动OP固件/源码/教程</a></li>
+<li><a href="https://github.com/juewuy/ShellClash">【GitHub】ShellClash 项目</a></li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>红米 AX6S 路由器</li>
+<li>一台 Windows 或 Mac 的电脑</li>
+<li><a href="https://share.qust.me/%E8%B7%AF%E7%94%B1%E5%99%A8/%E7%BA%A2%E7%B1%B3%20AX6S">提前下载好需要的固件</a></li>
+<li><a href="https://termius.com/windows">下载安装好 Termius</a>（老手可以不安装，直接用系统自带的 terminal）</li>
+</ul>
+<p><strong>如果你只需要 ShellClash 的功能，只用看前半部分就 OK ；需要刷 openwrt 可以跳过 ShellClash 的部分。不用担心变砖，刷坏了用<a href="https://www1.miwifi.com/miwifi_download.html">官方修复工具即可刷回原厂</a>。</strong></p>
+<h2 id="解锁-ssh">解锁 SSH</h2>
+<p><strong>1. 升级开发版固件</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/202203092209940.jpg" alt="" loading="lazy"></figure>
+<p>登录红米 AX6S 的后台（一般是：192.168.31.1），点击右上角选择-系统升级-选择手动升级，勾选下载好的「内测版」固件，点击开始升级。</p>
+<p>⌛️等待系统升级完成重启，重新连接上 Wi-Fi。</p>
+<p><strong>2. 在线计算 root 密码</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/202203092210359.jpg" alt="" loading="lazy"></figure>
+<p>浏览器打开 <a href="https://www.oxygen7.cn/miwifi/">https://www.oxygen7.cn/miwifi/</a>，输入路由器后台右下角完整的 SN 号，点击 GO。<strong>计算出来的结果就是 root 密码，复制保存好。</strong></p>
+<p><strong>3. telnet 连接开启 ssh</strong></p>
+<p>打开 Termius，可以选择不登录 Continue Without  Account。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/8C2AAD6B-524A-420B-BFD0-C41C91B5DD24.png" alt="" loading="lazy"></figure>
+<p>点击 New Host 添加</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/51541936-2C8F-4B4A-9730-4CCEC7BA4900.png" alt="" loading="lazy"></figure>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH：取消勾选</p>
+<p>Telnet：勾选</p>
+<p>然后点击向右的箭头，最后选择 Hosts 里的「192.168.31.1」开始 telnet 连接。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/265346AF-FDA1-488A-8A34-B2FFF01D0C08.png" alt="" loading="lazy"></figure>
+<ul>
+<li>login 用户名：root</li>
+<li>密码通过在线计算得来，复制粘贴回车即可。（输入不显示）</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/72D3F040-C74B-41C0-B688-DA903A00AD89.png" alt="" loading="lazy"></figure>
+<p>复制以下命令，回车即可开启 ssh。</p>
+<pre><code>nvram set ssh_en=1 &amp; nvram set uart_en=1 &amp; nvram set boot_wait=on &amp; nvram set bootdelay=3 &amp; nvram set flag_try_sys1_failed=0 &amp; nvram set flag_try_sys2_failed=1
+nvram set flag_boot_rootfs=0 &amp; nvram set &quot;boot_fw1=run boot_rd_img;bootm&quot;
+nvram set flag_boot_success=1 &amp; nvram commit &amp; /etc/init.d/dropbear enable &amp; /etc/init.d/dropbear start
+
+</code></pre>
+<p><strong>4. 尝试 ssh 连接路由器</strong></p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/31FE7942-F350-4A16-B7D0-291FD84D8932.png" alt="" loading="lazy"></figure>
+<p>选择 Hosts-点击 New Host 添加</p>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH 的用户名里填写：root</p>
+<p>Password 粘贴之前计算出来的 root 密码</p>
+<p>点击右上角箭头，再点击 Hosts 里的 192.168.31.1 就应该能连接上 SSH 了。（注意选择 ssh 不是 telnet）</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/9373666F-3D32-474B-97F7-226220669E9F.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/7398B7D3-AE8D-4891-BB51-E637AA9C0B92.png" alt="" loading="lazy"></figure>
+<p>选择 ADD AND CONTINUE，就会进入 SSH 连接。</p>
+<h2 id="安装-shellclash">安装 ShellClash</h2>
+<p><strong>安装</strong></p>
+<p>在 SSH 里复制此命令开始安装 ShellClash</p>
+<pre><code>export url='https://raw.fastgit.org/juewuy/ShellClash/master' &amp;&amp; sh -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/56A56B4E-9D1F-4AC1-B3E2-0337A5038571.png" alt="" loading="lazy"></figure>
+<p>选择 2 测试版（AX6S 暂时只支持测试版）</p>
+<p>然后 1 确认安装</p>
+<p><strong>配置 Clash</strong></p>
+<p>输入 Clash 回车进行配置</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/494D1DFF-03AE-4C83-8A2F-63BE9F322442.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>选择 1 主机或旁路由</p>
+</li>
+<li>
+<p>选择 1 不代理 UDP</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/933A6F45-F250-4B82-A87D-6B9DF07903D7.png" alt="" loading="lazy"></figure>
+<ul>
+<li>选 1 安装 Dashboard 面板</li>
+<li>选择 2 YACD 面板</li>
+<li>选择 1 的路径</li>
+<li>选择 1 确认开启</li>
+</ul>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/12EBAFF0-3B7A-44D7-A651-5276CACA8286.png" alt="" loading="lazy"></figure>
+<ul>
+<li>1 开始导入</li>
+<li>1 在线生成</li>
+<li>粘贴你的订阅链接（你的机场✈️后台有提供）</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/3252BB1C-4A3B-45FC-AB27-530AC3C3DC37.png" alt="" loading="lazy"></figure>
+<ul>
+<li>1 开始生成配置文件</li>
+<li>1 立即启动 Clash 服务</li>
+<li>最后选择 0 退出脚本即可</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/202203092216633.jpg" alt="" loading="lazy"></figure>
+<p>现在应该就能正常使用了，在浏览器里打开 http://192.168.31.1:9999/ui，就能访问控制后台。可以在手机小米路由器 App 上选择关闭更新，以防止自动更新，麻烦。我的建议：不折腾的就不用固化，喜欢折腾就直接刷下面的 openwrt。</p>
+<h2 id="安装-openwrt-系统">安装 openwrt 系统</h2>
+<p><strong>1. 刷入过渡 openwrt 固件</strong></p>
+<p>在 SSH 里复制粘贴下面的命令，便可刷入 openwrt 过渡固件。</p>
+<pre><code>cd /tmp
+curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/%E7%BA%A2%E7%B1%B3%20AX6S/factory.bin -o factory.bin
+mtd -r write /tmp/factory.bin firmware
+</code></pre>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/202203092211047.jpg" alt="" loading="lazy"></figure>
+<p>刷入过渡固件后会自动重启，Wi-Fi 名会变为 openwrt-5G。</p>
+<ul>
+<li>
+<p>默认后台：192.168.6.1</p>
+</li>
+<li>
+<p>用户名：root</p>
+</li>
+<li>
+<p>密码：password</p>
+</li>
+</ul>
+<p><strong>2. 刷写其它第三方固件：</strong></p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/202203092213319.jpg" alt="" loading="lazy"></figure>
+<p>在路由器后台选择-System-Backup / Flash Firmware</p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/202203092211802.jpg" alt="" loading="lazy"></figure>
+<p><strong>不要勾选</strong> Keep settings，然后 Image 选择文件选择 openwrt 固件，然后点击 Flash image。</p>
+<p><img src="https://oss.qust.me/img/202203092210656.jpg" alt="" loading="lazy">最后选择 Proceed 即可。</p>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/202203092210982.jpg" alt="" loading="lazy"></figure>
+<p>你可以用同样的方法刷不同版本的 openwrt 固件（不保留配置升级），这里就不过多的介绍，以后应该会有更多不同编译版本的 openwrt 固件让选择。</p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/IMG_2422.JPG" alt="" loading="lazy"></figure>
+<p>另外 openwrt 里开启 160Mhz 也是有效的，不过 4*4 mimo 和 160Mhz 得二选一，两者不可兼得。</p>
+<h2 id="性能测试">性能测试</h2>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/202203092212243.jpg" alt="" loading="lazy"></figure>
+<p>MTK 7622B 双核 a53，加上有 aes 硬解，能跑这个速度我确实没想到，也太快了吧！这是 MTK7621 的好几十倍了。200多的价格，不错的无线性能，以及丰富的固件，外加上代理性能也不拉胯，解锁刷机还特简单，这不冲一波吗。</p>
+<p>有蛮长一段时间没更新自己的 blog 了，非常抱歉。最近一直在做视频也就是 UP 主，如果你愿意可以在 <a href="https://space.bilibili.com/11544017">bilibili</a> 和 <a href="https://www.youtube.com/channel/UCMb3ctshCbbQKImygnWdrZA">YouTube</a> 关注我，非常感谢🙏。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[嘿 Siri 前往香港｜如何通过 Siri 控制路由器代理]]></title>
+        <id>https://qust.me/post/siri-router/</id>
+        <link href="https://qust.me/post/siri-router/">
+        </link>
+        <updated>2021-12-13T04:38:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>昨晚洗澡的时候想着在电视上看部港区 Netflix 的电影，因为有喊 Siri 播放音乐的习惯，我就想能不能通过 Siri 直接切换节点，那岂不是特别方便。今天就实践了下，感觉还挺方便，写个教程分享下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>昨晚洗澡的时候想着在电视上看部港区 Netflix 的电影，因为有喊 Siri 播放音乐的习惯，我就想能不能通过 Siri 直接切换节点，那岂不是特别方便。今天就实践了下，感觉还挺方便，写个教程分享下。</p>
+<!--more-->
+<p><strong>省流助手：</strong></p>
+<ol>
+<li>路由器、旁路由、或者 Mac 网关使用的是 Clash。（openclash、shellclash、MerlinClash、ClashX Rro、Clash For Windows 都可以）</li>
+<li>Mac Surge 作为网关也可以，操作基本一致。</li>
+</ol>
+<h2 id="基本思路">🧠 基本思路</h2>
+<ol>
+<li>iPhone、Mac、HomePod 都支持 Siri 且 Siri 也支持快捷指令 ‎Shortcuts。</li>
+<li>‎快捷指令支持 http 请求功能，Clash 和 Surge 也都有 restful API。</li>
+<li>所以只用写一个 http 请求的快捷指令就能控制路由器的节点或开关代理了</li>
+</ol>
+<h2 id="通过-siri-控制-clash-配置">✅ 通过 Siri 控制 Clash 配置</h2>
+<h3 id="获取-clash-请求信息推荐使用-chrome-浏览器">💻 获取 Clash 请求信息（推荐使用 chrome 浏览器）</h3>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%881.54.59.jpg" alt="截屏2021-12-13 下午1.54.59" loading="lazy"></figure>
+<p>openclash 默认就有 Yacd 和 Dashboad 控制面板，ShellClash 也是默认有的。如果你不知道 Clash 程序的控制面板在哪里：你可以先检查你在的 <a href="https://clash.gitbook.io/doc/restful-api">Clash 配置开启</a>，然后打开<a href="http://clash.razord.top/#/proxies">默认的</a>控制面板或是 <a href="http://yacd.haishan.me/">Yacd</a> 的面板填入信息即可。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.05.15.jpg" alt="截屏2021-12-13 下午2.05.15" loading="lazy"></figure>
+<p>Host 是你 Clash 网关设备局域网的 IP，端口在你的 Clash 文件里的 external-controller，密钥是配置文件里的 secret。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.07.27.jpg" alt="截屏2021-12-13 下午2.07.27" loading="lazy"></figure>
+<p>比如我打开就是这样，我点击节点选择便可以切换节点，或是选择全球直连则意味着关闭代理。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.09.46.jpg" alt="截屏2021-12-13 下午2.09.46" loading="lazy"></figure>
+<p>打开开发者工具（推荐使用 Chrome 浏览器，Mac 快捷按键是： Cmd+Opt+I，Windows Linux 是： F12,Ctrl+Shift+I ）</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.13.37.jpg" alt="截屏2021-12-13 下午2.13.37" loading="lazy"></figure>
+<p>然后在右边👉选择 Network-Fetch/XHR。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.23.14.jpg" alt="截屏2021-12-13 下午2.23.14" loading="lazy"></figure>
+<p>然后切换下节点，右边就能看到网络请求了。我们点开那个最长的（我这里分组名为「节点选择」是中文所以看起来乱码的，Request Method：PUT 为的请求就对了，你的如果分组名是英文则直接对应的英文分组名，看起来则不是乱码）。复制 Request URL:  后面那个 url，下面会用到。</p>
+<p>下面 Request Headers 的 Authorization: Bearer 123456 也会用到，不过这里其实就后台控制密码，没有设置后台密码的这里则没有。</p>
+<p>如果你想通过 Siri 操作的不是节点选择，而是别的比如 “自动选择”、“国外媒体”等也是同样的操作。</p>
+<h3 id="创建-siri-快捷指令">🔧 创建 Siri 快捷指令</h3>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/IMG_1453%202.JPEG" alt="IMG_1453 2" loading="lazy"></figure>
+<p>打开快捷指令 App，选择 + 号，点击 添加操作，搜索 url 选择获取 URL 内容。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/IMG_1457%202.JPEG" alt="IMG_1457 2" loading="lazy"></figure>
+<p>在第一栏的 URL 里填上上一步的“Request URL”链接，然后点击内容展开。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/IMG_1464.JPEG" alt="IMG_1464" loading="lazy"></figure>
+<ol>
+<li>
+<p>方法我们选择 PUT</p>
+</li>
+<li>
+<p>添加头部</p>
+<p>键填写：Authorization，文本：Bearer 123456（这个 123456 是我 clash 后台控制密码，如果你 Clash 后台没有设置密码这步可以不填）</p>
+</li>
+<li>
+<p>添加请求体（选择文本）</p>
+<p>键填写：name，文本：你的节点的名称（我这里是：台湾 01 [ H1 ]，完全复制 clash 面板的里任意节点名字即可，带 emoji 也直接复制，「🎯 全球直连 」这种也可以）</p>
+</li>
+</ol>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/IMG_1466.JPEG" alt="IMG_1466" loading="lazy"></figure>
+<p>最后修改默认的「获取 URL 内容」为你想要的 Siri 关键词，再点击右上角 X 即可。我这里是“切换到台湾”，你可以改成你喜欢习惯的。</p>
+<h3 id="如何验证">🔒 如何验证：</h3>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%883.06.52.jpg" alt="截屏2021-12-13 下午3.06.52" loading="lazy"></figure>
+<p>点开捷径选择执行（播放按钮▶︎）没有任何返回即为成功。（有返回则一般为错误信息）</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%883.09.44.jpg" alt="截屏2021-12-13 下午3.09.44" loading="lazy"></figure>
+<p>在 clash 控制面板可以看到切换到了指定节点。</p>
+<h3 id="如何创建更多">🍇 如何创建更多</h3>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/IMG_1470.JPEG" alt="IMG_1470" loading="lazy"></figure>
+<ol>
+<li>选择做好的快捷指令复制。</li>
+<li>修改请求体里的节点名和 Siri 关键词即可。</li>
+</ol>
+<h2 id="总结">🪢 总结：</h2>
+<p>我自己用下来还挺方便的，因为 Siri 会通过 iCloud 同步快捷指令，所以任意局域网设备都能完成这个操作包括 HomePod。</p>
+<p>如果你想参考我的可以<a href="https://www.icloud.com/shortcuts/78c715f3fba041b785746fc42f3b0a14">点击这里</a>，只能参考哦，你还是得自己修改，如果大家不会 surge 版本我后面可以考虑写一下。其实大家如果用一套 Clash 配置模版的话这个倒是可以通用的，因为就局域网 IP 地址不一样。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[人人都能办的澳门电信红蓝卡，更便宜的流量和更低的月租。]]></title>
+        <id>https://qust.me/post/MOCT-red-blue/</id>
+        <link href="https://qust.me/post/MOCT-red-blue/">
+        </link>
+        <updated>2021-11-29T08:11:07.000Z</updated>
+        <content type="html"><![CDATA[<p>之前有在博客和视频给推荐过「澳门电信学生卡」和「澳门电信劳务卡」，前者因为审核要求严格需要提供学生证等信息，现在已经很难办理了；后者因为有电信诈骗的人员被查到用了此卡，现在澳门电信那边也暂停了此卡的办理。所以今天就给大家推荐下澳门电信的红卡和蓝卡，并且现在就能轻松买到的。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-29%20%E4%B8%8B%E5%8D%884.13.00.jpg" alt="截屏2021-11-29 下午4.13.00" loading="lazy"></figure>
+<p>声明下两张卡是澳门电信的代理商寄给我测试的，没有恰饭，在此表示下感谢。</p>
+<h2 id="红卡大流量">🍠 红卡：大流量</h2>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_1270.jpg" alt="IMG_1270" loading="lazy"></figure>
+<p>红卡是又叫做 easy+，是主打流量的，有这两种月租方式：</p>
+<ul>
+<li>每天2澳门币，也就是每月 48 人民币，有 4GB 高速流量的套餐，无限流量，超过 4GB 后网速会被限制到 大约 256kb/s。</li>
+<li>还有每天5澳币，也就是每月 120 人民币，有 15GB 高速流量的套餐，超过后也是相同的网速限制。<br>
+虽然流量还是有点小贵，但比之前的劳务卡还是更便宜点的。</li>
+</ul>
+<h2 id="蓝卡低月租">🔵 蓝卡：低月租</h2>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/IMG_1271.jpg" alt="IMG_1271" loading="lazy"></figure>
+<p>蓝卡则是不过期流量卡，可以享受这四种包流量：</p>
+<ul>
+<li>28澳门币 1GB（22元）</li>
+<li>98澳门币 6GB（78元）</li>
+<li>188澳门币 15GB（150元）</li>
+<li>288澳门币 40GB（229元）</li>
+</ul>
+<p>虽然流量贵不少，但流量都是永久有效的，不会过期。不过蓝卡我个人更推荐作为一个澳门号码保号收短信使用，没有月租，收短信也免费。额外的费用是每隔半年需要充值50澳门币也就是40元保号，也就意味着每月只要 7 元左右你就能拥有一个澳门号码，流量还能留着应急使用，还是很划算的。</p>
+<h3 id="激活和国内的手机卡一样需要实名认证的所以不要拿这个卡做一些不好的事情">🐔 激活（和国内的手机卡一样需要实名认证的，所以不要拿这个卡做一些不好的事情）</h3>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/IMG_1251.JPEG" alt="IMG_1251" loading="lazy"></figure>
+<p>激活需要关闭Wi-Fi，因为要使用手机卡的网络激活，并且需要在手机-网络设置里打开漫游网络。然后直接扫描认证的二维码进行激活即可。激活最后一步就会让你选择套餐。</p>
+<h3 id="流媒体测试">📺 流媒体测试</h3>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/IMG_1284.JPEG" alt="IMG_1284" loading="lazy"></figure>
+<p>Netflix 是支持非制内容的，TikTok 也是能直接播放的，YouTube 也是有 Premium 的。不过流量这么贵，应该看不起视频吧 = =，比较可惜的是 Apple News 仍然是无法打开。</p>
+<h3 id="网速测试限速测试"><strong>🌍 网速测试｜限速测试</strong></h3>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/IMG_1275.JPEG" alt="IMG_1275" loading="lazy"></figure>
+<p>这里拿的是红卡进行测试，4G 信号好的时候其实用的是 4G+（iPhone 不直接显示），fast.com 测速能到 5 60Mbps 左右。然后超过流量限速后也在 300 kbps 左右。</p>
+<h3 id="️-电话短信测试">☎️ 电话｜短信测试</h3>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/IMG_1279.JPEG" alt="IMG_1279" loading="lazy"></figure>
+<p>使用澳门的号码在大陆是可以直接拨打号码的，也是能正常通话，只是会有额外的费用，每分钟通话在 3毛人民币左右。澳门号码注册 Telegram 这种收验证码也是完全 OK 的。</p>
+<h3 id="充值">💰 充值</h3>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/IMG_1282.JPEG" alt="IMG_1282" loading="lazy"></figure>
+<p>充值直接公众号「中国电信澳门」就能直接充值，微信人民币就能直接支付，汇率也在 0.8 挺划算的。</p>
+<h2 id="总结">🪢总结</h2>
+<p>红卡我个人更推荐有对流量需求比较高的用户，毕竟这个流量价格其实还是蛮贵的。相比之下我个人还是推荐蓝卡，因为大多时候我们是需要一个号码接受短信和注册一些服务，综合更低的月租很明显更划算，这个流量只是偶尔应急用一用。哦对了这两张卡都是不用签约，如果不想用了直接扔了就可以，还是非常方便。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-29%20%E4%B8%8B%E5%8D%885.18.32.jpg" alt="截屏2021-11-29 下午5.18.32" loading="lazy"></figure>
+<p>最后如果感兴趣，可以联系下澳门代理商，都是 100元包邮，红蓝卡里都有100澳门币的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[移动和目 AX18 刷 openwrt 教程，百元的 IPQ6000 也太强了。]]></title>
+        <id>https://qust.me/post/ax18-openwrt/</id>
+        <link href="https://qust.me/post/ax18-openwrt/">
+        </link>
+        <updated>2021-11-25T12:54:13.000Z</updated>
+        <content type="html"><![CDATA[<p>之前有在博客和视频推荐过 <a href="https://qust.me/post/ax18_shellclash/">移动 AX18 这款路由器</a>，在推荐后价格也一路上涨了几十元，但最近几个月芯片缺货严重，即使是主打性价比的用高通芯片的小米路由器也顶不住，纷纷涨价和改用「低端」 MTK 芯片了。近期出品的 GL-iNet 同款芯片的 AX1800 也卖到了 500 元，相比之下移动 AX18 依然性价比特别特别高。<strong>（注意不要买新款，新款的 AX18 不是 IPQ6000 芯片了）</strong></p>
+<p><strong>省流助手</strong></p>
+<ul>
+<li>感谢「<a href="https://www.right.com.cn/forum/thread-6945618-1-1.html">暗云</a>」大佬提供的固件</li>
+<li>暂时该 openwrt 固件没有 Wi-Fi 无线功能（作者说：256M 内存太小，硬件加解密驱动和无线只能二选一，所以无线驱动没上）</li>
+</ul>
+<h3 id="下载固件和-uboot">🌍 下载固件和 uboot</h3>
+<p>链接:  <a href="https://pan.baidu.com/s/12vfeSMahZRjq2OldKn8OSw">百度网盘</a> 提取码: ng0s</p>
+<h3 id="刷入-openwrt-系统">💻 刷入 openwrt 系统</h3>
+<p>AX18 刷成 openwrt 系统非常非常简单：</p>
+<ol>
+<li>登陆后台：在路由器的背面有默认的 wifi 信息，<strong>默认密码就是你的后台登录密码</strong>，路由器的后台是 wifi.cmcc 或 192.168.10.1。</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-25%20%E4%B8%8B%E5%8D%8810.48.20.png" alt="截屏2021-11-25 下午10.48.20" loading="lazy"></figure>
+<ol start="2">
+<li>刷写固件：在后台选择-高级设置-升级固件-<strong>取消勾选保留配置</strong>-然后选择下载好的固件上传升级即可。</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-25%20%E4%B8%8B%E5%8D%8810.56.38.png" alt="截屏2021-11-25 下午10.56.38" loading="lazy"></figure>
+<ol start="3">
+<li>稍等几分钟后路由器重启使用有线网络连接路由器就是 openwrt 的系统了。（后台密码是:password）注意⚠️这个系统是没有 无线网络 Wi-Fi 功能的。</li>
+</ol>
+<h3 id="刷入-uboot">🔌 刷入 uboot</h3>
+<p>有了 uboot 就能非常方便的刷机更新系统了，也能很大程度避免路由器变砖，如果刷过 android 知道 Recovery 这个就和那类似。</p>
+<ol>
+<li>
+<p>在 openwrt-系统-文件传输 上传好下载的 uboot-cmiot-ax18.bin 文件。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-04%20%E4%B8%8A%E5%8D%8811.28.19.jpg" alt="截屏2021-12-04 上午11.28.19" loading="lazy"></figure>
+</li>
+<li>
+<p>再打开 TTYD 终端 执行以下命令(用户名：root 密码：password 密码输入不显示，输入完回车即可)</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-04%20%E4%B8%8A%E5%8D%8811.34.38.jpg" alt="截屏2021-12-04 上午11.34.38" loading="lazy"></figure>
+<pre><code class="language-shell">mtd write /tmp/upload/uboot-cmiot-ax18.bin /dev/mtd13
+</code></pre>
+</li>
+</ol>
+<p>进入 uboot 的方式，插电开机按住 rest 8s 以上，电脑通过网线连接路由器的 lan 口，并且将电脑设置为静态IP：192.168.1.x （x表示 2-255 任意数），打开 192.168.1.1 即可打开 uboot。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-04%20%E4%B8%8A%E5%8D%8811.46.01.jpg" alt="截屏2021-12-04 上午11.46.01" loading="lazy"></figure>
+<h3 id="性能测试">💥 性能测试</h3>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-11-25%20%E4%B8%8B%E5%8D%8811.24.44.png" alt="截屏2021-11-25 下午11.24.44" loading="lazy"></figure>
+<p>刷完之后我直接扔进弱电箱做主路由了，然后 Wi-Fi 用的是小米 mesh 那一套（ax6000 + ax6 * 2）。</p>
+<p>直接看图吧，没必要多说了吧。百元的 AX18 路由器，高通  IPQ6000 的 CPU，轻松跑满 1000M 宽带。</p>
+<h3 id="总结">🪢 总结</h3>
+<p>还要啥自行车？？？赶紧冲吧，这价格还不是暴打你的软路由。另外还修复了之前官方固件有高 CPU 系统会挂的问题，现在怎么测速高负载都很稳了。</p>
+]]></content>
+    </entry>
+</feed>

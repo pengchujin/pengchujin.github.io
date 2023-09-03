@@ -1,0 +1,365 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Surge 把你的 Mac 变成最强路由器 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Surge 把你的 Mac 变成最强路由器 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="最近一两年我用过很多路由器：斐讯 n1、NanoPi r2s、NanoPi r4s、华硕 ax86u 等等都是蛮热门的产品。但在我前俩天买了用了 Mac 的 Surge 当作家里的路由器后，方便和体验真的是回不去了。
+
+关于 surge 4..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Surge 把你的 Mac 变成最强路由器
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-01-16
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/20210116213225.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>最近一两年我用过很多路由器：斐讯 n1、NanoPi r2s、NanoPi r4s、华硕 ax86u 等等都是蛮热门的产品。但在我前俩天买了用了 Mac 的 Surge 当作家里的路由器后，方便和体验真的是回不去了。</p>
+<!--more-->
+<p>关于 surge 4 的教程特别是 DHCP 当做路由器，我看网上的资料教程实在是很少，自己查也废了不少功夫，就写个教程做个视频分享给大家。温馨提示：<strong>首先你得有台放在家里，最好接着网线的 Mac 系统电脑；还有就是你要花几百块买 Surge 这个软件。</strong></p>
+<p>Surge 是一个很强大的网络工具，不仅仅是一个代理软件；目前 Surge 是版本买断制度的，你可以直接在<a href="https://nssurge.com/buy_now">官网购买</a>，然后就能一直使用 Surge 4 这个大的版本了。</p>
+<h2 id="surge-dhcp-接管网络">Surge DHCP 接管网络</h2>
+<h3 id="1-添加-surge-的配置文件">1 添加 Surge 的配置文件</h3>
+<p>你订阅的服务应该会给 Surge 的<strong>订阅链接</strong>，如果没有也没关系，你可以通过第三方 <a href="https://bianyuan.xyz">订阅转换</a> 生成（推荐用这个，分流会丰富合理很多）：</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20210116211324.png" alt="" loading="lazy"></figure>
+<ol>
+<li>订阅链接填上你的 v2ray、ss 、trojan 的订阅</li>
+<li>客户端选择 surge 4</li>
+<li>选择生成订阅链接就好了</li>
+</ol>
+<p>打开 surge 设置中的<strong>配置</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20210116211500.png" alt="" loading="lazy"></figure>
+<p>选择从 url 安装配置</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20210116211555.png" alt="" loading="lazy"></figure>
+<p>粘贴上你的配置文件订阅地址后选择完成</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20210116211622.png" alt="" loading="lazy"></figure>
+<p>选中刚才添加的点击 <strong>应用</strong></p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/20210116211641.png" alt="" loading="lazy"></figure>
+<p>在策略里选择 <strong>规则判定</strong>，这时候你应该就能愉快的上网了。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/20210116211714.png" alt="" loading="lazy"></figure>
+<p>如果不行可以重新退出打开下 surge，并检查是否打开了 <strong>设置为系统代理</strong> 和 <strong>增强模式</strong>。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/20210116211730.png" alt="" loading="lazy"></figure>
+<h3 id="2-配置-surge-dhcp-接管网络">2 配置 Surge DHCP 接管网络</h3>
+<h4 id="设置电脑-ip-为静态ip">设置电脑 IP 为静态IP</h4>
+<p>打开 <strong>系统偏好设置-网络</strong>，选择以太网（也就是网线接口），配置 IPv4 选择 <strong>使用 DHCP（手动设定地址）</strong>，我的路由器是 192.168.88.1 所以 IP 地址我就填 192.168.88.2，只用修改最后一位在 2-225 之间就行。（如果你的路由器是 192.168.31.1 你的 IP 地址就可以填 192.168.31.2，以此类推）随后选择 <strong>应用</strong>。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20210116212721.png" alt="" loading="lazy"></figure>
+<h4 id="关闭路由器-dhcp">关闭路由器 DHCP</h4>
+<p>一般都在 <strong>内部网络-DHCP服务器</strong> 选项里，关闭启用 DHCP， 保存并应用。（各家系统的设置位置可能有差别，但基本都是有 DHCP 开关选项的）</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/20210116212428.png" alt="" loading="lazy"></figure>
+<h4 id="打开-surge-dhcp-选项">打开 Surge DHCP 选项</h4>
+<p>在左侧 <strong>设备</strong> 里，点开后有 <strong>DHCP 服务器</strong> 开关，点开后请认真看下内容，然后选择下一步。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/20210116221722.png" alt="" loading="lazy"></figure>
+<p>网络设备和你上面设置固定的 IP 的一致，插网线的选择 <strong>Ethernet</strong> 就行，继续下一步。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/20210116212820.png" alt="" loading="lazy"></figure>
+<p>Surge 会检测当前网络环境是否有 DHCP 设置，如果上面你正确关闭了 路由器 DHCP 这里应该能直接过去。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/20210116213020.png" alt="" loading="lazy"></figure>
+<p>选择 Surge 默认的设置点击<strong>完成</strong>即可，如果你懂的可以自行修改。</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/20210116213337.png" alt="" loading="lazy"></figure>
+<p>把你其它设备<strong>重新连接 wifi 或者关闭路由器 wifi 再打开</strong>即可看到 设备里新增设备。</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/20210116213153.png" alt="" loading="lazy"></figure>
+<p>如果你想你连接的设备通过 Surge 走代理服务，你可以右键选择设备名然后选择 <strong>使用 Surge 作为网关</strong>，再<strong>设备重新连接或者关闭路由器 wifi 再打开</strong>即可。</p>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/20210116213225.png" alt="" loading="lazy"></figure>
+<h2 id="surge-dhcp-使用模块">Surge DHCP 使用模块</h2>
+<p>我只购买了 Mac 版的 Surge，但我想我的手机也能实现除了能用代理外，也能使用 微博去广告、Netflix 有评分、看 tiktok 不用拔掉 sim 卡。如果你也想使用 Module 的功能可以继续往下看，这部分可能稍微有点麻烦。</p>
+<h4 id="mac-创建证书">Mac 创建证书</h4>
+<ol>
+<li>
+<p>打开 <strong>钥匙串访问 app</strong>（Keychain Access.app）</p>
+</li>
+<li>
+<p>选择菜单项 钥匙串访问 （Keychain Access） -&gt; 证书助理 （Certificate Assistant） -&gt; 创建证书颁发机构 Create Certificate Authority…</p>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/20210116221318.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>证书参数（名字邮箱随意填写）点击创建即可，记下倒出的位置，后面要用到。</p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/20210116222932.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>证书创建后，在左侧选择 <strong>我的证书</strong> （My Certificates），然后在右侧列表中找到该证书，右键点击证书，选择导出，<strong>导出格式选择为 .p12 格式，导出时需要设置 密码 （passphrase），不可设置为空。若不可选择 p12 格式，请确认先切换到我的证书 （My Certificates） 后再进行导出。</strong></p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/20210116223054.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/20210116223108.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>将证书复制到左侧 Keychains 列表中的 System 中 粘贴 （不做该步骤会使得 Safari 不认该 CA，不过 Chrome 可以正常工作）输入刚才添加的密码完成。</p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/20210116223550.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/20210116223604.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>双击证书，将该证书标记为可信，关闭窗口输入登录密码确认操作。</p>
+<figure data-type="image" tabindex="22"><img src="https://oss.qust.me/img/20210116223630.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>将得到的 Certificates.p12 文件用在 terminal 中进行 base64 编码，得到结果会用到。</p>
+<pre><code>base64 SurgeModule.p12 
+</code></pre>
+<figure data-type="image" tabindex="23"><img src="https://oss.qust.me/img/20210116224319.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>编辑 Surge 的配置文件（设置-配置-在 Finder 中找到配置；然后用文本编辑器打开），加入 MITM 段。ca-passphrase = 填写你之前的密码，ca-p12 = 填写你刚 base64 出来的结果。</p>
+<pre><code>[MITM]
+enable = true
+tcp-connection = true
+hostname = *facebook.com, *pinboard.in
+ca-passphrase = 123456
+ca-p12 = MIIJtQIBAzCCCXwGCSqGSIb3DQ…..
+</code></pre>
+<figure data-type="image" tabindex="24"><img src="https://oss.qust.me/img/20210116224523.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://oss.qust.me/img/20210116224533.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>打开再文件里右键刚才编辑好的文件选 Surge 打开，选择覆盖，便会使用新的配置文件。</p>
+<figure data-type="image" tabindex="26"><img src="https://oss.qust.me/img/20210116224637.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="27"><img src="https://oss.qust.me/img/20210116224646.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>在 <strong>解密</strong> 中打开 HTTPS 解密开关。</p>
+<figure data-type="image" tabindex="28"><img src="https://oss.qust.me/img/20210116224919.png" alt="" loading="lazy"></figure>
+</li>
+</ol>
+<h4 id="发送证书到手机安装">发送证书到手机安装</h4>
+<ol>
+<li>
+<p>在 Surge <strong>解密</strong> 中选择为 iOS 模拟器倒出证书</p>
+<figure data-type="image" tabindex="29"><img src="https://oss.qust.me/img/20210116225450.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>发送证书到手机（airdrop 或者别的方式发到手机上）。</p>
+<figure data-type="image" tabindex="30"><img src="https://oss.qust.me/img/20210116231352.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>在手机打开描述文件，设置里选择已下载的描述文件-安装描述文件-选择同意输入密码即可。</p>
+<figure data-type="image" tabindex="31"><img src="https://oss.qust.me/img/20210116225607.PNG" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="32"><img src="https://oss.qust.me/img/20210116231010.PNG" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="33"><img src="https://oss.qust.me/img/20210116231016.PNG" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>最后在 <strong>设置</strong>-<strong>通用</strong>-<strong>关于手机</strong> 打开对证书的信任。</p>
+<figure data-type="image" tabindex="34"><img src="https://oss.qust.me/img/20210116231307.PNG" alt="" loading="lazy"></figure>
+</li>
+</ol>
+<h4 id="surge-安装打开模块">Surge 安装打开模块</h4>
+<p>在<strong>设置</strong>中打开<strong>模块</strong>选择<strong>从 URL 安装模块</strong>，安装这个模块选择开启后应用即可。</p>
+<p>https://raw.githubusercontent.com/pengchujin/SurgeMacModule/main/modules.sgmodule</p>
+<figure data-type="image" tabindex="35"><img src="https://oss.qust.me/img/20210116232936.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="36"><img src="https://oss.qust.me/img/20210116234315.png" alt="" loading="lazy"></figure>
+<p>更多模块功能可以看看这里（上面是我做了一个合并的，免拔卡看 tiktok、Netflix 评分、微博去广告 等等）</p>
+<ul>
+<li>https://github.com/lhie1/Rules/tree/master/Surge/Surge%203/Module</li>
+<li>https://github.com/Tartarus2014/Surge-Script</li>
+<li>https://github.com/nzw9314/Surge/tree/master/Module</li>
+</ul>
+<p>也可以看看这个 module 使用教程：https://merlinblog.xyz/wiki/surge-module.html</p>
+<h2 id="总结">总结</h2>
+<p>如果有有问题可以看看 surge 开发者详细的文章：https://blankwonder.medium.com</p>
+<p>surge 官方功能手册：https://manual.nssurge.com/book/understanding-surge/cn/</p>
+<p>如果对这篇教程有疑问也可以发邮件给我 pengchujin@hotmail.com</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#surge-dhcp-%E6%8E%A5%E7%AE%A1%E7%BD%91%E7%BB%9C">Surge DHCP 接管网络</a>
+<ul>
+<li><a href="#1-%E6%B7%BB%E5%8A%A0-surge-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">1 添加 Surge 的配置文件</a></li>
+<li><a href="#2-%E9%85%8D%E7%BD%AE-surge-dhcp-%E6%8E%A5%E7%AE%A1%E7%BD%91%E7%BB%9C">2 配置 Surge DHCP 接管网络</a>
+<ul>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E7%94%B5%E8%84%91-ip-%E4%B8%BA%E9%9D%99%E6%80%81ip">设置电脑 IP 为静态IP</a></li>
+<li><a href="#%E5%85%B3%E9%97%AD%E8%B7%AF%E7%94%B1%E5%99%A8-dhcp">关闭路由器 DHCP</a></li>
+<li><a href="#%E6%89%93%E5%BC%80-surge-dhcp-%E9%80%89%E9%A1%B9">打开 Surge DHCP 选项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#surge-dhcp-%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97">Surge DHCP 使用模块</a><br>
+*
+<ul>
+<li><a href="#mac-%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6">Mac 创建证书</a></li>
+<li><a href="#%E5%8F%91%E9%80%81%E8%AF%81%E4%B9%A6%E5%88%B0%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85">发送证书到手机安装</a></li>
+<li><a href="#surge-%E5%AE%89%E8%A3%85%E6%89%93%E5%BC%80%E6%A8%A1%E5%9D%97">Surge 安装打开模块</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/PocketTube/">
+              <h3 class="post-title">
+                使用 PocketTube 管理我的 YouTube 订阅，顺便分享下我的 300 多个订阅
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>红米 ax6000 刷 openwrt 教程，终于有完善好用的 openwrt 了 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 ax6000 刷 openwrt 教程，终于有完善好用的 openwrt 了 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="上次我们给红米 AX6000 解锁了 SSH，今天就再进一步来给他刷上 openwrt 顺便测试下。目前红米 AX6000 已经有 openwrt 官方的支持了，固件也达到了基本完善的状态，无线 Wi-Fi 信号和原厂差不多，只是 led ..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              红米 ax6000 刷 openwrt 教程，终于有完善好用的 openwrt 了
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-11-06
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/9a567e4bde00f35a00d48a7042d8e9b3.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>上次我们给红米 AX6000 解锁了 SSH，今天就再进一步来给他刷上 openwrt 顺便测试下。目前红米 AX6000 已经有 openwrt 官方的支持了，固件也达到了基本完善的状态，无线 Wi-Fi 信号和原厂差不多，只是 led 灯依然有一些 bug。不过如果你不是对 openwrt 需求强烈和爱折腾的用户，其实跟着按照上次解锁 SSH 后就够用了。当然今天这个教程刷完 openwrt 还是能直接用官方恢复工具刷回原厂固件的，不用担心变砖。</p>
+<p><strong>在教程开始前还是先感谢下：</strong></p>
+<ul>
+<li>
+<p><a href="https://github.com/openwrt/openwrt/pull/10690">暗云的适配和提交的代码</a></p>
+</li>
+<li>
+<p><a href="https://www.right.com.cn/forum/thread-8255378-1-1.html">ptpt52 分享的不用拆机的刷机教程</a></p>
+</li>
+<li>
+<p><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=8261104&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D103">以及 237176253 编译分享的固件</a></p>
+</li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<p>1 一台红米 ax6000 路由器（解锁好 ssh 了，如果没有可以先看看上篇）</p>
+<p>2 一台 Windows 电脑（主要刷回原厂固件需要 Windows ）</p>
+<p>3 下载安装 <a href="https://termius.com/windows">Termius</a> (termius ssh 连接比较方便，当然别的 ssh 工具也行)</p>
+<p>4 然后下载好（原厂分区）<a href="https://www.right.com.cn/forum/thread-8261104-1-1.html">红米 ax6000 的 openwrt 固件</a></p>
+<h2 id="第一步刷入过渡固件">第一步：刷入过渡固件</h2>
+<pre><code>cat /proc/cmdline
+</code></pre>
+<p>这一步需要路由器是正常联网的，首先 ssh 连接上红米 ax6000 ，执行上面的命令，查看返回的 firmware 等于 0 还是 1。 （我截图这里是 1 ）</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/83c9206c32913d9035fbd41e03dda290.png" alt="" loading="lazy"></figure>
+<p>如果是 0 执行</p>
+<pre><code>nvram set boot_wait=on
+nvram set uart_en=1
+nvram set flag_boot_rootfs=1
+nvram set flag_last_success=1
+nvram set flag_boot_success=1
+nvram set flag_try_sys1_failed=0
+nvram set flag_try_sys2_failed=0
+nvram commit
+cd /tmp
+curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/redmi-ax6000/initramfs-factory.ubi -o initramfs-factory.ubi
+ubiformat /dev/mtd9 -y -f /tmp/initramfs-factory.ubi
+reboot -f
+</code></pre>
+<p>如果是 1 执行</p>
+<pre><code>nvram set boot_wait=on
+nvram set uart_en=1
+nvram set flag_boot_rootfs=0
+nvram set flag_last_success=0
+nvram set flag_boot_success=1
+nvram set flag_try_sys1_failed=0
+nvram set flag_try_sys2_failed=0
+nvram commit
+cd /tmp
+curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/redmi-ax6000/initramfs-factory.ubi -o initramfs-factory.ubi
+ubiformat /dev/mtd8 -y -f /tmp/initramfs-factory.ubi
+reboot -f
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/6ecb550bc09b0d5727c98e365fa06ce9.png" alt="" loading="lazy"></figure>
+<p>复制执行完就会重启进入过渡固件，过渡固件的</p>
+<ul>
+<li>管理ip：192.168.5.1</li>
+<li>用户名和密码：root/password</li>
+<li>无线wifi名称：OpenWrt</li>
+<li>无线wifi密码：password</li>
+</ul>
+<h2 id="第二步从过渡固件刷入-openwrt">第二步：从过渡固件刷入 openwrt</h2>
+<p>在刷写前需要设置下 ENV ，浏览器打开过渡固件后台 192.168.5.1，登录用户名 root，密码 password。然后打开服务里的终端，同样登录用户名 root，密码 password（输入密码不会显示输完回车即可）。</p>
+<pre><code>fw_setenv boot_wait on
+fw_setenv uart_en 1
+fw_setenv flag_boot_rootfs 0
+fw_setenv flag_last_success 1
+fw_setenv flag_boot_success 1
+fw_setenv flag_try_sys1_failed 8
+fw_setenv flag_try_sys2_failed 8
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/5c135d3417688558c9c3cd1ab3e16829.png" alt="" loading="lazy"></figure>
+<p>然后复制上面的命令到终端执行，从过渡固件刷入 openwrt 这步是必须做的。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/f8dcae198ecb44b333723fa7e422c4d5.png" alt="" loading="lazy"></figure>
+<p>然后打开系统-备份与升级，选择刷写固件。浏览里找到下载好的 openwrt 固件，选择上传。上传好后选择<strong>取消勾选保留当前配置</strong>然后选择继续。等待刷写完成自动重启，就会进入新的 openwrt 固件。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/83f3fd0d3a73d69e2430ba51ad62534b.png" alt="" loading="lazy"></figure>
+<p>新的 openwrt 固件后台地址是 192.168.6.1 用户名和密码依然是 root 和 password，默认的网口 1 是 wan 口，剩下的都是 lan 口。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/2b8b2c4abbbdb3bad4cf12a4a94b5c7c.jpg" alt="" loading="lazy"></figure>
+<p>目前这个 openwrt 的固件已经集成了 hwnat，也就是硬件加速，这是我喜欢硬路由的地方，正常上网使用像是 NAT、PPOE 性能和效率都非常高，跑满正常 1000M 宽带 CPU 几乎不动。CPU 性能当然依然足够 1000M 外网，coremark 两万七千多分数，这个上篇也说过。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/f3d8f60d7cc959ed5b30cdc024d921cc.JPEG" alt="" loading="lazy"></figure>
+<p>和官方固件对比测试了下无线 Wi-Fi 的性能，测试的手机是最低标配 Wi-Fi 6 的 iPhone 13 ，在近处能达到 700Mbps 多，隔了一堵墙后也有 500 Mbps 左右，基本能达到官方固件的水平。</p>
+<p>如果你想从当前 openwrt 固件刷到别的版本，同样是在系统-备份与升级，下载好的 openwrt 固件，选择上传，然后选择刷写固件，不勾选保留当前配置即可。当然如果只是同一个作者的固件只是更新版本，一般也可以保留配置直接升级的。</p>
+<h2 id="刷回官方">刷回官方</h2>
+<p>如果不想使用 openwrt 固件了或者一不小心刷错了无法开机，都可以是使用官方的修复工具刷回原厂，当然前提是你没修改过路由器的分区。目前 openwrt 官方的固件会合并最后两个分区为大分区，个人不建议新手这么做，因为要是挂了刷回官方固件就需要拆机比较麻烦，ptpt52 也在 GitHub 发了使用官方分区 PR 等等看吧。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/1e3713a47744387ed30a74d8766862ee.png" alt="" loading="lazy"></figure>
+<p>首先下载好<a href="https://www.miwifi.com/miwifi_download.html">官方修复工具</a>和<a href="https://www.miwifi.com/miwifi_download.html">官方固件</a>，使用小米路由器修复工具需要提前退出 Windows 自带的杀毒，我<strong>更推荐大家去下载安装个火绒</strong>这样更安全方便。</p>
+<p>路由器进入恢复模式，路由器先用针按住后面的 reset 恢复按钮，再插上电源，持续顶住大约 8s，等到黄色指示灯变为黄色闪烁，就可以松开 reset 按钮，然后用网线连接 Windows 电脑，路由器这边连接 lan 口就可以，红米 ax6000 没有标 lan wan ，接 234 都可以。</p>
+<p>打开解压好的小米路由器修复工具，要是有防火墙提示选择允许即可，然后选择本地上传下载好的官方固件 ；然后网卡选择：请选择与路由器相连的以太网网卡； 现在再点下一步就会自动开始刷机，看到发送完成就说明刷机完成了。然后我们等待路由黄灯变为蓝灯闪烁。我们就可以拔下电源再重新插上路由器，这样就完成了，路由器就回到了官方的固件。</p>
+<h2 id="重置-升级-刷机后如何恢复-ssh">重置、升级、刷机后如何恢复 SSH</h2>
+<p>无论你是升级了系统、还是恢复了出厂、还是刷了别的版本的系统或 openwrt 再刷回来，telnet 其实都是打开的，因为已经写在了 bdata 分区。不过 telnet 密码会恢复成默认的，我们需要通过路由器后台右下角的 SN 号来计算。这里有两个网站直接在线计算（安全的离线计算）：</p>
+<ul>
+<li>
+<p><a href="https://www.oxygen7.cn/miwifi/">Oxygen7</a></p>
+</li>
+<li>
+<p><a href="https://miwifi.dev/ssh">Miwifidev</a></p>
+</li>
+</ul>
+<p>telnet 连上以后，执行：</p>
+<pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+</code></pre>
+<p>就开启了 ssh，ssh 默认密码就是上面计算出来的一样。</p>
+<h2 id="总结">总结</h2>
+<p>这次把红米 ax6000 从刷 openwrt 到刷回官方固件，恢复 ssh 整个完整的都折腾了一遍，希望对大家有所帮助。还是那句话你了解你需要 openwrt 你再去刷它，刷了 openwrt 肯定会失去官方的 mesh 以及官方的 App，当然也会获得更多的功能。红米 ax6000 在 400 元左右真的是个还不错的选择，除了没有 2.5G 网口很遗憾；当然预算少点选择红米 ax6s 也不错性能也是够用，相比软路由 ax6000 更适合当台路由器也同样能有丰富的功能。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%88%B7%E5%85%A5%E8%BF%87%E6%B8%A1%E5%9B%BA%E4%BB%B6">第一步：刷入过渡固件</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E4%BB%8E%E8%BF%87%E6%B8%A1%E5%9B%BA%E4%BB%B6%E5%88%B7%E5%85%A5-openwrt">第二步：从过渡固件刷入 openwrt</a></li>
+<li><a href="#%E5%88%B7%E5%9B%9E%E5%AE%98%E6%96%B9">刷回官方</a></li>
+<li><a href="#%E9%87%8D%E7%BD%AE-%E5%8D%87%E7%BA%A7-%E5%88%B7%E6%9C%BA%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D-ssh">重置、升级、刷机后如何恢复 SSH</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/ax6000-shellclash/">
+              <h3 class="post-title">
+                红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

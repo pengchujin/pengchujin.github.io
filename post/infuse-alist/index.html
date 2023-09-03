@@ -1,0 +1,281 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>infuse+alist+网盘，不用 NAS 也能打造影音库 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="infuse+alist+网盘，不用 NAS 也能打造影音库 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="这几天一直在使用体验 infuse + alist + 网盘，体验还不错，比 Nas 会要方便很多。主要用 Nas 的还是少部分用户，毕竟入门门槛还是有些高的，只是拿来看电影看剧也没太要必要。 这里也就简单写个文字版，配合视频，方便大家复制..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              infuse+alist+网盘，不用 NAS 也能打造影音库
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-12-23
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/419b0f2ceb4c180cb94bdabd5c90065c.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>这几天一直在使用体验 infuse + alist + 网盘，体验还不错，比 Nas 会要方便很多。主要用 Nas 的还是少部分用户，毕竟入门门槛还是有些高的，只是拿来看电影看剧也没太要必要。 这里也就简单写个文字版，配合视频，方便大家复制代码，查看引用的链接。</p>
+<!-- more -->
+<h2 id="alist-安装">alist 安装</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/419b0f2ceb4c180cb94bdabd5c90065c.jpg" alt="" loading="lazy"></figure>
+<p>为什么要安装 alist 呢？主要是绝大部分网盘都不支持 <a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%96%E5%86%99%E5%92%8C%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">webdav</a> 协议，需要借助 alist 找个“中介”提供 webdav 让 infuse 能连接观看网盘里的电影，当然 alist 默认的是转发，连接速度还是取决于你网盘以及本地网络的速度。所以在路由器、安卓手机、replit 平台安装体验都很不错，下面三种任选其一即可。</p>
+<h3 id="路由器">路由器</h3>
+<p>软路由 iStoreOS 系统自带就不讲了，不带的可以用 <a href="https://github.com/sbwml/luci-app-alist">luci-app-alist</a> 的一键安装脚本（需要 40M 剩余空间，手动安装的话只需要 20多M）</p>
+<pre><code>sh -c &quot;$(curl -ksS https://raw.githubusercontent.com/sbwml/luci-app-alist/master/install.sh)&quot;
+</code></pre>
+<p>我试了 360t7 没问题，在 <a href="https://github.com/sbwml/luci-app-alist/releases">releases</a> 里也可以手动下载安装。下载自己路由 CPU 架构的 alist ipk，luci alist，以及 i18n 三个 ipk 文件，然后在路由器后台里的系统-文件传输，选择下载好的三个文件依次上传，再依次安装就完成了。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/764b1ea4be8e291d33e3e8876d3eb3d9.jpg" alt="" loading="lazy"></figure>
+<p>选择启用，推荐勾选允许外网访问，然后保存并应用就可以了，默认的 web 管理密码可以支持查看。</p>
+<h3 id="安卓手机">安卓手机</h3>
+<p>在手机上安装使用前我真是没想到手机上操作能这么方便还非常省电，我坚果 pro2 一晚上后台挂着掉电 10% 左右，四五天充一次没问题的。</p>
+<p>推荐从 <a href="https://f-droid.org/en/packages/com.termux/">f-droid</a> 上下载安装 termux，Google Play 上蛮久没更新了，安装打开后：</p>
+<p>更新软件软件包：</p>
+<pre><code>pkg update
+</code></pre>
+<p>安装 alist：</p>
+<pre><code>pkg install alist
+</code></pre>
+<p>启动 alist 服务：</p>
+<pre><code>alist server 
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/4224eeab766c4e63b23288129a711fa0.jpg" alt="" loading="lazy"></figure>
+<p>第一次启动会输出用户名 admin 和初始化的密码，保存好。然后访问手机 Wi-Fi 的 ip，比如我这里是 192.168.1.22，再加上端口号 5244 就能进入后台。</p>
+<h3 id="replit-平台">replit 平台</h3>
+<p><a href="https://replit.com/~">replit</a> 是一个在线开发平台，当然也可以白嫖运行 alist 的服务。alist 官方也有给提供一键导入运行的<a href="https://github.com/alist-org/alist-replit">链接</a>。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/4ef551b4fc1637b0ff7e3a7be596ebbf.jpg" alt="" loading="lazy"></figure>
+<p>选择 run on replit，需要注册登录下，我就直接使用 GitHub 账户登录 replit 了。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/f3aad9ad044b10b0b54f603c3fff9c42.jpg" alt="" loading="lazy"></figure>
+<p>再点击 Import from GitHub，倒入的过程需要稍等片刻。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/6fe2fc5044f35e824181e7828d081dfc.jpg" alt="" loading="lazy"></figure>
+<p>然后点击最顶部的 run，就会开始运行。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/5227c8dde86f12d4cbb174fedbd6cf6c.jpg" alt="" loading="lazy"></figure>
+<p>完成后就能看到 replit 提供的链接就是我们的后台地址，右下角输出的就是我们后台的密码，也就能打开登录使用了。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/4931467160d36876ab80750181dbff4e.jpg" alt="" loading="lazy"></figure>
+<p>replit 一段时间不访问就会自动杀死，推荐在监控网站上添加个 5 分钟每次的监控，以我在用的 <a href="https://updown.io/">updown.io</a> 为例。注册登录以后，输入刚才 alist 链接地址，然后勾选5分钟，再点击保存就好了</p>
+<h2 id="alist-添加网盘">alist 添加网盘</h2>
+<p>这里给大家演示下 alist 添加阿里云盘，<a href="https://alist.nn.ci/zh/guide/drivers/aliyundrive.html">alist 官方文档</a> 有非常详细的教程直接参看就能添加上，当然 alist 支持非常多的网盘，不是用阿里云盘的同样也能添加上。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/ddad8dbd64b7ffed47bcb2fc9a1b4a1e.jpg" alt="" loading="lazy"></figure>
+<p>在 alist 的管理后台选择-存储-添加-驱动选择阿里云盘：</p>
+<p>挂载路径填写：/阿里云盘 （这个会是主页文件夹的名称）</p>
+<p>根文件夹ID：root （默认的 root 就是整个网盘都挂载上）</p>
+<p>刷新令牌：在 <a href="https://alist.nn.ci/zh/guide/drivers/aliyundrive.html">alist 官方文档</a> 用手机阿里云盘 app 扫码就能得到 （不要泄漏，保存好）</p>
+<p>最后点击添加就能添加上。</p>
+<p><strong>补充下根文件夹 ID</strong></p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/446cc41484ddff3ee6ca97a7c6cd9b2d.jpg" alt="" loading="lazy"></figure>
+<p>如果你只想挂载阿里云盘里的电影这个文件，就复制选中的这段字符替换默认的 root 填进根文件夹 ID 里。</p>
+<h2 id="infuse-添加-alist">infuse 添加 alist</h2>
+<p><a href="https://alist.nn.ci/zh/guide/webdav.html">alist 官方文档</a> 有 webdav 非常详细的介绍，我这里截图给大家演示下 iPhone 的，因为 infuse 各客户端能通过 iCloud 同步设置，只用添加一台设备就 OK。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/db68a009ab6b2bfb187beb5eea147dcd.JPEG" alt="" loading="lazy"></figure>
+<p>在 infuse 的设置-新增文件来源-添加-添加 WebDAV 就能开始添加。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/8ebf963dadf2da3f12e0a619f9b7ee7e.JPEG" alt="" loading="lazy"></figure>
+<p>名称：随意填写</p>
+<p>通讯协议：路由器或者安卓手机的默认的 webdav 就行，replit 因为是 https，所以勾选成 WebDAV（HTTPS）</p>
+<p>地址：路由器或者安卓填局域网 IP，replit 填写它给的链接就行</p>
+<p>用户名和密码：就是 alist 后台的用户名和密码</p>
+<p>高级里的路径：/dav (如果你想细分 infuse 只连接某个文件夹可以后面继续添加比如 /dav/阿里云盘，/dav 一定要填的)</p>
+<p>端口：安卓手机和路由默认的都是 5244 端口，replit 链接是 https 所以是 443</p>
+<p>点击保存应该就能连接上了，连上后文件夹点下星号收藏，就会开始同步抓取内容。</p>
+<h2 id="资源推荐">资源推荐</h2>
+<h3 id="阿里云盘">阿里云盘</h3>
+<p>阿里云盘的好处是速度真的还行，40G 50G 的原盘很流畅，自己存储空间不够也能保存下来别人分享的超大资源。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#alist-%E5%AE%89%E8%A3%85">alist 安装</a>
+<ul>
+<li><a href="#%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a></li>
+<li><a href="#%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA">安卓手机</a></li>
+<li><a href="#replit-%E5%B9%B3%E5%8F%B0">replit 平台</a></li>
+</ul>
+</li>
+<li><a href="#alist-%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%9B%98">alist 添加网盘</a></li>
+<li><a href="#infuse-%E6%B7%BB%E5%8A%A0-alist">infuse 添加 alist</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90">资源推荐</a>
+<ul>
+<li><a href="#%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98">阿里云盘</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/360t7-openwrt/">
+              <h3 class="post-title">
+                360 T7 刷 openwrt 教程｜最强的百元路由器
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AX3600 ShellClash 教程｜官方固件使用代理 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="AX3600 ShellClash 教程｜官方固件使用代理 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="小米 AX3600 采用的是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，外加上双核主频高达 1.7GHz 的 NPU，这让这款路由器的跑「加密解密」类的代理性能特别特别的好。开启 SSH 和 安装 ShellClash..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              AX3600 ShellClash 教程｜官方固件使用代理
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-05
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>小米 AX3600 采用的是高通 IPQ8071A 4核心 1.4GHz A53 的 CPU，外加上双核主频高达 1.7GHz 的 NPU，这让这款路由器的跑「加密解密」类的代理性能特别特别的好。开启 SSH 和 安装 ShellClash 都不会影响固件正常的更新升级，也不会影响官方固件的功能， 如果你有这方面的需求会是非常棒的选择。</p>
+<!--more-->
+<p>这个教程会教你解锁小米 AX3600 的 SSH，并使用 ShellClash「基于命令行的 Clash」进行代理。</p>
+<p>该教程主要参考了：</p>
+<ul>
+<li><a href="https://www.right.com.cn/forum/thread-4046020-1-1.html">[AX3600] 小米ax3600获取root权限【简单快速】【修复丢ssid】</a></li>
+<li><a href="https://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">在路由器上安装及使用 ShellClash 的教程</a></li>
+</ul>
+<p>你基本不需要任何准备，有台能上网的电脑甚至手机都可以，最好用网线连接到小米 AX3600 路由器。</p>
+<p>提前下载好文件（旧版固件和脚本）：链接: https://pan.baidu.com/s/15QsNvM9qwgTVtk8zF843eA 提取码: 8rcu</p>
+<h2 id="开启-ax3600-ssh">开启 AX3600 SSH</h2>
+<h3 id="降级">降级</h3>
+<p>下载 AX3600 1.0.17 的固件，在路由器后台选择本地「固件升级」，就会清除现有数据降级，等待降级完成后重新设置好路由器即可。</p>
+<h3 id="获取后台-stok">获取后台 STOK</h3>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.43.49.jpg" alt="截屏2021-05-03 下午4.43.49" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<h3 id="获取-ssh">获取 SSH</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B
+</code></pre>
+<p>将 &lt;STOK&gt;  替换为上一步的值，替换完成后复制到浏览器打开。</p>
+<h3 id="修改默认-ssh-密码为-admin">修改默认 SSH 密码为 admin</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20echo%20-e%20'admin%5Cnadmin'%20%7C%20passwd%20root%3B
+</code></pre>
+<p>将 &lt;STOK&gt;  替换为上上一步的值，替换完成后复制到浏览器打开。</p>
+<h3 id="备份">备份</h3>
+<p>现在应该可以通过 ssh 连接到 小米 AX3600 了，终端里执行（密码是 admin）</p>
+<pre><code>ssh root@192.168.31.1
+</code></pre>
+<p>在小米 AX3600 上执行</p>
+<pre><code>mkdir /tmp/syslogbackup/
+dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
+</code></pre>
+<p>浏览器请求该地址下载备份 http://192.168.31.1/backup/log/mtd9</p>
+<h3 id="固化-ssh">固化 SSH</h3>
+<p>在电脑上将下载好的 fuckax3600 上传到小米 AX3600 的根目录（fuckax3600 路径下执行）</p>
+<pre><code>scp fuckax3600 root@192.168.31.1:/tmp
+</code></pre>
+<p>然后在小米 AX3600 上执行</p>
+<pre><code>chmod +x /tmp/fuckax3600
+/tmp/fuckax3600 unlock
+</code></pre>
+<p>系统会自动重启</p>
+<p>重新 SCP 上传一遍脚本（因为 tmp 重启会被清空）</p>
+<pre><code>scp fuckax3600 root@192.168.31.1:/tmp
+</code></pre>
+<p>SSH 重新连接上小米 AX3600 后，执行</p>
+<pre><code>chmod +x /tmp/fuckax3600
+/tmp/fuckax3600 hack
+/tmp/fuckax3600 lock
+</code></pre>
+<p>这会设置永久的 ssh、telnet、uart 权限，也会计算出<strong>默认的密码，记得保存</strong></p>
+<p>备注：如果升级后丢失 SSH 权限，你也可以 telnet 连接上 AX3600 后执行，即可恢复 SSH。</p>
+<p>telnet 192.168.31.1 （用户名是 root，秘密是刚才得出的密码）</p>
+<p>如果你的电脑提示没有 telnet，<strong><a href="https://help.aliyun.com/document_detail/40796.html">Windows 打开 telnet 教程</a></strong>，Mac 则是先安装 brew 再通过 brew 安装 telnet。</p>
+<pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear start
+</code></pre>
+<h2 id="安装使用-shellclash">安装使用 ShellClash</h2>
+<p>SSH 连接上小米 AX3600 执行安装</p>
+<pre><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.55.06.jpg" alt="截屏2021-05-06 下午7.55.06" loading="lazy"></figure>
+<p>选择 1 安装到 /etc，然后再选择 1 确认安装。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.56.25.jpg" alt="截屏2021-05-06 下午7.56.25" loading="lazy"></figure>
+<p>安装好就能使用 clash 命令了 ，输入 clash 就能进入配置。这里选择 4 让局域网设备都能走代理（如果你清楚别的可以自行选择）。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.59.53.jpg" alt="截屏2021-05-06 下午7.59.53" loading="lazy"></figure>
+<p>推荐选择不代理 UDP 也就是 1，然后安装 DashBoard 面板也就能网页直接控制了也就是 1 。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.01.39.jpg" alt="截屏2021-05-06 下午8.01.39" loading="lazy"></figure>
+<p>推荐选择 Yacd 面板，界面很好看 选择 2，然后安装目录选择 1 即可。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.05.20.jpg" alt="截屏2021-05-06 下午8.05.20" loading="lazy"></figure>
+<p>1 选择导入配置文件。如果你没有 Clash 的配置文件而是 v2ray、ss、trojan 的订阅链接（你的机场会提供），你可以再选择 1 进行「在线生成 Clash 配置文件」；如果有的话可以选择 2 直接导入配置文件。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.07.27.jpg" alt="截屏2021-05-06 下午8.07.27" loading="lazy"></figure>
+<p>然后粘贴上你的订阅链接（url 链接），再选择 1 开始生成配置文件。生成配置文件后按 0 返回上层菜单即可。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
+<p>再按 1 选择立即开启 Clash  的服务即可。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
+<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
+<p>这个时候应该就能科学上网了速度也应该不错。</p>
+<h3 id="电视-netflix-看不了">电视 Netflix 看不了？</h3>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/IMG_1895.JPG" alt="IMG_1895" loading="lazy"></figure>
+<p>如果你的电视、电视盒子碰见这种错误，可以尝试更换 ShellClash 的 DNS 模式。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-10%20%E4%B8%8B%E5%8D%889.12.25.jpg" alt="截屏2021-05-10 下午9.12.25" loading="lazy"></figure>
+<p>将 Clash 的 DNS 运行模式切换到 fake-ip，理论上就能解决这个问题。</p>
+<h2 id="总结">总结</h2>
+<p>得益于小米 AX3600 超强的 CPU + NPU 组合，跑代理速度是真不错。ShellClash 这种方案虽然没有图形化 UI 操作方便，但好在不需要刷麻烦也不稳定的 openwrt 固件，直接小米官方固件也能享受到网络「加速」的福利。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%BC%80%E5%90%AF-ax3600-ssh">开启 AX3600 SSH</a>
+<ul>
+<li><a href="#%E9%99%8D%E7%BA%A7">降级</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0-stok">获取后台 STOK</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96-ssh">获取 SSH</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4-ssh-%E5%AF%86%E7%A0%81%E4%B8%BA-admin">修改默认 SSH 密码为 admin</a></li>
+<li><a href="#%E5%A4%87%E4%BB%BD">备份</a></li>
+<li><a href="#%E5%9B%BA%E5%8C%96-ssh">固化 SSH</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-shellclash">安装使用 ShellClash</a>
+<ul>
+<li><a href="#%E7%94%B5%E8%A7%86-netflix-%E7%9C%8B%E4%B8%8D%E4%BA%86">电视 Netflix 看不了？</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/redmi_ax6_openwrt/">
+              <h3 class="post-title">
+                红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

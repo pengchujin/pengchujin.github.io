@@ -1,0 +1,281 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>嘿 Siri 前往香港｜如何通过 Siri 控制路由器代理 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="嘿 Siri 前往香港｜如何通过 Siri 控制路由器代理 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="昨晚洗澡的时候想着在电视上看部港区 Netflix 的电影，因为有喊 Siri 播放音乐的习惯，我就想能不能通过 Siri 直接切换节点，那岂不是特别方便。今天就实践了下，感觉还挺方便，写个教程分享下。
+
+省流助手：
+
+路由器、旁路由、或者..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              嘿 Siri 前往香港｜如何通过 Siri 控制路由器代理
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-12-13
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/siri-clash2.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>昨晚洗澡的时候想着在电视上看部港区 Netflix 的电影，因为有喊 Siri 播放音乐的习惯，我就想能不能通过 Siri 直接切换节点，那岂不是特别方便。今天就实践了下，感觉还挺方便，写个教程分享下。</p>
+<!--more-->
+<p><strong>省流助手：</strong></p>
+<ol>
+<li>路由器、旁路由、或者 Mac 网关使用的是 Clash。（openclash、shellclash、MerlinClash、ClashX Rro、Clash For Windows 都可以）</li>
+<li>Mac Surge 作为网关也可以，操作基本一致。</li>
+</ol>
+<h2 id="基本思路">🧠 基本思路</h2>
+<ol>
+<li>iPhone、Mac、HomePod 都支持 Siri 且 Siri 也支持快捷指令 ‎Shortcuts。</li>
+<li>‎快捷指令支持 http 请求功能，Clash 和 Surge 也都有 restful API。</li>
+<li>所以只用写一个 http 请求的快捷指令就能控制路由器的节点或开关代理了</li>
+</ol>
+<h2 id="通过-siri-控制-clash-配置">✅ 通过 Siri 控制 Clash 配置</h2>
+<h3 id="获取-clash-请求信息推荐使用-chrome-浏览器">💻 获取 Clash 请求信息（推荐使用 chrome 浏览器）</h3>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%881.54.59.jpg" alt="截屏2021-12-13 下午1.54.59" loading="lazy"></figure>
+<p>openclash 默认就有 Yacd 和 Dashboad 控制面板，ShellClash 也是默认有的。如果你不知道 Clash 程序的控制面板在哪里：你可以先检查你在的 <a href="https://clash.gitbook.io/doc/restful-api">Clash 配置开启</a>，然后打开<a href="http://clash.razord.top/#/proxies">默认的</a>控制面板或是 <a href="http://yacd.haishan.me/">Yacd</a> 的面板填入信息即可。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.05.15.jpg" alt="截屏2021-12-13 下午2.05.15" loading="lazy"></figure>
+<p>Host 是你 Clash 网关设备局域网的 IP，端口在你的 Clash 文件里的 external-controller，密钥是配置文件里的 secret。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.07.27.jpg" alt="截屏2021-12-13 下午2.07.27" loading="lazy"></figure>
+<p>比如我打开就是这样，我点击节点选择便可以切换节点，或是选择全球直连则意味着关闭代理。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.09.46.jpg" alt="截屏2021-12-13 下午2.09.46" loading="lazy"></figure>
+<p>打开开发者工具（推荐使用 Chrome 浏览器，Mac 快捷按键是： Cmd+Opt+I，Windows Linux 是： F12,Ctrl+Shift+I ）</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.13.37.jpg" alt="截屏2021-12-13 下午2.13.37" loading="lazy"></figure>
+<p>然后在右边👉选择 Network-Fetch/XHR。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%882.23.14.jpg" alt="截屏2021-12-13 下午2.23.14" loading="lazy"></figure>
+<p>然后切换下节点，右边就能看到网络请求了。我们点开那个最长的（我这里分组名为「节点选择」是中文所以看起来乱码的，Request Method：PUT 为的请求就对了，你的如果分组名是英文则直接对应的英文分组名，看起来则不是乱码）。复制 Request URL:  后面那个 url，下面会用到。</p>
+<p>下面 Request Headers 的 Authorization: Bearer 123456 也会用到，不过这里其实就后台控制密码，没有设置后台密码的这里则没有。</p>
+<p>如果你想通过 Siri 操作的不是节点选择，而是别的比如 “自动选择”、“国外媒体”等也是同样的操作。</p>
+<h3 id="创建-siri-快捷指令">🔧 创建 Siri 快捷指令</h3>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/IMG_1453%202.JPEG" alt="IMG_1453 2" loading="lazy"></figure>
+<p>打开快捷指令 App，选择 + 号，点击 添加操作，搜索 url 选择获取 URL 内容。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/IMG_1457%202.JPEG" alt="IMG_1457 2" loading="lazy"></figure>
+<p>在第一栏的 URL 里填上上一步的“Request URL”链接，然后点击内容展开。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/IMG_1464.JPEG" alt="IMG_1464" loading="lazy"></figure>
+<ol>
+<li>
+<p>方法我们选择 PUT</p>
+</li>
+<li>
+<p>添加头部</p>
+<p>键填写：Authorization，文本：Bearer 123456（这个 123456 是我 clash 后台控制密码，如果你 Clash 后台没有设置密码这步可以不填）</p>
+</li>
+<li>
+<p>添加请求体（选择文本）</p>
+<p>键填写：name，文本：你的节点的名称（我这里是：台湾 01 [ H1 ]，完全复制 clash 面板的里任意节点名字即可，带 emoji 也直接复制，「🎯 全球直连 」这种也可以）</p>
+</li>
+</ol>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/IMG_1466.JPEG" alt="IMG_1466" loading="lazy"></figure>
+<p>最后修改默认的「获取 URL 内容」为你想要的 Siri 关键词，再点击右上角 X 即可。我这里是“切换到台湾”，你可以改成你喜欢习惯的。</p>
+<h3 id="如何验证">🔒 如何验证：</h3>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%883.06.52.jpg" alt="截屏2021-12-13 下午3.06.52" loading="lazy"></figure>
+<p>点开捷径选择执行（播放按钮▶︎）没有任何返回即为成功。（有返回则一般为错误信息）</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-12-13%20%E4%B8%8B%E5%8D%883.09.44.jpg" alt="截屏2021-12-13 下午3.09.44" loading="lazy"></figure>
+<p>在 clash 控制面板可以看到切换到了指定节点。</p>
+<h3 id="如何创建更多">🍇 如何创建更多</h3>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/IMG_1470.JPEG" alt="IMG_1470" loading="lazy"></figure>
+<ol>
+<li>选择做好的快捷指令复制。</li>
+<li>修改请求体里的节点名和 Siri 关键词即可。</li>
+</ol>
+<h2 id="总结">🪢 总结：</h2>
+<p>我自己用下来还挺方便的，因为 Siri 会通过 iCloud 同步快捷指令，所以任意局域网设备都能完成这个操作包括 HomePod。</p>
+<p>如果你想参考我的可以<a href="https://www.icloud.com/shortcuts/78c715f3fba041b785746fc42f3b0a14">点击这里</a>，只能参考哦，你还是得自己修改，如果大家不会 surge 版本我后面可以考虑写一下。其实大家如果用一套 Clash 配置模版的话这个倒是可以通用的，因为就局域网 IP 地址不一样。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF">🧠 基本思路</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-siri-%E6%8E%A7%E5%88%B6-clash-%E9%85%8D%E7%BD%AE">✅ 通过 Siri 控制 Clash 配置</a>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96-clash-%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8-chrome-%E6%B5%8F%E8%A7%88%E5%99%A8">💻 获取 Clash 请求信息（推荐使用 chrome 浏览器）</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA-siri-%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4">🔧 创建 Siri 快捷指令</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%AA%8C%E8%AF%81">🔒 如何验证：</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A4%9A">🍇 如何创建更多</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">🪢 总结：</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/MOCT-red-blue/">
+              <h3 class="post-title">
+                人人都能办的澳门电信红蓝卡，更便宜的流量和更低的月租。
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

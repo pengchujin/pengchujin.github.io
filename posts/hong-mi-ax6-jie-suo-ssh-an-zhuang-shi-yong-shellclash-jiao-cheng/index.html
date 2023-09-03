@@ -1,0 +1,378 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>红米 AX6 解锁 SSH 安装使用 ShellClash 教程 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 AX6 解锁 SSH 安装使用 ShellClash 教程 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="红米 AX6 和小米 AX3600 配置基本相同，只是缺少一根智能家居的天线，性价比高的离谱。就是解锁 SSH 稍微麻烦了点，不过性价比是真不错。
+
+准备
+一台电脑（Mac Windows 均可）
+另外一台已经是 openwrt 的路由器（..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              红米 AX6 解锁 SSH 安装使用 ShellClash 教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-09
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/31129c1c64cae837a109a9fd89d6e192.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>红米 AX6 和小米 AX3600 配置基本相同，只是缺少一根智能家居的天线，性价比高的离谱。就是解锁 SSH 稍微麻烦了点，不过性价比是真不错。</p>
+<!--more-->
+<h2 id="准备">准备</h2>
+<p>一台电脑（Mac Windows 均可）</p>
+<p>另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）</p>
+<p>Windows 需要安装 <a href="https://www.putty.org/">Putty</a> 和 <a href="https://winscp.net/eng/download.php">WinSCP</a>｜Mac 使用命令行即可</p>
+<h2 id="第一步降级并恢复出厂设置">第一步｜降级并恢复出厂设置</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%8812.44.44.jpg" alt="截屏2021-05-03 下午12.44.44" loading="lazy"></figure>
+<p><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra69/miwifi_ra69_firmware_a7244_1.0.16.bin">红米 ax6 1.0.16 固件</a> <a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra69/miwifi_ra69_firmware_45a77_1.0.18.bin">红米 ax6 1.0.18 固件</a>，下载其中一个即可（推荐下载 1.0.16 ）；打开路由器后台选择 系统升级—手动升级—然后选择下载好的固件，等待重启。</p>
+<p>然后最好再恢复下出厂设置。</p>
+<h2 id="第二步准备-openwrt-服务">第二步｜准备 openwrt 服务</h2>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_1734.JPG" alt="IMG_1734" loading="lazy"></figure>
+<p>我这里准备的是一台刷了 openwrt 的 k2p，只需要接上电源有 Wi-Fi 信号即可（后续会让红米 AX 6 Wi-Fi 连接上此 openwrt 路由器）。</p>
+<h3 id="创建-lua-文件">创建 lua 文件</h3>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.04.00.jpg" alt="截屏2021-05-03 下午4.04.00" loading="lazy"></figure>
+<p>ssh 连接上 openwrt 的路由器，然后使用 nano 创建 /usr/lib/lua/luci/controller/admin/xqsystem.lua 这样一个文件。</p>
+<pre><code>nano /usr/lib/lua/luci/controller/admin/xqsystem.lua
+</code></pre>
+<p>如果你的系统没有 nano 你可以使用 vi 或 vim</p>
+<pre><code>vim /usr/lib/lua/luci/controller/admin/xqsystem.lua
+</code></pre>
+<p>文件内容填写下面的保存即可。</p>
+<pre><code>module(&quot;luci.controller.admin.xqsystem&quot;, package.seeall)
+
+
+function index()
+    local page   = node(&quot;api&quot;)
+    page.target  = firstchild()
+    page.title   = (&quot;&quot;)
+    page.order   = 100
+    page.index = true
+    page   = node(&quot;api&quot;,&quot;xqsystem&quot;)
+    page.target  = firstchild()
+    page.title   = (&quot;&quot;)
+    page.order   = 100
+    page.index = true
+    entry({&quot;api&quot;, &quot;xqsystem&quot;, &quot;token&quot;}, call(&quot;getToken&quot;), (&quot;&quot;), 103, 0x08)
+end
+
+local LuciHttp = require(&quot;luci.http&quot;)
+
+function getToken()
+    local result = {}
+    result[&quot;code&quot;] = 0
+    result[&quot;token&quot;] = &quot;; nvram set ssh_en=1; nvram commit; echo -e 'admin\nadmin' | passwd root; sed -i 's/channel=.*/channel=\&quot;debug\&quot;/g' /etc/init.d/dropbear; /etc/init.d/dropbear start;&quot;
+    LuciHttp.write_json(result)
+end
+</code></pre>
+<p>输入完成后你可以 cat /usr/lib/lua/luci/controller/admin/xqsystem.lua  检查一下。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.08.15.jpg" alt="截屏2021-05-03 下午4.08.15" loading="lazy"></figure>
+<h3 id="修改该-openwrt-路由器的-lan-地址并关闭-dhcp">修改该 openwrt 路由器的 Lan 地址，并关闭 DHCP</h3>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.16.28.jpg" alt="截屏2021-05-03 下午4.16.28" loading="lazy"></figure>
+<p>登陆 openwrt 的后台，在 网络-接口-Lan 选择编辑，IPv4 地址修改为 169.254.31.1。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.18.02.jpg" alt="截屏2021-05-03 下午4.18.02" loading="lazy"></figure>
+<p>在 DHCP 服务器 — 高级设置里取消勾选 动态 DHCP（也就是关闭 DHCP，这会让你需要手动设置网络 IP 才能连接上该 openwrt 路由器）然后<strong>保存 并 应用</strong>。然后重启该 openwrt 路由器</p>
+<h3 id="验证">验证</h3>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.27.07.jpg" alt="截屏2021-05-03 下午4.27.07" loading="lazy"></figure>
+<p>想再次连接到 openwrt 路由器，你需要讲电脑的网络 Wi-Fi 设置为手动 IPv4 （IP 地址填写：169.254.31.3；子网掩码：255.255.255.0；路由器：169.254.31.1）。</p>
+<p>然后浏览器访问：http://169.254.31.1/cgi-bin/luci/api/xqsystem/token，如果得到下面的结果，则证明你设置成功。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.33.46.jpg" alt="截屏2021-05-03 下午4.33.46" loading="lazy"></figure>
+<h2 id="第三步红米-ax-6-破解-ssh">第三步｜红米 AX 6 破解 SSH</h2>
+<p>将电脑的网络设置回自动获取 DHCP，然后最好将电脑用网线和 红米 AX6 连接（因为红米 ax6 解锁 Wi-Fi 可能会掉线）。</p>
+<h3 id="获取后台-stok">获取后台 STOK</h3>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.43.49.jpg" alt="截屏2021-05-03 下午4.43.49" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<h3 id="第一次请求">第一次请求</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/extendwifi_connect?ssid={SSID}&amp;password={Wi-Fi密码}
+</code></pre>
+<ul>
+<li>
+<p>&lt;STOK&gt; 替换为上面的值</p>
+</li>
+<li>
+<p>{SSID} 替换为 openwrt 路由器的 Wi-Fi 名</p>
+</li>
+<li>
+<p>{Wi-Fi密码} 替换为 openwrt 路由器的 Wi-Fi 密码</p>
+</li>
+</ul>
+<p>&lt;&gt; 和 {} 均需要替换</p>
+<p>我的替换后如下（我的 Wi-Fi 没有密码，你的如果有密码填上密码即可）</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=b3ee3b3d1baa28c0b208a46a47c84a03/api/misystem/extendwifi_connect?ssid=OPENWRT_DEE_5G&amp;password=
+</code></pre>
+<p>将替换好的值复制到浏览器请求，如果显示 code 0 则成功。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%887.48.03.jpg" alt="截屏2021-05-03 下午7.48.03" loading="lazy"></figure>
+<!--显示1646的请检查下第一步的DHCP是否关闭,  1619的请检查第一步IP是否设置正确或者路由器B下仍有其他设备, 1655的请再来一次, 有小概率会连接失败
+如果一直失败请改下路由器B的SSID/密码/信道/换着连下2.4G和5G(不要开二合一)-->
+<h3 id="第二次请求">第二次请求</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/xqsystem/oneclick_get_remote_token?username=xxx&amp;password=xxx&amp;nonce=xxx
+</code></pre>
+<p>&lt;STOK&gt; 替换为小米路由器后台获得的值即可，其它均不用改变</p>
+<p>将替换好的值复制到浏览器请求，如果显示 code 0 则成功</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%887.47.55.jpg" alt="截屏2021-05-03 下午7.47.55" loading="lazy"></figure>
+<h2 id="第四步验证-ssh-并备份">第四步｜验证 SSH 并备份</h2>
+<p>ssh 连接小米路由器<strong>ssh root@192.168.31.1</strong> 密码是 admin，如果能 ssh 连接上则证明上述步骤均完成。</p>
+<p>链接成功后进行备份</p>
+<pre><code>mkdir /tmp/syslogbackup/
+dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
+</code></pre>
+<p>浏览器请求该地址下载备份</p>
+<p>http://192.168.31.1/backup/log/mtd9</p>
+<h2 id="第五步-固化-ssh可选">第五步 ｜固化  SSH（可选）</h2>
+<p>fuckax3600：https://pan.baidu.com/s/15QsNvM9qwgTVtk8zF843eA 提取码: 8rcu</p>
+<p>这一步我没有验证，AX6 应该和 AX3600 一样的通用。</p>
+<p>在电脑上将下载好的 fuckax3600 上传到小米 AX3600 的 tmp 目录（fuckax3600 路径下执行）</p>
+<pre><code>scp fuckax3600 root@192.168.31.1:/tmp
+</code></pre>
+<p>然后在红米 AX6 上执行</p>
+<pre><code>chmod +x /tmp/fuckax3600
+/tmp/fuckax3600 unlock
+</code></pre>
+<p>系统会自动重启</p>
+<p>重新 SCP 上传一遍脚本（因为 tmp 重启会被清空）</p>
+<pre><code>scp fuckax3600 root@192.168.31.1:/tmp
+</code></pre>
+<p>SSH 重新连接上红米 AX6 后，执行</p>
+<pre><code>chmod +x /tmp/fuckax3600
+/tmp/fuckax3600 hack
+/tmp/fuckax3600 lock
+</code></pre>
+<p>这会设置永久的 ssh、telnet、uart 权限，也会计算出<strong>默认的密码，记得保存</strong></p>
+<p>备注：如果升级后丢失 SSH 权限，你也可以 telnet 连接上 AX6 后执行，即可恢复 SSH。</p>
+<p>telnet 192.168.31.1 （用户名是 root，秘密是刚才得出的密码）</p>
+<pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear start
+</code></pre>
+<h2 id="第六步-安装使用-shellclash">第六步 ｜ 安装使用 ShellClash</h2>
+<p>SSH 连接上红米 AX6执行安装</p>
+<pre><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.55.06.jpg" alt="截屏2021-05-06 下午7.55.06" loading="lazy"></figure>
+<p>选择 1 安装到 /etc，然后再选择 1 确认安装。</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.56.25.jpg" alt="截屏2021-05-06 下午7.56.25" loading="lazy"></figure>
+<p>安装好就能使用 clash 命令了 ，输入 clash 就能进入配置。这里选择 4 让局域网设备都能走代理（如果你清楚别的可以自行选择）。</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.59.53.jpg" alt="截屏2021-05-06 下午7.59.53" loading="lazy"></figure>
+<p>推荐选择不代理 UDP 也就是 1，然后安装 DashBoard 面板也就能网页直接控制了也就是 1 。</p>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.01.39.jpg" alt="截屏2021-05-06 下午8.01.39" loading="lazy"></figure>
+<p>推荐选择 Yacd 面板，界面很好看 选择 2，然后安装目录选择 1 即可。</p>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.05.20.jpg" alt="截屏2021-05-06 下午8.05.20" loading="lazy"></figure>
+<p>1 选择导入配置文件。如果你没有 Clash 的配置文件而是 v2ray、ss、trojan 的订阅链接（你的机场会提供），你可以再选择 1 进行「在线生成 Clash 配置文件」；如果有的话可以选择 2 直接导入配置文件。</p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.07.27.jpg" alt="截屏2021-05-06 下午8.07.27" loading="lazy"></figure>
+<p>然后粘贴上你的订阅链接（url 链接），再选择 1 开始生成配置文件。生成配置文件后按 0 返回上层菜单即可。</p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
+<p>再按 1 选择立即开启 Clash  的服务即可。</p>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
+<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
+<p>这个时候应该就能科学上网了速度也应该不错。</p>
+<h2 id="总结">总结</h2>
+<p>得益于红米 AX6 超强的 CPU + NPU 组合，跑代理速度是真不错。ShellClash 这种方案虽然没有图形化 UI 操作方便，但好在不需要刷麻烦也不稳定的 openwrt 固件，直接小米官方固件也能享受到网络「加速」的福利。</p>
+<p>红米 AX6 目前解锁 SSH 稍微有点麻烦，不过胜在性价比高。如果你动手能力强，且有另一台 openwrt 路由器，我还是更推荐你购买 AX6。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87">准备</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E9%99%8D%E7%BA%A7%E5%B9%B6%E6%81%A2%E5%A4%8D%E5%87%BA%E5%8E%82%E8%AE%BE%E7%BD%AE">第一步｜降级并恢复出厂设置</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%87%86%E5%A4%87-openwrt-%E6%9C%8D%E5%8A%A1">第二步｜准备 openwrt 服务</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA-lua-%E6%96%87%E4%BB%B6">创建 lua 文件</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E8%AF%A5-openwrt-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84-lan-%E5%9C%B0%E5%9D%80%E5%B9%B6%E5%85%B3%E9%97%AD-dhcp">修改该 openwrt 路由器的 Lan 地址，并关闭 DHCP</a></li>
+<li><a href="#%E9%AA%8C%E8%AF%81">验证</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E7%BA%A2%E7%B1%B3-ax-6-%E7%A0%B4%E8%A7%A3-ssh">第三步｜红米 AX 6 破解 SSH</a>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0-stok">获取后台 STOK</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82">第一次请求</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%B7%E6%B1%82">第二次请求</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E9%AA%8C%E8%AF%81-ssh-%E5%B9%B6%E5%A4%87%E4%BB%BD">第四步｜验证 SSH 并备份</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E5%9B%BA%E5%8C%96-ssh%E5%8F%AF%E9%80%89">第五步 ｜固化  SSH（可选）</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-shellclash">第六步 ｜ 安装使用 ShellClash</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/hong-mi-ax5xiao-mi-ax1800-jie-suo-sshoran-zhuang-shi-yong-shellclash-jiao-cheng/">
+              <h3 class="post-title">
+                红米 AX5、小米 AX1800 解锁 SSH｜安装使用 ShellClash 教程
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>360 T7 刷 openwrt 教程｜最强的百元路由器 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="360 T7 刷 openwrt 教程｜最强的百元路由器 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="
+这就是 2022 年百元最强的路由器 360 T7，和红米 AX6S 相同规格的无线 Wi-Fi，同等性能的 CPU，以及同样都能刷 openwrt，但价格却只要红米的一半。360 T7 是运营商与 360 合作的定制款路由器，我买到的这..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              360 T7 刷 openwrt 教程｜最强的百元路由器
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-11-23
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/33a2a6dfde669f3ea07b75286b772f82.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <!-- more -->
+<p>这就是 2022 年百元最强的路由器 360 T7，和红米 AX6S 相同规格的无线 Wi-Fi，同等性能的 CPU，以及同样都能刷 openwrt，但价格却只要红米的一半。360 T7 是运营商与 360 合作的定制款路由器，我买到的这款是白色的，站立式的设计比较省空间，正面有一颗 led 指示灯，背面是四个千兆的网口。</p>
+<p>无线规格是 ax3000，支持 160Mhz 频宽的 Wi-Fi，相比红米 ax6s 的 4x4mimo 80Mhz 频宽，目前 2*2 mimo 160Mhz 还是更实用，能让近几年的安卓、Windows 设备都能达到 2400Mbps 的连接速率；CPU 是 MTK 的 MT7981，arm a53 双核 1.3GHz，和红米的 AX6s 基本相当，不过胜在 MT7981 支持的加速特性更多；以及配备了 256M 的内存 128M 的闪存。当然更多的拆解和评测可以去 <a href="https://www.acwifi.net/22217.html">acwifi 网站</a>有非常详细的拆解评测；而我们今天的教程是把它刷成 openwrt，不能浪费这么好的配置。</p>
+<p><strong>教程开始前还是先感谢下：</strong></p>
+<ul>
+<li><a href="https://cmi.hanwckf.top/">hanwckf h大的开源适配以及刷机的教程</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-8263340-1-1.html">237 编译分享的固件</a></li>
+</ul>
+<p><strong>目前的刷机教程需要拆机，用 ttl 的方式刷机，对新手不是很友好。</strong></p>
+<h2 id="准备工作">准备工作</h2>
+<p>1 360 T7 路由器</p>
+<p>2 一台 Windows 电脑（需要能插网线）</p>
+<p>3 USB 转 TTL 的模块（淘宝几块钱就能买到）</p>
+<p>4 公对母的杜邦线（用于连接 TTL 模块和路由器）和网线</p>
+<p>5 下载好 <a href="https://www.right.com.cn/forum/thread-8263340-1-1.html">openwrt 固件</a></p>
+<p>6 下载<a href="https://apps.microsoft.com/store/detail/%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B/9NBLGGH43HDM?hl=zh-cn&amp;gl=cn">安装串口调试助手</a>和 <a href="https://termius.com/windows">Termius</a></p>
+<h2 id="开启-telnet">开启 Telnet</h2>
+<p><strong>拆机接上 TTL</strong></p>
+<p>360 T7 的底部有两颗螺丝，螺丝刀捅开贴纸就能顺利拧下来。塑料后盖非常的紧，卡扣非常多，需要费点力气，当然也没法避免卡扣会掉。<br>
+<img src="https://oss.qust.me/img/de59b787402fbf56c138bca3fd733e75.JPEG" alt="" loading="lazy"></p>
+<p>拆开后，就能看到 TTL 的串口，如图里所示，从上到下分别是 RXD、TXD、GND。我们用杜邦线对应的连接好 TTL 模块即可（路由 RXD 连接模块的 TXD，TXD 连接 RXD，GND 连接 GND）。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/b52265c40b228f09a2831780ef70db41.jpg" alt="" loading="lazy"></figure>
+<p>打开串口调试助手后，串口号选择插入 COM 口设备，波特率选择到 115200，然后选择连接。</p>
+<p><strong>failsafe 模式下打开 telnet</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/53ff1e59f71b6809d0792a8f283f0ce9.jpg" alt="" loading="lazy"></figure>
+<p>现在给路由器插上电源，就能看到右边框里不断有开机日志的输出。我们不停的发送 f（记得需要回车换行，另外按 esc 能直接发送），就能看到进入 failsafe 模式。</p>
+<pre><code># 开启uboot控制台菜单
+fw_setenv bootmenu_delay 3
+
+# 挂载rootfs并开启telnet
+mount_root
+sed -i 's/.*local debug=.*/\tlocal debug=1/' /etc/init.d/telnet
+
+# 修改root密码为password
+passwd root
+
+password
+
+password
+
+# 重启
+reboot
+
+</code></pre>
+<p>然后依次复制上面的命令到串口调试工具里执行，记得都要有回车换行符号。修改 root 密码这一步是连续两次输入相同的密码，我这里是换成了 password；最后完成 reboot 重启就可以。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/5da1d5c6c42a33f8cb8d6a1065ab7e4b.jpg" alt="" loading="lazy"></figure>
+<p>输入 reboot 回车后系统就会正常重启。</p>
+<h2 id="刷入-uboot">刷入 uboot</h2>
+<p>重启之后我们就可以正常配置好路由器，路由器的 Wi-Fi 密码信息以及后台密码信息在 360 T7 的底部，这一步请<strong>确保路由能正常联网</strong>，因为会从网络上获取 uboot 进行刷入，当然如果你习惯 scp 或别的方式上传也是一样的。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/dc0c3233e7bf44a610a6fec2bc3de86d.jpg" alt="" loading="lazy"></figure>
+<p>打开 termius 选择 telnet 进行连接，默认的后台地址是 192.168.2.1，用户名是 root，密码是 password（这个是上一步自己输入修改的）。</p>
+<pre><code>cd /tmp
+wget https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/360T7/360t7-fip-fixed-parts.bin
+mtd write 360t7-fip-fixed-parts.bin fip
+</code></pre>
+<p>连接后复制上面的命令在 telnet 里执行，这一步会将 uboot 写入路由器。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/2e6a33685891d446d17c2665a2ad4d02.jpg" alt="" loading="lazy"></figure>
+<p>我这执行完成后是如图的结果，现在就能开始下一步了。</p>
+<h2 id="uboot-刷入-openwrt">uboot 刷入 openwrt</h2>
+<p>有了 uboot 刷机就非常方便了，我们先进入 uboot ：路由器先顶住背面的 reset 按钮不放，再插上电源等待大约 8 秒松开 reset 就能进入 uboot。uboot 是没有 dhcp 的，用网线连接路由的 LAN 口和电脑，我们需要手动设置下电脑的 IP。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/5c18cd64f6b9f3d784621cf9252fbe8e.jpg" alt="" loading="lazy"></figure>
+<p>如图上电脑的 IP 手动设置为 192.168.1.2，子网掩码 255.255.255.0，网关设置 192.168.1.1，dns 也设置 192.168.1.1。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/9c1df35991ab498dc757a332262bf5fe.jpg" alt="" loading="lazy"></figure>
+<p>然后浏览器打开 192.168.1.1 就能进入 uboot 了，我们选择下载好的 openwrt 固件，上传刷入即可（zip 格式的需要解压）。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20d75584129352e4aa9fefacf082e23f.jpg" alt="" loading="lazy"></figure>
+<p>刷入完成路由器就会自动重启进入新的 openwrt 固件，你也能重新装好后盖正常使用。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/05c040f0370136cdd76cdde19f9456a1.jpg" alt="" loading="lazy"></figure>
+<p>openwrt 固件默认后台地址的是 192.168.6.1，用户名是 root，密码 password，默认的 Wi-Fi 名是 mtk 开头的，默认 Wi-Fi 没有密码。</p>
+<h2 id="openwrt-性能测试">openwrt 性能测试</h2>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/b3ffba0984573151b89572017188ac62.jpg" alt="" loading="lazy"></figure>
+<p>首先 coremark 跑分 8803.7，MT7981 还行能看，都是 arm a53 主频和核心数肯定直接影响得分，这个双核 1.3Ghz 也就差不多这水平了。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/99124442d5faf2fabc561d2a00849b3b.jpg" alt="" loading="lazy"></figure>
+<p>科学性能能跑到 800Mbps 左右，这里需要说一下用的是 passwall，ss 的加密是 chacha20-ietf-poly1305，我手动选择了 rust 的版本，如果默认的 Libev 版本大约只有 300Mbps 左右。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/6da89ac066899ca67b575eb688f67d87.jpg" alt="" loading="lazy"></figure>
+<p>hwnat 硬件加速工作正常，跑满 1000M 宽带 CPU 基本没有占用。</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/69b379fe3ef6549cec7f1d1ba62bb4e1.JPEG" alt="" loading="lazy"></figure>
+<p>无线信号真的非常不错，近处用 iPhone 13 测试无论原厂还是 openwrt 都能有 700Mbps 以上。</p>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/b303c5d04fe2da6cc267569dc79b820a.JPEG" alt="" loading="lazy"></figure>
+<p>隔了一堵区墙后也能有 450Mbps 以上，效果比之前的 ax6s 还略好一点。</p>
+<h2 id="总结">总结</h2>
+<p>360 T7 一百多的价格，搭载了 MTK MT7981，无论是无线 Wi-Fi 性能还是刷机后的科学性能都非常非常有性价比了，也有 uboot 刷机方便不用担心刷挂了；目前唯一的缺点就是刷机需要拆机用 ttl，有点麻烦对新手不友好。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E5%BC%80%E5%90%AF-telnet">开启 Telnet</a></li>
+<li><a href="#%E5%88%B7%E5%85%A5-uboot">刷入 uboot</a></li>
+<li><a href="#uboot-%E5%88%B7%E5%85%A5-openwrt">uboot 刷入 openwrt</a></li>
+<li><a href="#openwrt-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">openwrt 性能测试</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/ax6000-openwrt/">
+              <h3 class="post-title">
+                红米 ax6000 刷 openwrt 教程，终于有完善好用的 openwrt 了
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>斐讯n1配置旁路由后无法访问网络 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="斐讯n1配置旁路由后无法访问网络 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。
+
+参考了恩山 这个帖子 [N1盒子] 【终极指南】关于N1做旁路由添加 iptabl..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              斐讯n1配置旁路由后无法访问网络
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-23
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/20200523120019.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>斐讯 n1 做旁路由，碰见部分路由器做主路由例如：小米、华为、linksys 等经常会碰见配置好旁路由设置无法上网，或者国内网络无法打开，或国内网络很慢。</p>
+<!--more-->
+<p>参考了恩山 这个帖子 [N1盒子] <a href="https://www.right.com.cn/FORUM/thread-2983767-1-1.html">【终极指南】关于N1做旁路由添加 iptables 自定义防火墙规则的见解</a></p>
+<h3 id="方法一">方法一</h3>
+<ul>
+<li>选择 <strong>网络</strong> — <strong>防火墙</strong> — <strong>自定义防火墙</strong>  末尾添加上这段</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20200523120019.jpg" alt="" loading="lazy"></figure>
+<pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+</code></pre>
+<p>解释：用来 “iptables 修改 NAT 表，使经过 eth0 的网卡的流量的源 IP 伪装成 eth0 的 IP，而且是动态伪装（直接读取 eth0 的 IP 地址）”</p>
+<h3 id="方法二">方法二</h3>
+<p>我个人因为试过的路由器比较多，方法一碰见很多路由器其实没啥作用。这里添加wan 口就可以。</p>
+<ul>
+<li>
+<p>第一步：打开 <strong>网络</strong>—<strong>接口</strong>—<strong>lan 修改</strong>—<strong>物理设置</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20200523120418.jpg" alt="" loading="lazy"></figure>
+<p>取消勾选桥接接口，下面选择 “以太网适配器: &quot;eth0()&quot;”  保存应用</p>
+</li>
+<li>
+<p>第二步 打开 <strong>网络</strong>—<strong>接口</strong>—<strong>添加新接口</strong></p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20200523120742.jpg" alt="" loading="lazy"></figure>
+<p>新的接口名称：wan</p>
+<p>新接口的协议：DHCP客户端</p>
+<p>包含以下接口选择：“以太网适配器: &quot;eth0()&quot;”</p>
+<p>然后点提交</p>
+</li>
+</ul>
+<p>这时候应该都解决问题，能打开网站了。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%B8%80">方法一</a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%BA%8C">方法二</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/codec/">
+              <h3 class="post-title">
+                视频与编码
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

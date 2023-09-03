@@ -1,0 +1,274 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>红米 AX5、小米 AX1800 解锁 SSH｜安装使用 ShellClash 教程 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 AX5、小米 AX1800 解锁 SSH｜安装使用 ShellClash 教程 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="这个教程将会指导你如何解锁红米 AX5、小米 AX1800 SSH，并安装 ShellClash 插件，用非常先进的 Clash 实现科学上网。
+
+红米 AX5 和小米 AX1800 可以基本看成一个产品，配置基本相同，外观设计不同。CPU..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              红米 AX5、小米 AX1800 解锁 SSH｜安装使用 ShellClash 教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-09
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%886.28.12.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>这个教程将会指导你如何解锁红米 AX5、小米 AX1800 SSH，并安装 ShellClash 插件，用非常先进的 Clash 实现科学上网。</p>
+<!--more-->
+<p>红米 AX5 和小米 AX1800 可以基本看成一个产品，配置基本相同，外观设计不同。CPU都是：高通 IPQ6000，高通四核1.2GHz。在性能上和小米 AX3600 或者说红米 AX6 差距很大，不是非常推荐购买 AX5 更不推荐购买 AX1800。</p>
+<h2 id="降级">降级？</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%886.04.55.jpg" alt="截屏2021-05-09 下午6.04.55" loading="lazy"></figure>
+<p><strong>目前这一步你可以省略</strong>，亲测目前 AX5 升级到最新固件 <em>1.4.20</em>，仍然可以解锁 SSH。AX1800 最新固件应该也没有问题，如果你下面操作不行的话，可以使用这里提供的降级固件，在后台常用设置-系统状态里-手动选择下载好的固件，降级后再解锁 SSH。</p>
+<ul>
+<li><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/rm1800/miwifi_rm1800_all_65ab2_1.0.328.bin">小米 AX1800 1.0.328 下载</a></li>
+<li><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra67/miwifi_ra67_all_f3fac_1.0.26.bin">红米 AX6 1.0.26 下载</a></li>
+</ul>
+<h2 id="获取-ssh-权限">获取 SSH 权限</h2>
+<h3 id="获取后台-stok">获取后台 STOK</h3>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.43.49.jpg" alt="截屏2021-05-03 下午4.43.49" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<h3 id="获取-ssh">获取 SSH</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B
+</code></pre>
+<p>将 &lt;STOK&gt;  替换为上一步的值，替换完成后复制到浏览器打开。</p>
+<h3 id="修改默认-ssh-密码为-admin">修改默认 SSH 密码为 admin</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20echo%20-e%20'admin%5Cnadmin'%20%7C%20passwd%20root%3B
+</code></pre>
+<p>将 &lt;STOK&gt;  替换为上上一步的值，替换完成后复制到浏览器打开。</p>
+<h3 id="连接-ssh">连接 SSH</h3>
+<p>现在应该可以通过 ssh 连接到 小米 AX1800、红米 AX5 了，终端里执行（密码是 admin，输入不会显示，输入完回车就行）</p>
+<pre><code>ssh root@192.168.31.1
+</code></pre>
+<p>如果提示这种错误 (没有就可以忽略，第一次让你按 yes 即可)</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%886.13.46.jpg" alt="截屏2021-05-09 下午6.13.46" loading="lazy"></figure>
+<p>你可以删除这个文件的指定行，我这里后面可以看到是 45，或者直接删除这个文件。</p>
+<pre><code>rm -rf /Users/pengchujin/.ssh/known_hosts
+</code></pre>
+<h2 id="安装使用-shellclash">安装使用 ShellClash</h2>
+<p>SSH 连接上小米 AX1800、红米 AX5 执行安装</p>
+<pre><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.55.06.jpg" alt="截屏2021-05-06 下午7.55.06" loading="lazy"></figure>
+<p>选择 1 安装到 /etc，然后再选择 1 确认安装。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.56.25.jpg" alt="截屏2021-05-06 下午7.56.25" loading="lazy"></figure>
+<p>安装好就能使用 clash 命令了 ，输入 clash 就能进入配置。这里选择 4 让局域网设备都能走代理（如果你清楚别的可以自行选择）。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%887.59.53.jpg" alt="截屏2021-05-06 下午7.59.53" loading="lazy"></figure>
+<p>推荐选择不代理 UDP 也就是 1，然后安装 DashBoard 面板也就能网页直接控制了也就是 1 。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.01.39.jpg" alt="截屏2021-05-06 下午8.01.39" loading="lazy"></figure>
+<p>推荐选择 Yacd 面板，界面很好看 选择 2，然后安装目录选择 1 即可。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.05.20.jpg" alt="截屏2021-05-06 下午8.05.20" loading="lazy"></figure>
+<p>1 选择导入配置文件。如果你没有 Clash 的配置文件而是 v2ray、ss、trojan 的订阅链接（你的机场会提供），你可以再选择 1 进行「在线生成 Clash 配置文件」；如果有的话可以选择 2 直接导入配置文件。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.07.27.jpg" alt="截屏2021-05-06 下午8.07.27" loading="lazy"></figure>
+<p>然后粘贴上你的订阅链接（url 链接），再选择 1 开始生成配置文件。生成配置文件后按 0 返回上层菜单即可。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.09.41.jpg" alt="截屏2021-05-06 下午8.09.41" loading="lazy"></figure>
+<p>再按 1 选择立即开启 Clash  的服务即可。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.10.26.jpg" alt="截屏2021-05-06 下午8.10.26" loading="lazy"></figure>
+<p>启动后你可以通过 http://192.168.31.1:9999/，进行节点的切换和规则的选择。当然你再按 4 选择开机启动也可以。</p>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-06%20%E4%B8%8B%E5%8D%888.11.01.jpg" alt="截屏2021-05-06 下午8.11.01" loading="lazy"></figure>
+<p>这个时候应该就能科学上网了速度也应该还可以。</p>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-09%20%E4%B8%8B%E5%8D%885.21.05.jpg" alt="截屏2021-05-09 下午5.21.05" loading="lazy"></figure>
+<p>这是我测试的红米 AX5 v2ray（vmess ws+tls）的速度，比红米 AX6 或者说小米 AX3600 相差很多，后者能跑满我家 500M 宽带。</p>
+<h2 id="后记">后记</h2>
+<p>这个不会固化 telnet ，如果你升级路由器应该会丢失 SSH，建议你不要再升级固件，目前的固件也已经支持 AP mesh。如果你非常想升级以后新出的固件，可以参考恩山<a href="https://www.chiphells.com/FORUM/thread-4107121-1-1.html">这个教程</a>，固化 telnet 以后升级都会保留 SSH权限，就是稍微有点麻烦。</p>
+<p>红米 AX5 和小米 AX1800 性能稍微有点差，但也能满足日常使用，看 Netflix 4K、YouTube 8k 都没问题。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%99%8D%E7%BA%A7">降级？</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96-ssh-%E6%9D%83%E9%99%90">获取 SSH 权限</a>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0-stok">获取后台 STOK</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96-ssh">获取 SSH</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4-ssh-%E5%AF%86%E7%A0%81%E4%B8%BA-admin">修改默认 SSH 密码为 admin</a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5-ssh">连接 SSH</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-shellclash">安装使用 ShellClash</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/openClash/">
+              <h3 class="post-title">
+                OpenClash 使用教程
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

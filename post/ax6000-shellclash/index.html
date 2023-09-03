@@ -1,0 +1,349 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="这是一台红米 AX6000 路由器，这台路由器被大家诟病最多就是没有 2.5G 网口，连一个都没有，全都是千兆网口，隔壁的 tp-link  相同方案的都已经配备了两个 2.5G 的网口了。雷军，金凡！但价格也确实便宜很多，在 pdd 上都..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-09-11
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/a127ca3994740588cbbf9ac5404fc38b.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>这是一台红米 AX6000 路由器，这台路由器被大家诟病最多就是没有 2.5G 网口，连一个都没有，全都是千兆网口，隔壁的 tp-link  相同方案的都已经配备了两个 2.5G 的网口了。雷军，金凡！但价格也确实便宜很多，在 pdd 上都被促销到了 300 多元。红米 AX6000 搭载的是 MTK  2021 年发布的 Filogic 830 平台，具体型号是 mt7986a，四核  ARM A53 的架构，主频更是高达 2.0GHz，制程也是极为先进的 12nm，对于路由器这个 CPU 已经是最强的之一了，另外还有 512M 内存和 128M 闪存。这么强大性能的 CPU 如果不让它干点别的简直是浪费，今天就把这台红米 AX6000 解锁 SSH 安装 ShellClash 看看性能到底有多强。</p>
+<!--more-->
+<p>在教程开始前还是想感谢下面的帖子，我也是参看他们的方法：</p>
+<ul>
+<li>
+<p><a href="https://forum.openwrt.org/t/add-openwrt-support-for-xiaomi-redmi-ax6000/125008/141">openwrt 官方社区的破解</a></p>
+</li>
+<li>
+<p><a href="https://www.right.com.cn/forum/thread-8253195-1-1.html">恩山论坛「高伟凡」的简化</a></p>
+</li>
+<li>
+<p><a href="https://github.com/juewuy/ShellClash">GitHub ShellClash 项目</a></p>
+</li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>一台红米 AX6000 （ 产品型号 RB06）</li>
+<li>一台电脑（Mac Win Linux 均可）</li>
+<li>下载安装 <a href="https://termius.com/">Termius</a> （任意 ssh 工具都行，termius 简单适合新手）</li>
+<li>下载路由路由器固件 <a href="https://share.qust.me/redmi-ax6000-1.2.8.bin">1.2.8 版本</a></li>
+</ul>
+<h2 id="解锁-ssh">解锁 SSH</h2>
+<p><strong>1 升级到指定版本固件(可跳过)</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/634acdbce425fff1d6e7c50936a50ba6.png" alt="" loading="lazy"></figure>
+<p>这款路由器的固件一直没有升级，当前的固件可以直接跳过这一步，主要有人反馈 1.2.8 有丢失 5G 的情况。在小米路由器后台，将路由器手动升级到 <a href="https://share.qust.me/redmi-ax6000-1.2.8.bin">1.2.8 版本</a></p>
+<p><strong>2 获取路由器 stock</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/024c75b6d70e1dfe518cbee557f5549c.png" alt="" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<p><strong>3 开启调试模式</strong></p>
+<p>打开浏览器，复制下面的内容到地址栏，并替换 {STOK}</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok={token}/api/misystem/set_sys_time?timezone=%20%27%20%3B%20zz%3D%24%28dd%20if%3D%2Fdev%2Fzero%20bs%3D1%20count%3D2%202%3E%2Fdev%2Fnull%29%20%3B%20printf%20%27%A5%5A%25c%25c%27%20%24zz%20%24zz%20%7C%20mtd%20write%20-%20crash%20%3B%20
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/428b4ac624cd226edd18fc9fcbc6819f.png" alt="" loading="lazy"></figure>
+<p>我的替换后如上。将替换好的值复制到浏览器请求，如果显示 {&quot;code&quot;:0} 如上返回内容则表示成功。</p>
+<p><strong>4 通过浏览器请求重启</strong></p>
+<p>同样打开浏览器，复制下面的内容到地址栏，并替换 {STOK}</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok={token}/api/misystem/set_sys_time?timezone=%20%27%20%3b%20reboot%20%3b%20
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/0214c8bf434a74c5c8cdc6f4af0e9d31.png" alt="" loading="lazy"></figure>
+<p>通过浏览器执行完这一步路由器会重启，等待重启完成。</p>
+<p><strong>5 设置 Bdata 永久开启 telnet</strong></p>
+<p>重启完成后打开路由器后台（注意：路由器重启你需要重新登陆获取下新的 stok ），然后同样打开浏览器，复制下面的内容到地址栏，并替换 {STOK} 。</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok={token}/api/misystem/set_sys_time?timezone=%20%27%20%3B%20bdata%20set%20telnet_en%3D1%20%3B%20bdata%20set%20ssh_en%3D1%20%3B%20bdata%20set%20uart_en%3D1%20%3B%20bdata%20commit%20%3B%20
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/04c251ca083bfe723f623ee1b481ae15.png" alt="" loading="lazy"></figure>
+<p>然后再次执行第 4 小步的「通过浏览器请求重启」，等待重启完成。</p>
+<p><strong>6 telnet 连接开启 ssh</strong></p>
+<p>打开 Termius，可以选择不登录 Continue Without Account。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/8C2AAD6B-524A-420B-BFD0-C41C91B5DD24.png" alt="img" loading="lazy"></figure>
+<p>点击 New Host 添加</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/51541936-2C8F-4B4A-9730-4CCEC7BA4900.png" alt="img" loading="lazy"></figure>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH：取消勾选</p>
+<p>Telnet：勾选</p>
+<p>然后点击向右的箭头，最后选择 Hosts 里的「192.168.31.1」开始 telnet 连接。(不用输入用户和密码)</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/500ebdbdab277edd684af63a25749cdf.png" alt="" loading="lazy"></figure>
+<p><strong>7 永久开启并固化 ssh</strong></p>
+<pre><code>echo -e 'admin\nadmin' | passwd root
+nvram set ssh_en=1
+nvram set telnet_en=1
+nvram set uart_en=1
+nvram set boot_wait=on
+nvram commit
+sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+mkdir /data/auto_ssh
+cd /data/auto_ssh
+curl -O https://fastly.jsdelivr.net/gh/lemoeo/AX6S@main/auto_ssh.sh
+chmod +x auto_ssh.sh
+uci set firewall.auto_ssh=include
+uci set firewall.auto_ssh.type='script'
+uci set firewall.auto_ssh.path='/data/auto_ssh/auto_ssh.sh'
+uci set firewall.auto_ssh.enabled='1'
+uci commit firewall
+uci set system.@system[0].timezone='CST-8'
+uci set system.@system[0].webtimezone='CST-8'
+uci set system.@system[0].timezoneindex='2.84'
+uci commit
+mtd erase crash
+reboot
+</code></pre>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/026b10d7a8e18e9acaadfdaad062d1cf.png" alt="" loading="lazy"></figure>
+<p>复制上面的命令到 termius 终端里执行，这会设置 ssh 密码为 admin、并永久开启 SSH、并从开发模式修改回正常的模式，并重启。重启完成后就能连上 ssh 了。</p>
+<p><strong>8 尝试 ssh 连接路由器</strong></p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/31FE7942-F350-4A16-B7D0-291FD84D8932.png" alt="img" loading="lazy"></figure>
+<p>选择 Hosts-点击 New Host 添加</p>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH 的用户名里填写：root</p>
+<p>Password 是：admin</p>
+<p>点击右上角箭头，再点击 Hosts 里的 192.168.31.1 就应该能连接上 SSH 了。（注意选择 ssh 不是 telnet）</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/9373666F-3D32-474B-97F7-226220669E9F.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/38d7fbb3f0de3f2bcc6a87cee76f6ba0.png" alt="" loading="lazy"></figure>
+<p>选择 ADD AND CONTINUE，就会进入 ssh 连接。</p>
+<h2 id="安装-shellclash">安装 ShellClash</h2>
+<p><strong>安装</strong></p>
+<p>在 SSH 里复制此命令开始安装 ShellClash</p>
+<pre><code>export url='https://raw.fastgit.org/juewuy/ShellClash/master' &amp;&amp; sh -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/d75280a49fea597269a0cdfeb7410c88.png" alt="" loading="lazy"></figure>
+<p>选择 1 正式版，然后选择 1 确认安装。</p>
+<p><strong>配置 Clash</strong></p>
+<p>输入 Clash 回车进行配置<img src="https://oss.qust.me/img/c1ccb59b92deb4dafbf9e4be11fa7e67.png" alt="" loading="lazy"></p>
+<ul>
+<li>选择 1 主机或旁路由</li>
+<li>选择 1 不代理 UDP</li>
+<li>选 1 安装 Dashboard 面板</li>
+<li>选择 3 YACD 面板（选择你熟悉的都 OK）</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/777dba3c4da2cd659026516f38694abf.png" alt="" loading="lazy"></figure>
+<ul>
+<li>选择 1 的路径</li>
+</ul>
+<ul>
+<li>1 开始导入</li>
+<li>1 在线生成</li>
+<li>粘贴你的订阅链接（你的机场✈️后台有提供）</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/bf4f9318774bbe3e5ba31d044c2aa1d7.png" alt="" loading="lazy"></figure>
+<ul>
+<li>1 开始生成配置文件</li>
+<li>1 立即启动 Clash 服务</li>
+<li>选择 4 允许开机启动</li>
+<li>最后选择 0 退出脚本即可</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/f31725aff57a2b10742b495e14aa3b7e.png" alt="" loading="lazy"></figure>
+<p>现在应该就能正常使用了，在浏览器里打开 http://192.168.31.1:9999/ui，就能访问控制后台。</p>
+<h2 id="测速性能">测速性能</h2>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/94ad9b666e209e4344f48f40b1c8ccc0.jpg" alt="" loading="lazy"></figure>
+<p>直接上图，跑满 1000M 宽带 CPU 占用不到 50%！这 TM 也太强了吧。Filogic 830  四核 2.0GHz 果然没让我失望，并且发热真的很低，比小米 AX5400 电竞一手摸就能感觉凉快很多。</p>
+<h2 id="重置-升级-刷机后如何恢复-ssh">重置、升级、刷机后如何恢复 SSH</h2>
+<p>无论你是升级了系统、还是恢复了出厂、还是刷了别的版本的系统或 openwrt 再刷回来，telnet 其实都是打开的，因为写在了 bdata 分区。不过 telnet 密码会恢复成默认的，我们需要通过路由器后台右下角的 SN 号来计算。这里有两个网站直接在线计算（安全的离线计算）：</p>
+<p><a href="https://www.oxygen7.cn/miwifi/">Oxygen7</a></p>
+<p><a href="https://miwifi.dev/ssh">Miwifidev</a></p>
+<p>telnet 连上以后，执行：</p>
+<pre><code>sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+</code></pre>
+<p>就开启了 ssh，ssh 默认密码就是上面计算出来的一样。</p>
+<h2 id="总结购买建议">总结购买建议</h2>
+<p>红米 AX6000 搭载的 Filogic 830 平台 mt7986a 性能太强了，这可能是市面上最强的硬路由 CPU 了；但红米 AX6000 没给一个 2.5G 网口真的是浪费这颗 CPU 的性能，1000M 的外网远远达不到这颗 CPU 的上限。如果你买了红米 AX6000 那解锁 ssh 安装 ShellClash 是个好的选择，如果没有价格在 400 左右还是非常值得考虑入手的，再高就等  Filogic 830 平台的新品吧。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E8%A7%A3%E9%94%81-ssh">解锁 SSH</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-shellclash">安装 ShellClash</a></li>
+<li><a href="#%E6%B5%8B%E9%80%9F%E6%80%A7%E8%83%BD">测速性能</a></li>
+<li><a href="#%E9%87%8D%E7%BD%AE-%E5%8D%87%E7%BA%A7-%E5%88%B7%E6%9C%BA%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D-ssh">重置、升级、刷机后如何恢复 SSH</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E8%B4%AD%E4%B9%B0%E5%BB%BA%E8%AE%AE">总结购买建议</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/msm8916/">
+              <h3 class="post-title">
+                4g 随身 Wi-Fi 刷 openwrt 变成软路由 
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

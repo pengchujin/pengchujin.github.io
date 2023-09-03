@@ -1,0 +1,344 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NanoPi R4S 上手体验 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="NanoPi R4S 上手体验 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="在购买 NanoPi R4s 之前，我其实已经拥有了 NanoPi R2s。是的 R2s 很好用，价格也非常便宜，你只用花不到 200 元就能购买一台拥有 2 个 1000M 网口，性能也还过得去的体积非常小的路由器。前些天浏览新闻看到 R..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              NanoPi R4S 上手体验
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-12-20
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/20201220194933.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>在购买 NanoPi R4s 之前，我其实已经拥有了 NanoPi R2s。是的 R2s 很好用，价格也非常便宜，你只用花不到 200 元就能购买一台拥有 2 个 1000M 网口，性能也还过得去的体积非常小的路由器。前些天浏览新闻看到 R4s 曝光的消息，这俩天看到淘宝正好上架了，我还是按捺不住入手了一台。</p>
+<!--more-->
+<h2 id="基本配置">基本配置</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/20201220202048.jpg" alt="" loading="lazy"></figure>
+<p>很容易看出因为 CPU 的大小和俩个 USB 3.0 接口让 R4s 的体积的直接大了不少，R4s 因为是直接 PCIe 接的 1000M 网口理论效率应该也能高一点，我也总结了下俩个的一些基本配置可以参看下。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">R2s R4s 对比</th>
+<th style="text-align:center">R2s</th>
+<th style="text-align:center">R4s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CPU</td>
+<td style="text-align:center">28nm Rockchip RK3328 4核 A53 1.5Ghz</td>
+<td style="text-align:center">28 nm Rockchip RK3399 2.0Ghz 双核 A72 + 4核 1.5Ghz A53</td>
+</tr>
+<tr>
+<td style="text-align:center">内存</td>
+<td style="text-align:center">1GB</td>
+<td style="text-align:center">1GB / 4GB</td>
+</tr>
+<tr>
+<td style="text-align:center">网口</td>
+<td style="text-align:center">1个原生 1000M + 1 USB 3.0 转接 1000 M</td>
+<td style="text-align:center">1个原生 1000M + 1 PICe 1000 M</td>
+</tr>
+<tr>
+<td style="text-align:center">USB 接口</td>
+<td style="text-align:center">1个 USB 2.0 接口</td>
+<td style="text-align:center">2 个 USB 3.0 接口</td>
+</tr>
+<tr>
+<td style="text-align:center">供电</td>
+<td style="text-align:center">micro USB 供电（有 Type C 口版本可选）</td>
+<td style="text-align:center">Type C</td>
+</tr>
+<tr>
+<td style="text-align:center">尺寸</td>
+<td style="text-align:center">55.6 x 52 mm</td>
+<td style="text-align:center">66 mm x 66 mm</td>
+</tr>
+<tr>
+<td style="text-align:center">系统卡槽</td>
+<td style="text-align:center">micro SD</td>
+<td style="text-align:center">micro SD</td>
+</tr>
+<tr>
+<td style="text-align:center">单核 Geekbench 5 跑分</td>
+<td style="text-align:center">105</td>
+<td style="text-align:center">206</td>
+</tr>
+<tr>
+<td style="text-align:center">多核 Geekbench 5 跑分</td>
+<td style="text-align:center">325</td>
+<td style="text-align:center">615</td>
+</tr>
+<tr>
+<td style="text-align:center">CPU TDP</td>
+<td style="text-align:center">5W</td>
+<td style="text-align:center">7W</td>
+</tr>
+<tr>
+<td style="text-align:center">带壳价格</td>
+<td style="text-align:center">200 元左右</td>
+<td style="text-align:center">1GB 359元 / 4GB 449 元左右</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安装系统">安装系统</h2>
+<p>默认的后台地址：192.168.2.1</p>
+<p>默认用户名：root</p>
+<p>默认密码：password</p>
+<h3 id="准备">准备</h3>
+<ul>
+<li>micro SD 卡一张</li>
+<li>下载安装 <a href="https://www.balena.io/etcher/">Etcher</a> （烧录工具， Mac Win Linux 都支持，非常好用）</li>
+<li>下载 R4S 固件 <a href="https://github.com/LewiVir/NanoPi-R4S">Github链接</a></li>
+</ul>
+<p>Official 是来自于 friendly 的源，Lean 的则是来自于 Lean 的，我个人推荐目前用 Lean 的版本功能丰富很多。下载 Release 出的内容比较多，选择  <strong>openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz</strong> 下载就可以。注意选择自己对应的内存版本。目前的固件可能还不是很稳定，可以参看那个项目的 issue。</p>
+<h3 id="烧录系统">烧录系统</h3>
+<ol>
+<li>
+<p>电脑插上 micro SD 卡</p>
+</li>
+<li>
+<p>打开 Etcher ，先选从 Github 下载的 固件（不需要解压），再选择你插入的 SD 卡</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/20201220210337.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>点 Flash 烧录（Mac 可能需要输入下密码）</p>
+</li>
+<li>
+<p>烧录完成后拔下 micro SD 卡插上 NanoPi R4S 的卡槽，插电开机即可。</p>
+</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/20201220211920.JPG" alt="" loading="lazy"></figure>
+<p>插上电源和网线理论上就能正常使用了。</p>
+<h2 id="usb-无线网卡">USB 无线网卡</h2>
+<p>我有带着一个体积小性能好便携路由器的需求，但 NanoPi R4s 又不带 Wifi 功能，只好选择再买个 USB 无线网卡。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/20201220213131.jpeg" alt="" loading="lazy"></figure>
+<p>从左到右依次是 网件 A6210AC（MT7612U 芯片）、未知品牌（RT3070芯片）、GRiS （RTL8822BU芯片）、未知品牌（RTL 8811CU/AU）的无线网卡。</p>
+<p>买这么多个因为该 openwrt 的 USB 无线网卡驱动目前还不完善，我测试了下这四个中只有 <strong>网件 A6210AC（MT7612U 芯片）</strong>、<strong>未知品牌（RT3070芯片）</strong> 这俩个芯片插上去就能直接使用（不能热插拔，插上去需要重启后即可配置使用）。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/20201220215929.jpg" alt="" loading="lazy"></figure>
+<p>网件 A6210AC（MT7612U 芯片）这款我个人非常推荐，淘宝上卖的价格非常便宜 79 元左右，支持 USB 3.0，也支持 5Ghz，连接速度和稳定性都不错。</p>
+<h2 id="配置代理">配置代理</h2>
+<p>我个人比较推荐使用 OpenClash，目前使用也很方便。</p>
+<ul>
+<li>选择 服务-配置文件订阅-添加</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/20201220221127.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>配置文件名随便填即可；订阅地址可以是你的 Clash 地址也可以是别的地址，如果是 V2ray、SS 等地址记得钩一下在线转换，这会给你的订阅转换成 Clash 格式的。最后点下保存配置。（图中的配置是瞎编的链接不用尝试）</li>
+</ul>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/20201220221302.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>开关在 OpenClash 的主界面，你可以选择你刚添加的配置文件 点开启用，这时候应该就能正常使用了。</li>
+</ul>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/20201220222622.jpg" alt="" loading="lazy"></figure>
+<p>控制面板也和其他平台的 Clash 类似，可以点开 Web 版查看选择节点、模式等操作。</p>
+<p>当然固件也是带有 Hello World、PassWall 等传统的 V2ray 、ss、ssr、trojan 等订阅，选择节点的服务，你可以在里面选择添加订阅地址，或者直接添加节点使用。</p>
+<h2 id="总结">总结</h2>
+<ul>
+<li>NanoPi R4s 固件暂时还不太稳定，如果你不着急也可以再等等。</li>
+<li>NanoPi R4s 和 R2s 最大的提升其实是 CPU 性能，和 USB 速度；R2s 这对于大部分人完全足够使用。R2s 代理我测过大概能跑 300M+ ，我会觉得还缺了点，但到了 R4s 正好能弥补这个遗憾。另外就是 USB 3.0 接口了，对于想用 USB 无线网卡上网以及外界存储设备的人来说还是非常有必要的。</li>
+<li>1Gb 版本的当路由器完全够用，你不必选择 4Gb 版本。</li>
+<li>R4s 价格偏高，体积偏大了点，发热也大了不少，没更高需求建议买 Type C 口的 R2s ，性价比会高很多。</li>
+</ul>
+<p>我会把 NanoPi R4s 当作便携的高性能路由器使用，出门能挂在移动电源上，然后配合 USB 无线网卡非常不错。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">基本配置</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F">安装系统</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87">准备</a></li>
+<li><a href="#%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F">烧录系统</a></li>
+</ul>
+</li>
+<li><a href="#usb-%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1">USB 无线网卡</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86">配置代理</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/mac2020/">
+              <h3 class="post-title">
+                我买了台 Mac M1
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

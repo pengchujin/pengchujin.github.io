@@ -1,0 +1,274 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OpenClash 使用教程 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="OpenClash 使用教程 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="OpenClash 是一个可运行在 OpenWrt 上的 Clash 客户端，一般来说你的路由器的第三方固件会附带，当然也可以自行安装。相比于传统的 SS、SSR 或者 PassWall 这些客户端来说，OpenClash 使用 Clash..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              OpenClash 使用教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-08
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.29.51.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><a href="https://github.com/vernesong/OpenClash">OpenClash</a> 是一个可运行在 OpenWrt 上的<a href="https://github.com/Dreamacro/clash"> Clash </a>客户端，一般来说你的路由器的第三方固件会附带，当然也可以自行安装。相比于传统的 SS、SSR 或者 PassWall 这些客户端来说，OpenClash 使用 Clash 的配置文件，规则代理会灵活很多，配合 yacd 等 WebUI 控制台操作也非常方便。</p>
+<!--more-->
+<h2 id="安装">安装</h2>
+<p>OpenClash 会发布编译好的 IPK 文件（openwrt 的软件包），你可以直接<a href="https://github.com/vernesong/OpenClash/releases">下载安装</a>，然后 SSH 到 openwrt 后台进行安装。</p>
+<pre><code>cd /tmp
+wget https://github.com/vernesong/OpenClash/releases/download/v0.42.05-beta/luci-app-openclash_0.42.05-beta_all.ipk
+opkg install luci-app-openclash_0.42.05-beta_all.ipk
+</code></pre>
+<p>如果你的版本比较旧，你也可以这样来更新你的 openclash，我这里就以 0.42.05 版本为例。</p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%884.06.12.jpg" alt="截屏2021-05-08 下午4.06.12" loading="lazy"></figure>
+<h2 id="配置">配置</h2>
+<h3 id="添加配置文件">添加配置文件</h3>
+<p>你的机场一般会给你提供一个订阅地址，有没有 Clash 的订阅都没关系。ss、v2ray、trojan 都是支持的 SSR 不行🙅，复制准备好。</p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%884.36.31.jpg" alt="截屏2021-05-08 下午4.36.31" loading="lazy"></figure>
+<p>打开 openclash，在 ConfigUpdate 配置文件订阅里选择新增。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%884.40.08.jpg" alt="截屏2021-05-08 下午4.40.08" loading="lazy"></figure>
+<ul>
+<li>
+<p>配置文件名随便取个名字</p>
+</li>
+<li>
+<p>然后在订阅地址里填写机场给你提供的（不是 SSR 的都行）</p>
+</li>
+<li>
+<p>在线订阅转换勾选上 ｜ 如果你机场提供的就是 Clash 的配置订阅并且你也不想改，就不用勾选</p>
+</li>
+<li>
+<p>订阅转换模版如果你有喜欢的可以里面选择一个，或者默认即可</p>
+</li>
+<li>
+<p>其它默认即可。当然其它的选项你理解，并且有需求可以自行更改。</p>
+</li>
+</ul>
+<p>然后保存配置。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%885.03.26.jpg" alt="截屏2021-05-08 下午5.03.26" loading="lazy"></figure>
+<p>保存配置后，应用配置理论上就能直接使用了，打开 Google YouTube 等网站应该不会有问题。你可以选择打开自动更新，这样就会每天更新你机场的节点变动。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%885.52.59.jpg" alt="截屏2021-05-08 下午5.52.59" loading="lazy"></figure>
+<h2 id="控制面板">控制面板</h2>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.08.53.jpg" alt="截屏2021-05-08 下午6.08.53" loading="lazy"></figure>
+<p>在 OpenClash 打开后会提供控制面板，推荐你选择 Yacd 的。控制面板提供流量信息，可以方便的切换节点配置。（如果你打开后需要填写 ip 地址就是你这台 openwrt 路由器的 IP，端口默认是 9090，密码默认是：123456 ）控制面板的信息在上图中也有提供。</p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.10.43.jpg" alt="截屏2021-05-08 下午6.10.43" loading="lazy"></figure>
+<p>概述里面能看到图形化的实时流量信息。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.13.18.jpg" alt="截屏2021-05-08 下午6.13.18" loading="lazy"></figure>
+<p>在代理里面能切换节点。简单介绍下规则：</p>
+<ul>
+<li>节点选择就是默认的选择节点（你也可以选择 url-test，系统就会选择默认延迟低的；全球直连则是不走代理）</li>
+<li>自动选择（这个你可以忽略）</li>
+<li>国外媒体、微软服务、苹果服务等等，你的可能不一样。你可以针对每个服务进行选择，这样的好处是灵活。比如你可以让电报走美国节点，Netflix 选择香港、苹果的选择直接连接等等。</li>
+</ul>
+<p>这个文件规则是你上面「订阅转换模版」选择的结果，你可以在那里选择功能更丰富的规则。</p>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.19.18.jpg" alt="截屏2021-05-08 下午6.19.18" loading="lazy"></figure>
+<p>在配置里默认是 Rule 就是有规则的代理，国内网站不走代理，国外的才走，能大大提升速度节省流量。如果你想完全不走代理你在这里可以选择 Direct、如果你想所有的网站包括国内都走代理可以在这里选择 Global，然后在上一步代理的 Global 里即可选择节点。</p>
+<h3 id="方便的-web-管理">方便的 Web 管理</h3>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.23.54.jpg" alt="截屏2021-05-08 下午6.23.54" loading="lazy"></figure>
+<p>你可以打开 http://yacd.haishan.me/ 保存这个网站到书签或者你浏览器的首页，手机、电脑任何一个设备都可以。然后添加你的控制面板信息，http://路由器IP:端口、然后输入密码、像是上图我的那样（结尾不需要/）。就可以成功添加。</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-08%20%E4%B8%8B%E5%8D%886.25.52.jpg" alt="截屏2021-05-08 下午6.25.52" loading="lazy"></figure>
+<p>这样局域网里的任何设备都能非常方便的控制 Clash 的规则、查看网络信息等等。非常方便</p>
+<h2 id="后记">后记</h2>
+<p>OpenClash 可能看起来麻烦点，不过实际使用却非常方便灵活，能按规则的走代理，让不同的服务走不同的节点就非常方便。配合 Web 网页的控制后台，非常推荐大家路由器都使用这种更先进的上网方式。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a>
+<ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">添加配置文件</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF">控制面板</a>
+<ul>
+<li><a href="#%E6%96%B9%E4%BE%BF%E7%9A%84-web-%E7%AE%A1%E7%90%86">方便的 Web 管理</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/home-mesh/">
+              <h3 class="post-title">
+                家庭网络小米 Mesh 组网指南｜ShellClash 抛弃软路由全家开心 Netflix
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

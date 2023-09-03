@@ -1,0 +1,337 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>红米 AX6S 性能远超想象，解锁 SSH 安装 ShellClash｜刷 openwrt 教程 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1693747146654">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 AX6S 性能远超想象，解锁 SSH 安装 ShellClash｜刷 openwrt 教程 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="这大半年路由器涨价降配，大家应该都有所了解。红米 AX6S 就是之前红米 AX6 的继任者，无线规格基本一致，主要是 CPU 从高通 IPQ8071A 降级到了双核 1.35GHz A53 的 MTK7622B，以及 128M 的闪存和 2..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1693747146654" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              红米 AX6S 性能远超想象，解锁 SSH 安装 ShellClash｜刷 openwrt 教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-03-09
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/202203092215670.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>这大半年路由器涨价降配，大家应该都有所了解。红米 AX6S 就是之前红米 AX6 的继任者，无线规格基本一致，主要是 CPU 从高通 IPQ8071A 降级到了双核 1.35GHz A53 的 MTK7622B，以及 128M 的闪存和 256M 的内存。不过如今两者全新的价格已经不在一个档次，AX6S 拼多多只要 240 元左右，AX6 已经停产全新的都被炒到了 400 元。本来不打算买红米 AX6S，但最近流出了 AX6S 解锁 SSH 的官方固件，并且能刷 openwrt 了。另外测试下来这颗 MTK7622B CPU 支持 aes 硬解，<strong>科学性能表现十分强悍</strong>，比之前的 MTK7621 不知道高哪里去了。我个人觉得目前挺值得购买的，也就有了这个教程。</p>
+<!--more-->
+<p><strong>致谢：在此感谢如下帖子和教程，我也是整合并用更简单规整的方式重新表述。</strong></p>
+<ul>
+<li><a href="https://www.right.com.cn/forum/thread-8173581-1-1.html">【恩山】红米AX6s 有开发版官方固件</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-8187405-1-1.html">【恩山】AX6S 闭源无线驱动OP固件/源码/教程</a></li>
+<li><a href="https://github.com/juewuy/ShellClash">【GitHub】ShellClash 项目</a></li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>红米 AX6S 路由器</li>
+<li>一台 Windows 或 Mac 的电脑</li>
+<li><a href="https://share.qust.me/%E8%B7%AF%E7%94%B1%E5%99%A8/%E7%BA%A2%E7%B1%B3%20AX6S">提前下载好需要的固件</a></li>
+<li><a href="https://termius.com/windows">下载安装好 Termius</a>（老手可以不安装，直接用系统自带的 terminal）</li>
+</ul>
+<p><strong>如果你只需要 ShellClash 的功能，只用看前半部分就 OK ；需要刷 openwrt 可以跳过 ShellClash 的部分。不用担心变砖，刷坏了用<a href="https://www1.miwifi.com/miwifi_download.html">官方修复工具即可刷回原厂</a>。</strong></p>
+<h2 id="解锁-ssh">解锁 SSH</h2>
+<p><strong>1. 升级开发版固件</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/202203092209940.jpg" alt="" loading="lazy"></figure>
+<p>登录红米 AX6S 的后台（一般是：192.168.31.1），点击右上角选择-系统升级-选择手动升级，勾选下载好的「内测版」固件，点击开始升级。</p>
+<p>⌛️等待系统升级完成重启，重新连接上 Wi-Fi。</p>
+<p><strong>2. 在线计算 root 密码</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/202203092210359.jpg" alt="" loading="lazy"></figure>
+<p>浏览器打开 <a href="https://www.oxygen7.cn/miwifi/">https://www.oxygen7.cn/miwifi/</a>，输入路由器后台右下角完整的 SN 号，点击 GO。<strong>计算出来的结果就是 root 密码，复制保存好。</strong></p>
+<p><strong>3. telnet 连接开启 ssh</strong></p>
+<p>打开 Termius，可以选择不登录 Continue Without  Account。</p>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/8C2AAD6B-524A-420B-BFD0-C41C91B5DD24.png" alt="" loading="lazy"></figure>
+<p>点击 New Host 添加</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/51541936-2C8F-4B4A-9730-4CCEC7BA4900.png" alt="" loading="lazy"></figure>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH：取消勾选</p>
+<p>Telnet：勾选</p>
+<p>然后点击向右的箭头，最后选择 Hosts 里的「192.168.31.1」开始 telnet 连接。</p>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/265346AF-FDA1-488A-8A34-B2FFF01D0C08.png" alt="" loading="lazy"></figure>
+<ul>
+<li>login 用户名：root</li>
+<li>密码通过在线计算得来，复制粘贴回车即可。（输入不显示）</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/72D3F040-C74B-41C0-B688-DA903A00AD89.png" alt="" loading="lazy"></figure>
+<p>复制以下命令，回车即可开启 ssh。</p>
+<pre><code>nvram set ssh_en=1 &amp; nvram set uart_en=1 &amp; nvram set boot_wait=on &amp; nvram set bootdelay=3 &amp; nvram set flag_try_sys1_failed=0 &amp; nvram set flag_try_sys2_failed=1
+nvram set flag_boot_rootfs=0 &amp; nvram set &quot;boot_fw1=run boot_rd_img;bootm&quot;
+nvram set flag_boot_success=1 &amp; nvram commit &amp; /etc/init.d/dropbear enable &amp; /etc/init.d/dropbear start
+
+</code></pre>
+<p><strong>4. 尝试 ssh 连接路由器</strong></p>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/31FE7942-F350-4A16-B7D0-291FD84D8932.png" alt="" loading="lazy"></figure>
+<p>选择 Hosts-点击 New Host 添加</p>
+<p>Address 填写：192.168.31.1</p>
+<p>SSH 的用户名里填写：root</p>
+<p>Password 粘贴之前计算出来的 root 密码</p>
+<p>点击右上角箭头，再点击 Hosts 里的 192.168.31.1 就应该能连接上 SSH 了。（注意选择 ssh 不是 telnet）</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/9373666F-3D32-474B-97F7-226220669E9F.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/7398B7D3-AE8D-4891-BB51-E637AA9C0B92.png" alt="" loading="lazy"></figure>
+<p>选择 ADD AND CONTINUE，就会进入 SSH 连接。</p>
+<h2 id="安装-shellclash">安装 ShellClash</h2>
+<p><strong>安装</strong></p>
+<p>在 SSH 里复制此命令开始安装 ShellClash</p>
+<pre><code>export url='https://raw.fastgit.org/juewuy/ShellClash/master' &amp;&amp; sh -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/56A56B4E-9D1F-4AC1-B3E2-0337A5038571.png" alt="" loading="lazy"></figure>
+<p>选择 2 测试版（AX6S 暂时只支持测试版）</p>
+<p>然后 1 确认安装</p>
+<p><strong>配置 Clash</strong></p>
+<p>输入 Clash 回车进行配置</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/494D1DFF-03AE-4C83-8A2F-63BE9F322442.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>选择 1 主机或旁路由</p>
+</li>
+<li>
+<p>选择 1 不代理 UDP</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="12"><img src="https://oss.qust.me/img/933A6F45-F250-4B82-A87D-6B9DF07903D7.png" alt="" loading="lazy"></figure>
+<ul>
+<li>选 1 安装 Dashboard 面板</li>
+<li>选择 2 YACD 面板</li>
+<li>选择 1 的路径</li>
+<li>选择 1 确认开启</li>
+</ul>
+<figure data-type="image" tabindex="13"><img src="https://oss.qust.me/img/12EBAFF0-3B7A-44D7-A651-5276CACA8286.png" alt="" loading="lazy"></figure>
+<ul>
+<li>1 开始导入</li>
+<li>1 在线生成</li>
+<li>粘贴你的订阅链接（你的机场✈️后台有提供）</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="https://oss.qust.me/img/3252BB1C-4A3B-45FC-AB27-530AC3C3DC37.png" alt="" loading="lazy"></figure>
+<ul>
+<li>1 开始生成配置文件</li>
+<li>1 立即启动 Clash 服务</li>
+<li>最后选择 0 退出脚本即可</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="https://oss.qust.me/img/202203092216633.jpg" alt="" loading="lazy"></figure>
+<p>现在应该就能正常使用了，在浏览器里打开 http://192.168.31.1:9999/ui，就能访问控制后台。可以在手机小米路由器 App 上选择关闭更新，以防止自动更新，麻烦。我的建议：不折腾的就不用固化，喜欢折腾就直接刷下面的 openwrt。</p>
+<h2 id="安装-openwrt-系统">安装 openwrt 系统</h2>
+<p><strong>1. 刷入过渡 openwrt 固件</strong></p>
+<p>在 SSH 里复制粘贴下面的命令，便可刷入 openwrt 过渡固件。</p>
+<pre><code>cd /tmp
+curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/%E7%BA%A2%E7%B1%B3%20AX6S/factory.bin -o factory.bin
+mtd -r write /tmp/factory.bin firmware
+</code></pre>
+<figure data-type="image" tabindex="16"><img src="https://oss.qust.me/img/202203092211047.jpg" alt="" loading="lazy"></figure>
+<p>刷入过渡固件后会自动重启，Wi-Fi 名会变为 openwrt-5G。</p>
+<ul>
+<li>
+<p>默认后台：192.168.6.1</p>
+</li>
+<li>
+<p>用户名：root</p>
+</li>
+<li>
+<p>密码：password</p>
+</li>
+</ul>
+<p><strong>2. 刷写其它第三方固件：</strong></p>
+<figure data-type="image" tabindex="17"><img src="https://oss.qust.me/img/202203092213319.jpg" alt="" loading="lazy"></figure>
+<p>在路由器后台选择-System-Backup / Flash Firmware</p>
+<figure data-type="image" tabindex="18"><img src="https://oss.qust.me/img/202203092211802.jpg" alt="" loading="lazy"></figure>
+<p><strong>不要勾选</strong> Keep settings，然后 Image 选择文件选择 openwrt 固件，然后点击 Flash image。</p>
+<p><img src="https://oss.qust.me/img/202203092210656.jpg" alt="" loading="lazy">最后选择 Proceed 即可。</p>
+<figure data-type="image" tabindex="19"><img src="https://oss.qust.me/img/202203092210982.jpg" alt="" loading="lazy"></figure>
+<p>你可以用同样的方法刷不同版本的 openwrt 固件（不保留配置升级），这里就不过多的介绍，以后应该会有更多不同编译版本的 openwrt 固件让选择。</p>
+<figure data-type="image" tabindex="20"><img src="https://oss.qust.me/img/IMG_2422.JPG" alt="" loading="lazy"></figure>
+<p>另外 openwrt 里开启 160Mhz 也是有效的，不过 4*4 mimo 和 160Mhz 得二选一，两者不可兼得。</p>
+<h2 id="性能测试">性能测试</h2>
+<figure data-type="image" tabindex="21"><img src="https://oss.qust.me/img/202203092212243.jpg" alt="" loading="lazy"></figure>
+<p>MTK 7622B 双核 a53，加上有 aes 硬解，能跑这个速度我确实没想到，也太快了吧！这是 MTK7621 的好几十倍了。200多的价格，不错的无线性能，以及丰富的固件，外加上代理性能也不拉胯，解锁刷机还特简单，这不冲一波吗。</p>
+<p>有蛮长一段时间没更新自己的 blog 了，非常抱歉。最近一直在做视频也就是 UP 主，如果你愿意可以在 <a href="https://space.bilibili.com/11544017">bilibili</a> 和 <a href="https://www.youtube.com/channel/UCMb3ctshCbbQKImygnWdrZA">YouTube</a> 关注我，非常感谢🙏。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E8%A7%A3%E9%94%81-ssh">解锁 SSH</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-shellclash">安装 ShellClash</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-openwrt-%E7%B3%BB%E7%BB%9F">安装 openwrt 系统</a></li>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">性能测试</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/siri-router/">
+              <h3 class="post-title">
+                嘿 Siri 前往香港｜如何通过 Siri 控制路由器代理
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,427 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷 | 酱紫表</title>
+<link rel="shortcut icon" href="https://qust.me/favicon.ico?v=1620664166110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qust.me/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷 | 酱紫表 - Atom Feed" href="https://qust.me/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168348943-1"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168348943-1');
+</script>
+
+
+    <meta name="description" content="我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qust.me">
+  <img class="avatar" src="https://qust.me/images/avatar.png?v=1620664166110" alt="">
+  </a>
+  <h1 class="site-title">
+    酱紫表
+  </h1>
+  <p class="site-description">
+    复杂的世界里一个就足够了
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/pengchujin" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/pengchujin" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/u/3138279871" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              红米 AX6 刷 openwrt 教程｜软路由杀手来了🥷
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-03
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://oss.qust.me/img/IMG_1725.PNG" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>我用过很多路由器（有时候必须得装一下才能让人信服），比如最近热门的 NanoPi R2s、R4S、斐讯 N1、AX86U，最近甚至一直都是用的 Mac mini 安装 Surge Mac 版本来当软路由。但我必须得说红米 AX6 无论是官方固件作为 AP Mesh Wi-Fi 的信号还是刷 openwrt 处理「网络数据」都是性价比非常非常高的选择，这方面性能上其实完全不输软路由。</p>
+<!--more-->
+<p>该教程主要参考：</p>
+<p><a href="https://www.right.com.cn/forum/space-uid-191571.html">li4621180</a>：https://www.right.com.cn/forum/thread-4111331-1-1.html</p>
+<p><a href="https://www.right.com.cn/forum/space-uid-90558.html">yyjdelete</a>：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4060726&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D64</p>
+<p>解锁 SSH 更推荐看看 CN_SZTL的教程（有脚本方便的方法）： https://xn--m80a.ml/openwrt/dev/10.html</p>
+<h2 id="警告️">警告⚠️</h2>
+<ul>
+<li>
+<p>如果你操作错误等情况可能会变砖得返厂，我不会对此负责</p>
+</li>
+<li>
+<p>目前教程也会比较麻烦，你旁边有<strong>得有一台别的 openwrt 路由器</strong>作为辅助</p>
+</li>
+<li>
+<p>固件不是特别稳定 Wi-Fi 因为驱动原因暂时比官方的要差不少，如果你是觉得你是新手可以再等等</p>
+</li>
+<li>
+<p>暂时还没刷回官方的教程（以后肯定会有）</p>
+</li>
+</ul>
+<h2 id="准备">准备</h2>
+<p>一台电脑（Mac Windows 均可）</p>
+<p>另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）</p>
+<p>Windows 需要安装 <a href="https://www.putty.org/">Putty</a> 和 <a href="https://winscp.net/eng/download.php">WinSCP</a>｜Mac 使用命令行即可</p>
+<h2 id="第一步降级并恢复出厂设置">第一步｜降级并恢复出厂设置</h2>
+<figure data-type="image" tabindex="1"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%8812.44.44.jpg" alt="截屏2021-05-03 下午12.44.44" loading="lazy"></figure>
+<p><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra69/miwifi_ra69_firmware_a7244_1.0.16.bin">红米 ax6 1.0.16 固件</a> <a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/ra69/miwifi_ra69_firmware_45a77_1.0.18.bin">红米 ax6 1.0.18 固件</a>，下载其中一个即可（推荐下载 1.0.16 ）；打开路由器后台选择 系统升级—手动升级—然后选择下载好的固件，等待重启。</p>
+<p>然后最好再恢复下出厂设置。</p>
+<h2 id="第二步准备-openwrt-服务">第二步｜准备 openwrt 服务</h2>
+<figure data-type="image" tabindex="2"><img src="https://oss.qust.me/img/IMG_1734.JPG" alt="IMG_1734" loading="lazy"></figure>
+<p>我这里准备的是一台刷了 openwrt 的 k2p，只需要接上电源有 Wi-Fi 信号即可（后续会让红米 AX 6 Wi-Fi 连接上此 openwrt 路由器）。</p>
+<h3 id="创建-lua-文件">创建 lua 文件</h3>
+<figure data-type="image" tabindex="3"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.04.00.jpg" alt="截屏2021-05-03 下午4.04.00" loading="lazy"></figure>
+<p>ssh 连接上 openwrt 的路由器，然后使用 nano 创建 /usr/lib/lua/luci/controller/admin/xqsystem.lua 这样一个文件。</p>
+<pre><code>nano /usr/lib/lua/luci/controller/admin/xqsystem.lua
+</code></pre>
+<p>如果你的系统没有 nano 你可以使用 vi 或 vim</p>
+<pre><code>vim /usr/lib/lua/luci/controller/admin/xqsystem.lua
+</code></pre>
+<p>文件内容填写下面的保存即可。</p>
+<pre><code>module(&quot;luci.controller.admin.xqsystem&quot;, package.seeall)
+
+
+function index()
+    local page   = node(&quot;api&quot;)
+    page.target  = firstchild()
+    page.title   = (&quot;&quot;)
+    page.order   = 100
+    page.index = true
+    page   = node(&quot;api&quot;,&quot;xqsystem&quot;)
+    page.target  = firstchild()
+    page.title   = (&quot;&quot;)
+    page.order   = 100
+    page.index = true
+    entry({&quot;api&quot;, &quot;xqsystem&quot;, &quot;token&quot;}, call(&quot;getToken&quot;), (&quot;&quot;), 103, 0x08)
+end
+
+local LuciHttp = require(&quot;luci.http&quot;)
+
+function getToken()
+    local result = {}
+    result[&quot;code&quot;] = 0
+    result[&quot;token&quot;] = &quot;; nvram set ssh_en=1; nvram commit; echo -e 'admin\nadmin' | passwd root; sed -i 's/channel=.*/channel=\&quot;debug\&quot;/g' /etc/init.d/dropbear; /etc/init.d/dropbear start;&quot;
+    LuciHttp.write_json(result)
+end
+</code></pre>
+<p>输入完成后你可以 cat /usr/lib/lua/luci/controller/admin/xqsystem.lua  检查一下。</p>
+<figure data-type="image" tabindex="4"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.08.15.jpg" alt="截屏2021-05-03 下午4.08.15" loading="lazy"></figure>
+<h3 id="修改该-openwrt-路由器的-lan-地址并关闭-dhcp">修改该 openwrt 路由器的 Lan 地址，并关闭 DHCP</h3>
+<figure data-type="image" tabindex="5"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.16.28.jpg" alt="截屏2021-05-03 下午4.16.28" loading="lazy"></figure>
+<p>登陆 openwrt 的后台，在 网络-接口-Lan 选择编辑，IPv4 地址修改为 169.254.31.1。</p>
+<figure data-type="image" tabindex="6"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.18.02.jpg" alt="截屏2021-05-03 下午4.18.02" loading="lazy"></figure>
+<p>在 DHCP 服务器 — 高级设置里取消勾选 动态 DHCP（也就是关闭 DHCP，这会让你需要手动设置网络 IP 才能连接上该 openwrt 路由器）然后<strong>保存 并 应用</strong>。然后重启该 openwrt 路由器</p>
+<h3 id="验证">验证</h3>
+<figure data-type="image" tabindex="7"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.27.07.jpg" alt="截屏2021-05-03 下午4.27.07" loading="lazy"></figure>
+<p>想再次连接到 openwrt 路由器，你需要讲电脑的网络 Wi-Fi 设置为手动 IPv4 （IP 地址填写：169.254.31.3；子网掩码：255.255.255.0；路由器：169.254.31.1）。</p>
+<p>然后浏览器访问：http://169.254.31.1/cgi-bin/luci/api/xqsystem/token，如果得到下面的结果，则证明你设置成功。</p>
+<figure data-type="image" tabindex="8"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.33.46.jpg" alt="截屏2021-05-03 下午4.33.46" loading="lazy"></figure>
+<h2 id="第三步红米-ax-6-破解-ssh">第三步｜红米 AX 6 破解 SSH</h2>
+<p>将电脑的网络设置回自动获取 DHCP，然后最好将电脑用网线和 红米 AX6 连接（因为红米 ax6 解锁 Wi-Fi 可能会掉线）。</p>
+<h3 id="获取后台-stok">获取后台 STOK</h3>
+<figure data-type="image" tabindex="9"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%884.43.49.jpg" alt="截屏2021-05-03 下午4.43.49" loading="lazy"></figure>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<h3 id="第一次请求">第一次请求</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/extendwifi_connect?ssid={SSID}&amp;password={Wi-Fi密码}
+</code></pre>
+<ul>
+<li>
+<p>&lt;STOK&gt; 替换为上面的值</p>
+</li>
+<li>
+<p>{SSID} 替换为 openwrt 路由器的 Wi-Fi 名</p>
+</li>
+<li>
+<p>{Wi-Fi密码} 替换为 openwrt 路由器的 Wi-Fi 密码</p>
+</li>
+</ul>
+<p>&lt;&gt; 和 {} 均需要替换</p>
+<p>我的替换后如下（我的 Wi-Fi 没有密码，你的如果有密码填上密码即可）</p>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=b3ee3b3d1baa28c0b208a46a47c84a03/api/misystem/extendwifi_connect?ssid=OPENWRT_DEE_5G&amp;password=
+</code></pre>
+<p>将替换好的值复制到浏览器请求，如果显示 code 0 则成功。</p>
+<figure data-type="image" tabindex="10"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%887.48.03.jpg" alt="截屏2021-05-03 下午7.48.03" loading="lazy"></figure>
+<!--显示1646的请检查下第一步的DHCP是否关闭,  1619的请检查第一步IP是否设置正确或者路由器B下仍有其他设备, 1655的请再来一次, 有小概率会连接失败
+如果一直失败请改下路由器B的SSID/密码/信道/换着连下2.4G和5G(不要开二合一)-->
+<h3 id="第二次请求">第二次请求</h3>
+<pre><code>http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/xqsystem/oneclick_get_remote_token?username=xxx&amp;password=xxx&amp;nonce=xxx
+</code></pre>
+<p>&lt;STOK&gt; 替换为小米路由器后台获得的值即可，其它均不用改变</p>
+<p>将替换好的值复制到浏览器请求，如果显示 code 0 则成功</p>
+<figure data-type="image" tabindex="11"><img src="https://oss.qust.me/img/%E6%88%AA%E5%B1%8F2021-05-03%20%E4%B8%8B%E5%8D%887.47.55.jpg" alt="截屏2021-05-03 下午7.47.55" loading="lazy"></figure>
+<h2 id="第四步验证-ssh-并备份">第四步｜验证 SSH 并备份</h2>
+<p>ssh 连接小米路由器<strong>ssh root@192.168.31.1</strong> 密码是 admin，如果能 ssh 连接上则证明上述步骤均完成。</p>
+<p>链接成功后进行备份</p>
+<pre><code>mkdir /tmp/syslogbackup/
+dd if=/dev/mtd9 of=/tmp/syslogbackup/mtd9
+</code></pre>
+<p>浏览器请求该地址下载备份</p>
+<p>http://192.168.31.1/backup/log/mtd9</p>
+<h2 id="第五步刷入-openwrt-固件">第五步｜刷入 openwrt 固件</h2>
+<h3 id="下载固件备用">下载固件备用</h3>
+<p>下载固件：https://pan.baidu.com/s/1NVDSw79g4V18JpucMsBMkw<br>
+提取码：fmaw</p>
+<h3 id="ssh-连接-红米-ax-设置env">ssh 连接 红米 ax  设置env</h3>
+<p>ssh 连接上后复制👇下面执行</p>
+<pre><code>nvram set flag_last_success=0
+nvram set flag_boot_rootfs=0
+nvram set flag_boot_success=1
+nvram set flag_try_sys1_failed=0
+nvram set flag_try_sys2_failed=0
+nvram set boot_wait=on
+nvram set uart_en=1
+nvram set telnet_en=1
+nvram set ssh_en=1
+nvram commit
+</code></pre>
+<h3 id="scp-固件-qsdk-固件并刷入">scp 固件 qsdk 固件并刷入</h3>
+<p>scp 下载好的  xiaomimtd12.bin 到 红米 AX6 的 /tmp 下面</p>
+<pre><code>scp xiaomimtd12.bin root@192.168.31.1:/tmp
+</code></pre>
+<p>并在红米 AX6 上执行</p>
+<pre><code>mtd write /tmp/xiaomimtd12.bin rootfs
+</code></pre>
+<p>断电重启红米 AX6，<strong>此时红米 AX 6 的后台地址已经变为 192.168.1.1</strong></p>
+<h3 id="重新分区">重新分区</h3>
+<p>scp 下载好的  a6minbib.bin 到 红米 AX6 的 /tmp 下面</p>
+<pre><code>scp a6minbib.bin root@192.168.1.1:/tmp
+</code></pre>
+<p>并在 红米AX6 上执行</p>
+<pre><code>. /lib/upgrade/platform.sh
+switch_layout boot; do_flash_failsafe_partition a6minbib &quot;0:MIBIB&quot;
+</code></pre>
+<p>拔电源重启路由器</p>
+<h3 id="openwrt刷入到rootfs_1分区">openwrt刷入到rootfs_1分区</h3>
+<p>scp 下载好的 openwrt-ipq807x-generic-xiaomi_ax6-squashfs-nand-factory.bin 到 红米 AX6 的 /tmp</p>
+<pre><code>scp openwrt-ipq807x-generic-xiaomi_ax6-squashfs-nand-factory.bin root@192.168.1.1:/tmp
+</code></pre>
+<p>在红米 AX6 上执行刷入</p>
+<pre><code>ubiformat /dev/mtd13 -y -f /tmp/openwrt-ipq807x-generic-xiaomi_ax6-squashfs-nand-factory.bin
+fw_setenv flag_last_success 1
+fw_setenv flag_boot_rootfs 1
+</code></pre>
+<p>红米 AX6 执行命令重启</p>
+<pre><code>reboot
+</code></pre>
+<p>重启后完成，系统应该已经是 openwrt 系统了。</p>
+<h2 id="one-more-thing-安装-clash">one more thing ｜安装 Clash</h2>
+<p>该固件并不会自带 clash ，或别的代理软件，需要手动安装。</p>
+<pre><code>wget https://github.com/vernesong/OpenClash/releases/download/v0.40.7-beta/luci-app-openclash_0.40.7-beta_all.ipk
+opkg install luci-app-openclash_0.40.7-beta_all.ipk
+</code></pre>
+<p>因为 libcap 安装比较麻烦，所以上面 openclash 安装的是去年10月初的版本。</p>
+<p><strong>如果你想安装最新</strong>的可以修改</p>
+<p>vim /etc/opkg.conf 将 /etc/opkg.conf 的内容修改为以下内容</p>
+<pre><code>dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+#option check_signature
+arch all 100
+arch aarch64_cortex-a53_neon-vfpv4 200
+arch aarch64_cortex-a53 300
+</code></pre>
+<p>vim /etc/opkg/distfeeds.conf 将 /etc/opkg/distfeeds.conf 的内容修改为以下内容</p>
+<pre><code>src/gz openwrt_19.07_base https://mirrors.cloud.tencent.com/lede/releases/19.07-SNAPSHOT/packages/aarch64_cortex-a53/base/
+src/gz openwrt_19.07_freifunk https://mirrors.cloud.tencent.com/lede/releases/19.07-SNAPSHOT/packages/aarch64_cortex-a53/freifunk/
+src/gz openwrt_19.07_luci https://mirrors.cloud.tencent.com/lede/releases/19.07-SNAPSHOT/packages/aarch64_cortex-a53/luci/
+src/gz openwrt_19.07_packages https://mirrors.cloud.tencent.com/lede/releases/19.07-SNAPSHOT/packages/aarch64_cortex-a53/packages/
+src/gz openwrt_19.07_routing https://mirrors.cloud.tencent.com/lede/releases/19.07-SNAPSHOT/packages/aarch64_cortex-a53/routing/
+src/gz openwrt_19.07_telephony https://mirrors.cloud.tencent.com/lede/releases/19.07-SNAPSHOT/packages/aarch64_cortex-a53/telephony/
+</code></pre>
+<h2 id="总结">总结</h2>
+<p>我家是 500M 的联通宽带，vmess 协议 ws+tls 轻松跑满 500M 的宽带，CPU 占用也才 20-30%。如果拿 MTK 7621 芯片的 k2p 测试的速度是 30Mbps。红米 AX6 采用的是高通 IPQ8071A 芯片，4 核心 A53 1.4GHz 的 CPU 外加上双核 1.7GHz NPU，在进行计算任务的时候依靠 NPU，红米 AX6 在这方面真的暴打很多软路由。</p>
+<p>不足的是现在刷机还比较麻烦，并且目前的固件不是很稳定，还只适合尝鲜阶段不适合日常使用。期待下吧，毕竟这款 CPU+NPU 实在是太强了。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%AD%A6%E5%91%8A%EF%B8%8F">警告⚠️</a></li>
+<li><a href="#%E5%87%86%E5%A4%87">准备</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E9%99%8D%E7%BA%A7%E5%B9%B6%E6%81%A2%E5%A4%8D%E5%87%BA%E5%8E%82%E8%AE%BE%E7%BD%AE">第一步｜降级并恢复出厂设置</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%87%86%E5%A4%87-openwrt-%E6%9C%8D%E5%8A%A1">第二步｜准备 openwrt 服务</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA-lua-%E6%96%87%E4%BB%B6">创建 lua 文件</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E8%AF%A5-openwrt-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84-lan-%E5%9C%B0%E5%9D%80%E5%B9%B6%E5%85%B3%E9%97%AD-dhcp">修改该 openwrt 路由器的 Lan 地址，并关闭 DHCP</a></li>
+<li><a href="#%E9%AA%8C%E8%AF%81">验证</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E7%BA%A2%E7%B1%B3-ax-6-%E7%A0%B4%E8%A7%A3-ssh">第三步｜红米 AX 6 破解 SSH</a>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0-stok">获取后台 STOK</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82">第一次请求</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%B7%E6%B1%82">第二次请求</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E9%AA%8C%E8%AF%81-ssh-%E5%B9%B6%E5%A4%87%E4%BB%BD">第四步｜验证 SSH 并备份</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%E5%88%B7%E5%85%A5-openwrt-%E5%9B%BA%E4%BB%B6">第五步｜刷入 openwrt 固件</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6%E5%A4%87%E7%94%A8">下载固件备用</a></li>
+<li><a href="#ssh-%E8%BF%9E%E6%8E%A5-%E7%BA%A2%E7%B1%B3-ax-%E8%AE%BE%E7%BD%AEenv">ssh 连接 红米 ax  设置env</a></li>
+<li><a href="#scp-%E5%9B%BA%E4%BB%B6-qsdk-%E5%9B%BA%E4%BB%B6%E5%B9%B6%E5%88%B7%E5%85%A5">scp 固件 qsdk 固件并刷入</a></li>
+<li><a href="#%E9%87%8D%E6%96%B0%E5%88%86%E5%8C%BA">重新分区</a></li>
+<li><a href="#openwrt%E5%88%B7%E5%85%A5%E5%88%B0rootfs_1%E5%88%86%E5%8C%BA">openwrt刷入到rootfs_1分区</a></li>
+</ul>
+</li>
+<li><a href="#one-more-thing-%E5%AE%89%E8%A3%85-clash">one more thing ｜安装 Clash</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qust.me/post/clashxProMac/">
+              <h3 class="post-title">
+                Mac 电脑使用 ClashX Pro 作为网关旁路由
+              </h3>
+            </a>
+          </div>
+        
+
+        <div id="vcomments"></div>
+          <script>
+              new Valine({
+                  el: '#vcomments',
+                  appId: 'Di60lIXoR3yRjU6UWeYJLTUu-gzGzoHsz',
+                  appKey: 'xKi8rVQmnFe2bMcKiAwizHQH'
+              })
+          </script>
+
+        <!--  -->
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qust.me/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
